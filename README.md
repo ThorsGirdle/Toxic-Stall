@@ -1,10 +1,13 @@
 **Enhancements**
+
 Toxic: Enhanced card gives X0.05 per Toxic card triggered this round when triggered
 
 **Items**
+
 Black Sludge: Enhances 1 selected card and 2 random cards in hand into Toxic cards
 
 **Jokers**
+
 Paldean Wooper: Gains $5 when a face card is destroyed
 
 Foongus: Holding Black Sludge Toxic cards gain X0.15 at round start (this line is very subject to change)
@@ -28,12 +31,20 @@ Varoom: Next 2 cards retrigger, gains 2 after rerolling.
 
 
 **TO-DO**
+
 Bug fixes
+
 Joker Display
+
 Other Juice type things
+
 Bug fixes
+
 Add more Jokers
+
 Rework Foongus line
+
 (maybe) add Boss Blinds
 
 Bug fixes
+
