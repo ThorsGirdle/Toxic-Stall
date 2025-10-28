@@ -35,6 +35,7 @@ local blacksludge = {
       end
 			juice_flip(G.hand.highlighted[1])
       juice_flip_table(card, cards_held, true, limit)
+			poke_unhighlight_cards()
 		end
   end,
   in_pool = function(self)
