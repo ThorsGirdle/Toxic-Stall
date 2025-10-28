@@ -25,6 +25,9 @@ local rellor = {
 		end
 		if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == "Item" then
 			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+			return {
+				extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+			}
 		end
 		return scaling_evo(self, card, context, "j_stall_rabsca", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
@@ -60,6 +63,14 @@ local rabsca = {
 		end
 		if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == "Item" then
 			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+			return {
+				extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+			}
+		end
+		if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == "Tarot" then
+			return {
+				extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
+			}
 		end
 	end,
 }

@@ -78,6 +78,9 @@ local amoonguss = {
 		if context.using_consumeable then
 			if context.consumeable.ability.name == "pokeball" or context.consumeable.ability.name == "greatball" or context.consumeable.ability.name == "ultraball" or context.consumeable.ability.name == "masterball" then
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+				return {
+						extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT}
+						}
 			end	
 		end
 	end,
