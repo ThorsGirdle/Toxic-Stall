@@ -33,6 +33,9 @@ local foongus = {
 			if context.setting_blind and not card.getting_sliced then
 				foongus_xmult(card.ability.extra.Xmult_mod)
 				G.GAME.toxic_triggered = true
+				return {
+				extra = { message = "Effect Spore", colour = G.C.MULT },
+				}
 			end
     end
 		return level_evo(self, card, context, "j_stall_amoonguss")
@@ -66,6 +69,9 @@ local amoonguss = {
 			if context.setting_blind and not card.getting_sliced then
 				foongus_xmult(card.ability.extra.Xmult_mod)
 				G.GAME.toxic_triggered = true
+				return {
+					extra = { message = 'Effect Spore', colour = G.C.MULT },
+				}
 			end
 			if context.joker_main and card.ability.extra.mult > 0 then
 				return{
@@ -75,7 +81,7 @@ local amoonguss = {
 				}		
 			end
     end
-		if context.using_consumeable then
+		if context.using_consumeable and not context.blueprint then
 			if context.consumeable.ability.name == "pokeball" or context.consumeable.ability.name == "greatball" or context.consumeable.ability.name == "ultraball" or context.consumeable.ability.name == "masterball" then
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 				return {
