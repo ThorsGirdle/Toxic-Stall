@@ -9,9 +9,6 @@ local toxic = {
   no_rank = false,
   no_suit = false,
   always_scores = false,
-  unlocked = true,
-  discovered = true,
-  no_collection = false,
 
   loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
