@@ -78,7 +78,7 @@ local rabsca = {
 	calculate = function(self, card, context)
 		if context.joker_main  then
 			if (G.GAME.consumeable_usage_total.tarot or G.GAME.consumeable_usage_total.stall_item) and G.GAME.consumeable_usage_total.stall_item + (G.GAME.consumeable_usage_total.stall_item or 0) > 0 then
-				local mult = (G.GAME.consumeable_usage_total.stall_item or 0)/2 + (G.GAME.consumeable_usage_total.tarot or 0) * card.ability.extra.mult_mod
+				local mult = ((G.GAME.consumeable_usage_total.stall_item or 0)/2 + (G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
 				return {
 					mult = mult
                 }
@@ -106,4 +106,5 @@ return {name = "Rellor",
 enabled = stall_config.Rellor or false,
 list = list
 }
+
 --]]
