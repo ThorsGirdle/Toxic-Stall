@@ -34,25 +34,6 @@ local rellor = {
 		end
 		return scaling_evo(self, card, context, "j_stall_rabsca", card.ability.extra.items_used, self.config.evo_rqmt)
 	end,
-
-
-
-
-	--[[calculate = function(self, card, context)
-		if context.joker_main and card.ability.extra.mult > 0 then
-			return {
-				message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
-				mult_mod = card.ability.extra.mult
-      }	
-		end
-		if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == "Item" then
-			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-			return {
-				extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT },
-			}
-		end
-	
-	end,--]]
 }
 
 local rabsca = {
@@ -77,7 +58,7 @@ local rabsca = {
 
 	calculate = function(self, card, context)
 		if context.joker_main  then
-			if (G.GAME.consumeable_usage_total.tarot or G.GAME.consumeable_usage_total.stall_item) and G.GAME.consumeable_usage_total.stall_item + (G.GAME.consumeable_usage_total.stall_item or 0) > 0 then
+			if (G.GAME.consumeable_usage_total.tarot or G.GAME.consumeable_usage_total.stall_item) and (G.GAME.consumeable_usage_total.stall_item or 0) + (G.GAME.consumeable_usage_total.tarot or 0) > 0 then
 				local mult = ((G.GAME.consumeable_usage_total.stall_item or 0)/2 + (G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
 				return {
 					mult = mult
@@ -106,5 +87,4 @@ return {name = "Rellor",
 enabled = stall_config.Rellor or false,
 list = list
 }
-
 --]]
