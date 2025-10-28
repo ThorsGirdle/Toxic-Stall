@@ -12,6 +12,7 @@ local paldean_wooper = {
   ptype = "Dark",
   gen = 9,
 	toxic = true,
+	designer = "Thor's Girdle",
   perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
@@ -41,7 +42,6 @@ local clodsire = {
   config = {extra = {money = 6}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
     return {vars = {card.ability.extra.money}}
   end,
   rarity = 2,
@@ -50,6 +50,7 @@ local clodsire = {
   ptype = "Dark",
   gen = 9,
 	toxic = true,
+	designer = "Thor's Girdle",
   perishable_compat = true,
   blueprint_compat = true,
   eternal_compat = true,
