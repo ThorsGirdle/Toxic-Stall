@@ -14,7 +14,7 @@ end
 
 --scales Toxic by variable amount... should probably combine it with the other one but whatever
 foongus_xmult = function(XMult)
-	if not G.GAME.current_round.toxic then
+	if not G.GAME.toxic_triggered then
 		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05}
 	end
 	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + XMult
@@ -34,4 +34,5 @@ end
 function SMODS.current_mod.reset_game_globals(run_start)
 	reset_toxic_scaling()
 end
+
 
