@@ -5,7 +5,6 @@ local dewpider = {
 	config = {extra = {money = 3, mult = 0, mult_mod = 1, minSum = 1}, evo_rqmt = 5},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local abbr = card.ability.extra
 	  return {vars = {abbr.minSum, abbr.minSum + 4, abbr.money, abbr.mult, abbr.mult_mod, self.config.evo_rqmt}}
 	end,
@@ -14,6 +13,7 @@ local dewpider = {
 	stage = "Basic",
 	ptype = "Water",
 	gen = 7,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = false,
@@ -65,7 +65,6 @@ local araquanid = {
 	config = {extra = {money = 4, mult = 0, mult_mod = 2, minSum = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local abbr = card.ability.extra
 	  return {vars = {abbr.minSum, abbr.minSum + 4, abbr.money, abbr.mult, abbr.mult_mod}}
 	end,
@@ -74,6 +73,7 @@ local araquanid = {
 	stage = "One",
 	ptype = "Water",
 	gen = 7,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = false,

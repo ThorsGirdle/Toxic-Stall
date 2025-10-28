@@ -4,7 +4,6 @@ local sandygast = {
 	config = {extra = {chip_mod = 1, chips = 0}, evo_rqmt = 42},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.chips, self.config.evo_rqmt}}
 	end,
 	rarity = 1, --Common
@@ -12,8 +11,9 @@ local sandygast = {
 	stage = "Basic",
 	ptype = "Psychic",
 	gen = 7,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
-	custome_art = true,
+	custom_art = true,
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
@@ -41,7 +41,6 @@ local palossand = {
 	config = {extra = {chip_mod = 2, chips = 0, waterTypes = 0}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.chips, self.config.waterTypes}}
 	end,
 	rarity = "poke_safari",
@@ -49,6 +48,7 @@ local palossand = {
 	stage = "One",
 	ptype = "Psychic",
 	gen = 7,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	custome_art = true,
 	perishable_compat = true,

@@ -4,7 +4,6 @@ local varoom = {
 	config = {extra = {retriggers = 2, rerolls = 0}, evo_rqmt = 6},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.retriggers, self.config.evo_rqmt}}
 	end,
@@ -14,6 +13,7 @@ local varoom = {
 	ptype = "Metal",
 	gen = 9,
 	toxic = true,
+	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = false,
 	eternal_compat = true,
@@ -51,7 +51,6 @@ local revavroom = {
 	config = {extra = {retriggers = 3}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.retriggers}}
 	end,
@@ -60,6 +59,7 @@ local revavroom = {
 	ptype = "Metal",
 	gen = 9,
 	toxic = true,
+	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = false,
 	eternal_compat = true,

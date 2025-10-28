@@ -4,7 +4,6 @@ local salandit = {
 	config = {extra = { rounds = 4}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = { card.ability.extra.rounds}}
 	end,
@@ -14,6 +13,7 @@ local salandit = {
 	ptype = "Dark",
 	gen = 7,
 	toxic = true,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = false,
@@ -55,7 +55,6 @@ local salazzle = {
 	config = {extra = {drainedMult = 0}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.mult, card.ability.extra.mult_mod}}
 	end,
@@ -66,6 +65,7 @@ local salazzle = {
 	gen = 7,
 	toxic = true,
 	atlas = "AtlasJokersBasicNatdex",
+	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
@@ -96,13 +96,10 @@ local salazzle = {
 	end,
 }
 
-if stall_config.Salandit then
-  list = {salandit, salazzle}
-else list = {}
-end
 
 return {
 	name = "Salandit",
 	enabled = stall_config.Salandit or false,
-	list = list
+	init = init,
+	list = {salandit, salazzle}
 }

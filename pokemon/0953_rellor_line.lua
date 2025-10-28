@@ -4,7 +4,6 @@ local rellor = {
 	config = {extra = { mult = 0, mult_mod = 1 }, evo_rqmt = 7},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 	    return {vars = {card.ability.extra.mult_mod, card.ability.extra.mult , self.config.evo_rqmt }}
 	end,
 	rarity = 1, --Common
@@ -12,6 +11,7 @@ local rellor = {
 	stage = "Basic",
 	ptype = "Grass",
 	gen = 9,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,
@@ -45,6 +45,7 @@ local rabsca = {
 	stage = "One",
 	ptype = "Grass", --wish it was Psychic :(
 	gen = 9,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,

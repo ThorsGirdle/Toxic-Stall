@@ -4,7 +4,6 @@ local skrelp = {
 	config = {extra = { heldChips = 1, highestSev = 0}, evo_rqmt = 7},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.heldChips, self.config.evo_rqmt}}
 	end,
@@ -15,6 +14,7 @@ local skrelp = {
 	gen = 7,
 	toxic = true,
 	atlas = "AtlasJokersBasicNatdex",
+	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
@@ -45,7 +45,6 @@ local dragalge = {
 	config = {extra = { heldChips = 2, toxicThreshold = 14}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.heldChips, card.ability.extra.toxicThreshold}}
 	end,
@@ -56,6 +55,7 @@ local dragalge = {
 	gen = 6,
 	toxic = true,
 	atlas = "AtlasJokersBasicNatdex",
+	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,

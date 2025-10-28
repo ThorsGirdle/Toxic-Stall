@@ -4,7 +4,6 @@ local foongus = {
 	config = {extra = {Xmult_mod = 0.15, rounds = 4}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.rounds}}
 	end,
@@ -15,6 +14,7 @@ local foongus = {
 	gen = 5,
 	atlas = "AtlasJokersBasicNatdex",
 	toxic = true,
+	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = false,
 	eternal_compat = true,
@@ -45,8 +45,8 @@ local amoonguss = {
 	config = {extra = {Xmult_mod = 0.25, mult = 0, mult_mod = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
+		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_blacksludge
 	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.mult, card.ability.extra.mult_mod}}
 	end,
 	rarity = "poke_safari", --Safari
@@ -56,6 +56,7 @@ local amoonguss = {
 	gen = 5,
 	atlas = "AtlasJokersBasicNatdex",
 	toxic = true,
+	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,

@@ -4,7 +4,6 @@ local klink = {
 	config = {extra = {money = 1, drawn = 0, to_draw = 12, totalEarned = 0}, evo_rqmt = 8},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local abbr = card.ability.extra
 	  return {vars = {abbr.money, abbr.to_draw - abbr.drawn, self.config.evo_rqmt - abbr.totalEarned}}
 	end,
@@ -13,6 +12,7 @@ local klink = {
 	stage = "Basic",
 	ptype = "Metal",
 	gen = 5,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,
@@ -41,7 +41,6 @@ local klang = {
 	config = {extra = {money = 1, drawn = 0, to_draw = 10, totalEarned = 0}, evo_rqmt = 10},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local abbr = card.ability.extra
 		return {vars = {abbr.money, abbr.to_draw - abbr.drawn, self.config.evo_rqmt - abbr.totalEarned}}
 	end,
@@ -50,6 +49,7 @@ local klang = {
 	stage = "One",
 	ptype = "Metal",
 	gen = 5,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = false,
@@ -78,7 +78,6 @@ local klinklang = {
 	config = {extra = {money = 1, Xmult = 2.5, drawn = 0, to_draw = 8, totaldrawn = 0, totalTarget = 30}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local abbr = card.ability.extra
 	  return {vars = {abbr.money, abbr.to_draw - abbr.drawn, abbr.Xmult, abbr.totalTarget, abbr.totaldrawn}}
 	end,
@@ -87,6 +86,7 @@ local klinklang = {
 	stage = "Two",
 	ptype = "Metal",
 	gen = 5,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = false,

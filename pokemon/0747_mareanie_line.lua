@@ -1,10 +1,9 @@
 local mareanie = {
 	name = "mareanie",
 	pos = {x = 22, y = 49},
-	config = {extra = {hazards = 4, Xmult = 0.3, heldTH = 0}, evo_rqmt = 25},	
+	config = {extra = {hazards = 4, Xmult = 0.35, heldTH = 0}, evo_rqmt = 25},	
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local abbr = card.ability.extra
 		info_queue[#info_queue+1] = {set = 'Other', key = 'poke_hazards', vars = {abbr.hazards}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard
@@ -18,6 +17,7 @@ local mareanie = {
 	gen = 7,
 	toxic = true,
 	hazard_poke = true,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,
@@ -50,10 +50,9 @@ end,
 local toxapex = {
 	name = "toxapex",
 	pos = {x = 24, y = 49},
-	config = {extra = {hazards = 4, Xmult = 0.4}},
+	config = {extra = {hazards = 4, Xmult = 0.45}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local abbr = card.ability.extra
 		info_queue[#info_queue+1] = {set = 'Other', key = 'poke_hazards', vars = {abbr.hazards}}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard
@@ -67,6 +66,7 @@ local toxapex = {
 	gen = 7,
 	toxic = true,
 	hazard_poke = true,
+	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,
