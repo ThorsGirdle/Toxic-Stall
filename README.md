@@ -18,7 +18,7 @@ Skrelp: Held 7s gain +1 Held Chips
 
 Mareanie: First played card gains X0.3 per Held Toxic and Hazard card
 
-Dewpider: If sum of Ranks in scoring Hand is within [1-4], earn $2 and gain +1 Mult 			
+Dewpider: If sum of Ranks in scoring Hand is within [1-5], earn $2 and gain +1 Mult 			
 
 Salandit: Adds 1 random Toxic card to deck when Blind is selected
 
@@ -47,4 +47,5 @@ Rework Foongus line
 (maybe) add Boss Blinds
 
 Bug fixes
+
 
