@@ -164,20 +164,17 @@ return {
 			j_stall_rellor = {
 				name = 'Rellor',      
 				text = {
-					"Gain {C:mult}+#1#{} when an {C:item}Item{}",
-					"card is used",
+					"{C:mult}+#1#{} per {C:item}Item{} card",
+					"used this run",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
-					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#3#{C:inactive,s:0.8} Mult)",
+					"{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}+#3#{C:inactive,s:0.8} Items)",
 				}
 			},
 			j_stall_rabsca = {
 				name = 'Rabsca',      
 				text = {
-					"Gain {C:mult}+#1#{} when an {C:item}Item{}",
-					"card is used",
-					"{br:2}ERROR - CONTACT STEAK",
-					"{C:mult}+#1#{} per {C:tarot}Tarot{} card",
-					"used this run",
+					"{C:mult}+#1#{} per {C:item}Item{} and ",
+					"{C:tarot}Tarot{} card used this run",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
 				} 
 			},
