@@ -21,11 +21,13 @@ foongus_xmult = function(XMult)
 end
 
 
-increment_item = function()
-	if not G.GAME.total_items_used then
-		G.GAME.total_items_used = 0
-	end
-	G.GAME.total_items_used = G.GAME.total_items_used + 1
+local set_consumeable_usage_ref = set_consumeable_usage
+function set_consumeable_usage(card)
+    local ret = set_consumeable_usage_ref(card)
+    if card.config.center.set == 'Item' then
+        G.GAME.consumeable_usage_total.stall_item = (G.GAME.consumeable_usage_total.stall_item or 0) + 1
+    end
+    return ret
 end
 
 
