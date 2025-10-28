@@ -61,7 +61,7 @@ local toxapex = {
 	end,
 	rarity = "poke_safari", --Safari
 	cost = 8,
-	stage = "Basic",
+	stage = "One",
 	ptype = "Dark",
 	gen = 7,
 	toxic = true,

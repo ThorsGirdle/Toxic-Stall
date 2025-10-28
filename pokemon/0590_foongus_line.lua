@@ -4,7 +4,7 @@ local foongus = {
 	config = {extra = {Xmult_mod = 0.15, rounds = 4}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
+		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_blacksludge
 	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.rounds}}
 	end,
 	rarity = 1, --Common
@@ -46,7 +46,7 @@ local amoonguss = {
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
-		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_blacksludge
+		
 	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.mult, card.ability.extra.mult_mod}}
 	end,
 	rarity = "poke_safari", --Safari
