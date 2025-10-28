@@ -50,6 +50,30 @@ local toxic = {
 			G.GAME.toxic_triggered = false
 		end
 	end,	
+	in_pool = function(self)
+	local toxic_mons = false
+	if G.jokers and G.jokers.cards then
+		for k, v in ipairs(G.jokers.cards) do
+			if v.toxic then
+				toxic_mons = true
+				break
+			end
+		end
+	end
+	local totalToxic = 0
+	if G.deck and G.deck.cards then
+		for k, v in pairs(G.deck.cards) do
+			if SMODS.has_enhancement(v, "m_stall_toxic") then
+				totalToxic = totalToxic + 1
+			end
+		end
+	end
+	if not toxic_mons and totalToxic < 5 then
+		return false
+	else 
+		return true
+	end
+end,
 }
 
 return {
