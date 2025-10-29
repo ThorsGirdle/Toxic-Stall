@@ -232,8 +232,9 @@ return {
 	},
 	misc = {
 		dictionary = {
-			rellor_line = "Rellor line:",
-			sandygast_line = "Sandygast line:",
+			stall_regular_pokemon1 = "Regular Pokemon",
+			stall_toxic_pokemon1= "Toxic Pokemon",
+
 		},
 	}
 }
