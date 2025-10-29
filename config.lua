@@ -1,5 +1,5 @@
 return{
-	PaldeanWooper = true,
+	Paldean_Wooper = true,
 	Foongus = true,
 	Klink = true,
 	Skrelp = true,
