@@ -5,7 +5,7 @@ local rellor = {
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.stall_item or 0) * card.ability.extra.mult_mod)
-	    return {vars = {card.ability.extra.mult_mod, mult/2, math.max(self.config.evo_rqmt - card.ability.extra.items_used, 0 )}}
+	    return {vars = {card.ability.extra.mult_mod, mult, math.max(self.config.evo_rqmt - card.ability.extra.items_used, 0 )}}
 	end,
 	rarity = 1, --Common
 	cost = 6,
@@ -19,11 +19,13 @@ local rellor = {
 
 	calculate = function(self, card, context)
 		if context.joker_main  then
-			if G.GAME.consumeable_usage_total.stall_item  and G.GAME.consumeable_usage_total.stall_item  > 0 then
-				local mult = (G.GAME.consumeable_usage_total.stall_item)/2 * card.ability.extra.mult_mod
-				return {
-					mult = mult
-                }
+			if G.GAME.consumeable_usage_total then
+				if G.GAME.consumeable_usage_total.stall_item  and G.GAME.consumeable_usage_total.stall_item  > 0 then
+					local mult = (G.GAME.consumeable_usage_total.stall_item) * card.ability.extra.mult_mod
+					return {
+						mult = mult
+									}
+				end
 			end
 		end
 		if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == "Item" then
@@ -43,7 +45,7 @@ local rabsca = {
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
-		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.stall_item or 0)/2 + (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
+		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.stall_item or 0) + (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
 	  return {vars = {card.ability.extra.mult_mod, mult}}
 	end,
 	rarity = "poke_safari", 
@@ -58,11 +60,13 @@ local rabsca = {
 
 	calculate = function(self, card, context)
 		if context.joker_main  then
-			if (G.GAME.consumeable_usage_total.tarot or G.GAME.consumeable_usage_total.stall_item) and (G.GAME.consumeable_usage_total.stall_item or 0) + (G.GAME.consumeable_usage_total.tarot or 0) > 0 then
-				local mult = ((G.GAME.consumeable_usage_total.stall_item or 0)/2 + (G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
-				return {
-					mult = mult
-                }
+			if G.GAME.consumeable_usage_total then
+				if (G.GAME.consumeable_usage_total.tarot or G.GAME.consumeable_usage_total.stall_item) and (G.GAME.consumeable_usage_total.stall_item or 0) + (G.GAME.consumeable_usage_total.tarot or 0) > 0 then
+					local mult = ((G.GAME.consumeable_usage_total.stall_item or 0)+ (G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
+					return {
+						mult = mult
+									}
+				end
 			end
 		end
 		if context.using_consumeable and not context.blueprint and context.consumeable.ability.set == "Item" then
