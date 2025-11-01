@@ -1,10 +1,11 @@
 
 --increases Toxic XMult by 0.05
-toxic_scaling = function()
+toxic_scaling = function(amount)
+if not amount then amount = 1 end
 	if not G.GAME.toxic_triggered then
 		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05}
 	end
-	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + G.GAME.current_round.toxic.toxicMult_mod
+	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + G.GAME.current_round.toxic.toxicMult_mod * amount
 end
 
 reset_toxic_scaling = function()
