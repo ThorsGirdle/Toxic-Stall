@@ -72,7 +72,7 @@ local revavroom = {
 calculate = function(self, card, context)
 	if context.reroll_shop and not context.blueprint then
 		if card.ability.extra.curr_retriggers < 30 then 
-			card.ability.extra.curr_retriggers = card.ability.extra.curr_retriggers + 2
+			card.ability.extra.curr_retriggers = card.ability.extra.curr_retriggers + 3
 				return {
 				message = 'Vroom', 
 				colour = G.C.MONEY 
@@ -87,7 +87,7 @@ calculate = function(self, card, context)
 	end
 	if context.repetition and context.cardarea == G.play then
 		if card.ability.extra.curr_retriggers >= 1 then
-			if not SMODS.has_enhancement(context.other_card, 'm_stone') or not SMODS.has_enhancement(context.other_card, 'm_stall_toxic') or context.other_card.debuff then
+			if not SMODS.has_enhancement(context.other_card, 'm_stone') and not SMODS.has_enhancement(context.other_card, 'm_stall_toxic') then
 				card.ability.extra.curr_retriggers = card.ability.extra.curr_retriggers - 1
 			end
 			return {
