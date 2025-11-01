@@ -175,6 +175,20 @@ def_list["j_stall_salazzle"] = {
 	},
 }
 
+def_list["j_stall_sandygast"] = {
+	text = {		
+		{ text = "+", colour = G.C.CHIPS },
+		{ ref_table = "card.ability.extra", ref_value = "chips", colour = G.C.CHIPS},
+	}
+}
+
+def_list["j_stall_palossand"] = {
+	text = {		
+		{ text = "+", colour = G.C.CHIPS },
+		{ ref_table = "card.ability.extra", ref_value = "chips", colour = G.C.CHIPS},
+	}
+}
+
 def_list["j_stall_varoom"] = {
 	text = {			
 		{ ref_table = "card.ability.extra", ref_value = "curr_retriggers", colour = G.C.ORANGE },
