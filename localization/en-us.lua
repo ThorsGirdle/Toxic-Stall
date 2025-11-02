@@ -18,35 +18,36 @@ return {
 			},
 			--543
 			j_stall_venipede = {
-				name = 'venipede',
+				name = 'Venipede',
 				text = {
-					"{C:green}$#1# in #2#{} chance to enhance first",
+					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
 					"scoring card with {C:attention}Toxic{}, increase",
 					"odds per played hand",
-					"{C:inactive,s:0.8}(Evolves after #2# rounds)",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
 				}
 			},
 			j_stall_whirlipede = {
-				name = 'whirlipede',
+				name = 'Whirlipede',
 				text = {
-					"{C:green}$#1# in #2#{} chance to enhance first",
+					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
 					"scoring card with {C:attention}Toxic{}, increase",
 					"odds per played hand",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Retrigger first scoring card 1 additional time",
-					"if extra Toxic Mult is at least #4#",
-					"{C:inactive,s:0.8}(Evolves after giving Toxic cards #5# retriggers)",
+					"{C:attention}Retrigger{} first scoring card if",
+					"extra {C:attention}Toxic{} Mult is at least {X:mult,C:white}X#3#",
+					"{C:inactive,s:0.8}(Evolves after giving Toxic cards {C:attention,s:0.8}#4#{C:inactive,s:0.8} retriggers)",
 				}
 			},
 			j_stall_scolipede = {
-				name = 'scolipede',
+				name = 'Scolipede',
 				text = {
-					"{C:green}$#1# in #2#{} chance to enhance first",
+					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
 					"scoring card with {C:attention}Toxic{}, increase",
 					"odds per played hand",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Retrigger first scoring card 1 additional time",
-					"per #4# extra Toxic Mult",
+					"{C:attention}Retrigger{} first scoring card {C:attention}1{} additional ",
+					"time per {X:mult,C:white}X#4#{} extra {C:attention}Toxic{} Mult",
+					"{C:inactive,s:0.8} (Currently {C:attention,s:0.8}#3#{C:inactive,s:0.8} retriggers)"
 				}
 			},
 			

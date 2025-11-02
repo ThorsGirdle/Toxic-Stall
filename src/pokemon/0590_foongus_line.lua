@@ -1,7 +1,7 @@
 local foongus = {
 	name = "foongus",
 	pos = {x = 8, y = 39},
-	config = {extra = {Xmult_mod = 0.15, rounds = 4}},
+	config = {extra = {Xmult_mod = 0.15, rounds = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_blacksludge
@@ -60,7 +60,7 @@ local amoonguss = {
 	toxic = true,
 	designer = "Thor's Girdle",
 	perishable_compat = true,
-	blueprint_compat = true,
+	blueprint_compat = false,
 	eternal_compat = true,
 	
 	add_to_deck = function(self, card, from_debuff)
