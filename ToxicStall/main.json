@@ -1,0 +1,21 @@
+{
+	"id": "ToxicStall",
+	"name": "The Toxic Stall",
+	"author": ["Thor's Girdle"],
+	"description": "Just adds some new stuff for Pokermon.",
+	"prefix": "stall",
+	"main_file": "main.lua",
+	"priority": 25,
+	"badge_colour": "701fab",
+	"badge_text_colour": "ffffff",
+  "display_name": "ToxicStall",
+	"version": "0.2.0",
+	"dependencies": [
+			"Steamodded (>=1.0.0~BETA-0711a)",
+			"Lovely (>=0.8)",
+			"Pokermon (>=3.2.1-1005a)"
+	],
+	"conflicts": [],
+	"provides": [],
+	"dump_loc": false
+}
