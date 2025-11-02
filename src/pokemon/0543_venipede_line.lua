@@ -113,7 +113,7 @@ local scolipede = {
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 		local abbr = card.ability.extra
 		local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'scolipede')
-	  return {vars = {math.min(num, 8), dem, math.min(math.floor((G.GAME.current_round.toxic.toxicXMult - 1)/abbr.threshold), 5), abbr.threshold}}
+	  return {vars = {math.min(num, 8), dem, abbr.retriggers, abbr.threshold}}
 	end,
 	rarity = "poke_safari", 
 	cost = 5,
