@@ -16,6 +16,26 @@ return {
 					"with {C:attention}Toxic{} when a {C:attention}face{} card is destroyed",
 				}
 			},
+			--453
+			j_stall_croagunk = {
+				name = 'Croagunk',
+				text = {
+				"If scored hand has exactly {C:attention}1{}", 
+				"scoring {C:hearts}Heart{} each played card",
+				"gives {C:mult}+#1#{} Mult when scored",
+				"{C:inactive,s:0.8}(Evolves after triggering {C:attention,s:0.8}#2#{C:inactive,s:0.8} times)",
+				}
+			},
+			j_stall_toxicroak = {
+				name = 'Toxicroak',
+				text = {
+				"{C:attention}Toxic",
+				"If scored hand has exactly {C:attention}1{}", 
+				"scoring {C:hearts}Heart{} each played card",
+				"gives {C:mult}+#1#{} Mult when scored",
+				"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Toxic Mult)",
+				}
+			},
 			--543
 			j_stall_venipede = {
 				name = 'Venipede',
