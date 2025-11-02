@@ -16,7 +16,41 @@ return {
 					"with {C:attention}Toxic{} when a {C:attention}face{} card is destroyed",
 				}
 			},
-		--590
+			--543
+			j_stall_venipede = {
+				name = 'venipede',
+				text = {
+					"{C:green}$#1# in #2#{} chance to enhance first",
+					"scoring card with {C:attention}Toxic{}, increase",
+					"odds per played hand",
+					"{C:inactive,s:0.8}(Evolves after #2# rounds)",
+				}
+			},
+			j_stall_whirlipede = {
+				name = 'whirlipede',
+				text = {
+					"{C:green}$#1# in #2#{} chance to enhance first",
+					"scoring card with {C:attention}Toxic{}, increase",
+					"odds per played hand",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Retrigger first scoring card 1 additional time",
+					"if extra Toxic Mult is at least #4#",
+					"{C:inactive,s:0.8}(Evolves after giving Toxic cards #5# retriggers)",
+				}
+			},
+			j_stall_scolipede = {
+				name = 'scolipede',
+				text = {
+					"{C:green}$#1# in #2#{} chance to enhance first",
+					"scoring card with {C:attention}Toxic{}, increase",
+					"odds per played hand",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Retrigger first scoring card 1 additional time",
+					"per #4# extra Toxic Mult",
+				}
+			},
+			
+			--590
 			j_stall_foongus = {
 				name = 'Foongus',
 				text = {
@@ -28,10 +62,8 @@ return {
 			j_stall_amoonguss = {
 				name = 'Amoonguss',
 				text = {
+					"{C:attention}Holding {C:item}Black Sludge{}",
 					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{} at round start",
-					"{br:2}ERROR - CONTACT STEAK",
-					"Gains {C:mult}+#3#{} Mult when a {C:item}Ball Item{} is used",
-					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
 				}
 			},
 			--599
@@ -233,7 +265,8 @@ return {
 	misc = {
 		dictionary = {
 			stall_regular_pokemon1 = "Regular Pokemon",
-			stall_toxic_pokemon1= "Toxic Pokemon",
+			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
+			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",
 
 		},
 	}
