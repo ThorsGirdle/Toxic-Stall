@@ -47,7 +47,7 @@ return {
 					"{br:2}ERROR - CONTACT STEAK",
 					"{C:attention}Retrigger{} first scoring card {C:attention}1{} additional ",
 					"time per {X:mult,C:white}X#4#{} extra {C:attention}Toxic{} Mult",
-					"{C:inactive,s:0.8} (Currently {C:attention,s:0.8}#3#{C:inactive,s:0.8} retriggers)"
+					"{C:inactive,s:0.8} (Max 5 retriggers)"
 				}
 			},
 			
