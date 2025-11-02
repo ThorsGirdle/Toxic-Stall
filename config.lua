@@ -1,5 +1,6 @@
 return{
 	Paldean_Wooper = true,
+	Croagunk = true,
 	Venipede = true,
 	Foongus = true,
 	Klink = true,
