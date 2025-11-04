@@ -1,12 +1,15 @@
 **Enhancements**
+
 Toxic: Enhanced card gives X0.05 per Toxic card triggered this round when triggered
 
 
 **Items**
+
 Black Sludge: Enhances 1 selected card and 2 random cards in hand into Toxic cards
 
 
 **Jokers**
+
 Paldean Wooper: Gains $5 when a face card is destroyed
 
 Croagunk: If scored hand has exactly 1 scoring Heart, each played card gives +3 Mult when scored
@@ -47,5 +50,6 @@ Add more Jokers
 Rework Foongus line
 
 (maybe) add Boss Blinds
+
 
 Bug fixes
