@@ -94,13 +94,8 @@ calculate = function(self, card, context)
 end,
 }
 
-if stall_config.Mareanie then
-  list = {mareanie, toxapex}
-else list = {}
-end
-
 return {
 name = "Mareanie Line", 
 enabled = stall_config.Mareanie or false,
-list = list
+list = {mareanie, toxapex}
 }

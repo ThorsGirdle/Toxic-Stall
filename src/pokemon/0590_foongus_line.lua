@@ -101,13 +101,8 @@ local amoonguss = {
 	end,
 }
 
-if stall_config.Foongus then
-  list = {foongus, amoonguss}
-else list = {}
-end
-
 return {
 	name = "Foongus Line",
 	enabled = stall_config.Foongus or false,
-	list = list
+	list = {foongus, amoonguss}
 }

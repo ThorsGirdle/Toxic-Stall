@@ -87,13 +87,8 @@ local clodsire = {
   end,
 }
 
-if stall_config.Paldean_Wooper then
-  list = { paldean_wooper, clodsire}
-else list = {}
-end
-
 return {
 	name = "Paldean Wooper Line",
 	enabled = stall_config.Paldean_Wooper or false,
-	list = list
+	list = { paldean_wooper, clodsire}
 }

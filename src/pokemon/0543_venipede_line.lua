@@ -65,7 +65,7 @@ local whirlipede = {
 	blueprint_compat = true,
 	eternal_compat = true,
 	custom_art = true,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 
 	calculate = function(self, card, context)
 		if context.before and context.scoring_hand and context.full_hand and context.scoring_hand[1] then
@@ -160,13 +160,9 @@ local scolipede = {
 	end,
 }
 
-if stall_config.Venipede then
-  list = {venipede, whirlipede, scolipede}
-else list = {}
-end
 
 return {
 	name = "Venipede Line",
 	enabled = stall_config.Venipede or false,
-	list = list
+	list = {venipede, whirlipede, scolipede}
 }

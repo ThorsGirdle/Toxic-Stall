@@ -84,12 +84,7 @@ local dragalge = {
 	end,
 }
 
-if stall_config.Skrelp then
-  list = {skrelp, dragalge}
-else list = {}
-end
-
 return {name = "Skrelp Line", 
 enabled = stall_config.Skrelp or false,
-list = list
+list = {skrelp, dragalge}
 }

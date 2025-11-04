@@ -98,14 +98,8 @@ calculate = function(self, card, context)
 end,
 }
 
-
-if stall_config.Varoom then
-  list = {varoom, revavroom}
-else list = {}
-end
-
 return {
 	name = "Varoom Line",
 	enabled = stall_config.Varoom or false,
-	list = list
+	list = {varoom, revavroom}
 }

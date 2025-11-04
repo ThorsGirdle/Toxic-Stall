@@ -12,7 +12,7 @@ local sandygast = {
 	ptype = "Psychic",
 	gen = 7,
 	designer = "Thor's Girdle",
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	custom_art = true,
 	perishable_compat = true,
 	blueprint_compat = true,
@@ -49,8 +49,8 @@ local palossand = {
 	ptype = "Psychic",
 	gen = 7,
 	designer = "Thor's Girdle",
-	atlas = "AtlasJokersBasicNatdex",
-	custome_art = true,
+	--atlas = "AtlasJokersBasicNatdex",
+	custom_art = true,
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
@@ -75,13 +75,8 @@ local palossand = {
 	end,
 }
 
-if stall_config.Sandygast then
-  list = { sandygast, palossand}
-else list = {}
-end
-
 return {
 	name = "Sandygast Line",
 	enabled = stall_config.Sandygast or false,
-	list = list
+	list = { sandygast, palossand}
 }

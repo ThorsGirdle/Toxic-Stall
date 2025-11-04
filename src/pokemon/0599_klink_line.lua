@@ -118,13 +118,8 @@ local klinklang = {
 	end,
 }
 
-if stall_config.Klink then
-  list = {klink, klang, klinklang}
-else list = {}
-end
-
 return {
 	name = "Klink Line",
 	enabled = stall_config.Klink or false,
-	list = list
+	list = {klink, klang, klinklang}
 }

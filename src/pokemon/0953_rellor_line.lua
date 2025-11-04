@@ -82,13 +82,8 @@ local rabsca = {
 	end,
 }
 
-if stall_config.Rellor then
-  list = {rellor, rabsca}
-else list = {}
-end
-
 return {name = "Rellor Line", 
 enabled = stall_config.Rellor or false,
-list = list
+list = {rellor, rabsca}
 }
 --]]

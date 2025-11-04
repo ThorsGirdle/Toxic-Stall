@@ -117,13 +117,7 @@ local araquanid = {
 	end
 }
 
-
-if stall_config.Dewpider then
-  list = {dewpider, araquanid}
-else list = {}
-end
-
 return {name = "Dewpider Line", 
 enabled = stall_config.Dewpider or false,
-list = list
+list = {dewpider, araquanid}
 }

@@ -96,14 +96,8 @@ local salazzle = {
 	end,
 }
 
-
-if stall_config.Salandit then
-  list = { salandit, salazzle}
-else list = {}
-end
-
 return {
 	name = "Salandit Line",
 	enabled = stall_config.Salandit or false,
-	list = list
+	list = { salandit, salazzle}
 }

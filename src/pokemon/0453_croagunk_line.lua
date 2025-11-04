@@ -121,13 +121,8 @@ local toxicroak = {
 	end,
 }
 
-if stall_config.Croagunk then
-  list = {croagunk, toxicroak}
-else list = {}
-end
-
 return {
 	name = "Croagunk Line",
 	enabled = stall_config.Croagunk or false,
-	list = list
+	list = {croagunk, toxicroak}
 }
