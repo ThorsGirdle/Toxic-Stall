@@ -235,21 +235,21 @@ return {
 			j_stall_varoom = {
 				name = 'Varoom',      
 				text = {
-					"The next {C:inactive}[#1#]{} scored card(s) retrigger,", 
-					"gain {C:attention}2{} for each {C:attention}Reroll{} used",
-					"{C:inactive,s0.8}(Max 20 cards, resets to 2 at end of ante)",
-					"{C:inactive,s0.8}(Evolve after rerolling {C:attention,s0.8}#2#{C:inactive,s0.8} times)",
+					"Gain {C:mult}+#1#{} Mult per {C:attention}Reroll{} and scored {C:attention}Stone",
+					"card, {C:mult}-1{} Mult per hand played",
+					"{C:inactive}(Currently {C:mult}+#2#{{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#3#{C:inactive,s:0.8} Mult)",
 				}
 			},
 			j_stall_revavroom = {
 				name = 'Revavroom',      
 				text = {
-					"The next {C:inactive}[#1#]{} scored card(s) retrigger,", 
-					"gain {C:attention}3{} for each {C:attention}Reroll{} used",
+					"Gain {C:mult}+#1#{} Mult per {C:attention}Reroll{} and scored {C:attention}Stone",
+					"cards, {C:mult}-2{} Mult per hand played",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Scored {C:attention}Stone{} and {C:attention}Toxic{} cards do not", 
-					"reduce number of stored retriggers",
-					"{C:inactive,s0.8}(Max 30 cards, resets to 3 at end of ante)",
+					"Scored {C:attention}Toxic{} cards retrigger if a",					
+					"{C:attention}Stone{} card is in scoring hand",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
 				} 
 			},
 		},
