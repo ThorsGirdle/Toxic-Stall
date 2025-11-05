@@ -29,20 +29,21 @@ local toxic = {
 			G.GAME.current_round.toxic = { toxicXMult = card.ability.extra.toxicXMult }
 			G.GAME.current_round.toxic.toxicMult_mod = { toxicMult_mod = card.ability.extra.toxicMult_mod }
 		end
+		-- played toxic cards score and scale normally
 		if context.main_scoring and context.cardarea == G.play then
 			toxic_scaling()
 			G.GAME.toxic_triggered = true
 			card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult
 			return { x_mult = card.ability.extra.toxicXMult}
-			
 		end
-		if context.cardarea == G.hand and context.card_effects and (next(context.card_effects[1]) or #context.card_effects > 1) and not context.end_of_round then --or (context.other_card.ability.perma_h_chips and context.other_card.ability.perma_h_chips > 0) then
-					toxic_scaling()
-					G.GAME.toxic_triggered = true
-					card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult
-					SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, card)
-
-			end
+		-- checks if held in hand and triggered by a joker
+		if context.post_trigger and context.other_context.individual and context.other_context.cardarea == G.hand and not context.other_context.end_of_round and
+        		context.other_context.other_card == card then
+		    toxic_scaling()
+		    G.GAME.toxic_triggered = true
+		    card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult
+		    return{xmult = G.GAME.current_round.toxic.toxicXMult}
+    	end
 		
 		card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult	
 		if context.end_of_round then
