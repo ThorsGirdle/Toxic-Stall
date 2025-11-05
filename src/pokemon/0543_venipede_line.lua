@@ -6,7 +6,7 @@ local venipede = {
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 		 local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'venipede')
-	  return {vars = {math.min(num, 10), dem, card.ability.extra.rounds}}
+	  return {vars = {num, dem, card.ability.extra.rounds}}
 	end,
 	rarity = 1, --Common
 	cost = 4,
@@ -52,7 +52,7 @@ local whirlipede = {
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  local abbr = card.ability.extra
 		local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'whirlipede')
-	  return {vars = {math.min(num, 8), dem, abbr.threshold, math.max(self.config.evo_rqmt - abbr.goal, 0)}}
+	  return {vars = {num, dem, abbr.threshold, math.max(self.config.evo_rqmt - abbr.goal, 0)}}
 	end,
 	rarity = "poke_safari", 
 	cost = 5,
@@ -113,7 +113,7 @@ local scolipede = {
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 		local abbr = card.ability.extra
 		local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'scolipede')
-	  return {vars = {math.min(num, 8), dem, abbr.retriggers, abbr.threshold}}
+	  return {vars = {num, dem, abbr.retriggers, abbr.threshold}}
 	end,
 	rarity = "poke_safari", 
 	cost = 5,
