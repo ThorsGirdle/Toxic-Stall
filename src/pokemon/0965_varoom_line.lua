@@ -1,11 +1,11 @@
 local varoom = {
 	name = "varoom",
 	pos = {x = 8, y = 64},
-	config = {extra = {curr_retriggers = 2, rerolls = 0}, evo_rqmt = 6},
+	config = {extra = {mult = 10, mult_mod = 1}, evo_rqmt = 30},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
-	  return {vars = {card.ability.extra.curr_retriggers, math.max(self.config.evo_rqmt - card.ability.extra.rerolls, 0)}}
+	  return {vars = {card.ability.extra.mult_mod, card.ability.extra.mult, self.config.evo_rqmt }}
 	end,
 	rarity = 1, --Common
 	cost = 5,
@@ -19,44 +19,44 @@ local varoom = {
 	eternal_compat = true,
 	atlas = "AtlasJokersBasicNatdex",
 
-calculate = function(self, card, context)
-	if context.reroll_shop and not context.blueprint then
-		card.ability.extra.rerolls = card.ability.extra.rerolls + 1
-		if  card.ability.extra.curr_retriggers < 20 then 
-			card.ability.extra.curr_retriggers = card.ability.extra.curr_retriggers + 2
+	calculate = function(self, card, context)
+		if context.reroll_shop and not context.blueprint then
+			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 				return {
 				message = 'Vroom', 
-				colour = G.C.MONEY 
+				colour = G.C.MULT 
 			}
 		end
-		if card.ability.extra.curr_retriggers > 20 then
-			card.ability.extra.curr_retriggers = 20
+		if context.after and not context.blueprint then
+			card.ability.extra.mult = card.ability.extra.mult - 1
 		end
-	end
-	if context.end_of_round and context.beat_boss and not context.blueprint and context.game_over == false then
-		card.ability.extra.curr_retriggers = 2
-	end
-	if context.repetition and context.cardarea == G.play then
-		--for _, scoring_card in ipairs(context.scoring_hand) do
-		if card.ability.extra.curr_retriggers >= 1 then
-			card.ability.extra.curr_retriggers = card.ability.extra.curr_retriggers - 1
+		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_stone') then
+			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 			return {
-				repetitions = 1
+				message = 'Vroom', 
+				colour = G.C.MULT 
 			}
 		end
-	end
-  return scaling_evo(self, card, context, "j_stall_revavroom", card.ability.extra.rerolls, self.config.evo_rqmt)
-end,
+		
+		if context.joker_main and card.ability.extra.mult > 0 then
+				return{
+					message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
+					mult_mod = card.ability.extra.mult
+				}		
+		end
+		
+		return scaling_evo(self, card, context, "j_stall_revavroom", card.ability.extra.mult, self.config.evo_rqmt)
+	end,
 }
 
 local revavroom = {
 	name = "revavroom",
 	pos = {x = 10, y = 64},
-	config = {extra = {curr_retriggers = 3}},
+	config = {extra = {mult = 30, mult_mod = 2, trigger = false}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
-	  return {vars = {card.ability.extra.curr_retriggers}}
+	  return {vars = {card.ability.extra.mult_mod, card.ability.extra.mult}}
 	end,
 	rarity = "poke_safari", --Safari
 	stage = "One",
@@ -69,33 +69,52 @@ local revavroom = {
 	eternal_compat = true,
 	atlas = "AtlasJokersBasicNatdex",
 
-calculate = function(self, card, context)
-	if context.reroll_shop and not context.blueprint then
-		if card.ability.extra.curr_retriggers < 30 then 
-			card.ability.extra.curr_retriggers = card.ability.extra.curr_retriggers + 3
+	calculate = function(self, card, context)
+		if context.reroll_shop and not context.blueprint then
+			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 				return {
 				message = 'Vroom', 
 				colour = G.C.MONEY 
 			}
-		end
-		if card.ability.extra.curr_retriggers > 30 then
-			card.ability.extra.curr_retriggers = 30
-		end
-	end
-	if context.end_of_round and context.beat_boss and not context.blueprint and context.game_over == false then
-		card.ability.extra.curr_retriggers = 3
-	end
-	if context.repetition and context.cardarea == G.play then
-		if card.ability.extra.curr_retriggers >= 1 then
-			if not SMODS.has_enhancement(context.other_card, 'm_stone') and not SMODS.has_enhancement(context.other_card, 'm_stall_toxic') then
-				card.ability.extra.curr_retriggers = card.ability.extra.curr_retriggers - 1
+		end	
+		if context.before and context.cardarea == G.jokers and context.scoring_hand and not context.blueprint then
+			for k, v in ipairs(context.scoring_hand) do
+				if SMODS.has_enhancement(v, 'm_stone') then
+					card.ability.extra.trigger = true
+					break
+				end
 			end
+		end
+		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_stone') then
+			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+		end
+		if context.joker_main and card.ability.extra.mult > 0 then
+				return{
+					message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
+					mult_mod = card.ability.extra.mult
+				}		
+		end
+		if context.repetition and context.cardarea == G.play and card.ability.extra.trigger then
+			if SMODS.has_enhancement(context.other_card, 'm_stall_toxic') then
+				return {
+					repetitions = 1
+				}
+			end
+		end
+		-- ;_; one day
+		--[[if context.repetition and context.cardarea == G.hand and card.ability.extra.trigger and SMODS.has_enhancement(context.other_card, "m_stall_toxic") and not context.other_card.debuff then
 			return {
 				repetitions = 1
 			}
+		end--]]
+		if context.after and not context.blueprint then
+			card.ability.extra.mult = card.ability.extra.mult - 2
+			if card.ability.extra.mult < 0 then
+				card.ability.extra.mult = 0
+			end
+			card.ability.extra.trigger = false
 		end
-	end
-end,
+	end,
 }
 
 return {
