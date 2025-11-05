@@ -188,21 +188,22 @@ def_list["j_stall_palossand"] = {
 		{ ref_table = "card.ability.extra", ref_value = "chips", colour = G.C.CHIPS},
 	}
 }
-
+--[[ weird stuff be happenin'
 def_list["j_stall_varoom"] = {
-	text = {			
-		{ ref_table = "card.ability.extra", ref_value = "curr_retriggers", colour = G.C.ORANGE },
-		{ text = " Retriggers", colour = G.C.ORANGE },
+	text = {		
+		{ text = " +", colour = G.C.MULT },	
+		{ ref_table = "card.ability.extra", ref_value = "mult", colour = G.C.MULT },
+		
 	}
 }
 
 def_list["j_stall_revavroom"] = {
 	text = {			
-		{ ref_table = "card.ability.extra", ref_value = "curr_retriggers", colour = G.C.ORANGE },
-		{ text = " Retriggers", colour = G.C.ORANGE },
+		{ text = " +", colour = G.C.MULT },	
+		{ ref_table = "card.ability.extra", ref_value = "mult", colour = G.C.MULT },
 	}
 }
-
+--]]
 
 return {
   name = "Toxic Stall JokerDisplay Definitions",
