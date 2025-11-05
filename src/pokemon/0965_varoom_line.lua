@@ -101,12 +101,12 @@ local revavroom = {
 				}
 			end
 		end
-		-- ;_; one day
-		--[[if context.repetition and context.cardarea == G.hand and card.ability.extra.trigger and SMODS.has_enhancement(context.other_card, "m_stall_toxic") and not context.other_card.debuff then
+		
+		if context.repetition and context.cardarea == G.hand and card.ability.extra.trigger and SMODS.has_enhancement(context.other_card, "m_stall_toxic") and not context.other_card.debuff then
 			return {
 				repetitions = 1
 			}
-		end--]]
+		end
 		if context.after and not context.blueprint then
 			card.ability.extra.mult = card.ability.extra.mult - 2
 			if card.ability.extra.mult < 0 then
