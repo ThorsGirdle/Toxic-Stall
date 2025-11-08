@@ -243,10 +243,11 @@ return {
 			j_stall_grapploct = {
 				name = 'Grapploct',
 				text = {
+					"{X:mult,C:white}X#3#{} Mult",
+					"{X:mult,C:white}-X1{} per non-{C:clubs}Club{} card held in hand",
+					"{br:2}ERROR - CONTACT STEAK",
+					--"{C:inactive,s:0.8}(Minimum of {X:mult,C:white,s:0.8}X1{C:inactive,s:0.8})",
 					"Each {C:clubs}#2#{} held in hand gives {C:chips}+#1#{} chips",
-					"{X:mult,C:white}X#3#{} - {X:mult,C:white} X1{} per non-{C:clubs}Club{}",
-					" card held in hand",
-					"{C:inactive,s:0.8}(Minimum of {X:mult,C:white}X1{C:inactive,s:0.8})",
 				}
 			},
 			--953

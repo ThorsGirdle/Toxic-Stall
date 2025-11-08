@@ -20,6 +20,8 @@ Foongus: Holding Black Sludge Toxic cards gain X0.15 at round start (this line i
 
 Klink: Gain $1 when 12 cards are drawn in a blind
 
+Bunnelby: When you draw the last card of a Rank from your deck, 1 in 2 chance to gain a Tarot card
+
 Skrelp: Held 7s gain +1 Held Chips
 
 Mareanie: First played card gains X0.3 per Held Toxic and Hazard card
@@ -29,6 +31,8 @@ Dewpider: If sum of Ranks in scoring Hand is within [1-4], earn $3 and gain +1 M
 Salandit: Adds 1 random Toxic card to deck when Blind is selected
 
 Sandygast: Gain +1 Chips for each scored Spade
+
+Clobbopus: Each Club card held in hand gives +15 chips 
 
 Rellor: Gain +1 Mult after using an Item (will hopefully be more of a Fortune Teller in the future)
 
