@@ -121,7 +121,7 @@ return {
 					"When you draw the last card of a", 
 					"{C:attention}Rank{} from your deck, {C:green}#1# in #2#{}",
 					"chance to gain a {C:tarot}Tarot{} card",
-					"{C:inactive,s:0.8}(Evolve after triggering {C:money,s:0.8}#3#{C:inactive,s:0.8} times)",
+					"{C:inactive,s:0.8}(Evolve after triggering {C:attention,s:0.8}#3#{C:inactive,s:0.8} times)",
 				}
 			},
 			j_stall_diggersby = {
@@ -230,6 +230,23 @@ return {
 					"Played {C:spades}Spade{} cards permanently gain",
 					"{C:mult}+1{} Mult when scored, capped", 
 					"by number of {X:water,C:white}Water{} Jokers",
+				}
+			},
+			--852
+			j_stall_clobbopus = {
+				name = 'Clobbopus',
+				text = {
+					"Each {C:clubs}#2#{} held in hand gives {C:chips}+#1#{} chips",
+					"{C:inactive,s:0.8}(Evolve after triggering {C:attention,s:0.8}#3#{C:inactive,s:0.8} times)",
+				}
+			},
+			j_stall_grapploct = {
+				name = 'Grapploct',
+				text = {
+					"Each {C:clubs}#2#{} held in hand gives {C:chips}+#1#{} chips",
+					"{X:mult,C:white}X#3#{} - {X:mult,C:white} X1{} per non-{C:clubs}Club{}",
+					" card held in hand",
+					"{C:inactive,s:0.8}(Minimum of {X:mult,C:white}X1{C:inactive,s:0.8})",
 				}
 			},
 			--953

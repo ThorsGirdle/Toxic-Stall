@@ -78,20 +78,18 @@ local salazzle = {
 				}
 			end
 		end
-		if context.individual and context.cardarea == G.hand and not context.end_of_round and SMODS.has_enhancement(context.other_card, "m_steel") and not context.other_card.debuff  then
+		if context.individual and context.cardarea == G.hand and not context.end_of_round and SMODS.has_enhancement(context.other_card, "m_steel") and not context.other_card.debuff and not context.blueprint then
 			context.other_card.ability.h_x_mult = context.other_card.ability.h_x_mult - 0.05
 			if context.other_card.ability.h_x_mult <= 1 then
 				context.other_card.ability.h_x_mult = 1
 				context.other_card:set_ability('c_base', nil, true)
 			end
 			toxic_scaling()
-			card.ability.extra.drainedMult = card.ability.extra.drainedMult + 5
+			card.ability.extra.drainedMult = card.ability.extra.drainedMult + 0.05
 		end
-		if context.individual and context.cardarea == G.jokers and not context.blueprint then
-			if context.setting_blind and not card.getting_sliced then
-				foongus_xmult(card.ability.extra.drainedMult)
-				G.GAME.toxic_triggered = true
-			end
+		if context.cardarea == G.jokers and context.setting_blind and not card.getting_sliced and not context.blueprint then
+			foongus_xmult(card.ability.extra.drainedMult)
+			G.GAME.toxic_triggered = true
 		end
 	end,
 }

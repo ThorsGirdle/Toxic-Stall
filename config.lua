@@ -10,6 +10,7 @@ return{
 	Dewpider = true,
 	Salandit = true,
 	Sandygast = true,
+	Clobbopus = true,
 	Rellor = true,
 	Varoom = true,
 }
