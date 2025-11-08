@@ -114,6 +114,25 @@ return {
 					"been drawn this blind",
 				}
 			},
+			--659
+			j_stall_bunnelby = {
+				name = 'Bunnelby',
+				text = {
+					"When you draw the last card of a", 
+					"{C:attention}Rank{} from your deck, {C:green}#1# in #2#{}",
+					"chance to gain a {C:tarot}Tarot{} card",
+					"{C:inactive,s:0.8}(Evolve after triggering {C:money,s:0.8}#3#{C:inactive,s:0.8} times)",
+				}
+			},
+			j_stall_diggersby = {
+				name = 'Diggersby',
+				text = {
+					"When you draw the last card of a ", 
+					"{C:attention}Rank{} from your deck, gain {X:mult,C:white}X#4#{} and",
+					"{C:green}#1# in #2#{} chance to gain a {C:tarot}Tarot{} card",
+					"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive})",
+				}
+			},
 			--690
 			j_stall_skrelp = {
 				name = 'Skrelp',
@@ -252,13 +271,15 @@ return {
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
 				} 
 			},
+
 		},
 			Item = {
 				c_stall_blacksludge = {
 					name = "Black Sludge",
 					text = {
-						"{C:enhanced}Enhance{} {C:attention}1{} selected card and", 
-						"{C:attention}2{} random cards in hand with {C:attention}Toxic{}",
+						"{C:enhanced}Enhance{} {C:attention}1{} selected", 
+						"card and {C:attention}2{} random cards",
+						"in hand with {C:attention}Toxic{}", 
 					},
 				},
 			},

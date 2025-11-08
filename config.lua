@@ -4,6 +4,7 @@ return{
 	Venipede = true,
 	Foongus = true,
 	Klink = true,
+	Bunnelby = true,
 	Skrelp = true,
 	Mareanie = true,
 	Dewpider = true,

@@ -44,7 +44,6 @@ local toxic = {
 		    card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult
 		    return{xmult = G.GAME.current_round.toxic.toxicXMult}
     	end
-		
 		card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult	
 		if context.end_of_round then
 			G.GAME.current_round.toxic.toxicXMult = 1

@@ -83,6 +83,16 @@ def_list["j_stall_klinklang"] = {
 		card.joker_display_values.status = status
 	end
 }
+def_list["j_stall_diggersby"] = {
+	text = {		
+		{
+			border_nodes = {
+				{ text = "X" },
+				{ ref_table = "card.ability.extra", ref_value = "Xmult" },
+			},
+		},
+	},
+}
 
 def_list["j_stall_mareanie"] = {
 	text = {		

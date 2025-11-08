@@ -5,7 +5,7 @@ local klink = {
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
-	  return {vars = {abbr.money, abbr.to_draw - abbr.drawn, self.config.evo_rqmt - abbr.totalEarned}}
+	  return {vars = {abbr.money, abbr.to_draw - abbr.drawn, math.max(self.config.evo_rqmt - abbr.totalEarned, 0)}}
 	end,
 	rarity = 1, --Common
 	cost = 4,
@@ -42,7 +42,7 @@ local klang = {
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
-		return {vars = {abbr.money, abbr.to_draw - abbr.drawn, self.config.evo_rqmt - abbr.totalEarned}}
+		return {vars = {abbr.money, abbr.to_draw - abbr.drawn, math.max(self.config.evo_rqmt - abbr.totalEarned, 0)}}
 	end,
 	rarity = "poke_safari", --Safari
 	cost = 6,
