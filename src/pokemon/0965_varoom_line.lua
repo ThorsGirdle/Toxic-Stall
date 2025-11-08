@@ -29,6 +29,9 @@ local varoom = {
 		end
 		if context.after and not context.blueprint then
 			card.ability.extra.mult = card.ability.extra.mult - 1
+			if card.ability.extra.mult < 0 then
+				card.ability.extra.mult = 0
+			end
 		end
 		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_stone') then
 			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
