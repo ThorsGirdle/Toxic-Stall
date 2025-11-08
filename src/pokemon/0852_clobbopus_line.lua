@@ -40,7 +40,7 @@ local grapploct = {
 		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chips, localize(card.ability.extra.suit, 'suits_singular'), card.ability.extra.Xmult}}
 	end,
-	rarity = 1, --Common
+	rarity = "poke_safari", 
 	cost = 8,
 	stage = "One",
 	ptype = "Fighting",
