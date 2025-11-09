@@ -39,6 +39,11 @@ Rellor: Gain +1 Mult after using an Item (will hopefully be more of a Fortune Te
 Varoom: Next 2 cards retrigger, gains 2 after rerolling, resets to 2 at end of ante
 
 
+Art Credits:
+
+
+emmadenslemma: Black Sludge, Toxic Enhancement, Mod Icon
+
 
 **TO-DO**
 Bug fixes
@@ -57,3 +62,4 @@ Rework Foongus line
 
 
 Bug fixes
+
