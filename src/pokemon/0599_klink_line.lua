@@ -108,7 +108,7 @@ local klinklang = {
         }
       end
     end
-		if context.cardarea == G.jokers and context.joker_main and card.ability.extra.totaldrawn > card.ability.extra.totalTarget then
+		if context.cardarea == G.jokers and context.joker_main and card.ability.extra.totaldrawn >= card.ability.extra.totalTarget then
 			return {
 				message = localize{type = 'variable', key = 'a_xmult', vars = {card.ability.extra.Xmult}}, 
 				colour = G.C.XMULT,
