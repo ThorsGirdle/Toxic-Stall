@@ -150,6 +150,25 @@ return {
 					"or more {C:attention}Held Chips{} gain {C:attention}Toxic",
 				}
 			},
+			--734
+			j_stall_yungoos = {
+				name = 'Yungoos',
+				text = {
+					"Gain {C:money}$#1#{} after scoring a",
+					"{C:attention}#3#{} of {V:1}#4#{}, target",
+					"card resets after payout",
+					"{C:inactive,s:0.8}(Evolves after earning {C:money,s:0.8}$#2#{C:inactive,s:0.8})",
+				}
+			},
+			j_stall_gumshoos = {
+				name = 'Gumshoos',
+				text = {
+					"Gain {C:money}$#1#{} and a Negative Clue Item after",
+					"scoring a {C:attention}#2#{} of {C:attention}#3#{}, target card",
+					"resets after payout and target Rank and",
+					"Suit are revealed once scored or Forseen"
+				}
+			},
 			--747
 			j_stall_mareanie = {
 				name = 'Mareanie',
@@ -244,7 +263,7 @@ return {
 				name = 'Grapploct',
 				text = {
 					"{X:mult,C:white}X#3#{} Mult",
-					"{X:mult,C:white}-X1{} per non-{C:clubs}Club{} card held in hand",
+					"{X:mult,C:white}-X#4#{} per non-{C:clubs}Club{} card held in hand",
 					"{br:2}ERROR - CONTACT STEAK",
 					--"{C:inactive,s:0.8}(Minimum of {X:mult,C:white,s:0.8}X1{C:inactive,s:0.8})",
 					"Each {C:clubs}#2#{} held in hand gives {C:chips}+#1#{} chips",
@@ -324,7 +343,8 @@ return {
 	},
 	misc = {
 		dictionary = {
-			stall_regular_pokemon1 = "Regular Pokemon",
+			stall_regular_pokemon1 = "Regular Pokemon 1/2",
+			stall_regular_pokemon2 = "Regular Pokemon 2/2",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",
 
