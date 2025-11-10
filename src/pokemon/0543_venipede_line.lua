@@ -1,7 +1,7 @@
 local venipede = {
 	name = "venipede",
 	pos = {x = 4, y = 36},
-	config = {extra = { num = 1, dem = 7, rounds = 5}},
+	config = {extra = { num = 1, dem = 8, rounds = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
@@ -46,7 +46,7 @@ local venipede = {
 local whirlipede = {
 	name = "whirlipede",
 	pos = {x = 6, y = 36},
-	config = {extra = { num = 1, dem = 6, threshold = 0.25, goal = 0, retriggers = 0},  evo_rqmt = 5},
+	config = {extra = { num = 1, dem = 7, threshold = 0.35, goal = 0, retriggers = 0},  evo_rqmt = 5},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
@@ -107,7 +107,7 @@ local whirlipede = {
 local scolipede = {
 	name = "scolipede",
 	pos = {x = 8, y = 36},
-	config = {extra = { num = 1, dem = 5, retriggers = 0, threshold = 0.25}},
+	config = {extra = { num = 1, dem = 6, retriggers = 0, threshold = 0.35}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
