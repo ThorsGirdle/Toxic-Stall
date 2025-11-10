@@ -32,34 +32,34 @@ Salandit: Adds 1 random Toxic card to deck when Blind is selected
 
 Sandygast: Gain +1 Chips for each scored Spade
 
-Clobbopus: Each Club card held in hand gives +15 chips 
+Clobbopus: Each Club card held in hand gives +8 chips 
 
 Rellor: Gain +1 Mult after using an Item (will hopefully be more of a Fortune Teller in the future)
 
 Varoom: Next 2 cards retrigger, gains 2 after rerolling, resets to 2 at end of ante
 
 
-Art Credits:
+**Art Credits:**
 
 
 emmadenslemma: Black Sludge, Toxic Enhancement, Mod Icon
 
 
+**Other Mods with Toxic Jokers**
+
+NachosPokermonDip by EternalNacho (Hisuian Sneasel/Sneasler)
+
+Agarmons by emmadenslemma (Toxel/Toxtricity)
+
+
 **TO-DO**
+
 Bug fixes
 
-Joker Display
+Joker Display 
 
 Other Juice type things
 
-Bug fixes
-
 Add more Jokers
 
-Rework Foongus line
-
 (maybe) add Boss Blinds
-
-
-Bug fixes
-
