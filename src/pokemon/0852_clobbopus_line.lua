@@ -1,7 +1,7 @@
 local clobbopus = {
 	name = "clobbopus",
 	pos = {x = 0, y = 0},
-	config = {extra = {chips = 15, suit = 'Clubs', triggers = 0}, evo_rqmt = 35},
+	config = {extra = {chips = 8, suit = 'Clubs', triggers = 0}, evo_rqmt = 35},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chips, localize(card.ability.extra.suit, 'suits_singular'), math.max( self.config.evo_rqmt - card.ability.extra.triggers, 0 )}}
@@ -35,10 +35,11 @@ local clobbopus = {
 local grapploct = {
 	name = "grapploct",
 	pos = {x = 0, y = 0},
-	config = {extra = {chips = 20, suit = 'Clubs', Xmult = 4}},
+	config = {extra = {chips = 16, suit = 'Clubs', Xmult = 3, Xmult1 = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-	  return {vars = {card.ability.extra.chips, localize(card.ability.extra.suit, 'suits_singular'), card.ability.extra.Xmult}}
+		local abbr = card.ability.extra
+	  return {vars = {abbr.chips, localize(abbr.suit, 'suits_singular'), abbr.Xmult, abbr.Xmult1}}
 	end,
 	rarity = "poke_safari", 
 	cost = 8,
@@ -71,7 +72,7 @@ local grapploct = {
 				end 	
 			end
 		return {
-			xmult = math.max(card.ability.extra.Xmult - nonClub, 1)
+			xmult = math.max(card.ability.extra.Xmult - card.ability.extra.Xmult1 * nonClub, 1)
 		}
 		end
 	end,
