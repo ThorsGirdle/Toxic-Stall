@@ -163,10 +163,13 @@ return {
 			j_stall_gumshoos = {
 				name = 'Gumshoos',
 				text = {
-					"Gain {C:money}$#1#{} and a Negative Clue Item after",
-					"scoring a {C:attention}#2#{} of {C:attention}#3#{}, target card",
-					"resets after payout and target Rank and",
-					"Suit are revealed once scored or Forseen"
+					"Gain {C:money}$#1#{} after scoring a",
+					"{C:attention}#2#{} of {C:attention}#3#{}, target card",
+					"resets after payout",  
+					"{br:2}ERROR - CONTACT STEAK",
+					"Gain a {C:attention}Clue{} {C:item}Item{} and reveal ",
+					"target {C:attention}Rank{} or {C:attention}Suit{} once ",
+					"it is scored or {C:attention}Foreseen{}",
 				}
 			},
 			--747
@@ -317,6 +320,13 @@ return {
 						"{C:enhanced}Enhance{} {C:attention}1{} selected", 
 						"card and {C:attention}2{} random cards",
 						"in hand with {C:attention}Toxic{}", 
+					},
+				},
+				c_stall_clue = {
+					name = "Clue",
+					text = {
+						"Gain {C:attention}+#1#{} hand size",
+						"this round",
 					},
 				},
 			},

@@ -72,6 +72,7 @@ local amoonguss = {
 			return true
 		end
 	end,
+	
 	calculate = function(self, card, context)
 		if context.cardarea == G.jokers and not context.blueprint then
 			if context.setting_blind and not card.getting_sliced then

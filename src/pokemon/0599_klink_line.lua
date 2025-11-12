@@ -89,7 +89,7 @@ local klinklang = {
 	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
-	blueprint_compat = false,
+	blueprint_compat = true,
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)

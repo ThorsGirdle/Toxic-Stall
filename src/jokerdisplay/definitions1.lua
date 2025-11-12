@@ -94,6 +94,29 @@ def_list["j_stall_diggersby"] = {
 	},
 }
 
+def_list["j_stall_yungoos"] = {
+	text = {		
+		
+		{ ref_table = "card.joker_display_values", ref_value = "rank", colour = G.C.ORANGE},
+		{ text = " of ", colour = G.C.ORANGE },
+		{ ref_table = "card.joker_display_values", ref_value = "suit", colour = G.C.ORANGE},
+	},
+	calc_function = function(card)
+		card.joker_display_values.rank = (G.GAME.current_round.yungoos_rank or "Ace")
+		card.joker_display_values.suit = (G.GAME.current_round.yungoos_suit or "Spades")
+		--card.joker_display_values.colour = {G.C.SUITS[G.GAME.current_round.yungoos_suit or "Spades"]}
+	end
+}
+
+def_list["j_stall_gumshoos"] = {
+	text = {		
+		
+		{ ref_table = "card.ability.extra", ref_value = "rank", colour = G.C.ORANGE},
+		{ text = " of ", colour = G.C.ORANGE },
+		{ ref_table = "card.ability.extra", ref_value = "suit", colour = G.C.ORANGE},
+	},
+}
+
 def_list["j_stall_mareanie"] = {
 	text = {		
 		{
@@ -115,7 +138,6 @@ def_list["j_stall_mareanie"] = {
 		end
 		card.joker_display_values.Xmult = 1 + (count * card.ability.extra.Xmult)
   end
-	
 }
 
 def_list["j_stall_toxapex"] = {

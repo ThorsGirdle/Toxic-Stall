@@ -24,6 +24,8 @@ Bunnelby: When you draw the last card of a Rank from your deck, 1 in 2 chance to
 
 Skrelp: Held 7s gain +1 Held Chips
 
+Yungoos: Gain $8 after scoring an [Ace] of [Spades], target changes after payout
+
 Mareanie: First played card gains X0.3 per Held Toxic and Hazard card
 
 Dewpider: If sum of Ranks in scoring Hand is within [1-4], earn $3 and gain +1 Mult 	

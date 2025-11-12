@@ -6,6 +6,7 @@ return{
 	Klink = true,
 	Bunnelby = true,
 	Skrelp = true,
+	Yungoos = true,
 	Mareanie = true,
 	Dewpider = true,
 	Salandit = true,
