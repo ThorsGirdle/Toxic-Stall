@@ -8,7 +8,7 @@ local venipede = {
 		 local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'venipede')
 	  return {vars = {num, dem, card.ability.extra.rounds}}
 	end,
-	rarity = 1, --Common
+	rarity = 2, --Uncommon
 	cost = 4,
 	stage = "Basic",
 	ptype = "Dark",
