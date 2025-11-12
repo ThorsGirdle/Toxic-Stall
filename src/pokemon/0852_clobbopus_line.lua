@@ -1,12 +1,12 @@
 local clobbopus = {
 	name = "clobbopus",
 	pos = {x = 0, y = 0},
-	config = {extra = {chips = 8, suit = 'Clubs', triggers = 0}, evo_rqmt = 35},
+	config = {extra = {chips = 12, suit = 'Clubs', triggers = 0}, evo_rqmt = 35},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chips, localize(card.ability.extra.suit, 'suits_singular'), math.max( self.config.evo_rqmt - card.ability.extra.triggers, 0 )}}
 	end,
-	rarity = 1, --Common
+	rarity = 2, --Uncommon
 	cost = 6,
 	stage = "Basic",
 	ptype = "Fighting",
