@@ -40,6 +40,8 @@ Rellor: Gain +1 Mult after using an Item (will hopefully be more of a Fortune Te
 
 Varoom: Next 2 cards retrigger, gains 2 after rerolling, resets to 2 at end of ante
 
+Spinarak: Card held in hand give +25 chips if adjacent Ranks are also held
+
 
 **Art Credits:**
 
