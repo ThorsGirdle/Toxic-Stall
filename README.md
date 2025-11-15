@@ -64,4 +64,8 @@ Other Juice type things
 
 Add more Jokers
 
-(maybe) add Boss Blinds
+Add Boss Blinds
+
+Fix Toxic not working with held in hand Retriggers
+
+Weird Deck Idea?

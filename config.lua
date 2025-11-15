@@ -1,4 +1,5 @@
 return{
+	Spinarak = true,
 	Paldean_Wooper = true,
 	Croagunk = true,
 	Venipede = true,

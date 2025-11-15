@@ -15,3 +15,31 @@ if (SMODS.Mods["JokerDisplay"] or {}).can_load then
   assert(SMODS.load_file("src/jokerdisplay.lua"))()
 
 end
+
+if stall_config.Spinarak == true then
+	SMODS.Joker:take_ownership('poke_spinarak', 
+			{ 
+		aux_poke = true,
+			no_collection = true,
+			custom_pool_func = true,
+			in_pool = function(self)
+					return false
+			end,
+			
+			},
+		 true
+	)
+
+	SMODS.Joker:take_ownership('poke_ariados', 
+			{ 
+		aux_poke = true,
+			no_collection = true,
+			custom_pool_func = true,
+			in_pool = function(self)
+					return false
+			end,
+			
+			},
+		 true
+	)
+end

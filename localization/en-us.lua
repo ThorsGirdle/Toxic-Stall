@@ -1,6 +1,26 @@
 return {
 	descriptions = {
 		Joker = {
+			--167
+			j_stall_spinarak = {
+				name = 'Spinarak',
+				text = {
+					"Cards held in hand give {C:chips}+#1#{} if",
+					"adjacent {C:attention}Ranks{} are also held",
+					"{C:inactive,s:0.8}(Evolves after giving {C:chips,s:0.8}#2#{C:inactive,s:0.8} Chips)"
+				}
+			},
+			j_stall_ariados = {
+				name = 'Ariados',
+				text = {
+					"Cards held in hand give {C:chips}+#1#{} if",
+					"adjacent {C:attention}Ranks{} are also held",
+					"{br:2}ERROR - CONTACT STEAK",
+					"{C:green}#2# in #3#{} chance to {C:attention}enhance{} cards",
+					"held in hand with {C:attention}Toxic{} if",
+					"adjacent ranks also trigger",
+				}
+			},
 			--194
 			j_stall_paldean_wooper = {
 				name = '{s:0.6}Paldean{}Wooper',
@@ -42,7 +62,7 @@ return {
 				text = {
 					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
 					"scoring card with {C:attention}Toxic{}, increase",
-					"odds per played hand",
+					"odds per played hand with {C:attention}5{} scoring cards",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
 				}
 			},
@@ -51,7 +71,7 @@ return {
 				text = {
 					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
 					"scoring card with {C:attention}Toxic{}, increase",
-					"odds per played hand",
+					"odds per played hand hand with {C:attention}5{} scoring cards",
 					"{br:2}ERROR - CONTACT STEAK",
 					"{C:attention}Retrigger{} first scoring card if",
 					"extra {C:attention}Toxic{} Mult is at least {X:mult,C:white}X#3#",
@@ -63,7 +83,7 @@ return {
 				text = {
 					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
 					"scoring card with {C:attention}Toxic{}, increase",
-					"odds per played hand",
+					"odds per played hand hand with {C:attention}5{} scoring cards",
 					"{br:2}ERROR - CONTACT STEAK",
 					"{C:attention}Retrigger{} first scoring card {C:attention}1{} additional ",
 					"time per {X:mult,C:white}X#4#{} extra {C:attention}Toxic{} Mult",

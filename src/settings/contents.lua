@@ -21,18 +21,20 @@ return {
     {
       title = function() return localize("stall_toxic_pokemon1") end,
       tiles = {
+				{ list = { "j_stall_spinarak", "j_stall_ariados" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_spinarak" } end, config_key = "Spinarak" },
         { list = { "j_stall_paldean_wooper", "j_stall_clodsire" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_paldean_wooper" } end, config_key = "Paldean_Wooper" },
 				{ list = { "j_stall_croagunk", "j_stall_toxicroak" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_croagunk" } end, config_key = "Croagunk" },
         { list = { "j_stall_venipede", "j_stall_whirlipede", "j_stall_scolipede" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_venipede" } end, config_key = "Venipede" },
 				{ list = { "j_stall_foongus", "j_stall_amoonguss" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_foongus" } end, config_key = "Foongus" },
         { list = { "j_stall_skrelp", "j_stall_dragalge" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_skrelp" } end, config_key = "Skrelp" },
-        { list = { "j_stall_mareanie", "j_stall_toxapex" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_mareanie" } end, config_key = "Mareanie" },
+        
          
       }
     },
 		{
       title = function() return localize("stall_toxic_pokemon2") end,
       tiles = {
+			{ list = { "j_stall_mareanie", "j_stall_toxapex" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_mareanie" } end, config_key = "Mareanie" },
 			{ list = { "j_stall_salandit", "j_stall_salazzle" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_salandit" } end, config_key = "Salazzle" },
 			{ list = { "j_stall_varoom", "j_stall_revavroom" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_varoom" } end, config_key = "Varoom" },
 			

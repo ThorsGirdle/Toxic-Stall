@@ -7,7 +7,7 @@ local paldean_wooper = {
     return {vars = {card.ability.extra.money, self.config.evo_rqmt - card.ability.extra.earned}}
   end,
   rarity = 1,
-  cost = 5,
+  cost = 4,
   stage = "Basic",
   ptype = "Dark",
   gen = 9,
