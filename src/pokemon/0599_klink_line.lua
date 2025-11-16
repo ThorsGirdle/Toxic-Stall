@@ -15,7 +15,7 @@ local klink = {
 	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
-	blueprint_compat = true,
+	blueprint_compat = false,
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
