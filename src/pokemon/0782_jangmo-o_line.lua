@@ -16,6 +16,7 @@ local jangmoo = {
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
+	poke_custom_values_to_keep = {"mult", "differenceLast"},
 	
 	calculate = function(self, card, context)
 		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" then
@@ -74,6 +75,7 @@ local hakamoo = {
 		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.mult, card.ability.extra.mult_mod, card.ability.extra.differenceLast, self.config.evo_rqmt}}
 	end,
+	poke_custom_values_to_keep = {"mult", "differenceLast"},
 	rarity = "poke_safari", 
 	cost = 8,
 	stage = "One",
@@ -145,6 +147,7 @@ local kommoo = {
 		abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.mult_mod, abbr.Xmult, abbr.Xmult_mod, abbr.differenceLast, 4 - abbr.consecutive}}
 	end,
+	poke_custom_values_to_keep = {"mult", "differenceLast"},
 	rarity = "poke_safari", 
 	cost = 8,
 	stage = "Two",
