@@ -297,7 +297,7 @@ return {
 				}
 			},
 			j_stall_kommoo = {
-				name = 'Hakamo-o',
+				name = 'Kommo-o',
 				text = {
 					"Gain {C:mult}+#2#{} Mult if played Hand is a",
 					"{C:attention}Two Pair{} and the difference of {C:attention}Ranks{}",
