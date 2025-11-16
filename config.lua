@@ -12,6 +12,7 @@ return{
 	Dewpider = true,
 	Salandit = true,
 	Sandygast = true,
+	Jangmoo = true,
 	Clobbopus = true,
 	Rellor = true,
 	Varoom = true,

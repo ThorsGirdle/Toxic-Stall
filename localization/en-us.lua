@@ -274,6 +274,40 @@ return {
 					"by number of {X:water,C:white}Water{} Jokers",
 				}
 			},
+			--782
+			j_stall_jangmoo = {
+				name = 'Jangmo-o',
+				text = {
+					"Gain {C:mult}+#2#{} Mult if played Hand is a",
+					"{C:attention}Two Pair{} and the difference of {C:attention}Ranks{}",
+					"is the same as previous {C:attention}Two Pair: #3#{}",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#4#{C:inactive,s:0.8} Mult)",
+					
+				}
+			},
+			j_stall_hakamoo = {
+				name = 'Hakamo-o',
+				text = {
+					"Gain {C:mult}+#2#{} Mult if played Hand is a",
+					"{C:attention}Two Pair{} and the difference of {C:attention}Ranks{}",
+					"is the same as previous hand: {C:attention}#3#{}",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#4#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_kommoo = {
+				name = 'Hakamo-o',
+				text = {
+					"Gain {C:mult}+#2#{} Mult if played Hand is a",
+					"{C:attention}Two Pair{} and the difference of {C:attention}Ranks{}",
+					"is the same as previous hand: {C:attention}#5#{}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Gain {X:mult,C:white}X#4#{} if difference is the same",
+					"for {C:attention}#6#{} consecutive hands",
+					"{C:inactive}(Currently {X:mult,C:white}X#3#{}, {C:mult}+#1#{C:inactive} Mult)",
+				}
+			},
 			--852
 			j_stall_clobbopus = {
 				name = 'Clobbopus',

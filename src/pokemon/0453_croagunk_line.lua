@@ -108,7 +108,7 @@ local toxicroak = {
 			card.ability.extra.hearts = 0
 		end   
 		
-		if context.joker_main and card.edition and not card.edition.negative then
+		if context.joker_main and card.edition and not card.edition.negative and not card.edition.poke_shiny then
 			toxic_scaling()
 			G.GAME.toxic_triggered = true
 			local toxicXMult = G.GAME.current_round.toxic.toxicXMult
