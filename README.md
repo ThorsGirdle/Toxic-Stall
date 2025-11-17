@@ -34,9 +34,11 @@ Salandit: Adds 1 random Toxic card to deck when Blind is selected
 
 Sandygast: Gain +1 Chips for each scored Spade
 
+Jangmo-o: Gain +2 Mult if played hand is a Two Pair and the difference of Ranks is the same as previous Two Pair
+
 Clobbopus: Each Club card held in hand gives +8 chips 
 
-Rellor: Gain +1 Mult after using an Item (will hopefully be more of a Fortune Teller in the future)
+Rellor: +1 Mult per Item used this run
 
 Varoom: Next 2 cards retrigger, gains 2 after rerolling, resets to 2 at end of ante
 

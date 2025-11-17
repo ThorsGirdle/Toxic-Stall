@@ -14,7 +14,7 @@ local sandygast = {
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
 	custom_art = true,
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	
@@ -51,7 +51,7 @@ local palossand = {
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
 	custom_art = true,
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	

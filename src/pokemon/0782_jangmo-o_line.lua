@@ -13,7 +13,7 @@ local jangmoo = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	poke_custom_values_to_keep = {"mult", "differenceLast"},
@@ -83,7 +83,7 @@ local hakamoo = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	
@@ -155,7 +155,7 @@ local kommoo = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	
