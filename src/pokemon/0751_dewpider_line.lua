@@ -2,7 +2,7 @@
 local dewpider = {
 	name = "dewpider",
 	pos = {x = 0, y = 50},
-	config = {extra = {money = 3, mult = 0, mult_mod = 1, minSum = 1}, evo_rqmt = 5},
+	config = {extra = {money = 2, mult = 0, mult_mod = 1, minSum = 1}, evo_rqmt = 8},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
@@ -22,13 +22,14 @@ local dewpider = {
 	
   calculate = function(self, card, context)
 		if context.cardarea == G.jokers then
-			local totalSum = 0
+			local totalSum, AceCount = 0, 0
 			if context.before and not context.blueprint then
 				for i, v in pairs(context.scoring_hand) do
 					if context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal < 11 then
 						totalSum = totalSum + context.scoring_hand[i].base.nominal
 					elseif context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal == 11 then
 						totalSum = totalSum + 1
+						AceCount = AceCount + 1
 					end
 				end		
 				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
@@ -38,6 +39,18 @@ local dewpider = {
 						message = '$'..earned,
 						colour = G.C.MONEY
 						}
+				elseif AceCount > 0 then
+					for i = 1, AceCount do
+						totalSum = totalSum + 10
+						if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
+							card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+							local earned = ease_poke_dollars(card, "dewpider", card.ability.extra.money)
+							return {
+								message = '$'..earned,
+								colour = G.C.MONEY
+								}
+						end
+					end
 				end
 			end
 			if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
@@ -82,21 +95,35 @@ local araquanid = {
 	
   calculate = function(self, card, context)
 		if context.cardarea == G.jokers then
-			local totalSum = 0
+			local totalSum, AceCount = 0, 0
 			if context.before and not context.blueprint then
 				for i, v in pairs(context.scoring_hand) do
 					if context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal < 11 then
 						totalSum = totalSum + context.scoring_hand[i].base.nominal
 					elseif context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal == 11 then
 						totalSum = totalSum + 1
+						AceCount = AceCount + 1
 					end
 				end		
 				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
 					card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-					local earned = ease_poke_dollars(card, "dewpider", card.ability.extra.money)
+					local earned = ease_poke_dollars(card, "araquanid", card.ability.extra.money)
 					return {
-
+						message = '$'..earned,
+						colour = G.C.MONEY
 						}
+				elseif AceCount > 0 then
+					for i = 1, AceCount do
+						totalSum = totalSum + 10
+						if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
+							card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+							local earned = ease_poke_dollars(card, "araquanid", card.ability.extra.money)
+							return {
+								message = '$'..earned,
+								colour = G.C.MONEY
+								}
+						end
+					end
 				end
 			end
 			if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
