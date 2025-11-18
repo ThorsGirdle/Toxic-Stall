@@ -3,18 +3,19 @@ return {
     {
       title = function() return localize("stall_regular_pokemon1") end,
       tiles = {
+				{ list = { "j_stall_sewaddle", "j_stall_swadloon", "j_stall_leavanny" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_sewaddle" } end, config_key = "Sewaddle" },
         { list = { "j_stall_klink", "j_stall_klang", "j_stall_klinklang" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_klink" } end, config_key = "Klink" },
 				{ list = { "j_stall_bunnelby", "j_stall_diggersby" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_bunnelby" } end, config_key = "Bunnelby" },
 				{ list = { "j_stall_yungoos", "j_stall_gumshoos" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_yungoos" } end, config_key = "Yungoos" },
 				{ list = { "j_stall_dewpider", "j_stall_araquanid" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_dewpider" } end, config_key = "Dewpider" },
         { list = { "j_stall_sandygast", "j_stall_palossand" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_sandygast" } end, config_key = "Sandygast" },
-				{ list = { "j_stall_jangmoo", "j_stall_hakamoo", "j_stall_kommoo" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_jangmo_o" } end, config_key = "Jangmoo" },
         
       }
     },
 		{
       title = function() return localize("stall_regular_pokemon2") end,
       tiles = {
+				{ list = { "j_stall_jangmoo", "j_stall_hakamoo", "j_stall_kommoo" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_jangmo_o" } end, config_key = "Jangmoo" },
 				{ list = { "j_stall_clobbopus", "j_stall_grapploct" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_clobbopus" } end, config_key = "Clobbopus" },
         { list = { "j_stall_rellor", "j_stall_rabsca" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_rellor" } end, config_key = "Rellor" },
       }

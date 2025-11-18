@@ -2,6 +2,7 @@ return{
 	Spinarak = true,
 	Paldean_Wooper = true,
 	Croagunk = true,
+	Sewaddle = true,
 	Venipede = true,
 	Foongus = true,
 	Klink = true,

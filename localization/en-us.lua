@@ -56,6 +56,36 @@ return {
 				"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Toxic Mult)",
 				}
 			},
+			--540
+			j_stall_sewaddle = {
+				name = 'Sewaddle',
+				text = {
+					"Played cards give {C:attention}half{} the total {C:chips}Chips{}",
+					"of first scored card when scored",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{C:inactive,s:0.8} rounds)",
+				}
+			},
+			j_stall_swadloon = {
+				name = 'Swadloon',
+				text = {
+					"Played cards give {C:attention}half{} the total {C:chips}Chips{}",
+					"of first scored card when scored",
+					"{br:2}ERROR - CONTACT STEAK",
+					"First played card permanently",
+					"gains {C:chips}+#1#{} Chips when scored",
+					"{C:inactive,s:0.7}(Evolves after giving {C:attention,s:0.7}#2#{C:inactive,s:0.7} scored cards {C:chips,s:0.7}+#3#{C:inactive,s:0.7} Chips)",
+				}
+			},
+			j_stall_leavanny = {
+				name = 'Leavanny',
+				text = {
+					"Played cards give the total {C:chips}Chips{}",
+					"of first scored card when scored",
+					"{br:2}ERROR - CONTACT STEAK",
+					"First played card permanently",
+					"gains {C:chips}+#1#{} Chips when scored",
+				}
+			},
 			--543
 			j_stall_venipede = {
 				name = 'Venipede',
