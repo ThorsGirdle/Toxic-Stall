@@ -60,16 +60,18 @@ return {
 			j_stall_sewaddle = {
 				name = 'Sewaddle',
 				text = {
-					"Played cards give {C:attention}half{} the total {C:chips}Chips{}",
-					"of first scored card when scored",
+					"Other played cards give {C:attention}half{}",
+					"the total {C:chips}Chips{} of first",
+					"scored card when scored",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{C:inactive,s:0.8} rounds)",
 				}
 			},
 			j_stall_swadloon = {
 				name = 'Swadloon',
 				text = {
-					"Played cards give {C:attention}half{} the total {C:chips}Chips{}",
-					"of first scored card when scored",
+					"Other played cards give {C:attention}half{}",
+					"the total {C:chips}Chips{} of first",
+					"scored card when scored",
 					"{br:2}ERROR - CONTACT STEAK",
 					"First played card permanently",
 					"gains {C:chips}+#1#{} Chips when scored",
@@ -79,8 +81,9 @@ return {
 			j_stall_leavanny = {
 				name = 'Leavanny',
 				text = {
-					"Played cards give the total {C:chips}Chips{}",
-					"of first scored card when scored",
+					"Other played cards give",
+					"the total {C:chips}Chips{} of first",
+					"scored card when scored",
 					"{br:2}ERROR - CONTACT STEAK",
 					"First played card permanently",
 					"gains {C:chips}+#1#{} Chips when scored",
@@ -91,8 +94,8 @@ return {
 				name = 'Venipede',
 				text = {
 					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
-					"scoring card with {C:attention}Toxic{}, increase",
-					"odds per played hand with {C:attention}5{} scoring cards",
+					"scoring card with {C:attention}Toxic{}, increase odds",
+					"per played hand with {C:attention}5{} scoring cards",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
 				}
 			},
@@ -100,8 +103,8 @@ return {
 				name = 'Whirlipede',
 				text = {
 					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
-					"scoring card with {C:attention}Toxic{}, increase",
-					"odds per played hand hand with {C:attention}5{} scoring cards",
+					"scoring card with {C:attention}Toxic{}, increase odds",
+					"per played hand hand with {C:attention}5{} scoring cards",
 					"{br:2}ERROR - CONTACT STEAK",
 					"{C:attention}Retrigger{} first scoring card if",
 					"extra {C:attention}Toxic{} Mult is at least {X:mult,C:white}X#3#",
@@ -112,8 +115,8 @@ return {
 				name = 'Scolipede',
 				text = {
 					"{C:green}#1# in #2#{} chance to {C:attention}enhance{} first",
-					"scoring card with {C:attention}Toxic{}, increase",
-					"odds per played hand hand with {C:attention}5{} scoring cards",
+					"scoring card with {C:attention}Toxic{}, increase odds",
+					"per played hand hand with {C:attention}5{} scoring cards",
 					"{br:2}ERROR - CONTACT STEAK",
 					"{C:attention}Retrigger{} first scoring card {C:attention}1{} additional ",
 					"time per {X:mult,C:white}X#4#{} extra {C:attention}Toxic{} Mult",
