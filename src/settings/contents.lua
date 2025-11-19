@@ -37,7 +37,7 @@ return {
       title = function() return localize("stall_toxic_pokemon2") end,
       tiles = {
 			{ list = { "j_stall_mareanie", "j_stall_toxapex" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_mareanie" } end, config_key = "Mareanie" },
-			{ list = { "j_stall_salandit", "j_stall_salazzle" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_salandit" } end, config_key = "Salazzle" },
+			{ list = { "j_stall_salandit", "j_stall_salazzle" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_salandit" } end, config_key = "Salandit" },
 			{ list = { "j_stall_varoom", "j_stall_revavroom" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_varoom" } end, config_key = "Varoom" },
 			
 		},	
