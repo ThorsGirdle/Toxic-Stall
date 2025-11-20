@@ -43,7 +43,9 @@ local yungoos={
 		return scaling_evo(self, card, context, "j_stall_gumshoos", card.ability.extra.totalEarned, self.config.evo_rqmt)
   end,
 	set_ability = function(self, card, initial, delay_sprites)
-		reset_yungoos_card()
+		if G.playing_cards then
+			reset_yungoos_card()
+		end
 	end,
 }
 
