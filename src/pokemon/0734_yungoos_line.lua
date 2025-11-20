@@ -8,7 +8,7 @@ local yungoos={
                    (G.GAME.current_round.yungoos_suit or "Spades"), colours = {G.C.SUITS[G.GAME.current_round.yungoos_suit or "Spades"]}}}
   end,
   rarity = 1, 
-  cost = 5, 
+  cost = 4, 
   stage = "Basic",
   ptype = "Colorless",
 	designer = "Thor's Girdle",
@@ -19,7 +19,7 @@ local yungoos={
 	eternal_compat = true,
 	
   calculate = function(self, card, context)
-    if not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_suit then
+    if not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_rank then
 			reset_yungoos_card()
 		end
 		if context.individual and context.cardarea == G.play and not context.end_of_round and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
@@ -42,6 +42,9 @@ local yungoos={
     end
 		return scaling_evo(self, card, context, "j_stall_gumshoos", card.ability.extra.totalEarned, self.config.evo_rqmt)
   end,
+	set_ability = function(self, card, initial, delay_sprites)
+		reset_yungoos_card()
+	end,
 }
 
 local gumshoos={
@@ -76,7 +79,7 @@ local gumshoos={
 	end,
 	
   calculate = function(self, card, context)
-	  if not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_suit then
+	  if not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_rank then
 			reset_yungoos_card()
 		end
     if context.individual and context.cardarea == G.play and not context.end_of_round and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
