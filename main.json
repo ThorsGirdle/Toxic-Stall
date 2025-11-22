@@ -9,7 +9,7 @@
 	"badge_colour": "701fab",
 	"badge_text_colour": "ffffff",
   "display_name": "ToxicStall",
-	"version": "0.2.5",
+	"version": "0.4.0",
 	"dependencies": [
 			"Steamodded (>=1.0.0~BETA-1016c)",
 			"Lovely (>=0.8)",
