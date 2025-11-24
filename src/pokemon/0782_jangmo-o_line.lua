@@ -70,7 +70,7 @@ local jangmoo = {
 local hakamoo = {
 	name = "hakamoo",
 	pos = {x = 4, y = 52},
-	config = {extra = {mult = 0, mult_mod = 3, differenceLast = 0}, evo_rqmt = 40},
+	config = {extra = {mult = 0, mult_mod = 3, differenceLast = 0}, evo_rqmt = 34},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.mult, card.ability.extra.mult_mod, card.ability.extra.differenceLast, self.config.evo_rqmt}}
@@ -141,7 +141,7 @@ local hakamoo = {
 local kommoo = {
 	name = "kommoo",
 	pos = {x = 6, y = 52},
-	config = {extra = {mult = 0, mult_mod = 4, Xmult = 1, Xmult_mod = 0.4, differenceLast = 0, consecutive = 0}},
+	config = {extra = {mult = 0, mult_mod = 4, Xmult = 1, Xmult_mod = 0.5, differenceLast = 0, consecutive = 0}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		abbr = card.ability.extra
