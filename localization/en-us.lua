@@ -266,7 +266,7 @@ return {
 					"Earn {C:money}$#1#{} after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Also gain {C:mult}+#4#{} per discarded card",
+					"Also gain {C:mult}+#4#{} Mult per discarded card",
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
 				}
 			},
@@ -274,7 +274,7 @@ return {
 			j_stall_popplio = {
 				name = 'Popplio',
 				text = {
-					"{C:chips}+#3#{} hands",
+					"{C:chips}+#3#{} hand",
 					"Gain {C:mult}+#2#{} Mult if {C:attention}poker hand{} is a",
 					"{C:attention}[#4#]{}, {C:attention}poker hand{} changes",
 					"after each hand",
@@ -285,7 +285,7 @@ return {
 			j_stall_brionne = {
 				name = 'Brionne',
 				text = {
-					"{C:chips}+#3#{} hands",
+					"{C:chips}+#3#{} hand",
 					"Gain {C:mult}+#2#{} Mult if {C:attention}poker hand{} is a",
 					"{C:attention}[#4#]{}, {C:attention}poker hand{} changes",
 					"after each hand",
@@ -296,7 +296,7 @@ return {
 			j_stall_primarina = {
 				name = 'Primarina',
 				text = {
-					"{C:chips}+#3#{} hands",
+					"{C:chips}+#3#{} hand",
 					"Gain {C:mult}+#2#{} Mult if {C:attention}poker hand{} is a",
 					"{C:attention}[#6#]{}, {C:attention}poker hand{} changes",
 					"after each hand",
