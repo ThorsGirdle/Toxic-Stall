@@ -1,7 +1,7 @@
 local varoom = {
 	name = "varoom",
 	pos = {x = 8, y = 64},
-	config = {extra = {mult = 12, mult_mod = 2}, evo_rqmt = 30},
+	config = {extra = {mult = 16, mult_mod = 2}, evo_rqmt = 36},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic

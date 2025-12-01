@@ -25,14 +25,14 @@ return {
 			j_stall_paldean_wooper = {
 				name = '{s:0.6}Paldean{}Wooper',
 				text = {
-					"Gain {C:money}$#1#{} when a {C:attention}face{} card is destroyed",
+					"Earn {C:money}$#1#{} when a {C:attention}face{} card is destroyed",
 					"{C:inactive,s:0.8}(Evolve after giving {C:money,s:0.8}$#2#{C:inactive,s:0.8})",
 				}
 			},
 			j_stall_clodsire = {
 				name = 'Clodsire',
 				text = {
-					"Gain {C:money}$#1#{} and enhance a random card in hand",
+					"Earn {C:money}$#1#{} and enhance a random card in hand",
 					"with {C:attention}Toxic{} when a {C:attention}face{} card is destroyed",
 				}
 			},
@@ -144,7 +144,7 @@ return {
 			j_stall_klink = {
 				name = 'Klink',
 				text = {
-					"Gain {C:money}$#1#{} after drawing {C:attention}#2#", 
+					"Earn {C:money}$#1#{} after drawing {C:attention}#2#", 
 					"cards in a blind",
 					"{C:inactive,s:0.8}(Evolve after giving {C:money,s:0.8}$#3#{C:inactive,s:0.8})",
 				}
@@ -152,7 +152,7 @@ return {
 			j_stall_klang = {
 				name = 'Klang',
 				text = {
-					"Gain {C:money}$#1#{} after drawing {C:attention}#2#", 
+					"Earn {C:money}$#1#{} after drawing {C:attention}#2#", 
 					"cards in a blind",
 					"{C:inactive,s:0.8}(Evolve after giving {C:money,s:0.8}$#3#{C:inactive,s:0.8})",
 				}
@@ -160,7 +160,7 @@ return {
 			j_stall_klinklang = {
 				name = 'Klinklang',
 				text = {
-					"Gain {C:money}$#1#{} after drawing {C:attention}#2#", 
+					"Earn {C:money}$#1#{} after drawing {C:attention}#2#", 
 					"cards in a blind",
 					"{br:2}ERROR - CONTACT STEAK",
 					"{X:mult,C:white}X#3#{} if {C:attention}#4#{C:inactive}[#5#]{} cards have ",
@@ -199,15 +199,118 @@ return {
 				text = {
 					"Held {C:attention}7{}s permanently gain {C:chips}+#1#{C:attention} Held Chips",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Held cards that have {C:attention}+#2#{}", 
+					"Held cards that have {C:chips}+#2#{}", 
 					"or more {C:attention}Held Chips{} gain {C:attention}Toxic",
+				}
+			},
+			--722
+			j_stall_rowlet = {
+				name = 'Rowlet',
+				text = {
+					"{C:attention}+#3#{} hand size",
+					"Gain {C:mult}+#2#{} Mult if held hand is a",
+					"{C:attention}[#4#]{}, resets each hand",
+					"Next target: {C:attention}[#5#]",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#6#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_dartrix = {
+				name = 'Dartrix',
+				text = {
+					"{C:attention}+#3#{} hand size",
+					"Gain {C:mult}+#2#{} Mult if held hand is a",
+					"{C:attention}[#4#]{}, resets each hand",
+					"Next target: {C:attention}[#5#]",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#6#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_decidueye = {
+				name = 'Decidueye',
+				text = {
+					"{C:attention}+#3#{} hand size",
+					"Gain {C:mult}+#2#{} Mult if held hand is a",
+					"{C:attention}[#4#]{}, resets each hand",
+					"Next target: {C:attention}[#5#]",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Also {C:green}#7# in #8#{} to gain a {C:spectral}Spectral{}",
+					"card if played {C:attention}poker hand{} is the",
+					"previous target: {C:attention}[#6#]",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+				}
+			},
+			--725
+			j_stall_litten = {
+				name = 'Litten',
+				text = {
+					"{C:red}+#2#{} discard",
+					"Earn {C:money}$#1#{} after discarding",
+					"your most played {C:attention}poker hand{}",
+					"{C:inactive,s:0.8}(Evolves after earning {C:money,s:0.8}$#3#{C:inactive,s:0.8})",
+				}
+			},
+			j_stall_torracat = {
+				name = 'Torracat',
+				text = {
+					"{C:red}+#2#{} discard",
+					"Earn {C:money}$#1#{} after discarding",
+					"your most played {C:attention}poker hand{}",
+					"{C:inactive,s:0.8}(Evolves after earning {C:money,s:0.8}$#3#{C:inactive,s:0.8})",
+				}
+			},
+			j_stall_incineroar = {
+				name = 'Incineroar',
+				text = {
+					"{C:red}+#2#{} discard",
+					"Earn {C:money}$#1#{} after discarding",
+					"your most played {C:attention}poker hand{}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Also gain {C:mult}+#4#{} per discarded card",
+					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
+				}
+			},
+			--728
+			j_stall_popplio = {
+				name = 'Popplio',
+				text = {
+					"{C:chips}+#3#{} hands",
+					"Gain {C:mult}+#2#{} Mult if {C:attention}poker hand{} is a",
+					"{C:attention}[#4#]{}, {C:attention}poker hand{} changes",
+					"after each hand",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#5#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_brionne = {
+				name = 'Brionne',
+				text = {
+					"{C:chips}+#3#{} hands",
+					"Gain {C:mult}+#2#{} Mult if {C:attention}poker hand{} is a",
+					"{C:attention}[#4#]{}, {C:attention}poker hand{} changes",
+					"after each hand",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#5#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_primarina = {
+				name = 'Primarina',
+				text = {
+					"{C:chips}+#3#{} hands",
+					"Gain {C:mult}+#2#{} Mult if {C:attention}poker hand{} is a",
+					"{C:attention}[#6#]{}, {C:attention}poker hand{} changes",
+					"after each hand",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Also gain {X:mult,C:white}X#5#{} per consecutive",
+					"correct hand, resets on round end",
+					"{C:inactive}(Currently {X:mult,C:white}X#4#{}, {C:mult}+#1#{C:inactive} Mult)",
 				}
 			},
 			--734
 			j_stall_yungoos = {
 				name = 'Yungoos',
 				text = {
-					"Gain {C:money}$#1#{} after scoring a",
+					"Earn {C:money}$#1#{} after scoring a",
 					"{C:attention}#3#{} of {V:1}#4#{}, target",
 					"card resets after payout",
 					"{C:inactive,s:0.8}(Evolves after earning {C:money,s:0.8}$#2#{C:inactive,s:0.8})",
@@ -216,7 +319,7 @@ return {
 			j_stall_gumshoos = {
 				name = 'Gumshoos',
 				text = {
-					"Gain {C:money}$#1#{} after scoring a",
+					"Earn {C:money}$#1#{} after scoring a",
 					"{C:attention}#2#{} of {C:attention}#3#{}, target card",
 					"resets after payout",  
 					"{br:2}ERROR - CONTACT STEAK",
@@ -365,7 +468,7 @@ return {
 				text = {
 					"{C:mult}+#1#{} per {C:item}Item{} card",
 					"used this run",
-					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult )",
 					"{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}+#3#{C:inactive,s:0.8} Items)",
 				}
 			},
@@ -413,7 +516,7 @@ return {
 					name = "Clue",
 					text = {
 						"Gain {C:attention}+#1#{} hand size",
-						"this round",
+						"this round and draw {C:attention}1{} card",
 					},
 				},
 			},

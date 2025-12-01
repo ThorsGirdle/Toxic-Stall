@@ -24,6 +24,12 @@ Bunnelby: When you draw the last card of a Rank from your deck, 1 in 2 chance to
 
 Skrelp: Held 7s gain +1 Held Chips
 
+Rowlet: Gain +1 Mult if held hand is a [Poker Hand], resets each hand
+
+Litten: Earn $2 after discarding your most played Poker Hand
+
+Popplio:  Gain +2 Mult if poker hand is a [Poker Hand], resets each hand
+
 Yungoos: Gain $8 after scoring an [Ace] of [Spades], target changes after payout
 
 Mareanie: First played card gains X0.3 per Held Toxic and Hazard card
