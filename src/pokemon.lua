@@ -1,6 +1,5 @@
 local subdir = "src/pokemon/"
  
-local nachos_loaded = (SMODS.Mods["NachosPokermonDip"] or {}).can_load and PkmnDip and PkmnDip.dex_order_groups
 
 local function load_pokemon(item)
 
@@ -38,9 +37,6 @@ local function load_pokemon_folder(folder)
           end
         end
 
-        if nachos_loaded then
-          PkmnDip.dex_order_groups[#PkmnDip.dex_order_groups + 1] = family
-        end
 
         if #family > 1 then
           pokermon.add_family(family)

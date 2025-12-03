@@ -42,4 +42,6 @@ if stall_config.Spinarak == true then
 			},
 		 true
 	)
+	
+	pokermon.dex_order_groups[#pokermon.dex_order_groups + 1] = { 'spinarak', 'ariados'}
 end
