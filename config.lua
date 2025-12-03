@@ -8,6 +8,7 @@ return{
 	Klink = true,
 	Bunnelby = true,
 	Skrelp = true,
+	Volcanion = true,
 	Rowlet = true,
 	Rowlet_Alt = false,
 	Litten = true,
