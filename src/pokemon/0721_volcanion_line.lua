@@ -39,6 +39,7 @@ local volcanion ={
 		
 		if context.after and card.ability.extra.reset == true and not context.blueprint then
 			card.ability.extra.currXmult = 1
+			card.ability.extra.reset = false
 		end
   end,
 }
@@ -47,4 +48,5 @@ return {
 	name = "volcanion Line",
 	enabled = stall_config.Volcanion or false,
 	list = {volcanion}
+
 }
