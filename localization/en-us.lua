@@ -234,10 +234,43 @@ return {
 					"{C:attention}[#4#]{}, resets each hand",
 					"Next target: {C:attention}[#5#]",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Also {C:green}#7# in #8#{} to gain a {C:spectral}Spectral{}",
-					"card if played {C:attention}poker hand{} is the",
-					"previous target: {C:attention}[#6#]",
+					"Also {C:green}#7# in #8#{} chance to gain a",
+					"{C:spectral}Spectral{} card if played {C:attention}poker hand{}",
+					"is the previous target: {C:attention}[#6#]",
 					"{C:inactive}(Currently {C:mult}+#1#{C:inactive} Mult)",
+				}
+			},
+			j_stall_rowlet_alt = {
+				name = 'Rowlet',
+				text = {
+					"{C:attention}+#2#{} hand size",
+					"Earn {C:money}$#1#{} if held hand is a",
+					"{C:attention}[#3#]{}, resets each hand",
+					"Next target: {C:attention}[#4#]",
+					"{C:inactive,s:0.8}(Evolves after earning {C:money,s:0.8}$#5#{C:inactive,s:0.8})",
+				}
+			},
+			j_stall_dartrix_alt = {
+				name = 'Dartrix',
+				text = {
+					"{C:attention}+#2#{} hand size",
+					"Earn {C:money}$#1#{} if held hand is a",
+					"{C:attention}[#3#]{}, resets each hand",
+					"Next target: {C:attention}[#4#]",
+					"{C:inactive,s:0.8}(Evolves after earning {C:money,s:0.8}$#5#{C:inactive,s:0.8})",
+				}
+			},
+			j_stall_decidueye_alt = {
+				name = 'Decidueye',
+				text = {
+					"{C:attention}+#2#{} hand size",
+					"Earn {C:money}$#1#{} if held hand is a",
+					"{C:attention}[#3#]{}, resets each hand",
+					"Next target: {C:attention}[#4#]",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Also {C:green}#6# in #7#{} chance to gain a",
+					"{C:spectral}Spectral{} card if played {C:attention}poker hand{}",
+					"is the previous target: {C:attention}[#5#]",
 				}
 			},
 			--725
@@ -267,6 +300,37 @@ return {
 					"your most played {C:attention}poker hand{}",
 					"{br:2}ERROR - CONTACT STEAK",
 					"Also gain {C:mult}+#4#{} Mult per discarded card",
+					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
+				}
+			},
+			j_stall_litten_alt = {
+				name = 'Litten',
+				text = {
+					"{C:red}+#1#{} discard",
+					"Gain {C:mult}+#3#{} after discarding",
+					"your most played {C:attention}poker hand{}",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#4#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_torracat_alt = {
+				name = 'Torracat',
+				text = {
+					"{C:red}+#1#{} discard",
+					"Gain {C:mult}+#3#{} after discarding",
+					"your most played {C:attention}poker hand{}",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#4#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_incineroar_alt = {
+				name = 'Incineroar',
+				text = {
+					"{C:red}+#2#{} discard",
+					"Gain {C:mult}+#4#{} after discarding",
+					"your most played {C:attention}poker hand{}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Also earn {C:money}$#1#{} per discarded card",
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
 				}
 			},
@@ -304,6 +368,41 @@ return {
 					"Also gain {X:mult,C:white}X#5#{} per consecutive",
 					"correct hand, resets on round end",
 					"{C:inactive}(Currently {X:mult,C:white}X#4#{}, {C:mult}+#1#{C:inactive} Mult)",
+				}
+			},
+			j_stall_popplio_alt = {
+				name = 'Popplio',
+				text = {
+					"{C:chips}+#3#{} hand",
+					"Gain {C:chips}+#2#{} Chips if {C:attention}poker hand{} is a",
+					"{C:attention}[#4#]{}, {C:attention}poker hand{} changes",
+					"after each hand",
+					"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+					"{C:inactive,s:0.8}(Evolves at {C:chips,s:0.8}+#5#{C:inactive,s:0.8} Chips)",
+				}
+			},
+			j_stall_brionne_alt = {
+				name = 'Brionne',
+				text = {
+					"{C:chips}+#3#{} hand",
+					"Gain {C:chips}+#2#{} Chips if {C:attention}poker hand{} is a",
+					"{C:attention}[#4#]{}, {C:attention}poker hand{} changes",
+					"after each hand",
+					"{C:inactive}(Currently {C:chips}+#1#{C:inactive} Chips)",
+					"{C:inactive,s:0.8}(Evolves at {C:chips,s:0.8}+#5#{C:inactive,s:0.8} Chips)",
+				}
+			},
+			j_stall_primarina_alt = {
+				name = 'Primarina',
+				text = {
+					"{C:chips}+#3#{} hand",
+					"Gain {C:chips}+#2#{} Chips if {C:attention}poker hand{} is a",
+					"{C:attention}[#6#]{}, {C:attention}poker hand{} changes",
+					"after each hand",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Also gain {X:mult,C:white}X#5#{} per consecutive",
+					"correct hand, resets on round end",
+					"{C:inactive}(Currently {X:mult,C:white}X#4#{}, {C:chips}+#1#{C:inactive})",
 				}
 			},
 			--734
@@ -545,6 +644,7 @@ return {
 		dictionary = {
 			stall_regular_pokemon1 = "Regular Pokemon 1/2",
 			stall_regular_pokemon2 = "Regular Pokemon 2/2",
+			stall_Alolan_starters = "Alolan Starters",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",
 

@@ -120,8 +120,33 @@ def_list["j_stall_dartrix"] = {
   },
 }
 
+def_list["j_stall_rowlet_alt"] = {
+  text = {
+		{ text = "Next: ", colour = G.C.GREY},
+    { ref_table = "card.ability.extra", ref_value = "next_poker_hand", colour = G.C.GREY },
+  },
+  extra = {
+    {
+		{ text = "Current: ", colour = G.C.GREY },
+		{ ref_table = "card.ability.extra", ref_value = "poker_hand", colour = G.C.GREY },
+    },
+  },
+}
 
-def_list["j_stall_decidueye"] = {
+def_list["j_stall_dartrix_alt"] = {
+  text = {
+		{ text = "Next: ", colour = G.C.GREY},
+    { ref_table = "card.ability.extra", ref_value = "next_poker_hand", colour = G.C.GREY },
+  },
+  extra = {
+    {
+		{ text = "Current: ", colour = G.C.GREY },
+		{ ref_table = "card.ability.extra", ref_value = "poker_hand", colour = G.C.GREY },
+    },
+  },
+}
+
+def_list["j_stall_decidueye_alt"] = {
   text = {
       { text = "Next: ", colour = G.C.GREY},
       { ref_table = "card.ability.extra", ref_value = "next_poker_hand", colour = G.C.GREY },
@@ -153,6 +178,27 @@ def_list["j_stall_brionne"] = {
 }
 
 def_list["j_stall_primarina"] = {
+  text = {
+		{ text = "Target: ", colour = G.C.GREY },
+		{ ref_table = "card.ability.extra", ref_value = "poker_hand", colour = G.C.GREY },
+  },
+}
+
+def_list["j_stall_popplio_alt"] = {
+  text = {
+		{ text = "Target: ", colour = G.C.GREY },
+		{ ref_table = "card.ability.extra", ref_value = "poker_hand", colour = G.C.GREY },
+  },
+}
+
+def_list["j_stall_brionne_alt"] = {
+  text = {
+		{ text = "Target: ", colour = G.C.GREY },
+		{ ref_table = "card.ability.extra", ref_value = "poker_hand", colour = G.C.GREY },
+  },
+}
+
+def_list["j_stall_primarina_alt"] = {
   text = {
 		{ text = "Target: ", colour = G.C.GREY },
 		{ ref_table = "card.ability.extra", ref_value = "poker_hand", colour = G.C.GREY },
