@@ -14,6 +14,8 @@ local volcanion ={
   --atlas = "",
   gen = 6,
   blueprint_compat = true,
+	designer = "Thor's Girdle",
+	
   calculate = function(self, card, context)
 		if context.before and not context.blueprint then
 			local tempChipTotal = 0
@@ -48,5 +50,4 @@ return {
 	name = "volcanion Line",
 	enabled = stall_config.Volcanion or false,
 	list = {volcanion}
-
 }

@@ -6,6 +6,7 @@ return{
 	Venipede = true,
 	Foongus = true,
 	Klink = true,
+	Larvesta = true,
 	Bunnelby = true,
 	Skrelp = true,
 	Volcanion = true,

@@ -167,6 +167,25 @@ return {
 					"been drawn this blind",
 				}
 			},
+			--636
+			j_stall_larvesta = {
+				name = 'Larvesta',
+				text = {
+					"Discarded cards gain permanently {C:mult}+#1#",
+					"on the {C:attention}first discard{} of round",
+					"{C:inactive,s:0.8}(Evolve after scoring a card with {C:mult,s:0.8}#2#+{C:inactive,s:0.8} total Mult)",
+				}
+			},	
+			j_stall_volcarona = {
+				name = 'Volcarona',
+				text = {
+					"Discarded cards permanently gain {C:mult}+#1#",
+					"Mult on the {C:attention}first discard{} of round",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Played cards give {X:mult,C:white}X#2#{} Mult per",
+					"given {C:mult}+Mult{} when scored",
+				}
+			},				
 			--659
 			j_stall_bunnelby = {
 				name = 'Bunnelby',
