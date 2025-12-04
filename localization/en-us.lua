@@ -172,7 +172,7 @@ return {
 				name = 'Larvesta',
 				text = {
 					"Discarded cards permanently gain {C:mult}+#1#",
-					"on the {C:attention}first discard{} of round",
+					"Mult on the {C:attention}first discard{} of round",
 					"{C:inactive,s:0.8}(Evolve after scoring a card with {C:mult,s:0.8}#2#+{C:inactive,s:0.8} total Mult)",
 				}
 			},	
