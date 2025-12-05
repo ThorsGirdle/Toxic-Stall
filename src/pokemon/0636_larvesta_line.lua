@@ -1,10 +1,10 @@
 local larvesta = {
 	name = "larvesta",
 	pos = {x = 0, y = 0},
-	config = {extra = {givenMult = 4, maxMult = 0}, evo_rqmt = 5},
+	config = {extra = {mult_mod = 4, maxMult = 0}, evo_rqmt = 7},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-	  return {vars = {card.ability.extra.givenMult, self.config.evo_rqmt}}
+	  return {vars = {card.ability.extra.mult_mod, self.config.evo_rqmt}}
 	end,
 	rarity = 3, --Rare
 	cost = 8,
@@ -24,7 +24,7 @@ local larvesta = {
 		end
 		
 		if context.discard and G.GAME.current_round.discards_used <= 0 then
-			context.other_card.ability.perma_mult = (context.other_card.ability.perma_mult or 0) + card.ability.extra.givenMult
+			context.other_card.ability.perma_mult = (context.other_card.ability.perma_mult or 0) + card.ability.extra.mult_mod
 			return {
 				message = localize('k_upgrade_ex'),
 				colour = G.C.MULT
@@ -53,10 +53,10 @@ local larvesta = {
 local volcarona = {
 	name = "volcarona",
 	pos = {x = 0, y = 0},
-	config = {extra = {givenMult = 1, xmultRate = 0.05}},
+	config = {extra = {mult_mod = 1, Xmult_mod = 0.05}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-	  return {vars = {card.ability.extra.givenMult, card.ability.extra.xmultRate}}
+	  return {vars = {card.ability.extra.mult_mod, card.ability.extra.Xmult_mod}}
 	end,
 	rarity = "poke_safari", 
 	cost = 8,
@@ -76,7 +76,7 @@ local volcarona = {
 		end
 		
 		if context.discard and G.GAME.current_round.discards_used <= 0 then
-			context.other_card.ability.perma_mult = (context.other_card.ability.perma_mult or 0) + card.ability.extra.givenMult
+			context.other_card.ability.perma_mult = (context.other_card.ability.perma_mult or 0) + card.ability.extra.mult_mod
 			return {
 				message = localize('k_upgrade_ex'),
 				colour = G.C.MULT
@@ -89,7 +89,7 @@ local volcarona = {
 				if SMODS.has_enhancement(context.other_card, 'm_lucky') then
 					xmult = xmult - 20
 				end
-				xmult = xmult * card.ability.extra.xmultRate
+				xmult = xmult * card.ability.extra.Xmult_mod
 				return {
 					xmult = 1 + xmult
 				}									
