@@ -41,10 +41,10 @@ local sewaddle = {
 local swadloon = {
 	name = "swadloon",
 	pos = {x = 0, y = 0},
-	config = {extra = {savedChips = 0, chips_mod = 4, bigBoys = 0, targetChips = 20}, evo_rqmt = 20 },
+	config = {extra = {savedChips = 0, chip_mod = 4, bigBoys = 0, targetChips = 20}, evo_rqmt = 20 },
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-	  return {vars = {card.ability.extra.chips_mod, (self.config.evo_rqmt - card.ability.extra.bigBoys), card.ability.extra.targetChips}}
+	  return {vars = {card.ability.extra.chip_mod, (self.config.evo_rqmt - card.ability.extra.bigBoys), card.ability.extra.targetChips}}
 	end,
 	rarity = "poke_safari",
 	cost = 6,
@@ -64,7 +64,7 @@ local swadloon = {
 				if card.ability.extra.savedChips == 0 then
 					card.ability.extra.savedChips = poke_total_chips(firstCard)
 				end
-				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chips_mod
+				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod
 			else 
 				if card.ability.extra.savedChips >= 20 then
 					 card.ability.extra.bigBoys = card.ability.extra.bigBoys + 1
@@ -85,10 +85,10 @@ local swadloon = {
 local leavanny = {
 	name = "leavanny",
 	pos = {x = 0, y = 0},
-	config = {extra = {savedChips = 0, chips_mod = 6}},
+	config = {extra = {savedChips = 0, chip_mod = 6}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-	  return {vars = {card.ability.extra.chips_mod}}
+	  return {vars = {card.ability.extra.chip_mod}}
 	end,
 	rarity = "poke_safari",
 	cost = 7,
@@ -108,7 +108,7 @@ local leavanny = {
 				if card.ability.extra.savedChips == 0 then
 					card.ability.extra.savedChips = poke_total_chips(firstCard)
 				end 
-				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chips_mod 
+				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod 
 			else 
 				return {
 					chips = card.ability.extra.savedChips
