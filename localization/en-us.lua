@@ -179,10 +179,7 @@ return {
 			j_stall_volcarona = {
 				name = 'Volcarona',
 				text = {
-					"Discarded cards permanently gain {C:mult}+#1#",
-					"Mult on the {C:attention}first discard{} of round",
-					"{br:2}ERROR - CONTACT STEAK",
-					"Played cards give {X:mult,C:white}X#2#{} Mult per",
+					"Played cards give {X:mult,C:white}X#1#{} Mult per",
 					"given {C:mult}+Mult{} when scored",
 				}
 			},				
