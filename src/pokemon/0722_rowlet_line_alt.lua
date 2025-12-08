@@ -260,8 +260,12 @@ local decidueye_alt = {
   end,
 }
 
+init = function()
+  pokermon.dex_order_groups[#pokermon.dex_order_groups + 1] = { 'rowlet_alt', 'dartrix_alt', 'decidueye_alt' }
+end
 
-return {name = "Rowlet Alt Line", 
+return {name = "Rowlet Alt Line",
 enabled = stall_config.Rowlet_Alt or false and not stall_config.Rowlet,
+init = init,
 list = {rowlet_alt, dartrix_alt, decidueye_alt}
 }

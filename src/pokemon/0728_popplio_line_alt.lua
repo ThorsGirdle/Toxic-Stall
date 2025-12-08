@@ -229,7 +229,12 @@ local primarina_alt = {
   end,
 }
 
+init = function()
+  pokermon.dex_order_groups[#pokermon.dex_order_groups + 1] = { 'popplio_alt', 'brionne_alt', 'primarina_alt' }
+end
+
 return {name = "Popplio Alt Line", 
-enabled = stall_config.Popplio_Alt or false and not stall_config.Popplio ,
+enabled = stall_config.Popplio_Alt or false and not stall_config.Popplio,
+init = init,
 list = {popplio_alt, brionne_alt, primarina_alt}
 }

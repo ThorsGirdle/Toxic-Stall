@@ -55,6 +55,12 @@ get_previous_from_mega = function(name, prefix, full_key)
   return get_previous_from_mega_ref(name, prefix, full_key)
 end
 
+local get_dex_number_ref = pokermon.get_dex_number
+pokermon.get_dex_number = function(name)
+  if string.sub(name, #name - 3, #name) == "_alt" and G.P_CENTERS['j_stall_'..name] then name = string.gsub(name, "_alt", '') end
+  return get_dex_number_ref(name)
+end
+
 return {
   key = "FAMILY_UTILS",
   value = family_utils
