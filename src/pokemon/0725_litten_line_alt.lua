@@ -183,7 +183,12 @@ local incineroar_alt = {
   end
 }
 
+init = function ()
+  pokermon.dex_order_groups[#pokermon.dex_order_groups + 1] = { 'litten_alt', 'torracat_alt', 'incineroar_alt' }
+end
+
 return {name = "Litten Alt Line", 
 enabled = stall_config.Litten == false and (stall_config.Litten_Alt or false),
+init = init,
 list = {litten_alt, torracat_alt, incineroar_alt}
 }
