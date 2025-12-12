@@ -5,20 +5,22 @@ return {
 			j_stall_spinarak = {
 				name = 'Spinarak',
 				text = {
-					"Cards held in hand give {C:chips}+#1#{} if",
-					"adjacent {C:attention}Ranks{} are also held",
+					"Cards held in hand give {C:chips}+#1#{}",
+					"Chips if both their adjacent",
+					"{C:attention}Ranks{} are also held",
 					"{C:inactive,s:0.8}(Evolves after giving {C:chips,s:0.8}#2#{C:inactive,s:0.8} Chips)"
 				}
 			},
 			j_stall_ariados = {
 				name = 'Ariados',
 				text = {
-					"Cards held in hand give {C:chips}+#1#{} if",
-					"adjacent {C:attention}Ranks{} are also held",
+					"Cards held in hand give {C:chips}+#1#{}",
+					"Chips if both their adjacent",
+					"{C:attention}Ranks{} are also held",
 					"{br:2}ERROR - CONTACT STEAK",
 					"{C:green}#2# in #3#{} chance to {C:attention}enhance{} cards",
 					"held in hand with {C:attention}Toxic{} if",
-					"adjacent ranks also trigger",
+					"both adjacent ranks also trigger",
 				}
 			},
 			--194
@@ -356,7 +358,8 @@ return {
 					"Gain {C:mult}+#4#{} after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Also earn {C:money}$#1#{} per discarded card",
+					"Also earn {C:money}$#1#{} if at least",
+					"{C:attention}4{} cards are discarded",
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
 				}
 			},
