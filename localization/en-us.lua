@@ -129,7 +129,7 @@ return {
 			j_stall_deerling = {
 				name = 'Deerling',
 				text = {
-					"{C:attention}Nature:{} {C:inactive}({C:attention}#4#{C:inactive})",
+					"{C:attention}Nature:{} {C:inactive}({V:1}#4#{C:inactive})",
 					"Gain {C:mult}+#1#{} Mult per {C:attention}consecutive{} played",
 					"hand with only scoring {C:attention}Nature{} cards",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
@@ -139,7 +139,7 @@ return {
 			j_stall_sawsbuck = {
 				name = 'Sawsbuck',
 				text = {
-					"{C:attention}Nature:{} {C:inactive}({C:attention}#3#{C:inactive})",
+					"{C:attention}Nature:{} {C:inactive}({V:1}#3#{C:inactive})",
 					"Gain {C:mult}+#1#{} Mult per {C:attention}consecutive{} played",
 					"hand with only scoring {C:attention}Nature{} cards",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
