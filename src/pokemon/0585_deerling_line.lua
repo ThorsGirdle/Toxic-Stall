@@ -7,9 +7,9 @@ local deerling = {
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"suit"}}
     end
-    local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, self.config.evo_rqmt, card.ability.extra.targets.value}
-		--add_target_cards_to_vars_suits(card_vars, card.ability.extra.targets)
-    return {vars = card_vars}
+    --local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, self.config.evo_rqmt, card.ability.extra.targets.value, colours = {G.C.SUITS["Spades"]}}
+		local abbr = card.ability.extra
+		return {vars = {abbr.mult_mod, abbr.mult, self.config.evo_rqmt, abbr.targets.value, colours = {G.C.SUITS[abbr.targets.value or "Spades"]}}}
 	end,
 	rarity = 1, --Common
 	cost = 5,
@@ -106,9 +106,9 @@ local sawsbuck = {
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"suit"}}
     end
-    local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, card.ability.extra.targets.value}
-   -- add_target_cards_to_vars_suits(card_vars, card.ability.extra.targets.value)
-    return {vars = card_vars}
+    --local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, card.ability.extra.targets.value}
+		local abbr = card.ability.extra
+		return {vars = {abbr.mult_mod, abbr.mult, abbr.targets.value, colours = {G.C.SUITS[abbr.targets.value or "Spades"]}}}
 	end,
 	rarity = "poke_safari", 
 	cost = 5,
