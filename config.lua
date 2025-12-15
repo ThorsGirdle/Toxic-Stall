@@ -4,6 +4,7 @@ return{
 	Croagunk = true,
 	Sewaddle = true,
 	Venipede = true,
+	Deerling = true,
 	Foongus = true,
 	Klink = true,
 	Larvesta = true,

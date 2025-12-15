@@ -63,6 +63,57 @@ clue_increment = function(handsize)
 	end
 end
 
+--get_poke_target_card_ranks but with suits, simple enough
+get_poke_target_card_suits = function(seed, num, default, use_deck)
+  local target_suits = {}
+  local valid_cards = {}
+  if not G.playing_cards then
+    return default
+  end
+  if use_deck then
+    for i = 1, num do
+      for k, v in ipairs(G.playing_cards) do
+        if v.ability.effect ~= 'Stone Card' then
+            local already_picked = false
+            for j = 1, #target_suits do
+              if target_suits[j].base.suit == v.base.suit then already_picked = true; break end
+            end
+            if not already_picked then
+              valid_cards[#valid_cards+1] = v
+            end
+        end
+      end
+      if #valid_cards > 0 then
+        local picked = pseudorandom_element(valid_cards, pseudoseed(seed))
+        target_suits[#target_suits+1] = {value = picked.base.suit}
+        valid_cards = {}
+      elseif #target_suits > 0 then
+        target_suits[#target_suits+1] = target_suits[1]
+      else
+         target_suits[#target_suits+1] = {value = "Spades"}
+      end
+    end
+  else
+    local random = {}
+    local cvalue = nil
+    for i = 1, 4 do
+      if i == 1 then cvalue = "Spades"
+      elseif i == 2 then cvalue = "Hearts"
+      elseif i == 3 then cvalue = "Clubs"
+      elseif i == 4 then cvalue = "Diamonds"
+      end
+      random[#random+1] = {value = cvalue}
+    end
+    --local args = {array = random, amt = num}
+    --target_suits = pseudorandom_multi(args)
+		pseudoshuffle(random, pseudoseed('default'))
+		target_suits = random[1]
+  end
+  --local sort_function = function(card1, card2) return card1.sortNum < card2.sortNum end
+  --table.sort(target_suits, sort_function)
+  return target_suits
+end
+
 reset_clue = function()
 	if G.GAME.current_round.clue_handsize then
 		G.hand:change_size(-G.GAME.current_round.clue_handsize)

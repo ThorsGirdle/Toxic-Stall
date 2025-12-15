@@ -14,11 +14,17 @@ Paldean Wooper: Gains $5 when a face card is destroyed
 
 Croagunk: If scored hand has exactly 1 scoring Heart, each played card gives +3 Mult when scored
 
+Sewaddle: Other Scoring cards give half the total chips of first scoring card
+
 Venipede: 1 in 7 chance to enhance first scoring card with Toxic, increase odd per played hand
+
+Deerling: Nature: [Suit] +1 Mult per consecutive hand with only scoring Nature cards
 
 Foongus: Holding Black Sludge Toxic cards gain X0.15 at round start (this line is very subject to change)
 
 Klink: Gain $1 when 12 cards are drawn in a blind
+
+Larvesta: Cards discarded on first discard of round permanently gain +3 Mult
 
 Bunnelby: When you draw the last card of a Rank from your deck, 1 in 2 chance to gain a Tarot card
 

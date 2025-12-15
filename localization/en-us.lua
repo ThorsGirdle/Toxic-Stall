@@ -125,7 +125,26 @@ return {
 					"{C:inactive,s:0.8} (Max 5 retriggers)"
 				}
 			},
-			
+			--585
+			j_stall_deerling = {
+				name = 'Deerling',
+				text = {
+					"{C:attention}Nature:{} {C:inactive}({C:attention}#4#{C:inactive})",
+					"Gain {C:mult}+#1#{} Mult per {C:attention}consecutive{} played",
+					"hand with only scoring {C:attention}Nature{} cards",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#3#{C:inactive,s:0.8} Mult)",
+				}
+			},
+			j_stall_sawsbuck = {
+				name = 'Sawsbuck',
+				text = {
+					"{C:attention}Nature:{} {C:inactive}({C:attention}#3#{C:inactive})",
+					"Gain {C:mult}+#1#{} Mult per {C:attention}consecutive{} played",
+					"hand with only scoring {C:attention}Nature{} cards",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+				}
+			},
 			--590
 			j_stall_foongus = {
 				name = 'Foongus',
