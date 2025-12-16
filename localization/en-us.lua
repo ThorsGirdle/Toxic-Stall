@@ -129,18 +129,18 @@ return {
 			j_stall_galarian_yamask = {
 				name = '{s:0.6}Galarian{}Yamask',
 				text = {
-					"Sell this card to give {C:pink}Energy{}",
-					"and {C:attention}Edition{} of {C:attention}Joker{} to the",
-					"left to the {C:attention}Joker{} to the right",
+					"Sell this card to remove {C:pink}Energy{} and",
+					"{C:attention}Edition{} of {C:attention}Joker{} to the left and give",
+					"them to the {C:attention}Joker{} to the right",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{{C:inactive,s:0.8} rounds)",
 				}
 			},	
 			j_stall_runerigus = {
 				name = 'Runerigus',
 				text = {
-					"Sell this card to copy {C:pink}Energy{}",
-					"and {C:attention}Edition{} of {C:attention}Joker{} to the",
-					"left to the {C:attention}Joker{} to the right",
+					"Sell this card to copy {C:pink}Energy{} and",
+					"{C:attention}Edition{} of {C:attention}Joker{} to the left and give",
+					"them to the {C:attention}Joker{} to the right",
 				}
 			},			
 			--585
