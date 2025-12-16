@@ -125,6 +125,24 @@ return {
 					"{C:inactive,s:0.8} (Max 5 retriggers)"
 				}
 			},
+			--562
+			j_stall_galarian_yamask = {
+				name = '{s:0.6}Galarian{}Yamask',
+				text = {
+					"Sell this card to give {C:pink}Energy{}",
+					"and {C:attention}Edition{} of {C:attention}Joker{} to the",
+					"left to the {C:attention}Joker{} to the right",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{{C:inactive,s:0.8} rounds)",
+				}
+			},	
+			j_stall_runerigus = {
+				name = 'Runerigus',
+				text = {
+					"Sell this card to copy {C:pink}Energy{}",
+					"and {C:attention}Edition{} of {C:attention}Joker{} to the",
+					"left to the {C:attention}Joker{} to the right",
+				}
+			},			
 			--585
 			j_stall_deerling = {
 				name = 'Deerling',
@@ -151,7 +169,7 @@ return {
 				text = {
 					"{C:attention}Holding {C:item}Black Sludge{}",
 					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{} at round start",
-					"{C:inactive,s:0.8}(Evolves after #2# rounds)",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
 				}
 			},
 			j_stall_amoonguss = {
@@ -523,7 +541,7 @@ return {
 				text = {
 					"When round begins, add a random",
 					"{C:attention}Toxic{} card to your hand",
-					"{C:inactive,s:0.8}(Evolves after #1# rounds)",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{C:inactive,s:0.8} rounds)",
 				}
 			},
 			j_stall_salazzle = {
@@ -605,7 +623,6 @@ return {
 					"{X:mult,C:white}X#3#{} Mult",
 					"{X:mult,C:white}-X#4#{} per non-{C:clubs}Club{} card held in hand",
 					"{br:2}ERROR - CONTACT STEAK",
-					--"{C:inactive,s:0.8}(Minimum of {X:mult,C:white,s:0.8}X1{C:inactive,s:0.8})",
 					"Each {C:clubs}#2#{} held in hand gives {C:chips}+#1#{} chips",
 				}
 			},
@@ -671,8 +688,8 @@ return {
 				m_stall_toxic = {
 					name = "Toxic Card",
 					text = {
-						"{C:enhanced}Enhanced{} card gives {X:red,C:white}X#2#{}",
-						"per {C:purple}Toxic{} card triggered",			
+						"Gives {X:red,C:white}X#2#{} per",
+						"{C:purple}Toxic{} card triggered",			
 						"this Blind when scored",
 						"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
 					}
@@ -690,8 +707,9 @@ return {
 	},
 	misc = {
 		dictionary = {
-			stall_regular_pokemon1 = "Regular Pokemon 1/2",
-			stall_regular_pokemon2 = "Regular Pokemon 2/2",
+			stall_regular_pokemon1 = "Regular Pokemon 1/3",
+			stall_regular_pokemon2 = "Regular Pokemon 2/3",
+			stall_regular_pokemon3 = "Regular Pokemon 3/3",			
 			stall_Alolan_starters = "Alolan Starters",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",

@@ -4,10 +4,17 @@ return {
       title = function() return localize("stall_regular_pokemon1") end,
       tiles = {
 				{ list = { "j_stall_sewaddle", "j_stall_swadloon", "j_stall_leavanny" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_sewaddle" } end, config_key = "Sewaddle" },
-        { list = { "j_stall_deerling", "j_stall_sawsbuck" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_deerling" } end, config_key = "Deerling" },
+        { list = { "j_stall_galarian_yamask", "runerigus" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_galarian_yamask" } end, config_key = "Galarian_Yamask" },
+				{ list = { "j_stall_deerling", "j_stall_sawsbuck" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_deerling" } end, config_key = "Deerling" },
 				{ list = { "j_stall_klink", "j_stall_klang", "j_stall_klinklang" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_klink" } end, config_key = "Klink" },
 				{ list = { "j_stall_larvesta", "j_stall_volcarona" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_larvesta" } end, config_key = "Larvesta" },
 				{ list = { "j_stall_bunnelby", "j_stall_diggersby" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_bunnelby" } end, config_key = "Bunnelby" },
+
+      }
+    },
+		    {
+      title = function() return localize("stall_regular_pokemon2") end,
+      tiles = {
 				{ list = { "j_stall_volcanion" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_volcanion" } end, config_key = "Volcanion" },
       }
     },
@@ -23,7 +30,7 @@ return {
       }
     },
 		{
-      title = function() return localize("stall_regular_pokemon2") end,
+      title = function() return localize("stall_regular_pokemon3") end,
       tiles = {
 				{ list = { "j_stall_yungoos", "j_stall_gumshoos" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_yungoos" } end, config_key = "Yungoos" },
 				{ list = { "j_stall_dewpider", "j_stall_araquanid" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_dewpider" } end, config_key = "Dewpider" },
