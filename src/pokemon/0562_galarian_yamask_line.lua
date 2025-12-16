@@ -1,7 +1,7 @@
 local galarian_yamask = {
 	name = "galarian_yamask",
 	pos = {x = 4, y = 8},
-	 config = {extra = {rounds = 5}},
+	 config = {extra = {rounds = 6}},
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.rounds}}
