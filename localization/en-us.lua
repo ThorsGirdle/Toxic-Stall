@@ -688,9 +688,9 @@ return {
 				m_stall_toxic = {
 					name = "Toxic Card",
 					text = {
-						"Gives {X:red,C:white}X#2#{} per",
-						"{C:purple}Toxic{} card triggered",			
-						"this Blind when triggered",
+						"Gives {X:red,C:white}X#2#{} per {C:purple}Toxic{}",
+						"card triggered this",			
+						"Blind when triggered",
 						"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
 					}
 				},
@@ -716,5 +716,4 @@ return {
 
 		},
 	}
-
 }
