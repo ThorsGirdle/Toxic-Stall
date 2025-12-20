@@ -485,7 +485,7 @@ return {
 				name = 'Gumshoos',
 				text = {
 					"Earn {C:money}$#1#{} after scoring a",
-					"{C:attention}#2#{} of {C:attention}#3#{}, target card",
+					"{V:2}#2#{} of {V:1}#3#{}, target card",
 					"resets after payout",  
 					"{br:2}ERROR - CONTACT STEAK",
 					"Gain a {C:attention}Clue{} {C:item}Item{} and reveal ",
