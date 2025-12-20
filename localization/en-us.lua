@@ -263,7 +263,7 @@ return {
 				name = 'Volcanion',
 				text = {
 					"Gain {X:mult,C:white}X#2#{} if total {C:chips}chips{} of scoring hand",
-					"is lower than previous total: {C:chips}#3#{}",
+					"is greater than previous total: {C:chips}#3#{}",
 					"double {X:mult,C:white}X{} Mult then reset self on failure",
 					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
 				}
