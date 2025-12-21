@@ -25,3 +25,17 @@ SMODS.Atlas({
     px = 34,
     py = 34
 })
+
+SMODS.Atlas({
+    key = "StallJokers", 
+    path = "StallJokers.png", 
+    px = 71,
+    py = 95, 
+})
+
+SMODS.Atlas({
+    key = "shiny_StallShinyJokers", 
+    path = "shiny_StallJokers.png", 
+    px = 71,
+    py = 95, 
+})

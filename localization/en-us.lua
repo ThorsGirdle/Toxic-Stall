@@ -258,6 +258,15 @@ return {
 					"or more {C:attention}Held Chips{} gain {C:attention}Toxic",
 				}
 			},
+			j_stall_mega_dragalge = {
+				name = 'Mega Dragalge',
+				text = {
+					"{C:attention}Leftmost{} card held in hand",
+					"permanently gains {C:chips}+#1#{} {C:attention}Held Chips{} ",
+					"per card held in hand with",
+					"at least {C:chips}#2# {C:attention}Held Chips{}",
+				}
+			},
 			--721
 			j_stall_volcanion = {
 				name = 'Volcanion',

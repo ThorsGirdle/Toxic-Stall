@@ -1,11 +1,11 @@
 local skrelp = {
 	name = "skrelp",
-	pos = {x = 28, y = 45},
-	config = {extra = { heldChips = 1, highestSev = 0}, evo_rqmt = 7},
+	--pos = {x = 28, y = 45},
+	config = {extra = { chip_mod = 1, highestSev = 0}, evo_rqmt = 7},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
-	  return {vars = {card.ability.extra.heldChips, self.config.evo_rqmt}}
+	  return {vars = {card.ability.extra.chip_mod, self.config.evo_rqmt}}
 	end,
 	rarity = 2, --Uncommon
 	cost = 6,
@@ -13,7 +13,7 @@ local skrelp = {
 	ptype = "Dark",
 	gen = 7,
 	toxic = true,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = true,
@@ -24,7 +24,7 @@ local skrelp = {
 			if G.hand.cards and context.individual then
 				if context.other_card:get_id() == 7 then
 					context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips or 0
-					context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips + card.ability.extra.heldChips
+					context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips + card.ability.extra.chip_mod
 					if card.ability.extra.highestSev < context.other_card.ability.perma_h_chips then
 						card.ability.extra.highestSev = context.other_card.ability.perma_h_chips
 					end
@@ -41,20 +41,20 @@ local skrelp = {
 
 local dragalge = {
 	name = "dragalge",
-	pos = {x = 0, y = 46},
-	config = {extra = { heldChips = 2, toxicThreshold = 14}},
+	--pos = {x = 0, y = 46},
+	config = {extra = { chip_mod = 2, toxicThreshold = 14}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
-	  return {vars = {card.ability.extra.heldChips, card.ability.extra.toxicThreshold}}
+	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.toxicThreshold}}
 	end,
-	rarity = "poke_safari", --Safari
+	rarity = "poke_safari", 
 	cost = 8,
 	stage = "One",
 	ptype = "Dark",
 	gen = 6,
 	toxic = true,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = true,
@@ -64,7 +64,7 @@ local dragalge = {
 		if context.cardarea == G.hand and G.hand.cards and context.individual then
 			if context.other_card:get_id() == 7 then
 				context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips or 0
-				context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips + card.ability.extra.heldChips
+				context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips + card.ability.extra.chip_mod
 			end
 			if context.other_card.ability.perma_h_chips and context.other_card.ability.perma_h_chips >= card.ability.extra.toxicThreshold then
 				toUpgrade = context.other_card
@@ -82,9 +82,53 @@ local dragalge = {
 			end
 		end
 	end,
+	megas = { "mega_dragalge" },
+}
+
+local mega_dragalge = {
+	name = "mega_dragalge",
+	pos = {x = 0, y = 0},
+	soul_pos = {x = 1, y = 0},
+	config = {extra = { chip_mod = 3, toxicThreshold = 15}},
+	loc_vars = function(self, info_queue, card)
+		type_tooltip(self, info_queue, card)
+	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.toxicThreshold}}
+	end,
+	rarity = "poke_mega", 
+	cost = 12,
+	stage = "Mega",
+	ptype = "Dark",
+	gen = 6,
+	toxic = true,
+	atlas = "StallJokers",
+	designer = "Thor's Girdle",
+	perishable_compat = true,
+	blueprint_compat = true,
+	eternal_compat = true,
+	
+	calculate = function(self, card, context)
+		if context.cardarea == G.hand and G.hand.cards and context.individual then
+			if context.other_card == G.hand.cards[1] then
+				local thresholdCount = 0
+				for _, v in pairs(G.hand.cards) do
+					if v.ability.perma_h_chips and v.ability.perma_h_chips >= card.ability.extra.toxicThreshold then
+						thresholdCount = thresholdCount + 1
+					end
+				end
+				context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips or 0
+				context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips + (card.ability.extra.chip_mod * thresholdCount)
+				if thresholdCount > 0 then
+					return {
+						extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
+						card = card
+					}
+				end
+			end
+		end
+	end,
 }
 
 return {name = "Skrelp Line", 
 enabled = stall_config.Skrelp or false,
-list = {skrelp, dragalge}
+list = {skrelp, dragalge, mega_dragalge}
 }
