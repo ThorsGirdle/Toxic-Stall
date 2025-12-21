@@ -364,8 +364,8 @@ return {
 					"Earn {C:money}$#1#{} after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Also gain {C:mult}+#4#{} Mult if at least",
-					"{C:attention}4{} cards are discarded",
+					"Also gain {C:mult}+#4#{} Mult per card",
+					"in discarded {C:attention}poker hand{}",
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
 				}
 			},
@@ -396,8 +396,8 @@ return {
 					"Gain {C:mult}+#4#{} after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Also earn {C:money}$#1#{} if at least",
-					"{C:attention}4{} cards are discarded",
+					"Also earn {C:money}$#1#{} per card",
+					"in discarded {C:attention}poker hand{}",
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
 				}
 			},

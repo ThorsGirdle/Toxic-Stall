@@ -118,7 +118,7 @@ local torracat_alt = {
 local incineroar_alt = {
 	name = "incineroar_alt",
 	pos = {x = 12, y = 48},
-	config = {extra = {money = 3, mult = 0, mult_mod = 3, d_size = 1}},
+	config = {extra = {money = 1, mult = 0, mult_mod = 3, d_size = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
@@ -147,33 +147,14 @@ local incineroar_alt = {
 			end
 			if trigger == true then
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-				if #context.full_hand > 3 then
-					local earned = ease_poke_dollars(card, "incineroar", card.ability.extra.money)
-					return {
-						message = '$'..earned,
-						colour = G.C.MONEY,
-					}
-				end
+				local _,_, scoringCards = stall_evaluate_hand(context.full_hand, true)
+				local earned = ease_poke_dollars(card, "incineroar", (card.ability.extra.money * #scoringCards))
 				return {
 					message = 'Roar!',
 					colour = G.C.MULT
 				}
 			end
 		end
-		
-		--[[
-		if context.discard and not context.other_card.debuff and card.ability.extra.trigger == true and not context.hook then
-			if context.other_card then
-				local earned = ease_poke_dollars(card, "incineroar", card.ability.extra.money)
-				return {
-					message = '$'..earned,
-					colour = G.C.MONEY,
-					delay = 0.45, 
-					card = card
-				}
-			end
-		end
-		--]]
 		
 		if context.joker_main and card.ability.extra.mult > 0 then
 			return {
