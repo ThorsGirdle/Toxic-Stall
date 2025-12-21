@@ -106,7 +106,7 @@ local torracat = {
 local incineroar = {
 	name = "incineroar",
 	pos = {x = 0, y = 0},
-	config = {extra = {money = 4, mult = 0, mult_mod = 1, d_size = 1, trigger = true}},
+	config = {extra = {money = 4, mult = 0, mult_mod = 2, d_size = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
@@ -126,30 +126,25 @@ local incineroar = {
   calculate = function(self, card, context)
 		if context.pre_discard and not context.hook then
 			local discardedHand = G.FUNCS.get_poker_hand_info(context.full_hand)
-			card.ability.extra.trigger = true
+			trigger = true
 			for handname, values in pairs(G.GAME.hands) do
 				if handname ~= discardedHand and (values.played or 0) > (G.GAME.hands[discardedHand].played or 0) and SMODS.is_poker_hand_visible(handname) then
-					card.ability.extra.trigger = false
+					trigger = false
 					break
 				end
 			end
-			if card.ability.extra.trigger == true then
+			if trigger == true then
 				local earned = ease_poke_dollars(card, "incineroar", card.ability.extra.money)
+				if #context.full_hand > 3 then 
+					card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
+					return {
+						message = 'Roar!',
+						colour = G.C.MULT
+					}
+				end
 				return {
 					message = '$'..earned,
 					colour = G.C.MONEY
-				}
-			end
-		end
-		
-		if context.discard and not context.other_card.debuff and card.ability.extra.trigger == true and not context.blueprint and not context.hook then
-			if context.other_card then
-				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-				return {
-					message = localize{type='variable',key='a_mult',vars={card.ability.extra.mult_mod}},
-					colour = G.C.RED,
-					delay = 0.45, 
-					card = card
 				}
 			end
 		end
