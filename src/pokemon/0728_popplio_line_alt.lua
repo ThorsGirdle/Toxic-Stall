@@ -202,15 +202,16 @@ local primarina_alt = {
 				xmult = card.ability.extra.currXmult,
 			}
 		end
+		
+		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+			card.ability.extra.currXmult = 1
+			card.ability.extra.triggered = false
+			return {
+				message = localize('k_reset')
+			}
+		end
+		
 	end,
-	
-	if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-		card.ability.extra.currXmult = 1
-		card.ability.extra.triggered = false
-		return {
-			message = localize('k_reset')
-		}
-	end
 
 	set_ability = function(self, card, initial, delay_sprites)
 			local _poker_hands = {}
