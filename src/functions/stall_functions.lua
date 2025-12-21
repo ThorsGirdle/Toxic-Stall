@@ -103,7 +103,7 @@ stall_evaluate_hand = function(cards, count_facedowns)
 
     local final_scoring_hand = {}
     for i = 1, #valid_cards do
-        local splashed = SMODS.always_scores(valid_cards[i]) or next(find_joker('Splash'))
+        local splashed = SMODS.always_scores(valid_cards[i]) or next(find_joker('Splash')) or next(find_joker('luvdisc')) or next(find_joker('magikarp')) or next(find_joker('feebas'))
         local unsplashed = SMODS.never_scores(valid_cards[i])
         if not splashed then
             for _, card in pairs(scoring_hand) do
