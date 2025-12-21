@@ -203,6 +203,14 @@ local primarina_alt = {
 			}
 		end
 	end,
+	
+	if context.end_of_round and not context.game_over then
+		card.ability.extra.currXmult = 1
+		card.ability.extra.triggered = false
+		return {
+			message = localize('k_reset')
+		}
+	end
 
 	set_ability = function(self, card, initial, delay_sprites)
 			local _poker_hands = {}
