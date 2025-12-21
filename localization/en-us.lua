@@ -364,7 +364,8 @@ return {
 					"Earn {C:money}$#1#{} after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Also gain {C:mult}+#4#{} Mult per discarded card",
+					"Also gain {C:mult}+#4#{} Mult if at least",
+					"{C:attention}4{} cards are discarded",
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
 				}
 			},
@@ -633,7 +634,7 @@ return {
 					"{C:mult}+#1#{} per {C:item}Item{} card",
 					"used this run",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult )",
-					"{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}+#3#{C:inactive,s:0.8} Items)",
+					"{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}#3#{C:inactive,s:0.8} Items)",
 				}
 			},
 			j_stall_rabsca = {
