@@ -1,7 +1,7 @@
 local popplio = {
 	name = "popplio",
 	pos = {x = 0, y = 0},
-	config = {extra = {mult = 0, mult_mod = 2, hands = 1, poker_hand = "High Card"}, evo_rqmt = 12},
+	config = {extra = {mult = 0, mult_mod = 1, hands = 1, poker_hand = "High Card"}, evo_rqmt = 12},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
@@ -75,7 +75,7 @@ local popplio = {
 local brionne = {
 	name = "brionne",
 	pos = {x = 0, y = 0},
-	config = {extra = {mult = 0, mult_mod = 3, hands = 1, poker_hand = "High Card"}, evo_rqmt = 30},
+	config = {extra = {mult = 0, mult_mod = 2, hands = 1, poker_hand = "High Card"}, evo_rqmt = 30},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
@@ -148,7 +148,7 @@ local brionne = {
 local primarina = {
 	name = "primarina",
 	pos = {x = 0, y = 0},
-	config = {extra = {mult = 0, mult_mod = 4, Xmult_mod = 1, currXmult = 1, hands = 1, poker_hand = "High Card", triggered = false}},
+	config = {extra = {mult = 0, mult_mod = 3, Xmult_mod = 1, currXmult = 1, hands = 1, poker_hand = "High Card", triggered = false}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra

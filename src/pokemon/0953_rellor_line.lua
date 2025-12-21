@@ -1,10 +1,10 @@
 local rellor = {
 	name = "rellor",
-	pos = {x = 14, y = 63},
+	--pos = {x = 14, y = 63},
 	config = {extra = { items_used = 0, mult_mod = 1 }, evo_rqmt = 6},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.stall_item or 0) * card.ability.extra.mult_mod)
+		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.item or 0) * card.ability.extra.mult_mod)
 	    return {vars = {card.ability.extra.mult_mod, mult, math.max(self.config.evo_rqmt - card.ability.extra.items_used, 0 )}}
 	end,
 	rarity = 1, --Common
@@ -13,15 +13,15 @@ local rellor = {
 	ptype = "Grass",
 	gen = 9,
 	designer = "Thor's Girdle",
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,
 
 	calculate = function(self, card, context)
 		if context.joker_main  then
 			if G.GAME.consumeable_usage_total then
-				if G.GAME.consumeable_usage_total.stall_item  and G.GAME.consumeable_usage_total.stall_item  > 0 then
-					local mult = (G.GAME.consumeable_usage_total.stall_item) * card.ability.extra.mult_mod
+				if G.GAME.consumeable_usage_total.item  and G.GAME.consumeable_usage_total.item > 0 then
+					local mult = (G.GAME.consumeable_usage_total.item) * card.ability.extra.mult_mod
 					return {
 						mult = mult
 									}
@@ -40,7 +40,7 @@ local rellor = {
 
 local rabsca = {
 	name = "rabsca",
-	pos = {x = 16, y = 63},
+	--pos = {x = 16, y = 63},
 	config = {extra = { mult_mod = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -54,15 +54,15 @@ local rabsca = {
 	ptype = "Grass", --wish it was Psychic :(
 	gen = 9,
 	designer = "Thor's Girdle",
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,
 
 	calculate = function(self, card, context)
 		if context.joker_main  then
 			if G.GAME.consumeable_usage_total then
-				if (G.GAME.consumeable_usage_total.tarot or G.GAME.consumeable_usage_total.stall_item) and (G.GAME.consumeable_usage_total.stall_item or 0) + (G.GAME.consumeable_usage_total.tarot or 0) > 0 then
-					local mult = ((G.GAME.consumeable_usage_total.stall_item or 0)+ (G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
+				if (G.GAME.consumeable_usage_total.tarot or G.GAME.consumeable_usage_total.item) and (G.GAME.consumeable_usage_total.item or 0) + (G.GAME.consumeable_usage_total.tarot or 0) > 0 then
+					local mult = ((G.GAME.consumeable_usage_total.item or 0) + (G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
 					return {
 						mult = mult
 									}
@@ -86,4 +86,3 @@ return {name = "Rellor Line",
 enabled = stall_config.Rellor or false,
 list = {rellor, rabsca}
 }
---]]

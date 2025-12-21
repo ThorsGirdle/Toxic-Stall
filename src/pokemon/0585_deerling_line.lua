@@ -1,15 +1,15 @@
 local deerling = {
 	name = "deerling",
 	pos = {x = 4, y = 1},
-	 config = {extra = {mult_mod = 1, mult = 0, check = true, form = "Summer", targets = {value = "Spades"}}, evo_rqmt = 12},
+	 config = {extra = {mult_mod = 1, mult = 0, check = true, form = "Summer", targets = {{suit = "Spades"}}}, evo_rqmt = 12},
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"suit"}}
     end
-    --local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, self.config.evo_rqmt, card.ability.extra.targets.value, colours = {G.C.SUITS["Spades"]}}
+    --local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, self.config.evo_rqmt, card.ability.extra.targets.suit, colours = {G.C.SUITS["Spades"]}}
 		local abbr = card.ability.extra
-		return {vars = {abbr.mult_mod, abbr.mult, self.config.evo_rqmt, abbr.targets.value, colours = {G.C.SUITS[abbr.targets.value or "Spades"]}}}
+		return {vars = {abbr.mult_mod, abbr.mult, self.config.evo_rqmt, abbr.targets[1].suit, colours = {G.C.SUITS[abbr.targets[1].suit or "Spades"]}}}
 	end,
 	rarity = 1, --Common
 	cost = 6,
@@ -26,7 +26,7 @@ local deerling = {
 		if context.before and not context.blueprint then
 			local wrongSuit = false
 			for _, playing_card in ipairs(context.scoring_hand) do
-				if not playing_card:is_suit(card.ability.extra.targets.value) then
+				if not playing_card:is_suit(card.ability.extra.targets[1].suit) then
 					wrongSuit = true
 					break
 				end
@@ -61,16 +61,16 @@ local deerling = {
 
   set_ability = function(self, card, initial, delay_sprites)
     if initial then
-      card.ability.extra.targets = get_poke_target_card_suits("deerling", 1, card.ability.extra.targets)
+      card.ability.extra.targets = get_poke_target_card_suit("deerling", true, 'Spades')
 		end
-		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets.value then
-			if card.ability.extra.targets.value == "Hearts" then
+		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets[1] and card.ability.extra.targets[1].suit then
+			if card.ability.extra.targets[1].suit == "Hearts" then
 				card.ability.extra.form = "Spring"
-			elseif card.ability.extra.targets.value == "Spades" then
+			elseif card.ability.extra.targets[1].suit == "Spades" then
 				card.ability.extra.form = "Summer"
-			elseif card.ability.extra.targets.value == "Diamonds" then
+			elseif card.ability.extra.targets[1].suit == "Diamonds" then
 				card.ability.extra.form = "Autumn"
-			elseif card.ability.extra.targets.value == "Clubs" then
+			elseif card.ability.extra.targets[1].suit == "Clubs" then
 				card.ability.extra.form = "Winter"
 			else
 				card.ability.extra.form = "Summer"
@@ -101,15 +101,15 @@ local deerling = {
 local sawsbuck = {
 	name = "sawsbuck",
 	pos = {x = 0, y = 2},
-	 config = {extra = {mult_mod = 2, mult = 0, check = true, form = "Summer", targets = {value = "Spades"}}},
+	 config = {extra = {mult_mod = 2, mult = 0, check = true, form = "Summer", targets = {{suit = "Spades"}}}},
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"suit"}}
     end
-    --local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, card.ability.extra.targets.value}
+    --local card_vars = {card.ability.extra.mult_mod, card.ability.extra.mult, card.ability.extra.targets.suit}
 		local abbr = card.ability.extra
-		return {vars = {abbr.mult_mod, abbr.mult, abbr.targets.value, colours = {G.C.SUITS[abbr.targets.value or "Spades"]}}}
+		return {vars = {abbr.mult_mod, abbr.mult, abbr.targets[1].suit, colours = {G.C.SUITS[abbr.targets[1].suit or "Spades"]}}}
 	end,
 	rarity = "poke_safari", 
 	cost = 7,
@@ -126,7 +126,7 @@ local sawsbuck = {
 		if context.before and not context.blueprint then
 			local wrongSuit = false
 			for _, playing_card in ipairs(context.scoring_hand) do
-				if not playing_card:is_suit(card.ability.extra.targets.value) then
+				if not playing_card:is_suit(card.ability.extra.targets[1].suit) then
 					wrongSuit = true
 					break
 				end
@@ -159,16 +159,16 @@ local sawsbuck = {
 
   set_ability = function(self, card, initial, delay_sprites)
     if initial then
-      card.ability.extra.targets = get_poke_target_card_suits("deerling", 1, card.ability.extra.targets)
+      card.ability.extra.targets = get_poke_target_card_suit("sawsbuck", true, 'Spades')
 		end
-		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets.value then
-			if card.ability.extra.targets.value == "Hearts" then
+		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets[1] and card.ability.extra.targets[1].suit then
+			if card.ability.extra.targets[1].suit == "Hearts" then
 				card.ability.extra.form = "Spring"
-			elseif card.ability.extra.targets.value == "Spades" then
+			elseif card.ability.extra.targets[1].suit == "Spades" then
 				card.ability.extra.form = "Summer"
-			elseif card.ability.extra.targets.value == "Diamonds" then
+			elseif card.ability.extra.targets[1].suit == "Diamonds" then
 				card.ability.extra.form = "Autumn"
-			elseif card.ability.extra.targets.value == "Clubs" then
+			elseif card.ability.extra.targets[1].suit == "Clubs" then
 				card.ability.extra.form = "Winter"
 			else
 				card.ability.extra.form = "Summer"
