@@ -59,7 +59,7 @@ clue_increment = function(handsize)
 	if G.GAME.current_round.clue_handsize < 10 then
 		G.GAME.current_round.clue_handsize = G.GAME.current_round.clue_handsize + handsize
 		G.hand:change_size(handsize)
-		G.FUNCS.draw_from_deck_to_hand(handsize)
+		SMODS.draw_cards(handsize)
 	end
 end
 
