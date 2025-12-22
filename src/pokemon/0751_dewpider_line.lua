@@ -1,7 +1,7 @@
 --Don't tell the rest, but this one is my favorite
 local dewpider = {
 	name = "dewpider",
-	pos = {x = 0, y = 50},
+	--pos = {x = 0, y = 50},
 	config = {extra = {money = 2, mult = 0, mult_mod = 1, minSum = 1}, evo_rqmt = 8},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -75,7 +75,7 @@ local dewpider = {
 
 local araquanid = {
 	name = "araquanid",
-	pos = {x = 2, y = 50},
+	--pos = {x = 2, y = 50},
 	config = {extra = {money = 4, mult = 0, mult_mod = 2, minSum = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)

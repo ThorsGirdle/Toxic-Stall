@@ -6,15 +6,17 @@ return {
 				{ list = { "j_stall_sewaddle", "j_stall_swadloon", "j_stall_leavanny" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_sewaddle" } end, config_key = "Sewaddle" },
         { list = { "j_stall_galarian_yamask", "j_stall_runerigus" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_galarian_yamask" } end, config_key = "Galarian_Yamask" },
 				{ list = { "j_stall_deerling", "j_stall_sawsbuck" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_deerling" } end, config_key = "Deerling" },
+				{ list = { "j_stall_joltik", "j_stall_galvantula" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_joltik" } end, config_key = "Joltik" },
 				{ list = { "j_stall_klink", "j_stall_klang", "j_stall_klinklang" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_klink" } end, config_key = "Klink" },
 				{ list = { "j_stall_larvesta", "j_stall_volcarona" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_larvesta" } end, config_key = "Larvesta" },
-				{ list = { "j_stall_bunnelby", "j_stall_diggersby" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_bunnelby" } end, config_key = "Bunnelby" },
+				
 
       }
     },
 		    {
       title = function() return localize("stall_regular_pokemon2") end,
       tiles = {
+				{ list = { "j_stall_bunnelby", "j_stall_diggersby" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_bunnelby" } end, config_key = "Bunnelby" },
 				{ list = { "j_stall_volcanion" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_volcanion" } end, config_key = "Volcanion" },
       }
     },

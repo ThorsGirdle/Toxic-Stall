@@ -179,6 +179,27 @@ return {
 					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{} at round start",
 				}
 			},
+			--595
+			j_stall_joltik = {
+				name = 'Joltik',
+				text = {
+					"{C:mult}+#1#{} Mult if sum of {C:attention}Ranks{}",
+					"in scored hand is less than",
+					"the sum of previous hand: {C:attention}#2#",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
+				}
+			},
+			j_stall_galvantula = {
+				name = 'Galvantula',
+				text = {
+					"{C:mult}+#1#{} Mult if {C:attention}sum{} of {C:attention}Ranks{}",
+					"in scored hand is less than",
+					"the {C:attention}sum{} of previous hand: {C:attention}#2#",
+					"{br:2}ERROR - CONTACT STEAK",
+					"{X:mult,C:white}X#3#{} if {C:attention}sum{} is less than {C:attention}half{}",
+					"the {C:attention}sum{} of previous hand",
+				}
+			},
 			--599
 			j_stall_klink = {
 				name = 'Klink',
@@ -559,8 +580,10 @@ return {
 				text = {
 					"{C:attention}Toxic{} cards always score",
 					"{br:2}ERROR - CONTACT STEAK",
-					"{C:attention}Steel{} cards are drained {X:mult,C:white}X0.05", 
-					"to all {C:attention}Toxic{} cards when held",
+					"{C:attention}Steel{} cards are drained by {X:mult,C:white}X0.05{}", 
+					"when held, all {C:attention}Toxic{} cards",
+					"are given drained {X:mult,C:white}X{} Mult",
+					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult drained)",
 				}
 			},
 			--769

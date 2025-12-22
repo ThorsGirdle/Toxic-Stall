@@ -1,7 +1,7 @@
 local popplio = {
 	name = "popplio",
 	pos = {x = 0, y = 0},
-	config = {extra = {mult = 0, mult_mod = 1, hands = 1, poker_hand = "High Card"}, evo_rqmt = 8},
+	config = {extra = {mult = 0, mult_mod = 1, hands = 1, poker_hand = "High Card"}, evo_rqmt = 12},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
@@ -75,7 +75,7 @@ local popplio = {
 local brionne = {
 	name = "brionne",
 	pos = {x = 0, y = 0},
-	config = {extra = {mult = 0, mult_mod = 2, hands = 1, poker_hand = "High Card"}, evo_rqmt = 20},
+	config = {extra = {mult = 0, mult_mod = 2, hands = 1, poker_hand = "High Card"}, evo_rqmt = 30},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
@@ -243,5 +243,4 @@ local primarina = {
 return {name = "Popplio Line", 
 enabled = stall_config.Popplio or false,
 list = {popplio, brionne, primarina}
-
 }

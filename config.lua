@@ -7,6 +7,7 @@ return{
 	Galarian_Yamask = true,
 	Deerling = true,
 	Foongus = true,
+	Joltik = true,
 	Klink = true,
 	Larvesta = true,
 	Bunnelby = true,

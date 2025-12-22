@@ -1,6 +1,6 @@
 local salandit = {
 	name = "salandit",
-	pos = {x = 12, y = 50},
+	--pos = {x = 12, y = 50},
 	config = {extra = { rounds = 4}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -14,7 +14,7 @@ local salandit = {
 	gen = 7,
 	toxic = true,
 	designer = "Thor's Girdle",
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = false,
 	eternal_compat = true,
@@ -51,12 +51,12 @@ local salandit = {
 
 local salazzle = {
 	name = "salazzle",
-	pos = {x = 14, y = 50},
+	--pos = {x = 14, y = 50},
 	config = {extra = {drainedMult = 0}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
-	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.mult, card.ability.extra.mult_mod}}
+	  return {vars = {card.ability.extra.drainedMult}}
 	end,
 	rarity = "poke_safari", --Safari
 	cost = 8,
@@ -64,7 +64,7 @@ local salazzle = {
 	ptype = "Dark",
 	gen = 7,
 	toxic = true,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	designer = "Thor's Girdle",
 	perishable_compat = true,
 	blueprint_compat = true,
