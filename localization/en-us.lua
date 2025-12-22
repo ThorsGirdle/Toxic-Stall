@@ -183,9 +183,9 @@ return {
 			j_stall_joltik = {
 				name = 'Joltik',
 				text = {
-					"{C:mult}+#1#{} Mult if sum of {C:attention}Ranks{}",
+					"{C:mult}+#1#{} Mult if {C:attention}sum{} of {C:attention}Ranks{}",
 					"in scored hand is less than",
-					"the sum of previous hand: {C:attention}#2#",
+					"the {C:attention}sum{} of previous hand: {C:attention}#2#",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#3#{C:inactive,s:0.8} rounds)",
 				}
 			},
@@ -196,8 +196,8 @@ return {
 					"in scored hand is less than",
 					"the {C:attention}sum{} of previous hand: {C:attention}#2#",
 					"{br:2}ERROR - CONTACT STEAK",
-					"{X:mult,C:white}X#3#{} if {C:attention}sum{} is less than {C:attention}half{}",
-					"the {C:attention}sum{} of previous hand",
+					"{X:mult,C:white}X#3#{} Mult if {C:attention}sum{} is less than ",
+					"{C:attention}half{} the {C:attention}sum{} of previous hand",
 				}
 			},
 			--599
