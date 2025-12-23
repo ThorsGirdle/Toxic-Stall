@@ -37,7 +37,7 @@ return {
 				{ list = { "j_stall_yungoos", "j_stall_gumshoos" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_yungoos" } end, config_key = "Yungoos" },
 				{ list = { "j_stall_dewpider", "j_stall_araquanid" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_dewpider" } end, config_key = "Dewpider" },
         { list = { "j_stall_sandygast", "j_stall_palossand" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_sandygast" } end, config_key = "Sandygast" },
-				{ list = { "j_stall_jangmoo", "j_stall_hakamoo", "j_stall_kommoo" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_jangmo_o" } end, config_key = "Jangmoo" },
+				{ list = { "j_stall_jangmoo", "j_stall_hakamoo", "j_stall_kommoo" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_jangmoo" } end, config_key = "Jangmoo" },
 				{ list = { "j_stall_clobbopus", "j_stall_grapploct" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_clobbopus" } end, config_key = "Clobbopus" },
         { list = { "j_stall_rellor", "j_stall_rabsca" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_rellor" } end, config_key = "Rellor" },
       }
@@ -65,4 +65,5 @@ return {
 		},	
 		},
 	}
+
 }
