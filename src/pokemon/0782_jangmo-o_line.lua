@@ -19,7 +19,7 @@ local jangmoo = {
 	poke_custom_values_to_keep = {"mult", "differenceLast"},
 	
 	calculate = function(self, card, context)
-		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" then
+		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" and not context.blueprint then
 			local rank1, rank2, rank3, rankCount1, rankCount2, rankCount3, difference = nil, nil, nil, 0, 0, 0, 0 -- three each since splash exists 
 			for i,v in ipairs(context.scoring_hand) do
 				if not rank1 then
@@ -88,7 +88,7 @@ local hakamoo = {
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
-		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" then
+		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" not context.blueprint then
 				local rank1, rank2, rank3, rankCount1, rankCount2, rankCount3 = nil, nil, nil, 0, 0, 0 -- three each since splash exists 
 			for i,v in ipairs(context.scoring_hand) do
 				if not rank1 then
@@ -124,7 +124,7 @@ local hakamoo = {
 			else 
 				card.ability.extra.differenceLast = difference
 			end	
-		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" then
+		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" not context.blueprint then
 			card.ability.extra.differenceLast = 0
 		end
 		
@@ -160,7 +160,7 @@ local kommoo = {
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
-		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" then
+		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" not context.blueprint then
 				local rank1, rank2, rank3, rankCount1, rankCount2, rankCount3 = nil, nil, nil, 0, 0, 0 -- three each since splash exists 
 			for i,v in ipairs(context.scoring_hand) do
 				if not rank1 then
@@ -207,7 +207,7 @@ local kommoo = {
 				card.ability.extra.differenceLast = difference
 				card.ability.extra.consecutive = 0
 			end	
-		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" then
+		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" not context.blueprint then
 			card.ability.extra.differenceLast = 0
 			card.ability.extra.consecutive = 0
 		end
