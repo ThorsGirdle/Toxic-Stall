@@ -39,6 +39,15 @@ return {
         { list = { "j_stall_sandygast", "j_stall_palossand" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_sandygast" } end, config_key = "Sandygast" },
 				{ list = { "j_stall_jangmoo", "j_stall_hakamoo", "j_stall_kommoo" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_jangmoo" } end, config_key = "Jangmoo" },
 				{ list = { "j_stall_clobbopus", "j_stall_grapploct" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_clobbopus" } end, config_key = "Clobbopus" },
+        { list = { "j_stall_dracozolt"}, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_dracozolt" } end, config_key = "Dracozolt" },
+      }
+    },
+				{
+      title = function() return localize("stall_regular_pokemon4") end,
+      tiles = {
+				{ list = { "j_stall_arctozolt"}, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_arctozolt" } end, config_key = "Arctozolt" },
+				{ list = { "j_stall_dracovish"}, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_dracovish" } end, config_key = "Dracovish" },
+				{ list = { "j_stall_arctovish"}, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_arctovish" } end, config_key = "Arctovish" },
         { list = { "j_stall_rellor", "j_stall_rabsca" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_rellor" } end, config_key = "Rellor" },
       }
     },
@@ -65,5 +74,4 @@ return {
 		},	
 		},
 	}
-
 }

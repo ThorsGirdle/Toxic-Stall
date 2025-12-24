@@ -26,7 +26,7 @@ local sewaddle = {
 				end
 			else 
 				return {
-					chips = math.floor(card.ability.extra.savedChips/2 + 0.5) 
+					chips = (card.ability.extra.savedChips/2) 
 				}
 			end
 		end
@@ -44,7 +44,7 @@ local swadloon = {
 	config = {extra = {savedChips = 0, chip_mod = 4, bigBoys = 0, targetChips = 20}, evo_rqmt = 20 },
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-	  return {vars = {card.ability.extra.chip_mod, (self.config.evo_rqmt - card.ability.extra.bigBoys), card.ability.extra.targetChips}}
+	  return {vars = {card.ability.extra.chip_mod, math.max((self.config.evo_rqmt - card.ability.extra.bigBoys),0), card.ability.extra.targetChips}}
 	end,
 	rarity = "poke_safari",
 	cost = 6,
@@ -65,12 +65,16 @@ local swadloon = {
 					card.ability.extra.savedChips = poke_total_chips(firstCard)
 				end
 				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod
+				return {
+					message = localize('k_upgrade_ex'),
+					colour = G.C.CHIPS
+				}
 			else 
 				if card.ability.extra.savedChips >= 20 then
 					 card.ability.extra.bigBoys = card.ability.extra.bigBoys + 1
 				end
 				return {
-					chips = math.floor(card.ability.extra.savedChips/2 + 0.5) 
+					chips = (card.ability.extra.savedChips/2)
 				}
 			end
 		end
@@ -109,6 +113,10 @@ local leavanny = {
 					card.ability.extra.savedChips = poke_total_chips(firstCard)
 				end 
 				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod 
+				return {
+					message = localize('k_upgrade_ex'),
+					colour = G.C.CHIPS
+				}
 			else 
 				return {
 					chips = card.ability.extra.savedChips

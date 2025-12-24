@@ -162,11 +162,6 @@ local galvantula = {
 	end,
 }
 
-
-
-
-
-
 return {name = "Joltik Line", 
 enabled = stall_config.Joltik or false,
 list = {joltik, galvantula}

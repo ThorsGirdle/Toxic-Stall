@@ -168,7 +168,8 @@ return {
 				name = 'Foongus',
 				text = {
 					"{C:attention}Holding {C:item}Black Sludge{}",
-					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{} at round start",
+					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{}",
+					"Mult at round start",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
 				}
 			},
@@ -176,7 +177,8 @@ return {
 				name = 'Amoonguss',
 				text = {
 					"{C:attention}Holding {C:item}Black Sludge{}",
-					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{} at round start",
+					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{}",
+					"Mult at round start",
 				}
 			},
 			--595
@@ -659,6 +661,59 @@ return {
 					"Each {C:clubs}#2#{} held in hand gives {C:chips}+#1#{} chips",
 				}
 			},
+			--880
+			j_stall_dracozolt = {
+				name = 'Dracozolt',
+				text = {
+					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
+					"{B:1,C:white}2+{} : {X:mult,C:white}X#3#{} Mult per scoring {C:attention}Gold{} card",
+					"{B:1,C:white}3+{} : {C:chips}+#4#{} per {C:money}$1{} you have",
+					"{B:2,C:white}2+{} : Earn {C:money}$#5#{} per hand played this round",
+					"{B:2,C:white}3+{} : First scoring {V:2}Spade{} becomes {C:attention}Gold{}",
+				}
+			},
+			--881
+			j_stall_arctozolt = {
+				name = 'Arctozolt',
+				text = {
+					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
+					"{B:1,C:white}2+{} : Scoring {V:1}#1#{} give double their Chips",
+					"{B:1,C:white}3+{} : Cards with {C:chips}#6#+ {C:attention}total{} Chips",
+					"give {X:mult,C:white}X#3#{} when scored",
+					"{B:2,C:white}2+{} : Each unenhanced card held in hand",
+					"permanently gain {C:chips}+#5#{} Chips",
+					"{B:2,C:white}3+{} : Each {V:2}#2#{} card held in hand",
+					"gives {X:mult,C:white}X#4#{} Mult",
+				}
+			},	
+			--882
+			j_stall_dracovish = {
+				name = 'Dracovish',
+				text = {
+					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
+					"{B:1,C:white}2+{} : {C:chips}+#3#{} Chips per {C:attention}consumable{} held this round",
+					"{B:1,C:white}3+{} : Gain a {C:tarot}Tarot{} card if {C:money}$#6#{}",
+					"has been earned this round",
+					"{C:inactive,s:0.8}(Must have room)",
+					"{B:2,C:white}2+{} : {C:mult}+#5#{} per {C:attention}consumable{} used this round",
+					"{B:2,C:white}3+{} : Earn {C:money}$#4#{} per {C:tarot}Tarot{} card used this round",
+				}
+			},	
+			--883
+			j_stall_arctovish = {
+				name = 'Arctovish',
+				text = {
+					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
+					"{B:1,C:white}2+{} : Held {C:planet}Planet{} cards give {X:mult,C:white}X#3#{}",
+					"{B:1,C:white}3+{} : Destroy leftmost {C:planet}Planet{} card to",
+					"gain {C:attention}#6#{} corresponding hand levels",
+					"{B:2,C:white}2+{} : Create {C:attention}1 {C:planet}Planet{} card per {C:attention}#5#{}",
+					"{V:2}Heart{} cards held in hand",
+					"{C:inactive,s:0.8}(Must have room)",
+					"{B:2,C:white}3+{} : Retrigger {C:attention}2{} leftmost cards",
+					"held in hand {C:attention}#4#{} additional time",
+				}
+			},				
 			--953
 			j_stall_rellor = {
 				name = 'Rellor',      
@@ -732,17 +787,27 @@ return {
 	},
 	Other = {
 		designed_by = {
-		name = "Designed By",
-		text = {
-			"{C:purple}#1#{}"
+			name = "Designed By",
+			text = {
+				"{C:purple}#1#{}"
+			}
 		},
-		}
+		ancientsuits = {
+			name = "Ancient Suits",
+			text = {
+					"Effect based on",
+					"number of {V:1}#1#{} and",
+					"{V:2}#2#{} in {C:attention}poker hand",
+					"{C:inactive}(Effects are {C:attention}cumulative{C:inactive})",
+			}
+    },
 	},
 	misc = {
 		dictionary = {
-			stall_regular_pokemon1 = "Regular Pokemon 1/3",
-			stall_regular_pokemon2 = "Regular Pokemon 2/3",
-			stall_regular_pokemon3 = "Regular Pokemon 3/3",			
+			stall_regular_pokemon1 = "Regular Pokemon 1/4",
+			stall_regular_pokemon2 = "Regular Pokemon 2/4",
+			stall_regular_pokemon3 = "Regular Pokemon 3/4",
+			stall_regular_pokemon4 = "Regular Pokemon 4/4",
 			stall_Alolan_starters = "Alolan Starters",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",

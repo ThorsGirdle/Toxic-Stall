@@ -105,7 +105,7 @@ local revavroom = {
 			end
 		end
 		
-		if context.repetition and context.cardarea == G.hand and card.ability.extra.trigger and SMODS.has_enhancement(context.other_card, "m_stall_toxic") and not context.other_card.debuff then
+		if context.repetition and context.cardarea ~= G.play and card.ability.extra.trigger and SMODS.has_enhancement(context.other_card, "m_stall_toxic") and not context.other_card.debuff then
 			return {
 				repetitions = 1
 			}

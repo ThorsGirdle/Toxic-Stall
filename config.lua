@@ -26,6 +26,10 @@ return{
 	Sandygast = true,
 	Jangmoo = true,
 	Clobbopus = true,
+	Dracozolt = true,
+	Arctozolt = true,
+	Dracovish = true,
+	Arctovish = true,
 	Rellor = true,
 	Varoom = true,
 }

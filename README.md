@@ -18,9 +18,13 @@ Sewaddle: Other Scoring cards give half the total chips of first scoring card
 
 Venipede: 1 in 7 chance to enhance first scoring card with Toxic, increase odd per played hand
 
+Galarian Yamask: Sell this card to remove Energy and Edition of Joker to the left and give them to the Joker to the right
+
 Deerling: Nature: [Suit] +1 Mult per consecutive hand with only scoring Nature cards
 
 Foongus: Holding Black Sludge Toxic cards gain X0.15 at round start (this line is very subject to change)
+
+Joltik: +16 Mult if sum of Ranks in scored hand is less than the sum of previous hand
 
 Klink: Gain $1 when 12 cards are drawn in a blind
 
@@ -29,6 +33,8 @@ Larvesta: Cards discarded on first discard of round permanently gain +3 Mult
 Bunnelby: When you draw the last card of a Rank from your deck, 1 in 2 chance to gain a Tarot card
 
 Skrelp: Held 7s gain +1 Held Chips
+
+Volcanion: Gain X1 if total chips of scoring hand is lower than the previous total, double X Mult then reset self on failure
 
 Rowlet: Gain +1 Mult if held hand is a [Poker Hand], resets each hand
 
@@ -68,6 +74,8 @@ emmadenslemma: Black Sludge, Toxic Enhancement, Mod Icon
 NachosPokermonDip by EternalNacho (Hisuian Sneasel/Sneasler)
 
 Agarmons by emmadenslemma (Toxel/Toxtricity)
+
+Gem-Pokermon by TGem7 (Hisuian Qwilfish/Overqwil)
 
 
 **TO-DO**

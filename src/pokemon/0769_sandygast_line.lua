@@ -62,6 +62,10 @@ local palossand = {
 				card.ability.extra.chips = (card.ability.extra.chips) + card.ability.extra.chip_mod
 				if context.other_card.ability.perma_mult < #find_pokemon_type("Water") then
 					context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + 1
+					return {
+						message = localize('k_upgrade_ex'),
+						colour = G.C.MULT
+					}
 				end
       end
 		end
