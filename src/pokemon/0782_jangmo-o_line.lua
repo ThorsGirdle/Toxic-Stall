@@ -124,7 +124,7 @@ local hakamoo = {
 			else 
 				card.ability.extra.differenceLast = difference
 			end	
-		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" not context.blueprint then
+		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" and not context.blueprint then
 			card.ability.extra.differenceLast = 0
 		end
 		
@@ -207,7 +207,7 @@ local kommoo = {
 				card.ability.extra.differenceLast = difference
 				card.ability.extra.consecutive = 0
 			end	
-		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" not context.blueprint then
+		elseif context.before and context.scoring_hand and context.scoring_name ~= "Two Pair" and not context.blueprint then
 			card.ability.extra.differenceLast = 0
 			card.ability.extra.consecutive = 0
 		end
