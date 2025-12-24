@@ -680,8 +680,8 @@ return {
 					"{B:1,C:white}2+{} : Scoring {V:1}#1#{} give double their Chips",
 					"{B:1,C:white}3+{} : Cards with {C:chips}#6#+ {C:attention}total{} Chips",
 					"give {X:mult,C:white}X#3#{} when scored",
-					"{B:2,C:white}2+{} : Each unenhanced card held in hand",
-					"permanently gain {C:chips}+#5#{} Chips",
+					"{B:2,C:white}2+{} : Each {C:attention}unenhanced{} card held in hand",
+					"permanently gains {C:chips}+#5#{} Chips",
 					"{B:2,C:white}3+{} : Each {V:2}#2#{} card held in hand",
 					"gives {X:mult,C:white}X#4#{} Mult",
 				}
