@@ -77,8 +77,12 @@ local dracovish = {
 			end
 		end
 		
-		if context.money_altered and context.amount > 0 and not context.blueprint then
-			card.ability.extra.moneyEarned = card.ability.extra.moneyEarned + context.amount
+		if context.money_altered and not context.blueprint then
+			local amount_gained = context.amount
+			if (SMODS.Mods["Talisman"] or {}).can_load then amount_gained = to_number(amount_gained) end
+      if amount_gained and amount_gained > 0 then
+				card.ability.extra.moneyEarned = card.ability.extra.moneyEarned + amount_gained
+			end
 		end
 		
 		if context.after then
