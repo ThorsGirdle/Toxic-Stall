@@ -44,7 +44,6 @@ local rabsca = {
 	config = {extra = { mult_mod = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = {set = 'Other', key = 'designed_by', vars = {"Thor's Girdle"}}
 		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.stall_item or 0) + (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
 	  return {vars = {card.ability.extra.mult_mod, mult}}
 	end,
