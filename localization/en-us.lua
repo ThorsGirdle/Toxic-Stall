@@ -677,7 +677,8 @@ return {
 				name = 'Arctozolt',
 				text = {
 					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
-					"{B:1,C:white}2+{} : Scoring {V:1}Diamond{} cards give double their Chips",
+					"{B:1,C:white}2+{} : Scoring {V:1}Diamond{} cards give",
+					"double their Chips",
 					"{B:1,C:white}3+{} : Cards with {C:chips}#6#+ {C:attention}total{} Chips",
 					"give {X:mult,C:white}X#3#{} when scored",
 					"{B:2,C:white}2+{} : Each {C:attention}unenhanced{} card held in hand",
