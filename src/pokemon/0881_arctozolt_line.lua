@@ -1,12 +1,12 @@
 local arctozolt = {
 	name = "arctozolt",
 	--pos = {x = 0, y = 0},
-	config = {extra = { suit1 = "Diamonds", suit2 = "Hearts", Xmult_mod = 1.5, Xmult_multi = 1.20, chip_mod = 3, chipThreshold = 40}},
+	config = {extra = { suit1 = "Diamonds", suit2 = "Hearts", Xmult_mod = 0.5, Xmult_multi = 1.20, chip_mod = 3, chipThreshold = 40}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra or self.config.extra
 		--info_queue[#info_queue+1] = {set = 'Other', key = 'ancientsuits', vars = {localize(abbr.suit1, 'suits'), localize(abbr.suit2, 'suits'), colours = {G.C.SUITS[abbr.suit1],  G.C.SUITS[abbr.suit2]}}}	
-	  return {vars = {abbr.suit1, abbr.suit2, abbr.Xmult_mod, abbr.Xmult_multi, abbr.chip_mod, abbr.chipThreshold, colours = {G.C.SUITS[abbr.suit1 or "Diamonds"], G.C.SUITS[abbr.suit2 or "Hearts"] }}}
+	  return {vars = {abbr.suit1, abbr.suit2, 1 + abbr.Xmult_mod, abbr.Xmult_multi, abbr.chip_mod, abbr.chipThreshold, colours = {G.C.SUITS[abbr.suit1 or "Diamonds"], G.C.SUITS[abbr.suit2 or "Hearts"] }}}
 	end,
 	rarity = 2, --Uncommon
 	cost = 6,
@@ -31,11 +31,11 @@ local arctozolt = {
 				if context.other_card:is_suit(card.ability.extra.suit1) and totalChips >= card.ability.extra.chipThreshold then
 					return{
 						chips = totalChips,
-						xmult = card.ability.extra.Xmult_mod,
+						xmult = 1 + card.ability.extra.Xmult_mod,
 					}
 				elseif totalChips >= card.ability.extra.chipThreshold then
 					return{
-						xmult = card.ability.extra.Xmult_mod,
+						xmult = 1 + card.ability.extra.Xmult_mod,
 					}
 				elseif context.other_card:is_suit(card.ability.extra.suit1) then
 					return{
