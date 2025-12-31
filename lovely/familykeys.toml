@@ -9,5 +9,5 @@ priority = 0
 target = '=[SMODS Pokermon "functions/pokefunctions.lua"]'
 position = "after"
 match_indent = true
-pattern = '''get_family_keys = function(cardname, custom_prefix, card)'''
+pattern = '''get_family_keys = function(card)'''
 payload = '''  custom_prefix = card.config.center.is_shell and (custom_prefix .. "_shell") or custom_prefix'''

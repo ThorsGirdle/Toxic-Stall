@@ -83,7 +83,6 @@ local galvantula = {
 	ptype = "Lightning",
 	gen = 5,
 	designer = "Thor's Girdle",
-	--custom_art = true,
 	--atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
 	blueprint_compat = true,
@@ -93,7 +92,7 @@ local galvantula = {
   calculate = function(self, card, context)
 		
 		if context.before and not context.blueprint then
-			local totalSum, AceCount, lastSum = 0, 0, 0
+			local totalSum, AceCount, lastSum = 0, 0, 0 --All this for Blackjack
 			for i, v in pairs(context.scoring_hand) do
 				if context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal < 11 then
 					totalSum = totalSum + context.scoring_hand[i].base.nominal

@@ -71,7 +71,7 @@ emmadenslemma: Black Sludge, Toxic Enhancement, Mod Icon
 
 **Other Mods with Toxic Jokers**
 
-NachosPokermonDip by EternalNacho (Hisuian Sneasel/Sneasler)
+NachosPokermonDip by EternalNacho (Hisuian Sneasel/Sneasler, Okidogi, Munkidori, Fezandipiti, and Pecharunt)
 
 Agarmons by emmadenslemma (Toxel/Toxtricity)
 
