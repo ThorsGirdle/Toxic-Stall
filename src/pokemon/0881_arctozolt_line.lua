@@ -1,7 +1,7 @@
 local arctozolt = {
 	name = "arctozolt",
 	--pos = {x = 0, y = 0},
-	config = {extra = { suit1 = "Diamonds", suit2 = "Hearts", Xmult_mod = 1.75, Xmult_mod1 = 1.25, chip_mod = 3, chipThreshold = 33}},
+	config = {extra = { suit1 = "Diamonds", suit2 = "Hearts", Xmult_mod = 1.5, Xmult_multi = 1.20, chip_mod = 3, chipThreshold = 40}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra or self.config.extra

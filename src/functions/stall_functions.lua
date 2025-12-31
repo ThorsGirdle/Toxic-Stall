@@ -136,26 +136,11 @@ get_ancient_suit_amount = function(hand, suit1, suit2, append_to_card)
 	}
 	
 	for i = 1, #hand do
-		if not SMODS.has_any_suit(hand[i]) then
-			if hand[i]:is_suit(suit1, true) then
-				suits[suit1] = suits[suit1] + 1
-			elseif hand[i]:is_suit(suit2, true) then
-				suits[suit2] = suits[suit2] + 1
-			end
+		if hand[i]:is_suit(suit1, true) then
+			suits[suit1] = suits[suit1] + 1
 		end
-	end
-	
-	for i = 1, #hand do
-		if SMODS.has_any_suit(hand[i]) then
-			if hand[i]:is_suit(suit1, true) and (suits[suit1] == 1 or suits[suit1] == 2)  then
-				suits[suit1] = suits[suit1] + 1
-			elseif hand[i]:is_suit(suit2, true) and (suits[suit2] == 1 or suits[suit2] == 2)  then
-				suits[suit2] = suits[suit2] + 1
-			elseif hand[i]:is_suit(suit1, true) and suits[suit1] == 0  then
-				suits[suit1] = suits[suit1] + 1
-			elseif hand[i]:is_suit(suit2, true) and suits[suit2] == 0  then
-				suits[suit2] = suits[suit2] + 1
-			end
+		if hand[i]:is_suit(suit2, true) then
+			suits[suit2] = suits[suit2] + 1
 		end
 	end
   

@@ -20,32 +20,8 @@ local jangmoo = {
 	
 	calculate = function(self, card, context)
 		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" and not context.blueprint then
-			local rank1, rank2, rank3, rankCount1, rankCount2, rankCount3, difference = nil, nil, nil, 0, 0, 0, 0 -- three each since splash exists 
-			for i,v in ipairs(context.scoring_hand) do
-				if not rank1 then
-					rank1 = v:get_id()
-					rankCount1 = rankCount1 + 1
-				elseif rank1 == v:get_id() then
-					rankCount1 = rankCount1 + 1
-				elseif not rank2 then
-					rank2 = v:get_id()
-					rankCount2 = rankCount2 + 1
-				elseif rank2 == v:get_id() then
-					rankCount2 = rankCount2 + 1
-				elseif not rank3 then
-					rank3 = v:get_id()
-					rankCount3 = rankCount3 + 1
-				elseif rank3 == v:get_id() then
-					rankCount3 = rankCount3 + 1
-				end
-			end
-			if rankCount1 == 2 and rankCount2 == 2 then
-				difference = math.abs(rank1 - rank2)
-			elseif rankCount2 == 2 and rankCount3 == 2 then
-				difference = math.abs(rank2 - rank3)
-			elseif rankCount3 == 2 and rankCount1 == 2 then
-				difference = math.abs(rank3 - rank1)
-			end
+			local pairRanks = get_X_same(2, context.scoring_hand, true)
+			local difference =  math.abs(pairRanks[1][1]:get_id() - pairRanks[#pairRanks][1]:get_id())
 			if difference == card.ability.extra.differenceLast then
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 				return {
@@ -89,32 +65,8 @@ local hakamoo = {
 	
 	calculate = function(self, card, context)
 		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" and not context.blueprint then
-				local rank1, rank2, rank3, rankCount1, rankCount2, rankCount3 = nil, nil, nil, 0, 0, 0 -- three each since splash exists 
-			for i,v in ipairs(context.scoring_hand) do
-				if not rank1 then
-					rank1 = v:get_id()
-					rankCount1 = rankCount1 + 1
-				elseif rank1 == v:get_id() then
-					rankCount1 = rankCount1 + 1
-				elseif not rank2 then
-					rank2 = v:get_id()
-					rankCount2 = rankCount2 + 1
-				elseif rank2 == v:get_id() then
-					rankCount2 = rankCount2 + 1
-				elseif not rank3 then
-					rank3 = v:get_id()
-					rankCount3 = rankCount3 + 1
-				elseif rank3 == v:get_id() then
-					rankCount3 = rankCount3 + 1
-				end
-			end
-			if rankCount1 == 2 and rankCount2 == 2 then
-				difference = math.abs(rank1 - rank2)
-			elseif rankCount2 == 2 and rankCount3 == 2 then
-				difference = math.abs(rank2 - rank3)
-			elseif rankCount3 == 2 and rankCount1 == 2 then
-				difference = math.abs(rank3 - rank1)
-			end
+			local pairRanks = get_X_same(2, context.scoring_hand, true)
+			local difference =  math.abs(pairRanks[1][1]:get_id() - pairRanks[#pairRanks][1]:get_id())		
 			if difference == card.ability.extra.differenceLast then
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 				return {
@@ -129,10 +81,10 @@ local hakamoo = {
 		end
 		
 		if context.joker_main and card.ability.extra.mult > 0 then
-		return {
-			mult = card.ability.extra.mult
-		}
-	 end
+			return {
+				mult = card.ability.extra.mult
+			}
+		end
 
 		return scaling_evo(self, card, context, "j_stall_kommoo", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
@@ -161,32 +113,8 @@ local kommoo = {
 	
 	calculate = function(self, card, context)
 		if context.before and context.scoring_hand and context.scoring_name == "Two Pair" and not context.blueprint then
-				local rank1, rank2, rank3, rankCount1, rankCount2, rankCount3 = nil, nil, nil, 0, 0, 0 -- three each since splash exists 
-			for i,v in ipairs(context.scoring_hand) do
-				if not rank1 then
-					rank1 = v:get_id()
-					rankCount1 = rankCount1 + 1
-				elseif rank1 == v:get_id() then
-					rankCount1 = rankCount1 + 1
-				elseif not rank2 then
-					rank2 = v:get_id()
-					rankCount2 = rankCount2 + 1
-				elseif rank2 == v:get_id() then
-					rankCount2 = rankCount2 + 1
-				elseif not rank3 then
-					rank3 = v:get_id()
-					rankCount3 = rankCount3 + 1
-				elseif rank3 == v:get_id() then
-					rankCount3 = rankCount3 + 1
-				end
-			end
-			if rankCount1 == 2 and rankCount2 == 2 then
-				difference = math.abs(rank1 - rank2)
-			elseif rankCount2 == 2 and rankCount3 == 2 then
-				difference = math.abs(rank2 - rank3)
-			elseif rankCount3 == 2 and rankCount1 == 2 then
-				difference = math.abs(rank3 - rank1)
-			end
+			local pairRanks = get_X_same(2, context.scoring_hand, true)
+			local difference =  math.abs(pairRanks[1][1]:get_id() - pairRanks[#pairRanks][1]:get_id())
 			if difference == card.ability.extra.differenceLast then
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 				card.ability.extra.consecutive = card.ability.extra.consecutive + 1

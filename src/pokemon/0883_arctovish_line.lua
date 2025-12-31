@@ -1,7 +1,7 @@
 local arctovish = {
 	name = "arctovish",
 	--pos = {x = 0, y = 0},
-	config = {extra = { suit1 = "Clubs", suit2 = "Hearts", Xmult_mod = 1.25, retriggers = 1, heartThreshold = 3, handLevelAmount = 2 }},
+	config = {extra = { suit1 = "Clubs", suit2 = "Hearts", Xmult_mod = 1.25, retriggers = 1, heartThreshold = 4, handLevelAmount = 2 }},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra or self.config.extra

@@ -667,9 +667,9 @@ return {
 				text = {
 					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
 					"{B:1,C:white}2+{} : {X:mult,C:white}X#3#{} Mult per scoring {C:attention}Gold{} card",
-					"{B:1,C:white}3+{} : {C:chips}+#4#{} per {C:money}$1{} you have",
+					"{B:1,C:white}3+{} : {C:chips}+#4#{} Chips per {C:money}$1{} you have",
 					"{B:2,C:white}2+{} : Earn {C:money}$#5#{} per hand played this round",
-					"{B:2,C:white}3+{} : First scoring {V:2}Spade{} becomes {C:attention}Gold{}",
+					"{B:2,C:white}3+{} : First scoring {V:2}Spade{} card becomes {C:attention}Gold{}",
 				}
 			},
 			--881
@@ -677,12 +677,12 @@ return {
 				name = 'Arctozolt',
 				text = {
 					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
-					"{B:1,C:white}2+{} : Scoring {V:1}#1#{} give double their Chips",
+					"{B:1,C:white}2+{} : Scoring {V:1}Diamond{} cards give double their Chips",
 					"{B:1,C:white}3+{} : Cards with {C:chips}#6#+ {C:attention}total{} Chips",
 					"give {X:mult,C:white}X#3#{} when scored",
 					"{B:2,C:white}2+{} : Each {C:attention}unenhanced{} card held in hand",
 					"permanently gains {C:chips}+#5#{} Chips",
-					"{B:2,C:white}3+{} : Each {V:2}#2#{} card held in hand",
+					"{B:2,C:white}3+{} : Each {V:2}Heart{} card held in hand",
 					"gives {X:mult,C:white}X#4#{} Mult",
 				}
 			},	
@@ -691,11 +691,11 @@ return {
 				name = 'Dracovish',
 				text = {
 					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
-					"{B:1,C:white}2+{} : {C:chips}+#3#{} Chips per {C:attention}consumable{} held this round",
-					"{B:1,C:white}3+{} : Gain a {C:tarot}Tarot{} card if {C:money}$#6#{}",
+					"{B:1,C:white}2+{} : {C:mult}+#5#{} Mult per {C:attention}consumable{} held this round",
+					"{B:1,C:white}3+{} : Create a {C:tarot}Tarot{} card if {C:money}$#6#{}",
 					"has been earned this round",
 					"{C:inactive,s:0.8}(Must have room)",
-					"{B:2,C:white}2+{} : {C:mult}+#5#{} per {C:attention}consumable{} used this round",
+					"{B:2,C:white}2+{} : {X:mult,C:white}X#3#{} Mult per {C:attention}consumable{} used this round",
 					"{B:2,C:white}3+{} : Earn {C:money}$#4#{} per {C:tarot}Tarot{} card used this round",
 				}
 			},	
@@ -789,15 +789,15 @@ return {
 		designed_by = {
 			name = "Designed By",
 			text = {
-				"{C:purple}#1#{}"
+				"{C:purple}#1#{}",
 			}
 		},
-		ancientsuits = {
+		ancient_suits = {
 			name = "Ancient Suits",
 			text = {
 					"Effect based on",
-					"number of {V:1}#1#{} and",
-					"{V:2}#2#{} in {C:attention}poker hand",
+					"number of {C:attention}#1#{} and",
+					"{C:attention}#2#{} in {C:attention}poker hand{}",
 					"{C:inactive}(Effects are {C:attention}cumulative{C:inactive})",
 			}
     },

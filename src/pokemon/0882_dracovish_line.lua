@@ -1,12 +1,12 @@
 local dracovish = {
 	name = "dracovish",
 	--pos = {x = 0, y = 0},
-	config = {extra = { suit1 = "Clubs", suit2 = "Spades", chip_mod = 12, mult = 9, money = 3, moneyEarned = 0, consumableHeld = 0, consumableUsed = 0, tarotUsed = 0, moneyThreshold = 5}},
+	config = {extra = { suit1 = "Clubs", suit2 = "Spades", Xmult_mod = 0.4, mult = 7, money = 3, moneyEarned = 0, consumableHeld = 0, consumableUsed = 0, tarotUsed = 0, moneyThreshold = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		local abbr = card.ability.extra or self.config.extra
-		--info_queue[#info_queue+1] = {set = 'Other', key = 'ancientsuits', vars = {localize(abbr.suit1, 'suits'), localize(abbr.suit2, 'suits'), colours = {G.C.SUITS[abbr.suit1],  G.C.SUITS[abbr.suit2]}}}	
-	  return {vars = {abbr.suit1, abbr.suit2, abbr.chip_mod, abbr.money, abbr.mult, abbr.moneyThreshold, colours = {G.C.SUITS[abbr.suit1 or "Clubs"], G.C.SUITS[abbr.suit2 or "Spades"] }}}
+		--info_queue[#info_queue+1] = {set = 'Other', key = 'ancient_suits', vars = {card.ability.extra.suit1, card.ability.extra.suit2}} --colours = {G.C.SUITS[abbr.suit1],  G.C.SUITS[abbr.suit2]}}}	
+	  local abbr = card.ability.extra or self.config.extra
+		return {vars = {abbr.suit1, abbr.suit2, abbr.Xmult_mod, abbr.money, abbr.mult, abbr.moneyThreshold, colours = {G.C.SUITS[abbr.suit1 or "Clubs"], G.C.SUITS[abbr.suit2 or "Spades"] }}}
 	end,
 	rarity = 2, --Uncommon
 	cost = 6,
@@ -50,16 +50,16 @@ local dracovish = {
 			if context.joker_main then
 				if card.ability.extra.ancient_suits[card.ability.extra.suit1] > 1 and card.ability.extra.ancient_suits[card.ability.extra.suit2] > 1 then
 					return {
-						mult = card.ability.extra.mult * card.ability.extra.consumableUsed,
-						chips = card.ability.extra.chip_mod * card.ability.extra.consumableHeld,
+						xmult = 1 + card.ability.extra.Xmult_mod * card.ability.extra.consumableUsed,
+						mult = card.ability.extra.mult * card.ability.extra.consumableHeld,
 					}
 				elseif card.ability.extra.ancient_suits[card.ability.extra.suit1] > 1 then
 					return {
-						chips = card.ability.extra.chip_mod * card.ability.extra.consumableHeld,
+						mult = card.ability.extra.mult * card.ability.extra.consumableHeld,
 					}
 				elseif card.ability.extra.ancient_suits[card.ability.extra.suit2] > 1 then
 					return {
-						mult = card.ability.extra.mult * card.ability.extra.consumableUsed,
+						xmult = 1 + card.ability.extra.Xmult_mod * card.ability.extra.consumableUsed,
 					}
 				end
 			end
