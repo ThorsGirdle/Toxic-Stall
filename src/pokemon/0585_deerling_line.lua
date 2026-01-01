@@ -69,8 +69,8 @@ local deerling = {
 	end,
 
   set_nature = function(self, card)
-
 		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets[1] and card.ability.extra.targets[1].suit then
+			card.ability.extra.targets = get_poke_target_card_suit("deerling", true, 'Spades')
 			if card.ability.extra.targets[1].suit == "Hearts" then
 				card.ability.extra.form = "Spring"
 			elseif card.ability.extra.targets[1].suit == "Spades" then
@@ -165,15 +165,16 @@ local sawsbuck = {
 	
 	set_ability = function(self, card, initial, delay_sprites)
 	  if initial then
-      card.ability.extra.targets = get_poke_target_card_suit("sawsbuck", true, 'Spades')
+			card.ability.extra.targets = get_poke_target_card_suit("sawsbuck", true, 'Spades')
 			if G.playing_cards then
 				self:set_nature(card)
-			end	
+			end
 		end
 	end,
 
   set_nature = function(self, card)
 		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets[1] and card.ability.extra.targets[1].suit then
+			card.ability.extra.targets = get_poke_target_card_suit("sawsbuck", true, 'Spades')
 			if card.ability.extra.targets[1].suit == "Hearts" then
 				card.ability.extra.form = "Spring"
 			elseif card.ability.extra.targets[1].suit == "Spades" then
