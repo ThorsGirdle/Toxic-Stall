@@ -59,10 +59,17 @@ local deerling = {
 	return scaling_evo(self, card, context, "j_stall_sawsbuck", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 
-  set_ability = function(self, card, initial, delay_sprites)
-    if initial then
+	set_ability = function(self, card, initial, delay_sprites)
+	  if initial then
       card.ability.extra.targets = get_poke_target_card_suit("deerling", true, 'Spades')
+			if G.playing_cards then
+				self:set_nature(card)
+			end	
 		end
+	end,
+
+  set_nature = function(self, card)
+
 		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets[1] and card.ability.extra.targets[1].suit then
 			if card.ability.extra.targets[1].suit == "Hearts" then
 				card.ability.extra.form = "Spring"
@@ -91,7 +98,7 @@ local deerling = {
 				card.children.center:set_sprite_pos({x = 8, y = 1})
 			end
 		else
-			self:set_ability(card)
+			self:set_nature(card)
 		end
 		
 	end,
@@ -156,11 +163,16 @@ local sawsbuck = {
 		end
 	end,
 	
-
-  set_ability = function(self, card, initial, delay_sprites)
-    if initial then
+	set_ability = function(self, card, initial, delay_sprites)
+	  if initial then
       card.ability.extra.targets = get_poke_target_card_suit("sawsbuck", true, 'Spades')
+			if G.playing_cards then
+				self:set_nature(card)
+			end	
 		end
+	end,
+
+  set_nature = function(self, card)
 		if card.ability and card.ability.extra and card.ability.extra.targets and card.ability.extra.targets[1] and card.ability.extra.targets[1].suit then
 			if card.ability.extra.targets[1].suit == "Hearts" then
 				card.ability.extra.form = "Spring"
@@ -189,7 +201,7 @@ local sawsbuck = {
 				card.children.center:set_sprite_pos({x = 4, y = 2})
 			end
 		else 
-			self:set_ability(card)
+			self:set_nature(card)
 		end
 		
 	end,

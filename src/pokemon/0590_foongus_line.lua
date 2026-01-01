@@ -45,7 +45,7 @@ local foongus = {
 local amoonguss = {
 	name = "amoonguss",
 	pos = {x = 10, y = 39},
-	config = {extra = {Xmult_mod = 0.20, mult = 0, mult_mod = 5}},
+	config = {extra = {Xmult_mod = 0.25, mult = 0, mult_mod = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_blacksludge
