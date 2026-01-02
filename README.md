@@ -54,6 +54,8 @@ Sandygast: Gain +1 Chips for each scored Spade
 
 Jangmo-o: Gain +2 Mult if played hand is a Two Pair and the difference of Ranks is the same as previous Two Pair
 
+Blipbug : Earn $3 after using a unique Tarot card
+
 Clobbopus: Each Club card held in hand gives +8 chips 
 
 Rellor: +1 Mult per Item used this run

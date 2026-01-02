@@ -25,6 +25,7 @@ return{
 	Salandit = true,
 	Sandygast = true,
 	Jangmoo = true,
+	Blipbug = true,
 	Clobbopus = true,
 	Dracozolt = true,
 	Arctozolt = true,

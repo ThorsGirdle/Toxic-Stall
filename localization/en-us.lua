@@ -644,12 +644,40 @@ return {
 					"{C:inactive}(Currently {X:mult,C:white}X#3#{}, {C:mult}+#1#{C:inactive} Mult)",
 				}
 			},
+			--824
+			j_stall_blipbug = {
+				name = 'Blipbug',
+				text = {
+					"Earn {C:money}$#1#{} after using a",
+					"{C:attention}unique{} {C:tarot}Tarot{} card",
+					"{C:inactive,s:0.7}(Evolves after using {C:attention,s:0.7}#2#{C:inactive,s:0.7} unique Tarot cards)",
+				}
+			},
+			j_stall_dottler = {
+				name = 'Dottler',
+				text = {
+					"Earn {C:money}$#1#{} after using a {C:attention}unique{} ",
+					"{C:tarot}Tarot{} or {C:planet}Planet{} card",
+					"{C:inactive,s:0.7}(Evolves after using {C:attention,s:0.7}#2#{C:inactive,s:0.7} unique Tarot or Planet cards)",
+				}
+			},
+			j_stall_orbeetle = {
+				name = 'Orbeetle',
+				text = {
+					"Earn {C:money}$#1#{} after using a",
+					"{C:attention}unique{} {C:attention}consumable{}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"{C:mult}+#2#{} Mult per {C:attention}unique{}",
+					"{C:attention}consumable{} used",
+					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
+				}
+			},
 			--852
 			j_stall_clobbopus = {
 				name = 'Clobbopus',
 				text = {
 					"Each {C:clubs}#2#{} held in hand gives {C:chips}+#1#{} chips",
-					"{C:inactive,s:0.8}(Evolve after triggering {C:attention,s:0.8}#3#{C:inactive,s:0.8} times)",
+					"{C:inactive,s:0.8}(Evolves after triggering {C:attention,s:0.8}#3#{C:inactive,s:0.8} times)",
 				}
 			},
 			j_stall_grapploct = {
