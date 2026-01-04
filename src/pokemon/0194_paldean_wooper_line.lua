@@ -71,7 +71,7 @@ local clodsire = {
 				for k, v in ipairs(G.hand.cards) do
 						table.insert(cards_held, v)
 				end
-				pseudorandom_element(cards_held, 'acquirethesire')
+				pseudoshuffle(cards_held, pseudoseed('acquirethesire'))
 				local limit = math.min(#cards_held, faces)
 				for i = 1, limit do
 					G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function() cards_held[i]:set_ability(G.P_CENTERS.m_stall_toxic);return true end }))
