@@ -13,13 +13,6 @@ SMODS.Atlas({
 })
 
 SMODS.Atlas({
-    key = "StallConsumablesPlaceholder", 
-    path = "StallConsumablesPlaceholder.png", 
-    px = 71,
-    py = 95, 
-})
-
-SMODS.Atlas({
     key = "modicon",
     path = "icon.png",
     px = 34,

@@ -61,10 +61,7 @@ local deerling = {
 
 	set_ability = function(self, card, initial, delay_sprites)
 	  if initial then
-      card.ability.extra.targets = get_poke_target_card_suit("deerling", true, 'Spades')
-			if G.playing_cards then
-				self:set_nature(card)
-			end	
+			self:set_nature(card)
 		end
 	end,
 
@@ -165,10 +162,7 @@ local sawsbuck = {
 	
 	set_ability = function(self, card, initial, delay_sprites)
 	  if initial then
-			card.ability.extra.targets = get_poke_target_card_suit("sawsbuck", true, 'Spades')
-			if G.playing_cards then
-				self:set_nature(card)
-			end
+			self:set_nature(card)
 		end
 	end,
 

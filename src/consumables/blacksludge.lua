@@ -5,6 +5,7 @@ local blacksludge = {
 	set = "Item",
 	pos = { x = 0, y = 0 },
   cost = 4,
+	artist = "Emma",
   unlocked = true,
   discovered = true,
   hidden = false,

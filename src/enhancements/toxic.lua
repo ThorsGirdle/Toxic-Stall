@@ -2,7 +2,7 @@
 local toxic = {
 	key = "toxic",		
   atlas = "StallEnhancements",
-	artist = "Agarpain",
+	artist = "Emma",
   pos = { x = 0, y = 0 },
 	config = {extra = {toxicXMult = 1, toxicMult_mod = 0.05}},
 	any_suit = false,

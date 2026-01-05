@@ -2,13 +2,14 @@ local clue = {
 	name = "clue",
 	key = "clue",
 	set = "Item",
-	pos = { x = 0, y = 0 },
+	pos = { x = 1, y = 0 },
+	artist = "Emma",
   cost = 4,
   unlocked = true,
   discovered = true,
   hidden = false,
   can_repeat_soul = false,
-  atlas = 'StallConsumablesPlaceholder',
+  atlas = 'StallConsumables',
 	config = { handsize = 1},
 	loc_vars = function(self, info_queue, center)
     return {vars = {self.config.handsize}}
