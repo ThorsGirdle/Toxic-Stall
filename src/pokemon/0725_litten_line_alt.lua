@@ -147,8 +147,10 @@ local incineroar_alt = {
 			end
 			if trigger == true then
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-				local _,_, scoringCards = stall_evaluate_hand(context.full_hand, true)
-				local earned = ease_poke_dollars(card, "incineroar", (card.ability.extra.money * #scoringCards))
+				if not context.blueprint then
+					local _,_, scoringCards = stall_evaluate_hand(context.full_hand, true)
+					local earned = ease_poke_dollars(card, "incineroar", (card.ability.extra.money * #scoringCards))
+				end
 				return {
 					message = 'Roar!',
 					colour = G.C.MULT
