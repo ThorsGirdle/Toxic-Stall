@@ -25,11 +25,13 @@ local dewpider = {
 			local totalSum, AceCount = 0, 0
 			if context.before and not context.blueprint then
 				for i, v in pairs(context.scoring_hand) do
-					if context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal < 11 then
-						totalSum = totalSum + context.scoring_hand[i].base.nominal
-					elseif context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal == 11 then
-						totalSum = totalSum + 1
-						AceCount = AceCount + 1
+					if not SMODS.has_no_rank(v) then
+						if context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal < 11 then
+							totalSum = totalSum + context.scoring_hand[i].base.nominal
+						elseif context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal == 11 then
+							totalSum = totalSum + 1
+							AceCount = AceCount + 1
+						end
 					end
 				end		
 				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
@@ -99,11 +101,13 @@ local araquanid = {
 			local totalSum, AceCount = 0, 0
 			if context.before and not context.blueprint then
 				for i, v in pairs(context.scoring_hand) do
-					if context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal < 11 then
-						totalSum = totalSum + context.scoring_hand[i].base.nominal
-					elseif context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal == 11 then
-						totalSum = totalSum + 1
-						AceCount = AceCount + 1
+					if not SMODS.has_no_rank(v) then
+						if context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal < 11 then
+							totalSum = totalSum + context.scoring_hand[i].base.nominal
+						elseif context.scoring_hand[i].base.nominal and context.scoring_hand[i].base.nominal == 11 then
+							totalSum = totalSum + 1
+							AceCount = AceCount + 1
+						end
 					end
 				end		
 				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
