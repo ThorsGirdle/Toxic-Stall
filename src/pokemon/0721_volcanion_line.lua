@@ -33,7 +33,7 @@ local volcanion ={
 		if context.joker_main then
 			if card.ability.extra.reset == true and not context.blueprint then
 				card.ability.extra.currXmult = card.ability.extra.currXmult * 2
-				card.ability.extra.chipTotal = 0
+				
 			end
 			return {
 				xmult = card.ability.extra.currXmult
@@ -42,6 +42,7 @@ local volcanion ={
 		
 		if context.after and card.ability.extra.reset == true and not context.blueprint then
 			card.ability.extra.currXmult = 1
+			card.ability.extra.chipTotal = 0
 			card.ability.extra.reset = false
 		end
   end,
@@ -53,3 +54,4 @@ return {
 	list = {volcanion}
 
 }
+
