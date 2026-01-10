@@ -530,7 +530,7 @@ return {
 			j_stall_mareanie = {
 				name = 'Mareanie',
 				text = {		
-					"{C:purple}+#1# Hazards",
+					"{C:purple}+#1#{} hazard level",
 					"First played card gives {X:mult,C:white}X#2#{}",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
@@ -540,10 +540,14 @@ return {
 			j_stall_toxapex = {
 				name = 'Toxapex',
 				text = {
-					"{C:purple}+#1# Hazards",
+					"{C:purple}+#1#{} hazard level",
 					"First played card gives {X:mult,C:white}X#2#{}",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
+					"{br:2}ERROR - CONTACT STEAK",
+					"First played card also",
+					"triggers {C:attention}Toxic{} if {C:purple}Hazard{}",
+					"level is {C:attention}2{} or more"
 				}
 			},
 			--751
