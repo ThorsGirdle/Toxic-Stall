@@ -1,6 +1,6 @@
 local croagunk = {
 	name = "croagunk",
-	pos = {x = 4, y = 30},
+	--pos = {x = 4, y = 30},
 	config = {extra = {mult = 3, triggersNum = 0, trigger = false, hearts = 0}, evo_rqmt = 10},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -16,7 +16,7 @@ local croagunk = {
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 
 	calculate = function(self, card, context)
 		if context.before and context.cardarea == G.jokers and context.scoring_hand and not context.blueprint then
@@ -54,7 +54,7 @@ local croagunk = {
 
 local toxicroak = {
 	name = "toxicroak",
-	pos = {x = 6, y = 30},
+	--pos = {x = 6, y = 30},
 	config = {extra = {mult = 4, hearts = 0, trigger = false}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -72,7 +72,7 @@ local toxicroak = {
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 
 	calculate = function(self, card, context)
 		local trigger = false
