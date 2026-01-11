@@ -6,7 +6,8 @@ local dracovish = {
 		type_tooltip(self, info_queue, card)
 		--info_queue[#info_queue+1] = {set = 'Other', key = 'ancient_suits', vars = {card.ability.extra.suit1, card.ability.extra.suit2}} --colours = {G.C.SUITS[abbr.suit1],  G.C.SUITS[abbr.suit2]}}}	
 	  local abbr = card.ability.extra or self.config.extra
-		return {vars = {abbr.suit1, abbr.suit2, abbr.Xmult_mod, abbr.money, abbr.mult, abbr.moneyThreshold, colours = {G.C.SUITS[abbr.suit1 or "Clubs"], G.C.SUITS[abbr.suit2 or "Spades"] }}}
+		return {vars = {abbr.suit1, abbr.suit2, abbr.Xmult_mod, abbr.money, abbr.mult, abbr.moneyThreshold, abbr.mult * abbr.consumableHeld, (1 + (abbr.Xmult_mod * abbr.consumableUsed)), 
+			abbr.money * abbr.tarotUsed,	colours = {G.C.SUITS[abbr.suit1 or "Clubs"], G.C.SUITS[abbr.suit2 or "Spades"] }}}
 	end,
 	rarity = 2, --Uncommon
 	cost = 6,

@@ -530,7 +530,7 @@ return {
 			j_stall_mareanie = {
 				name = 'Mareanie',
 				text = {		
-					"{C:purple}+#1#{} hazard level",
+					"{C:hazard}+#1#{} hazard layer",
 					"First played card gives {X:mult,C:white}X#2#{}",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
@@ -540,7 +540,7 @@ return {
 			j_stall_toxapex = {
 				name = 'Toxapex',
 				text = {
-					"{C:purple}+#1#{} hazard level",
+					"{C:hazard}+#1#{} hazard layer",
 					"First played card gives {X:mult,C:white}X#2#{}",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
@@ -724,12 +724,13 @@ return {
 				name = 'Dracovish',
 				text = {
 					"{C:attention}Ancient{} {B:1,C:white}#1#{C:attention}, {B:2,C:white}#2#{}",
-					"{B:1,C:white}2+{} : {C:mult}+#5#{} Mult per {C:attention}consumable{} held this round",
+					"{B:1,C:white}2+{} : {C:mult}+#5#{} Mult per {C:attention}consumable{} held this round {C:inactive}[{C:mult}+#7#{C:inactive}]{}",
 					"{B:1,C:white}3+{} : Create a {C:tarot}Tarot{} card if {C:money}$#6#{}",
 					"has been earned this round",
 					"{C:inactive,s:0.8}(Must have room)",
-					"{B:2,C:white}2+{} : {X:mult,C:white}X#3#{} Mult per {C:attention}consumable{} used this round",
-					"{B:2,C:white}3+{} : Earn {C:money}$#4#{} per {C:tarot}Tarot{} card used this round",
+					"{B:2,C:white}2+{} : {X:mult,C:white}X#3#{} Mult per {C:attention}consumable{}",
+					"used this round: {X:mult,C:white}X#8#{}",
+					"{B:2,C:white}3+{} : Earn {C:money}$#4#{} per {C:tarot}Tarot{} card used this round {C:inactive}[{C:money}$#9#{C:inactive}]{}",
 				}
 			},	
 			--883
