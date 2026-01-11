@@ -40,7 +40,7 @@ local toxic = {
 		-- checks if held in hand and triggered by a joker
 		--if context.post_trigger and context.other_context.individual and context.other_context.cardarea == G.hand and not context.other_context.end_of_round and
       --  		context.other_context.other_card == card then						The world is not ready
-		if context.cardarea ~= G.hand and context.card_effects and (next(context.card_effects[1]) or #context.card_effects > 1) and not context.end_of_round then	
+		if context.cardarea ~= G.play and context.card_effects and (next(context.card_effects[1]) or #context.card_effects > 1) and not context.end_of_round then	
 			toxic_scaling()
 			G.GAME.toxic_triggered = true
 			card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult
