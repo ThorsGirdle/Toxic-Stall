@@ -531,7 +531,7 @@ return {
 				name = 'Mareanie',
 				text = {		
 					"{C:hazard}+#1#{} hazard layer",
-					"First played card gives {X:mult,C:white}X#2#{}",
+					"First played card gives {X:mult,C:white}X#2#{} Mult",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
 					"{C:inactive,s:0.8}(Evolve after holding {C:attention,s:0.8}#3#{C:inactive,s:0.8} Hazard or Toxic cards)",
@@ -541,7 +541,7 @@ return {
 				name = 'Toxapex',
 				text = {
 					"{C:hazard}+#1#{} hazard layer",
-					"First played card gives {X:mult,C:white}X#2#{}",
+					"First played card gives {X:mult,C:white}X#2#{} Mult",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
 					"{br:2}ERROR - CONTACT STEAK",
