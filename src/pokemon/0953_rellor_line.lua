@@ -44,7 +44,7 @@ local rabsca = {
 	config = {extra = { mult_mod = 1}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.stall_item or 0) + (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
+		local mult = ((G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.item or 0) + (G.GAME.consumeable_usage_total and G.GAME.consumeable_usage_total.tarot or 0)) * card.ability.extra.mult_mod
 	  return {vars = {card.ability.extra.mult_mod, mult}}
 	end,
 	rarity = "poke_safari", 
@@ -85,3 +85,4 @@ return {name = "Rellor Line",
 enabled = stall_config.Rellor or false,
 list = {rellor, rabsca}
 }
+
