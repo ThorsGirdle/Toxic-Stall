@@ -262,7 +262,7 @@ return {
 					"of a {C:attention}Rank{} from your deck, gain",
 					"{X:mult,C:white}X#4#{} Mult and {C:green}#1# in #2#{} chance",
 					"to gain a {C:tarot}Tarot{} card",
-					"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive})",
+					"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)",
 				}
 			},
 			--690
