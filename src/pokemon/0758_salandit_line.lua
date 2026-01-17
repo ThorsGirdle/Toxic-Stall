@@ -1,4 +1,4 @@
-local salandit = {
+ local salandit = {
 	name = "salandit",
 	--pos = {x = 12, y = 50},
 	config = {extra = { rounds = 4}},
@@ -80,7 +80,7 @@ local salazzle = {
 		end
 		if context.individual and context.cardarea == G.hand and not context.end_of_round and SMODS.has_enhancement(context.other_card, "m_steel") and not context.other_card.debuff and not context.blueprint then
 			context.other_card.ability.h_x_mult = context.other_card.ability.h_x_mult - 0.05
-			if context.other_card.ability.h_x_mult <= 1 then
+			if context.other_card.ability.h_x_mult <= 1 and context.other_card.config.center.key == 'm_steel' then
 				context.other_card.ability.h_x_mult = 1
 				context.other_card:set_ability('c_base', nil, true)
 			end
