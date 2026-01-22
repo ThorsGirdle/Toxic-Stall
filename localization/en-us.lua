@@ -853,10 +853,11 @@ return {
 					name = "Focused Card",
 					text = {
 						"{C:fighting}Jab{C:inactive}: {C:attention}#5#{}, {V:1}#6#{} | {C:fighting}Hook{C:inactive}: {C:attention}#7#{}, {V:2}#8#{}",
-						"{C:chips}+#1#{} Chips if both {C:fighting}Jab{} cards are held in hand",
-						"{C:mult}+#3#{} Mult if both {C:fighting}Hook{} cards are in poker hand",
-						"Permanently gains {C:chips}+#2#{} Chips or {C:mult}+#4#{} Mult if",
-						"both {C:fighting}Jab{} and {C:fighting}Hook{} are triggered",
+						"{br:2}ERROR - CONTACT STEAK",
+						"{C:chips}+#1#{} Chips if holding both {C:fighting}Jab{} cards",
+						"{C:mult}+#3#{} Mult if both {C:fighting}Hook{} cards are scored",
+						"Gains {C:chips}+#2#{} Chips or {C:mult}+#4#{} Mult if both",
+						"{C:fighting}Jab{} and {C:fighting}Hook{} are triggered",
 					}
 				},
 			},
