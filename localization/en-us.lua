@@ -42,20 +42,23 @@ return {
 			j_stall_croagunk = {
 				name = 'Croagunk',
 				text = {
-				"If scored hand has exactly {C:attention}1{}", 
-				"scoring {C:hearts}Heart{}, each played card",
-				"gives {C:mult}+#1#{} Mult when scored",
-				"{C:inactive,s:0.8}(Evolves after triggering {C:attention,s:0.8}#2#{C:inactive,s:0.8} times)",
+					"If {C:attention}second{} played poker hand is the same",
+					"as the {C:attention}first{} played {C:attention}poker hand{}, the",
+					"{C:attention}first{} scoring card becomes {C:attention}Focused{}",
+					"{C:inactive}First poker hand: {C:attention}#1#{}",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
 				}
 			},
 			j_stall_toxicroak = {
 				name = 'Toxicroak',
 				text = {
-				"{C:attention}Toxic",
-				"If scored hand has exactly {C:attention}1{}", 
-				"scoring {C:hearts}Heart{}, each played card",
-				"gives {C:mult}+#1#{} Mult when scored",
-				"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Toxic Mult)",
+					"If {C:attention}second{} played poker hand is the same",
+					"as the {C:attention}first{} played {C:attention}poker hand{}, the",
+					"{C:attention}first{} scoring card becomes {C:attention}Focused{}",
+					"{C:inactive}First poker hand: {C:attention}#1#{}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Played {C:attention}Focused{} cards that trigger {C:fighting}Jab{}",
+					"also trigger {C:attention}Toxic{} when scored",
 				}
 			},
 			--540
@@ -227,6 +230,28 @@ return {
 					"{br:2}ERROR - CONTACT STEAK",
 					"{X:mult,C:white}X#3#{} if {C:attention}#4#{C:inactive}[#5#]{} cards have ",
 					"been drawn this blind",
+				}
+			},
+			--619
+			j_stall_mienfoo = {
+				name = 'Mienfoo',
+				text = {
+					"After playing {C:attention}#1# {C:attention}unique{} poker", 
+					"hands, the {C:attention}first{} scoring",
+					"card becomes {C:attention}Focused{}",
+					"{C:inactive,s:0.8}(Evolve after enhancing {C:attention,s:0.8}#2#{C:inactive,s:0.8} cards with Focused)",
+				}
+			},
+			j_stall_mienshao = {
+				name = 'Mienshao',
+				text = {
+					"After playing {C:attention}#1# {C:attention}unique{} poker", 
+					"hands, the {C:attention}first{} scoring",
+					"card becomes {C:attention}Focused{}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Gain {C:mult}+#2#{} Mult when a ",
+					"{C:attention}Focused{} card upgrades itself",
+					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",					
 				}
 			},
 			--636
@@ -806,6 +831,13 @@ return {
 						"this round and draw {C:attention}1{} card",
 					},
 				},
+				c_stall_blackbelt = { 
+					name = "Black Belt",
+					text = {
+						"{C:enhanced}Enhance{} {C:attention}#1#{} selected", 
+						"card with {C:attention}Focused{}",
+					},
+				},	
 			},
 			Enhanced = {
 				m_stall_toxic = {
@@ -815,6 +847,16 @@ return {
 						"card triggered this",			
 						"Blind when triggered",
 						"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
+					}
+				},
+				m_stall_focused = {
+					name = "Focused Card",
+					text = {
+						"{C:fighting}Jab{C:inactive}: {C:attention}#5#{}, {V:1}#6#{} | {C:fighting}Hook{C:inactive}: {C:attention}#7#{}, {V:2}#8#{}",
+						"{C:chips}+#1#{} Chips if both {C:fighting}Jab{} cards are held in hand",
+						"{C:mult}+#3#{} Mult if both {C:fighting}Hook{} cards are in poker hand",
+						"Permanently gains {C:chips}+#2#{} Chips or {C:mult}+#4#{} Mult if",
+						"both {C:fighting}Jab{} and {C:fighting}Hook{} are triggered",
 					}
 				},
 			},
@@ -846,6 +888,7 @@ return {
 			stall_Alolan_starters = "Alolan Starters",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",
+			stall_items = "Enhancement Items"
 
 		},
 	}

@@ -1,10 +1,11 @@
 local croagunk = {
 	name = "croagunk",
 	--pos = {x = 4, y = 30},
-	config = {extra = {mult = 3, triggersNum = 0, trigger = false, hearts = 0}, evo_rqmt = 10},
+	config = {extra = {pokerHand = "None", rounds = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-	  return {vars = {card.ability.extra.mult, math.max(self.config.evo_rqmt - card.ability.extra.triggersNum, 0)}}
+		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_focused
+	  return {vars = {card.ability.extra.pokerHand, card.ability.extra.rounds}}
 	end,
 	rarity = 2, --Uncommon
 	cost = 5,
@@ -14,53 +15,45 @@ local croagunk = {
 	toxic = true,
 	designer = "Thor's Girdle",
 	perishable_compat = true,
-	blueprint_compat = true,
+	blueprint_compat = false,
 	eternal_compat = true,
 	--atlas = "AtlasJokersBasicNatdex",
 
 	calculate = function(self, card, context)
-		if context.before and context.cardarea == G.jokers and context.scoring_hand and not context.blueprint then
-			for k, v in ipairs(context.scoring_hand) do
-				if v:is_suit("Hearts") then
-					card.ability.extra.hearts = card.ability.extra.hearts + 1
-					if card.ability.extra.hearts > 1 then
-						break
-					end
-				end
-			end
-			if card.ability.extra.hearts == 1 then
-				card.ability.extra.trigger = true
-			end
+		if context.before and not context.blueprint then
+			if G.GAME.current_round.hands_played == 0 and context.scoring_name then
+				card.ability.extra.pokerHand = context.scoring_name
+			elseif G.GAME.current_round.hands_played == 1 and context.scoring_name and context.scoring_name == card.ability.extra.pokerHand then
+				local first = context.scoring_hand[1]
+					first:set_ability(G.P_CENTERS.m_stall_focused, nil, true)
+					G.E_MANAGER:add_event(Event({
+						func = function()
+								first:juice_up()
+								return true
+						end
+					})) 
+				card.ability.extra.pokerHand = "None"
+			elseif G.GAME.current_round.hands_played ~= 0 then
+				card.ability.extra.pokerHand = "None"
+			end	
 		end
 		
-		if card.ability.extra.trigger and context.individual and  context.cardarea == G.play then
-			return {
-			    --message = "Ribbit", 
-          --colour = G.C.MULT,
-          mult = card.ability.extra.mult,
-          card = card
-			}
+		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+			card.ability.extra.pokerHand = "None"
 		end
-		
-		if context.after and card.ability.extra.trigger then
-			card.ability.extra.triggersNum = card.ability.extra.triggersNum + 1
-			card.ability.extra.trigger = false
-			card.ability.extra.hearts = 0
-		end   
-		
-	return scaling_evo(self, card, context, "j_stall_toxicroak", card.ability.extra.triggersNum, self.config.evo_rqmt)
+	return level_evo(self, card, context, "j_stall_toxicroak")
 	end,
 }
 
 local toxicroak = {
 	name = "toxicroak",
 	--pos = {x = 6, y = 30},
-	config = {extra = {mult = 4, hearts = 0, trigger = false}},
+	config = {extra = {pokerHand = "None"}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
-		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
-		local toxicMult = ((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicXMult) or 1)
-	  return {vars = {card.ability.extra.mult, toxicMult}}
+		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_focused
+		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic		
+	  return {vars = {card.ability.extra.pokerHand}}
 	end,
 	rarity = "poke_safari", 
 	cost = 5,
@@ -75,48 +68,32 @@ local toxicroak = {
 	--atlas = "AtlasJokersBasicNatdex",
 
 	calculate = function(self, card, context)
-		local trigger = false
-		if context.before and context.cardarea == G.jokers and context.scoring_hand then
-			for k, v in ipairs(context.scoring_hand) do
-				if v:is_suit("Hearts") then
-					card.ability.extra.hearts = card.ability.extra.hearts + 1
-					if card.ability.extra.hearts > 1 then
-						break
-					end
-				end
-			end
-			if card.ability.extra.hearts == 1 then
-				card.ability.extra.trigger = true
-			end
+		if context.before and not context.blueprint then
+			if G.GAME.current_round.hands_played == 0 and context.scoring_name then
+				card.ability.extra.pokerHand = context.scoring_name
+			elseif G.GAME.current_round.hands_played == 1 and context.scoring_name and context.scoring_name == card.ability.extra.pokerHand then
+				local first = context.scoring_hand[1]
+					first:set_ability(G.P_CENTERS.m_stall_focused, nil, true)
+					G.E_MANAGER:add_event(Event({
+						func = function()
+								first:juice_up()
+								return true
+						end
+					})) 
+				card.ability.extra.pokerHand = "None"
+			elseif G.GAME.current_round.hands_played ~= 0 then
+				card.ability.extra.pokerHand = "None"
+			end	
 		end
 		
-		if card.ability.extra.trigger and context.individual and  context.cardarea == G.play then
+		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, "m_stall_focused") and context.other_card.ability.extra.jab == true then
 			toxic_scaling()
 			G.GAME.toxic_triggered = true
-			local toxicXMult = G.GAME.current_round.toxic.toxicXMult
-			return {
-			    --message = "Ribbit", 
-          --colour = G.C.MULT,
-          mult = card.ability.extra.mult,
-					x_mult = toxicXMult,
-          card = card
-			}
+			return { x_mult = G.GAME.current_round.toxic.toxicXMult}
 		end
 		
-		if context.after and card.ability.extra.trigger then
-			card.ability.extra.trigger = false
-			card.ability.extra.hearts = 0
-		end   
-		
-		if context.joker_main and card.edition and not card.edition.negative and not card.edition.poke_shiny then
-			toxic_scaling()
-			G.GAME.toxic_triggered = true
-			local toxicXMult = G.GAME.current_round.toxic.toxicXMult
-			return {
-				--message = "Ribbit", 
-				--colour = G.C.MULT,
-				x_mult = toxicXMult,
-			}
+		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
+			card.ability.extra.pokerHand = "None"
 		end
 	end,
 }

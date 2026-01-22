@@ -32,3 +32,17 @@ SMODS.Atlas({
     px = 71,
     py = 95, 
 })
+
+SMODS.Atlas({
+    key = "PlaceholderStallEnhancements", 
+    path = "PlaceholderStallEnhancements.png", 
+    px = 71,
+    py = 95, 
+})
+
+SMODS.Atlas({
+    key = "PlaceholderStallItem", 
+    path = "PlaceholderStallItem.png", 
+    px = 71,
+    py = 95, 
+})

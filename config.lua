@@ -9,6 +9,7 @@ return{
 	Foongus = true,
 	Joltik = true,
 	Klink = true,
+	Mienfoo = true,
 	Larvesta = true,
 	Bunnelby = true,
 	Skrelp = true,
@@ -33,4 +34,5 @@ return{
 	Arctovish = true,
 	Rellor = true,
 	Varoom = true,
+	BlackBelt = true,
 }
