@@ -42,6 +42,7 @@ local volcanion ={
 		if context.after and card.ability.extra.reset == true and not context.blueprint then
 			card.ability.extra.currXmult = 1
 			card.ability.extra.reset = false
+			card.ability.extra.chipTotal = 0
 		end
   end,
 }
