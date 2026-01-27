@@ -1,7 +1,7 @@
 local arctovish = {
 	name = "arctovish",
 	--pos = {x = 0, y = 0},
-	config = {extra = { suit1 = "Clubs", suit2 = "Hearts", Xmult_mod = 0.25, retriggers = 1, heartThreshold = 4, handLevelAmount = 2 }},
+	config = {extra = { suit1 = "Clubs", suit2 = "Hearts", Xmult_mod = 0.25, retriggers = 1, heartThreshold = 3, handLevelAmount = 2, eaten = 0, madePlanet = 0 }},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra or self.config.extra
@@ -23,16 +23,18 @@ local arctovish = {
 		if context.cardarea == G.jokers and context.scoring_hand then
 			if context.before then
 				get_ancient_suit_amount(context.scoring_hand, card.ability.extra.suit1, card.ability.extra.suit2, card)
-			
-				if card.ability.extra.ancient_suits[card.ability.extra.suit1] > 2 then
+				if card.ability.extra.ancient_suits[card.ability.extra.suit1] > 2 then	
 					for i, v in ipairs(G.consumeables.cards) do
 						if v.ability.set == "Planet" then
+							card.ability.extra.eaten = 1
 							args = {hands = v.ability.hand_type, amount = card.ability.extra.handLevelAmount, card = card}
 							SMODS.upgrade_poker_hands(args)
 							local sliced_card = v
-							G.E_MANAGER:add_event(Event({func = function()
+							G.E_MANAGER:add_event(Event({
+							func = function()
               sliced_card:start_dissolve({HEX("57ecab")}, nil, 1.6)
               play_sound('slice1', 0.96+math.random()*0.08)
+							
 							return true end }))
 							break
 						end
@@ -48,7 +50,8 @@ local arctovish = {
 						end
 						heartCount = math.floor(heartCount/card.ability.extra.heartThreshold)
 						for i = 1, heartCount do
-							if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+							if #G.consumeables.cards + G.GAME.consumeable_buffer - card.ability.extra.eaten < G.consumeables.config.card_limit then
+								card.ability.extra.madePlanet = card.ability.extra.madePlanet + 1
 								G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 								G.E_MANAGER:add_event(Event({
 									func = (function()
@@ -66,12 +69,19 @@ local arctovish = {
 			end
 		end
 		
-		if context.other_consumeable and context.other_consumeable.ability.set == "Planet" and card.ability.extra.ancient_suits[card.ability.extra.suit1] > 1 then
+		
+		if context.other_consumeable and context.other_consumeable.ability.set == "Planet" and card.ability.extra.ancient_suits[card.ability.extra.suit1] > 1 then		
 			return {
 				xmult = 1 + card.ability.extra.Xmult_mod
 			}
 		end	
 		
+		if context.final_scoring_step and card.ability.extra.madePlanet > 0 then
+			local planets = card.ability.extra.madePlanet - card.ability.extra.eaten
+			for i = planets, 1, -1 do
+				SMODS.calculate_effect({x_mult = 1 + card.ability.extra.Xmult_mod}, card)
+			end
+		end
 		
 		if context.repetition and context.cardarea == G.hand and card.ability.extra.ancient_suits[card.ability.extra.suit2] > 2 then
 			if (context.other_card == G.hand.cards[1] or context.other_card == G.hand.cards[2]) and (next(context.card_effects[1]) or #context.card_effects > 1) then
@@ -86,6 +96,8 @@ local arctovish = {
 		if context.after then
 			card.ability.extra.ancient_suits[card.ability.extra.suit1] = 0
 			card.ability.extra.ancient_suits[card.ability.extra.suit2] = 0
+			card.ability.extra.eaten = 0
+			card.ability.extra.madePlanet = 0
 		end
 		
   end,
