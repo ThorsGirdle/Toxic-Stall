@@ -58,7 +58,7 @@ return {
 					"{C:inactive}First poker hand: {C:attention}#1#{}",
 					"{br:2}ERROR - CONTACT STEAK",
 					"Played {C:attention}Focused{} cards that trigger {C:fighting}Jab{}",
-					"also trigger {C:attention}Toxic{} when scored",
+					"also triggers {C:attention}Toxic{} when scored",
 				}
 			},
 			--540

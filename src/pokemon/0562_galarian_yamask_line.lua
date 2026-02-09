@@ -55,7 +55,7 @@ local runerigus = {
     return {vars = {}}
   end,
 	rarity = "poke_safari",
-	cost = 7,
+	cost = 8,
 	stage = "One",
 	ptype = "Psychic",
 	gen = 9,

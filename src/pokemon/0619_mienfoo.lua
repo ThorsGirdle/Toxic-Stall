@@ -64,7 +64,7 @@ local mienshao = {
 	  return {vars = {math.max(abbr.handReq - #abbr.uniqueHands, 0), abbr.mult_mod, abbr.mult_mod * abbr.upgrades}}
 	end,
 	rarity = "poke_safari", 
-	cost = 5,
+	cost = 6,
 	stage = "One",
 	ptype = "Fighting",
 	gen = 5,

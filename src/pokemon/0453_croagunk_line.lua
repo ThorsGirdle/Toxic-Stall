@@ -56,7 +56,7 @@ local toxicroak = {
 	  return {vars = {card.ability.extra.pokerHand}}
 	end,
 	rarity = "poke_safari", 
-	cost = 5,
+	cost = 7,
 	stage = "One",
 	ptype = "Dark",
 	gen = 4,

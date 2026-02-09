@@ -59,7 +59,7 @@ local volcarona = {
 	  return {vars = {card.ability.extra.Xmult_mod}}
 	end,
 	rarity = "poke_safari", 
-	cost = 8,
+	cost = 9,
 	stage = "One",
 	ptype = "Fire",
 	gen = 5,

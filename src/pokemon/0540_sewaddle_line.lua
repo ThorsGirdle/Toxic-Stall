@@ -7,7 +7,7 @@ local sewaddle = {
 	  return {vars = {card.ability.extra.rounds}}
 	end,
 	rarity = 1, --Common
-	cost = 5,
+	cost = 4,
 	stage = "Basic",
 	ptype = "Grass",
 	gen = 5,
@@ -47,7 +47,7 @@ local swadloon = {
 	  return {vars = {card.ability.extra.chip_mod, math.max((self.config.evo_rqmt - card.ability.extra.bigBoys),0), card.ability.extra.targetChips}}
 	end,
 	rarity = "poke_safari",
-	cost = 6,
+	cost = 5,
 	stage = "One",
 	ptype = "Grass",
 	gen = 5,
@@ -95,7 +95,7 @@ local leavanny = {
 	  return {vars = {card.ability.extra.chip_mod}}
 	end,
 	rarity = "poke_safari",
-	cost = 7,
+	cost = 6,
 	stage = "Two",
 	ptype = "Grass",
 	gen = 5,

@@ -8,7 +8,7 @@ local bunnelby = {
 	  return {vars = {num, dem, math.max(self.config.evo_rqmt - card.ability.extra.triggers, 0)}}
 	end,
 	rarity = 1, --Common
-	cost = 5,
+	cost = 6,
 	stage = "Basic",
 	ptype = "Colorless",
 	gen = 6,
@@ -67,7 +67,7 @@ local diggersby = {
 	  return {vars = {num, dem, card.ability.extra.Xmult, card.ability.extra.Xmult_mod}}
 	end,
 	rarity = "poke_safari", 
-	cost = 6,
+	cost = 7,
 	stage = "One",
 	ptype = "Earth",
 	gen = 6,
