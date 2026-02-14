@@ -1,7 +1,7 @@
 local larvesta = {
 	name = "larvesta",
 	pos = {x = 0, y = 0},
-	config = {extra = {mult_mod = 3, maxMult = 0}, evo_rqmt = 5},
+	config = {extra = {mult_mod = 3, maxMult = 0, tempMult = 0}, evo_rqmt = 5},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.mult_mod, self.config.evo_rqmt}}
@@ -38,10 +38,13 @@ local larvesta = {
 						card.ability.extra.maxMult = (context.other_card.ability.perma_mult or 0) + (context.other_card.ability.mult or 0) + (context.other_card.ability.extra and context.other_card.ability.extra.mult or 0) + (context.other_card.edition and context.other_card.edition.mult or 0)
 					end--]]
 				--elseif (context.other_card.ability.perma_mult or 0) + (context.other_card.ability.mult or 0) + (context.other_card.edition and context.other_card.edition.mult or 0) > card.ability.extra.maxMult then			 
-				card.ability.extra.maxMult = (context.other_card.ability.perma_mult or 0) + (context.other_card.ability.mult or 0) + (context.other_card.edition and context.other_card.edition.mult or 0)
+				card.ability.extra.tempMult = (context.other_card.ability.perma_mult or 0) + (context.other_card.ability.mult or 0) + (context.other_card.edition and context.other_card.edition.mult or 0)
 				if SMODS.has_enhancement(context.other_card, 'm_lucky') then
-					card.ability.extra.maxMult = card.ability.extra.maxMult - 20
-				end				
+					card.ability.extra.tempMult = card.ability.extra.tempMult - 20
+				end
+				if card.ability.extra.tempMult > card.ability.extra.maxMult then
+					card.ability.extra.maxMult = card.ability.extra.tempMult
+				end			
 			end
 		end	
 		
