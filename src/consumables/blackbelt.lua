@@ -8,8 +8,9 @@ local blackbelt = {
 	--artist = "Emma",
   unlocked = true,
   discovered = true,
-  hidden = false,
-  can_repeat_soul = false,
+	hidden = true,
+  soul_set = "Item",
+  soul_rate = .05,
   atlas = 'PlaceholderStallItem',
 	config = { mod_conv = 'm_stall_focused', max_highlighted = 1, min_highlighted = 1},
 	loc_vars = function(self, info_queue, center)
