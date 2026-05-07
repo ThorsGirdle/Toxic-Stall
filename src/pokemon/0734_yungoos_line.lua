@@ -4,7 +4,7 @@ local yungoos={
   config = {extra = {money_mod = 8, totalEarned = 0}, evo_rqmt = 24},
   loc_vars = function(self, info_queue, card)
     type_tooltip(self, info_queue, card)
-    return {vars = {card.ability.extra.money, math.max(self.config.evo_rqmt - card.ability.extra.totalEarned, 0), localize(G.GAME.current_round.yungoos_rank or "Ace", 'ranks'),
+    return {vars = {card.ability.extra.money_mod, math.max(self.config.evo_rqmt - card.ability.extra.totalEarned, 0), localize(G.GAME.current_round.yungoos_rank or "Ace", 'ranks'),
                    (G.GAME.current_round.yungoos_suit or "Spades"), colours = {G.C.SUITS[G.GAME.current_round.yungoos_suit or "Spades"]}}}
   end,
   rarity = 1, 
@@ -23,14 +23,14 @@ local yungoos={
 			reset_yungoos_card()
 		end
 		if context.individual and context.cardarea == G.play and not context.end_of_round and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
-			G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money
+			G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money_mod
         G.E_MANAGER:add_event(Event({
             func = function()
                 G.GAME.dollar_buffer = 0
                 return true
             end
         }))
-			local earned = ease_poke_dollars(card, "yungoos", card.ability.extra.money)
+			local earned = ease_poke_dollars(card, "yungoos", card.ability.extra.money_mod)
 			if not context.blueprint then
 				reset_yungoos_card()
 				card.ability.extra.totalEarned = card.ability.extra.totalEarned + earned
@@ -65,7 +65,7 @@ local gumshoos={
 		end
 		local suit_colours = (card.ability.extra.suitRevealed == false) and G.C.UI.TEXT_INACTIVE or (G.C.SUITS[card.ability.extra.suit or "Spades"])
 		local rank_colours = (card.ability.extra.rankRevealed == false) and G.C.UI.TEXT_INACTIVE or (G.C.ORANGE)
-    return {vars = {abbr.money, abbr.rank, abbr.suit, colours = {suit_colours, rank_colours}}} 
+    return {vars = {abbr.money_mod, abbr.rank, abbr.suit, colours = {suit_colours, rank_colours}}} 
   end,
   rarity = "poke_safari", 
   cost = 6, 
@@ -89,14 +89,14 @@ local gumshoos={
 			reset_yungoos_card()
 		end
     if context.individual and context.cardarea == G.play and not context.end_of_round and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
-			G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money
+			G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money_mod
         G.E_MANAGER:add_event(Event({
             func = function()
                 G.GAME.dollar_buffer = 0
                 return true
             end
         }))
-			local earned = ease_poke_dollars(card, "yungoos", card.ability.extra.money)
+			local earned = ease_poke_dollars(card, "yungoos", card.ability.extra.money_mod)
 			if not context.blueprint then
 				card.ability.extra.rankRevealed = false
 				card.ability.extra.suitRevealed = false
