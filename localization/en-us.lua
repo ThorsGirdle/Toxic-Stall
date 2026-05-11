@@ -573,7 +573,7 @@ return {
 					"{br:2}ERROR - CONTACT STEAK",
 					"First played card also",
 					"triggers {C:attention}Toxic{} if {C:purple}Hazard{}",
-					"level is {C:attention}2{} or more"
+					"layer is {C:attention}2{} or more"
 				}
 			},
 			--751
