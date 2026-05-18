@@ -11,7 +11,6 @@ return{
 	Klink = true,
 	Mienfoo = true,
 	Larvesta = true,
-	Bunnelby = true,
 	Skrelp = true,
 	Volcanion = true,
 	Rowlet = true,

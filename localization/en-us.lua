@@ -270,26 +270,6 @@ return {
 					"given {C:mult}+Mult{} when scored",
 				}
 			},				
-			--659
-			j_stall_bunnelby = {
-				name = 'Bunnelby',
-				text = {
-					"When you draw the last card of a", 
-					"{C:attention}Rank{} from your deck, {C:green}#1# in #2#{}",
-					"chance to gain a {C:tarot}Tarot{} card",
-					"{C:inactive,s:0.8}(Evolve after triggering {C:attention,s:0.8}#3#{C:inactive,s:0.8} times)",
-				}
-			},
-			j_stall_diggersby = {
-				name = 'Diggersby',
-				text = {
-					"When you draw the last card", 
-					"of a {C:attention}Rank{} from your deck, gain",
-					"{X:mult,C:white}X#4#{} Mult and {C:green}#1# in #2#{} chance",
-					"to gain a {C:tarot}Tarot{} card",
-					"{C:inactive}(Currently {X:mult,C:white}X#3#{C:inactive} Mult)",
-				}
-			},
 			--690
 			j_stall_skrelp = {
 				name = 'Skrelp',
