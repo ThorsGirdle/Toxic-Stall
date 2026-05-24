@@ -47,7 +47,6 @@ return {
 				{ list = { "j_stall_arctozolt"}, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_arctozolt" } end, config_key = "Arctozolt" },
 				{ list = { "j_stall_dracovish"}, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_dracovish" } end, config_key = "Dracovish" },
 				{ list = { "j_stall_arctovish"}, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_arctovish" } end, config_key = "Arctovish" },
-        { list = { "j_stall_rellor", "j_stall_rabsca" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_rellor" } end, config_key = "Rellor" },
       }
     },
     {

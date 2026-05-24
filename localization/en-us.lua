@@ -754,24 +754,6 @@ return {
 					"held in hand {C:attention}#4#{} additional time",
 				}
 			},				
-			--953
-			j_stall_rellor = {
-				name = 'Rellor',      
-				text = {
-					"{C:mult}+#1#{} Mult per {C:item}Item{}",
-					"card used this run",
-					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
-					"{C:inactive,s:0.8}(Evolves after using {C:attention,s:0.8}#3#{C:inactive,s:0.8} Items)",
-				}
-			},
-			j_stall_rabsca = {
-				name = 'Rabsca',      
-				text = {
-					"{C:mult}+#1#{} Mult per {C:item}Item{} and",
-					"{C:tarot}Tarot{} card used this run",
-					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
-				} 
-			},
 			--965
 			j_stall_varoom = {
 				name = 'Varoom',      
