@@ -63,6 +63,12 @@ local deerling = {
 	  if initial then
 			self:set_nature(card)
 		end
+		G.E_MANAGER:add_event(Event({
+				func = function()
+					self:set_sprites(card)
+					return true
+				end
+			}))
 	end,
 
   set_nature = function(self, card)
@@ -79,6 +85,7 @@ local deerling = {
 			else
 				card.ability.extra.form = "Summer"
 			end
+
 			self:set_sprites(card)
 		end
   end,
@@ -164,6 +171,12 @@ local sawsbuck = {
 	  if initial then
 			self:set_nature(card)
 		end
+		G.E_MANAGER:add_event(Event({
+		func = function()
+			self:set_sprites(card)
+			return true
+		end
+		}))
 	end,
 
   set_nature = function(self, card)
