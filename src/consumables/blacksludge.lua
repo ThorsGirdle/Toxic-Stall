@@ -2,7 +2,7 @@
 local blacksludge = {		
 	name = "blacksludge",
 	key = "blacksludge",
-	set = "Item",
+	set = "poke_item",
 	pos = { x = 0, y = 0 },
   cost = 4,
 	artist = "Emma",

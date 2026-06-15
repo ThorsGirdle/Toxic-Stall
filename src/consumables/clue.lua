@@ -1,7 +1,7 @@
 local clue = {		
 	name = "clue",
 	key = "clue",
-	set = "Item",
+	set = "poke_item",
 	pos = { x = 1, y = 0 },
 	artist = "Emma",
   cost = 4,
