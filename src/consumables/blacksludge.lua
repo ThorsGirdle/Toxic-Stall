@@ -28,14 +28,14 @@ local blacksludge = {
       end
       pseudoshuffle(cards_held, pseudoseed('blacksludge'))
       local limit = math.min(#cards_held, self.config.card_amount)
-      juice_flip(G.hand.highlighted[1])
-			juice_flip_table(card, cards_held, false, limit)
+      pokermon.juice_flip(G.hand.highlighted[1])
+			pokermon.juice_flip_table(card, cards_held, false, limit)
 			G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function() G.hand.highlighted[1]:set_ability(G.P_CENTERS.m_stall_toxic);return true end }))
       for i = 1, limit do
         G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function() cards_held[i]:set_ability(G.P_CENTERS.m_stall_toxic);return true end }))
       end
-			juice_flip(G.hand.highlighted[1])
-      juice_flip_table(card, cards_held, true, limit)
+			pokermon.juice_flip(G.hand.highlighted[1])
+      pokermon.juice_flip_table(card, cards_held, true, limit)
 			poke_unhighlight_cards()
 		end
   end,
