@@ -296,6 +296,15 @@ return {
 					"at least {C:chips}#2# {C:attention}Held Chips{}",
 				}
 			},
+			--701
+			j_stall_hawlucha = {
+				name = 'Hawlucha',
+				text = {
+					"{X:mult,C:white}X#1#{} and disable the current",
+					"{C:attention}Boss Blind{} if {C:attention}#2#{C:inactive}[#3#]{} cards have",
+					"been drawn this blind",
+				}
+			},			
 			--721
 			j_stall_volcanion = {
 				name = 'Volcanion',
@@ -777,7 +786,7 @@ return {
 			},
 
 		},
-			Item = {
+			poke_item = {
 				c_stall_blacksludge = {
 					name = "Black Sludge",
 					text = {
