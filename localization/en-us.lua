@@ -300,9 +300,9 @@ return {
 			j_stall_hawlucha = {
 				name = 'Hawlucha',
 				text = {
-					"{X:mult,C:white}X#1#{} and disable the current",
-					"{C:attention}Boss Blind{} if {C:attention}#2#{C:inactive}[#3#]{} cards have",
-					"been drawn this blind",
+					"{X:mult,C:white}X#1#{} Mult and disable the",
+					"current {C:attention}Boss Blind{} if {C:attention}#2#{C:inactive}[#3#]{} cards",
+					"have been drawn this blind",
 				}
 			},			
 			--721
