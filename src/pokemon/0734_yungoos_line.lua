@@ -133,7 +133,7 @@ local gumshoos={
 					end
 				end
 			end
-			if context.individual and context.cardarea == G.scry_view and not context.other_card.debuff and not context.blueprint then
+			if context.individual and context.cardarea == G.poke_scry_view and not context.other_card.debuff and not context.blueprint then
 				if card.ability.extra.suitRevealed == false and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) then
 					card.ability.extra.suitRevealed = true
 					if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
