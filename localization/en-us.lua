@@ -57,7 +57,7 @@ return {
 					"{C:attention}first{} scoring card becomes {C:attention}Focused{}",
 					"{C:inactive}First poker hand: {C:attention}#1#{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Played {C:attention}Focused{} cards that trigger {C:fighting}Jab{}",
+					"Played {C:attention}Focused{} cards that trigger {C:poke_fighting}Jab{}",
 					"also triggers {C:attention}Toxic{} when scored",
 				}
 			},
@@ -132,7 +132,7 @@ return {
 			j_stall_galarian_yamask = {
 				name = '{s:0.6}Galarian{}Yamask',
 				text = {
-					"Sell this card to remove {C:pink}Energy{} and",
+					"Sell this card to remove {C:poke_pink}Energy{} and",
 					"{C:attention}Edition{} of {C:attention}Joker{} to the left and give",
 					"them to the {C:attention}Joker{} to the right",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{{C:inactive,s:0.8} rounds)",
@@ -141,7 +141,7 @@ return {
 			j_stall_runerigus = {
 				name = 'Runerigus',
 				text = {
-					"Sell this card to copy {C:pink}Energy{} and",
+					"Sell this card to copy {C:poke_pink}Energy{} and",
 					"{C:attention}Edition{} of {C:attention}Joker{} to the left and give",
 					"them to the {C:attention}Joker{} to the right",
 				}
@@ -170,7 +170,7 @@ return {
 			j_stall_foongus = {
 				name = 'Foongus',
 				text = {
-					"{C:attention}Holding {C:item}Black Sludge{}",
+					"{C:attention}Holding {C:poke_item}Black Sludge{}",
 					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{}",
 					"Mult at round start",
 					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
@@ -179,7 +179,7 @@ return {
 			j_stall_amoonguss = {
 				name = 'Amoonguss',
 				text = {
-					"{C:attention}Holding {C:item}Black Sludge{}",
+					"{C:attention}Holding {C:poke_item}Black Sludge{}",
 					"{C:attention}Toxic{} cards gain {X:mult,C:white}X#1#{}",
 					"Mult at round start",
 				}
@@ -536,7 +536,7 @@ return {
 					"{V:2}#2#{} of {V:1}#3#{}, target card",
 					"resets after payout",  
 					"{br:2}ERROR - CONTACT STEAK",
-					"Gain a {C:attention}Clue{} {C:item}Item{} and reveal ",
+					"Gain a {C:attention}Clue{} {C:poke_item}Item{} and reveal ",
 					"target {C:attention}Rank{} or {C:attention}Suit{} once ",
 					"it is scored or {C:attention}Foreseen{}",
 				}
@@ -545,7 +545,7 @@ return {
 			j_stall_mareanie = {
 				name = 'Mareanie',
 				text = {		
-					"{C:hazard}+#1#{} hazard layer",
+					"{C:poke_hazard}+#1#{} hazard layer",
 					"First played card gives {X:mult,C:white}X#2#{} Mult",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
@@ -555,7 +555,7 @@ return {
 			j_stall_toxapex = {
 				name = 'Toxapex',
 				text = {
-					"{C:hazard}+#1#{} hazard layer",
+					"{C:poke_hazard}+#1#{} hazard layer",
 					"First played card gives {X:mult,C:white}X#2#{} Mult",
 					"per {C:attention}Hazard{} and {C:attention}Toxic{} card ", 
 					"held in hand when scored",
@@ -626,7 +626,7 @@ return {
 					"{br:2}ERROR - CONTACT STEAK",
 					"Played {C:spades}Spade{} cards permanently gain",
 					"{C:mult}+1{} Mult when scored, capped", 
-					"by number of {X:water,C:white}Water{} Jokers",
+					"by number of {X:poke_water,C:white}Water{} Jokers",
 				}
 			},
 			--782
@@ -823,12 +823,12 @@ return {
 				m_stall_focused = {
 					name = "Focused Card",
 					text = {
-						"{C:fighting}Jab{C:inactive}: {C:attention}#5#{}, {V:1}#6#{} | {C:fighting}Hook{C:inactive}: {C:attention}#7#{}, {V:2}#8#{}",
+						"{C:poke_fighting}Jab{C:inactive}: {C:attention}#5#{}, {V:1}#6#{} | {C:poke_fighting}Hook{C:inactive}: {C:attention}#7#{}, {V:2}#8#{}",
 						"{br:2}ERROR - CONTACT STEAK",
-						"{C:chips}+#1#{} Chips if holding both {C:fighting}Jab{} cards",
-						"{C:mult}+#3#{} Mult if both {C:fighting}Hook{} cards are scored",
+						"{C:chips}+#1#{} Chips if holding both {C:poke_fighting}Jab{} cards",
+						"{C:mult}+#3#{} Mult if both {C:poke_fighting}Hook{} cards are scored",
 						"Gains {C:chips}+#2#{} Chips or {C:mult}+#4#{} Mult if both",
-						"{C:fighting}Jab{} and {C:fighting}Hook{} are triggered",
+						"{C:poke_fighting}Jab{} and {C:poke_fighting}Hook{} are triggered",
 					}
 				},
 			},
