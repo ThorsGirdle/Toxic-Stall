@@ -113,7 +113,7 @@ local gumshoos={
 				if card.ability.extra.suitRevealed == false and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) then
 					card.ability.extra.suitRevealed = true
 					if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-						local _card = create_card('Item', G.consumeables, nil, nil, nil, nil, 'c_stall_clue')
+						local _card = create_card('poke_item', G.consumeables, nil, nil, nil, nil, 'c_stall_clue')
 						_card:add_to_deck()
 						G.consumeables:emplace(_card)
 						return {
@@ -124,7 +124,7 @@ local gumshoos={
 				if card.ability.extra.rankRevealed == false and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
 					card.ability.extra.rankRevealed = true
 					if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-						local _card = create_card('Item', G.consumeables, nil, nil, nil, nil, 'c_stall_clue')
+						local _card = create_card('poke_item', G.consumeables, nil, nil, nil, nil, 'c_stall_clue')
 						_card:add_to_deck()
 						G.consumeables:emplace(_card)
 						return {
@@ -148,7 +148,7 @@ local gumshoos={
 				if card.ability.extra.rankRevealed == false and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
 					card.ability.extra.rankRevealed = true
 					if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
-						local _card = create_card('Item', G.consumeables, nil, nil, nil, nil, 'c_stall_clue')
+						local _card = create_card('poke_item', G.consumeables, nil, nil, nil, nil, 'c_stall_clue')
 						_card:add_to_deck()
 						G.consumeables:emplace(_card)
 						return {
