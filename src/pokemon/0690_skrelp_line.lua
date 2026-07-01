@@ -65,20 +65,26 @@ local dragalge = {
 			if context.other_card:get_id() == 7 then
 				context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips or 0
 				context.other_card.ability.perma_h_chips = context.other_card.ability.perma_h_chips + card.ability.extra.chip_mod
-			end
-			if context.other_card.ability.perma_h_chips and context.other_card.ability.perma_h_chips >= card.ability.extra.toxicThreshold then
-				toUpgrade = context.other_card
-				G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function() toUpgrade:set_ability(G.P_CENTERS.m_stall_toxic);return true end }))
-				return {
-					extra = { message = localize('k_upgrade_ex'), colour = G.C.PURPLE },
-					card = card
-				}
-			end
-			if context.other_card:get_id() == 7 then
 				return {
 					extra = { message = localize('k_upgrade_ex'), colour = G.C.CHIPS },
 					card = card
 				}
+			end
+		end
+		if context.after and not context.blueprint and G.hand and G.hand.cards then
+			local upgrade = false
+			for _,held_card in ipairs(G.hand.cards) do
+				if held_card.ability.perma_h_chips and held_card.ability.perma_h_chips >= card.ability.extra.toxicThreshold then
+					upgrade = true,
+					G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function() held_card:set_ability(G.P_CENTERS.m_stall_toxic) return true end}))
+				end	
+			end
+			if upgrade == true then 
+				return {
+					message = 'Toxic', 
+					colour = G.C.PURPLE,
+					card = card
+					}	
 			end
 		end
 	end,
