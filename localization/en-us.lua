@@ -798,8 +798,8 @@ return {
 				c_stall_clue = {
 					name = "Clue",
 					text = {
-						"Gain {C:attention}+#1#{} hand size",
-						"this round and draw {C:attention}1{} card",
+						"Gain {C:attention}+#1#{} hand size this",
+						"round and draw {C:attention}1{} card",
 					},
 				},
 				c_stall_blackbelt = { 

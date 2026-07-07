@@ -19,9 +19,6 @@ local yungoos={
 	eternal_compat = true,
 	
   calculate = function(self, card, context)
-    if initial and not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_rank then
-			reset_yungoos_card()
-		end
 		if context.individual and context.cardarea == G.play and not context.end_of_round and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
 			G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money_mod
         G.E_MANAGER:add_event(Event({
@@ -43,8 +40,11 @@ local yungoos={
 		return scaling_evo(self, card, context, "j_stall_gumshoos", card.ability.extra.totalEarned, self.config.evo_rqmt)
   end,
 	set_ability = function(self, card, initial, delay_sprites)
-		if G.playing_cards and initial and not G.GAME.current_round.yungoos_suit and not G.GAME.current_round.yungoos_rank  then 
+		if initial then
 			reset_yungoos_card()
+		end
+		if G.playing_cards and ((not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_rank) or (G.jokers and not next(find_joker('yungoos')) and not next(find_joker('gumshoos')))) then
+		 	reset_yungoos_card()
 		end
 	end,
 }
@@ -78,16 +78,8 @@ local gumshoos={
 	blueprint_compat = true,
 	eternal_compat = true,
 	
-	add_to_deck = function(self, card, from_debuff)
-		if initial and not G.GAME.current_round.yungoos_suit and not G.GAME.current_round.yungoos_rank then
-			reset_yungoos_card()
-		end
-	end,
-	
   calculate = function(self, card, context)
-	  if not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_rank then
-			reset_yungoos_card()
-		end
+
     if context.individual and context.cardarea == G.play and not context.end_of_round and context.other_card:is_suit(G.GAME.current_round.yungoos_suit) and context.other_card:get_id() == G.GAME.current_round.yungoos_id then
 			G.GAME.dollar_buffer = (G.GAME.dollar_buffer or 0) + card.ability.extra.money_mod
         G.E_MANAGER:add_event(Event({
@@ -159,6 +151,12 @@ local gumshoos={
 			end
 		end
   end,
+	set_ability = function(self, card, initial, delay_sprites)
+	
+		if G.playing_cards and ((not G.GAME.current_round.yungoos_suit or not G.GAME.current_round.yungoos_rank) or (G.jokers and not next(find_joker('yungoos')) and not next(find_joker('gumshoos')))) then
+			reset_yungoos_card()
+		end
+	end,
 }
 
 return {name = "Yungoos Line", 

@@ -26,19 +26,20 @@ reset_yungoos_card = function()
   G.GAME.current_round.yungoos_rank = 'Ace'
   G.GAME.current_round.yungoos_id = 14
   G.GAME.current_round.yungoos_suit = 'Spades'
-  
-  local valid_yungoos_cards = {}
-  for _, playing_card in ipairs(G.playing_cards) do
-    if not SMODS.has_no_suit(playing_card) and not SMODS.has_no_rank(playing_card) then
-      valid_yungoos_cards[#valid_yungoos_cards + 1] = playing_card
-    end
-  end
-  local yungoos_card = pseudorandom_element(valid_yungoos_cards, 'yungoos' .. G.GAME.round_resets.ante)
-  if yungoos_card then
-    G.GAME.current_round.yungoos_rank = yungoos_card.base.value
-    G.GAME.current_round.yungoos_id = yungoos_card.base.id
-    G.GAME.current_round.yungoos_suit = yungoos_card.base.suit
-  end
+  if G.playing_cards then
+		local valid_yungoos_cards = {}
+		for _, playing_card in ipairs(G.playing_cards) do
+			if not SMODS.has_no_suit(playing_card) and not SMODS.has_no_rank(playing_card) then
+				valid_yungoos_cards[#valid_yungoos_cards + 1] = playing_card
+			end
+		end
+		local yungoos_card = pseudorandom_element(valid_yungoos_cards, 'yungoos' .. G.GAME.round_resets.ante)
+		if yungoos_card then
+			G.GAME.current_round.yungoos_rank = yungoos_card.base.value
+			G.GAME.current_round.yungoos_id = yungoos_card.base.id
+			G.GAME.current_round.yungoos_suit = yungoos_card.base.suit
+		end
+	end
 end
 
 --adds 1 handsize, capped to 10
