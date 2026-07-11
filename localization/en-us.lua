@@ -826,8 +826,8 @@ return {
 						"{C:poke_fighting}Combo{C:inactive}: {C:attention}#2#{}, {V:1}#3#{}",
 						"{br:2}ERROR - CONTACT STEAK",
 						"Permanently gain {C:mult}+#1#{} Mult",
-						"if both {C:poke_fighting}Combo{} cards",
-						"are in scoring hand",
+						"if poker hand contains",
+						" both {C:poke_fighting}Combo{} cards",
 					}
 				},
 			},
