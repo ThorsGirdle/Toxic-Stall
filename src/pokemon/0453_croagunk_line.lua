@@ -86,7 +86,7 @@ local toxicroak = {
 			end	
 		end
 		
-		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, "m_stall_focused") and context.other_card.ability.extra.jab == true then
+		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, "m_stall_focused") and context.other_card.ability.extra.combo == true then
 			toxic_scaling()
 			G.GAME.toxic_triggered = true
 			return { x_mult = G.GAME.current_round.toxic.toxicXMult}

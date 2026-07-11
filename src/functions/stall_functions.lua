@@ -156,17 +156,9 @@ set_focused_vars = function()
 		G.GAME.focused = {}
 		G.GAME.focused.set = true
 		local rankdefault = {{value = "Ace", id = "14"}, {value = "King", id = "13"}}
-		local ranks = get_poke_target_card_ranks("focused", 2, rankdefault, true)
-		G.GAME.focused.jab_rank = ranks[1]
-		G.GAME.focused.hook_rank = ranks[2]
-		G.GAME.focused.jab_suit = get_poke_target_card_suit("focused", true, "Spades")
-		local remaining = {}
-		for k, v in pairs(SMODS.Suits) do
-			if v.key ~= G.GAME.focused.jab_suit[1].suit then
-				table.insert(remaining, v.key or v)
-			end
-		end
-		G.GAME.focused.hook_suit = get_poke_target_card_suit("focused", true, "Hearts", remaining)
+		local ranks = get_poke_target_card_ranks("focused", 1, rankdefault, true)
+		G.GAME.focused.combo_rank = ranks[1]
+		G.GAME.focused.combo_suit = get_poke_target_card_suit("focused", true, "Spades")
 	end
 end
 

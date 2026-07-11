@@ -57,8 +57,8 @@ return {
 					"{C:attention}first{} scoring card becomes {C:attention}Focused{}",
 					"{C:inactive}First poker hand: {C:attention}#1#{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Played {C:attention}Focused{} cards that trigger {C:poke_fighting}Jab{}",
-					"also triggers {C:attention}Toxic{} when scored",
+					"{C:attention}Focused{} cards played with both {C:poke_fighting}Combo{}",
+					"cards also triggers {C:purple}Toxic{} when scored",
 				}
 			},
 			--540
@@ -823,12 +823,11 @@ return {
 				m_stall_focused = {
 					name = "Focused Card",
 					text = {
-						"{C:poke_fighting}Jab{C:inactive}: {C:attention}#5#{}, {V:1}#6#{} | {C:poke_fighting}Hook{C:inactive}: {C:attention}#7#{}, {V:2}#8#{}",
+						"{C:poke_fighting}Combo{C:inactive}: {C:attention}#2#{}, {V:1}#3#{}",
 						"{br:2}ERROR - CONTACT STEAK",
-						"{C:chips}+#1#{} Chips if holding both {C:poke_fighting}Jab{} cards",
-						"{C:mult}+#3#{} Mult if both {C:poke_fighting}Hook{} cards are scored",
-						"Gains {C:chips}+#2#{} Chips or {C:mult}+#4#{} Mult if both",
-						"{C:poke_fighting}Jab{} and {C:poke_fighting}Hook{} are triggered",
+						"Permanently gain {C:mult}+#1#{} Mult",
+						"if both {C:poke_fighting}Combo{} cards",
+						"are in scoring hand",
 					}
 				},
 			},
