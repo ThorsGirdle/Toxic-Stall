@@ -16,7 +16,7 @@
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
 	perishable_compat = true,
-	blueprint_compat = false,
+	blueprint_compat = true,
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
@@ -67,7 +67,7 @@ local salazzle = {
 	--atlas = "AtlasJokersBasicNatdex",
 	designer = "Thor's Girdle",
 	perishable_compat = true,
-	blueprint_compat = true,
+	blueprint_compat = false,
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
