@@ -10,7 +10,7 @@
 	rarity = 3, --Rare
 	cost = 7,
 	stage = "Basic",
-	ptype = "Dark",
+	ptype = "Fire",
 	gen = 7,
 	toxic = true,
 	designer = "Thor's Girdle",
@@ -61,7 +61,7 @@ local salazzle = {
 	rarity = "poke_safari", --Safari
 	cost = 8,
 	stage = "One",
-	ptype = "Dark",
+	ptype = "Fire",
 	gen = 7,
 	toxic = true,
 	--atlas = "AtlasJokersBasicNatdex",
