@@ -10,6 +10,7 @@ assert(SMODS.load_file("src/pokemon.lua"))()
 assert(SMODS.load_file("src/enhancements.lua"))()
 assert(SMODS.load_file("src/consumables.lua"))()
 assert(SMODS.load_file("src/settings.lua"))()
+assert(SMODS.load_file("src/seals.lua"))()
 
 if (SMODS.Mods["JokerDisplay"] or {}).can_load then
   assert(SMODS.load_file("src/jokerdisplay.lua"))()

@@ -49,8 +49,8 @@ local arctozolt = {
 			end
 		end
 		
-		if context.individual and context.cardarea == G.hand then
-			if card.ability.extra.ancient_suits[card.ability.extra.suit2] > 1 then
+		if context.individual and context.cardarea == G.hand and card.ability.extra.suit2 then
+			if card.ability.extra.ancient_suits[card.ability.extra.suit2]  > 1 then
 				if context.other_card.config.center == G.P_CENTERS.c_base then
 					context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod
 					G.E_MANAGER:add_event(Event({

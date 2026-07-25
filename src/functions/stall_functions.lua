@@ -162,6 +162,19 @@ set_focused_vars = function()
 	end
 end
 
+rockium_hand_limit = function(change)
+	if not G.GAME.current_round.rockium_selection then
+		G.GAME.current_round.rockium_selection = 0
+	end
+	if change > 0 and G.GAME.current_round.rockium_selection < 1 then
+		G.GAME.current_round.rockium_selection = G.GAME.current_round.rockium_selection + 1
+		SMODS.change_play_limit(change)
+	elseif change < 0 and G.GAME.current_round.rockium_selection >= 1 then
+		G.GAME.current_round.rockium_selection = G.GAME.current_round.rockium_selection - 1
+		SMODS.change_play_limit(change)
+	end
+end
+
 
 function SMODS.current_mod.reset_game_globals(run_start)
 	reset_toxic_scaling()
@@ -169,6 +182,14 @@ function SMODS.current_mod.reset_game_globals(run_start)
   if run_start then
     set_focused_vars()
   end
+end
+
+
+SMODS.current_mod.set_debuff = function(card)
+	if card.config.center.key == "m_wild" and card.seal and card.seal == "stall_zeal" then 
+		return 'prevent_debuff' 
+	end
+	return false
 end
 
 

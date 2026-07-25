@@ -30,7 +30,7 @@ local litten = {
 				end
 			end
 			if trigger == true then
-				local earned = ease_poke_dollars(card, "litten", card.ability.extra.money)
+				local earned = pokermon.ease_poke_dollars(card, "litten", card.ability.extra.money)
 				card.ability.extra.totalEarned = card.ability.extra.totalEarned + earned
 				return {
 					message = '$'..earned,
@@ -38,7 +38,7 @@ local litten = {
 				}
 			end
 		end
-		return scaling_evo(self, card, context, "j_stall_torracat", card.ability.extra.totalEarned, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_torracat", card.ability.extra.totalEarned, self.config.evo_rqmt)
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
@@ -82,7 +82,7 @@ local torracat = {
 				end
 			end
 			if trigger == true then
-				local earned = ease_poke_dollars(card, "torracat", card.ability.extra.money)
+				local earned = pokermon.ease_poke_dollars(card, "torracat", card.ability.extra.money)
 				card.ability.extra.totalEarned = card.ability.extra.totalEarned + earned
 				return {
 					message = '$'..earned,
@@ -90,7 +90,7 @@ local torracat = {
 				}
 			end
 		end
-		return scaling_evo(self, card, context, "j_stall_incineroar", card.ability.extra.totalEarned, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_incineroar", card.ability.extra.totalEarned, self.config.evo_rqmt)
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
@@ -134,7 +134,7 @@ local incineroar = {
 				end
 			end
 			if trigger == true then
-				local earned = ease_poke_dollars(card, "incineroar", card.ability.extra.money)
+				local earned = pokermon.ease_poke_dollars(card, "incineroar", card.ability.extra.money)
 				if not context.blueprint then
 					local _,_, scoringCards = stall_evaluate_hand(context.full_hand, true)
 					card.ability.extra.mult = card.ability.extra.mult + (card.ability.extra.mult_mod * #scoringCards)

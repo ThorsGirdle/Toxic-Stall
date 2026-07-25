@@ -49,12 +49,12 @@ local focused = {
 		if context.main_scoring and context.cardarea == G.play then
 			if card.ability.extra.combo == true then
 				card.ability.perma_mult = card.ability.perma_mult + card.ability.extra.comboMult
-				card.ability.extra.upgrades = card.ability.extra.upgrades + 1
-			end		 
-			return {
-				 message = localize('k_upgrade_ex'), 
-				 colour = G.C.MULT
-			}			
+				card.ability.extra.upgrades = card.ability.extra.upgrades + 1		 
+				return {
+					 message = localize('k_upgrade_ex'), 
+					 colour = G.C.MULT
+				}	
+			end				
 		end
 		
 		if context.after then

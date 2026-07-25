@@ -301,7 +301,7 @@ return {
 				name = 'Hawlucha',
 				text = {
 					"{X:mult,C:white}X#1#{} Mult and disable the",
-					"current {C:attention}Boss Blind{} if {C:attention}#2#{C:inactive}[#3#]{} cards",
+					"current {C:attention}Boss Blind{} if {C:attention}#2# {C:inactive}[#3#]{} cards",
 					"have been drawn this blind",
 				}
 			},			
@@ -786,69 +786,195 @@ return {
 			},
 
 		},
-			poke_item = {
-				c_stall_blacksludge = {
-					name = "Black Sludge",
-					text = {
-						"{C:enhanced}Enhance{} {C:attention}1{} selected", 
-						"card and {C:attention}2{} random cards",
-						"in hand with {C:attention}Toxic{}", 
-					},
-				},
-				c_stall_clue = {
-					name = "Clue",
-					text = {
-						"Gain {C:attention}+#1#{} hand size this",
-						"round and draw {C:attention}1{} card",
-					},
-				},
-				c_stall_blackbelt = { 
-					name = "Black Belt",
-					text = {
-						"{C:enhanced}Enhance{} {C:attention}#1#{} selected", 
-						"card with {C:attention}Focused{}",
-					},
-				},	
-			},
-			Enhanced = {
-				m_stall_toxic = {
-					name = "Toxic Card",
-					text = {
-						"Gives {X:red,C:white}X#2#{} per {C:purple}Toxic{}",
-						"card triggered this",			
-						"Blind when triggered",
-						"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
-					}
-				},
-				m_stall_focused = {
-					name = "Focused Card",
-					text = {
-						"{C:poke_fighting}Combo{C:inactive}: {C:attention}#2#{}, {V:1}#3#{}",
-						"{br:2}ERROR - CONTACT STEAK",
-						"Permanently gain {C:mult}+#1#{} Mult",
-						"if poker hand contains",
-						" both {C:poke_fighting}Combo{} cards",
-					}
+		poke_item = {
+			c_stall_blacksludge = {
+				name = "Black Sludge",
+				text = {
+					"{C:enhanced}Enhance{} {C:attention}1{} selected", 
+					"card and {C:attention}2{} random cards",
+					"in hand with {C:attention}Toxic{}", 
 				},
 			},
-				
-	},
-	Other = {
-		designed_by = {
-			name = "Designed By",
-			text = {
-				"{C:purple}#1#{}",
-			}
+			c_stall_clue = {
+				name = "Clue",
+				text = {
+					"Gain {C:attention}+#1#{} hand size this",
+					"round and draw {C:attention}1{} card",
+				},
+			},
+			c_stall_blackbelt = { 
+				name = "Black Belt",
+				text = {
+					"{C:enhanced}Enhance{} {C:attention}#1#{} selected", 
+					"card with {C:attention}Focused{}",
+				},
+			},	
 		},
-		ancient_suits = {
-			name = "Ancient Suits",
-			text = {
-					"Effect based on",
-					"number of {C:attention}#1#{} and",
-					"{C:attention}#2#{} in {C:attention}poker hand{}",
-					"{C:inactive}(Effects are {C:attention}cumulative{C:inactive})",
-			}
-    },
+		Enhanced = {
+			m_stall_toxic = {
+				name = "Toxic Card",
+				text = {
+					"Gives {X:red,C:white}X#2#{} per {C:purple}Toxic{}",
+					"card triggered this",			
+					"Blind when triggered",
+					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
+				}
+			},
+			m_stall_focused = {
+				name = "Focused Card",
+				text = {
+					"{C:poke_fighting}Combo{C:inactive}: {C:attention}#2#{}, {V:1}#3#{}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Permanently gain {C:mult}+#1#{} Mult",
+					"if poker hand contains",
+					" both {C:poke_fighting}Combo{} cards",
+				}
+			},
+		},		
+		Spectral = {
+			c_stall_z_crystal = {
+				name = "Z-Crystal",
+				text = {
+						"Add a {C:green}Zeal{}",
+						"to {C:attention}1{} selected",
+						"card in your hand",
+				},
+			},
+		},
+		
+		Other = {
+			ancient_suits = {
+				name = "Ancient Suits",
+				text = {
+						"Effect based on",
+						"number of {C:attention}#1#{} and",
+						"{C:attention}#2#{} in {C:attention}poker hand{}",
+						"{C:inactive}(Effects are {C:attention}cumulative{C:inactive})",
+				}
+			},
+			
+			stall_zeal_seal = {
+				name = "Zeal",
+				text = {
+					"Effect depends on",
+					"card's enhancement",
+				},
+			},
+			waterium_zeal = {
+				name = "Waterium Zeal",
+				text = {
+					"{X:chips,C:white}X#1#{} Chips",
+				},
+			},
+			firium_zeal = {
+				name = "Firium Zeal",
+				text = {
+					"Adds base {C:mult}Mult{} of",
+					"{C:attention}poker hand{} to {C:mult}Mult{}",
+				},
+			},
+			buginium_zeal = {
+				name = "Buginium Zeal",
+				text = {
+					"Cannot be debuffed",
+					"Create a {C:attention}Pickup {C:poke_item}Item{}",
+					"{C:inactive,s:0.8}(Must have room){}",
+				},
+			},
+			icium_zeal = {
+				name = "Icium Zeal",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult",
+					"Cannot destroy self",
+					--[["{C:green}#2#{} in {C:green}#3#{} chance to destroy",
+					"other scoring cards",--]]
+				},
+			},	
+			steelium_zeal = {
+				name = "Steelium Zeal",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult then discard",
+					"self when held in hand",
+				},
+			},	
+			rockium_zeal = {
+				name = "Rockium Zeal",
+				text = {
+					"+1 hand selection",
+					"limit for next hand",
+					"after card is drawn",
+					"{C:inactive,s:0.8}(Max of 1){}"
+				},
+			},
+			electrium_zeal = {
+				name = "Electrium Zeal",
+				text = {
+					"Earn {C:money}$#1#{} at end of",
+					"round per hands held",
+					"in hand this round",
+					"{C:inactive,s:0.8}(Currently {C:money}$#2#{C:inactive,s:0.8})"
+				},
+			},	
+			psychium_zeal = {
+				name = "Psychium Zeal",
+				text = {
+					"Increase all {C:attention}listed{}",
+					"{C:green}probababilities{} by {C:attention}#1#{}",
+					"while in {C:attention}poker hand{}",
+				},
+			},	
+			groundium_zeal = {
+				name = "Groundium Zeal",
+				text = {
+					"Cannot destroy self",
+					"All {C:poke_hazard}Hazard{} cards held in hand",
+					"retrigger {C:attention}#1#{} additional time",
+					"if card is in {C:attention}poker hand{}",
+				},
+			},				
+			grassium_zeal = {
+				name = "Grassium Zeal",
+				text = {
+					"Earn {C:money}$#1#{} per Growth",
+					"Reset Growth and create a",
+					"{C:planet}Planet{} card instead of",
+					"becoming a {C:attention}Flower{} card",
+					"{C:inactive,s:0.8}(Must have room){}",
+				},
+			},
+			fairium_zeal = {
+				name = "Fairium Zeal",
+				text = {
+					"{X:mult,C:white}X#1#{} Mult per {C:attention}unique{}",
+					"Rank in poker hand",
+				},
+			},
+			poisonium_zeal = {
+				name = "Poisonium Zeal",
+				text = {
+					"Increase Toxic scaling",
+					"by {X:mult,C:white}X#1#{} Mult",
+					"this round",
+				},
+			},
+			fightinium_zeal = {
+				name = "Fightinium Zeal",
+				text = {
+					"Permanently gain {C:chips}+#2#{} Chips",
+					"and {C:mult}+#1#{} Mult when",
+					"card upgrades itself"
+				},
+			},
+			normalium_zeal = {
+				name = "Normalium Zeal",
+				text = {
+					"Permanently gain {C:chips}+#1#{} Chips,",
+					"{C:mult}+#2#{} Mult, or {X:mult,C:white}X#3#{} Mult",
+					"when card changes",
+					"{C:attention}Rank{} or {C:attention}Suit{}",
+				},
+			},
+		},
 	},
 	misc = {
 		dictionary = {
@@ -859,8 +985,13 @@ return {
 			stall_Alolan_starters = "Alolan Starters",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",
-			stall_items = "Enhancement Items"
+			stall_items = "Enhancement Items",
+			stallzeal_variable = "Zeal",
 
 		},
-	}
+	
+		labels = {
+			stall_zeal_seal = "Zeal",
+		},
+	},
 }
