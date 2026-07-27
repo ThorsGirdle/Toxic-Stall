@@ -779,8 +779,8 @@ return {
 					"Gain {C:mult}+#1#{} Mult per {C:attention}Reroll{} and scored {C:attention}Stone",
 					"cards, {C:mult}-2{} Mult per hand played",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Scored {C:attention}Toxic{} cards retrigger if a",					
-					"{C:attention}Stone{} card is in scoring hand",
+					"Played {C:attention}Toxic{} cards retrigger if a",					
+					"{C:attention}Stone{} card is in poker hand",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
 				} 
 			},
@@ -861,20 +861,20 @@ return {
 				},
 			},
 			waterium_zeal = {
-				name = "Waterium Zeal",
+				name = "{X:poke_water}Waterium{} Zeal",
 				text = {
 					"{X:chips,C:white}X#1#{} Chips",
 				},
 			},
 			firium_zeal = {
-				name = "Firium Zeal",
+				name = "{X:poke_fire}Firium{} Zeal",
 				text = {
 					"Adds base {C:mult}Mult{} of",
 					"{C:attention}poker hand{} to {C:mult}Mult{}",
 				},
 			},
 			buginium_zeal = {
-				name = "Buginium Zeal",
+				name = "{X:green}Buginium{} Zeal",
 				text = {
 					"Cannot be debuffed",
 					"Create a {C:attention}Pickup {C:poke_item}Item{}",
@@ -882,7 +882,7 @@ return {
 				},
 			},
 			icium_zeal = {
-				name = "Icium Zeal",
+				name = "{X:planet}Icium{} Zeal",
 				text = {
 					"{X:mult,C:white}X#1#{} Mult",
 					"Cannot destroy self",
@@ -891,14 +891,14 @@ return {
 				},
 			},	
 			steelium_zeal = {
-				name = "Steelium Zeal",
+				name = "{X:poke_metal}Steelium{} Zeal",
 				text = {
 					"{X:mult,C:white}X#1#{} Mult then discard",
 					"self when held in hand",
 				},
 			},	
 			rockium_zeal = {
-				name = "Rockium Zeal",
+				name = "{X:poke_earth}Rockium{} Zeal",
 				text = {
 					"+1 hand selection",
 					"limit for next hand",
@@ -907,7 +907,7 @@ return {
 				},
 			},
 			electrium_zeal = {
-				name = "Electrium Zeal",
+				name = "{X:poke_lightning,C:black}Electrium{} Zeal",
 				text = {
 					"Earn {C:money}$#1#{} at end of",
 					"round per hands held",
@@ -916,7 +916,7 @@ return {
 				},
 			},	
 			psychium_zeal = {
-				name = "Psychium Zeal",
+				name = "{X:poke_psychic}Psychium{} Zeal",
 				text = {
 					"Increase all {C:attention}listed{}",
 					"{C:green}probababilities{} by {C:attention}#1#{}",
@@ -924,7 +924,7 @@ return {
 				},
 			},	
 			groundium_zeal = {
-				name = "Groundium Zeal",
+				name = "{X:poke_hazard}Groundium{} Zeal",
 				text = {
 					"Cannot destroy self",
 					"All {C:poke_hazard}Hazard{} cards held in hand",
@@ -933,7 +933,7 @@ return {
 				},
 			},				
 			grassium_zeal = {
-				name = "Grassium Zeal",
+				name = "{X:poke_grass}Grassium{} Zeal",
 				text = {
 					"Earn {C:money}$#1#{} per Growth",
 					"Reset Growth and create a",
@@ -943,22 +943,22 @@ return {
 				},
 			},
 			fairium_zeal = {
-				name = "Fairium Zeal",
+				name = "{X:poke_fairy}Fairium{} Zeal",
 				text = {
 					"{X:mult,C:white}X#1#{} Mult per {C:attention}unique{}",
 					"Rank in poker hand",
 				},
 			},
 			poisonium_zeal = {
-				name = "Poisonium Zeal",
+				name = "{X:tarot}Poisonium{} Zeal",
 				text = {
 					"Increase Toxic scaling",
 					"by {X:mult,C:white}X#1#{} Mult",
-					"this round",
+					"while in poker hand",
 				},
 			},
 			fightinium_zeal = {
-				name = "Fightinium Zeal",
+				name = "{X:poke_fighting}Fightinium{} Zeal",
 				text = {
 					"Permanently gain {C:chips}+#2#{} Chips",
 					"and {C:mult}+#1#{} Mult when",
@@ -966,7 +966,7 @@ return {
 				},
 			},
 			normalium_zeal = {
-				name = "Normalium Zeal",
+				name = "{X:poke_colorless}Normalium{} Zeal",
 				text = {
 					"Permanently gain {C:chips}+#1#{} Chips,",
 					"{C:mult}+#2#{} Mult, or {X:mult,C:white}X#3#{} Mult",

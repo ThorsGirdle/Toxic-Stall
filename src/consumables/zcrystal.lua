@@ -7,7 +7,7 @@ local z_crystal = {
   discovered = false,
 	hidden = true,
   soul_set = "poke_item",
-  soul_rate = .005,
+  soul_rate = .01,
   atlas = 'PlaceholderStallItem',
 	config = { extra = { seal = 'stall_zeal' }, max_highlighted = 1 },
 	loc_vars = function(self, info_queue, card)

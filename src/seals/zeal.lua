@@ -4,10 +4,11 @@ local zeal = {
 	badge_colour = HEX("24BD7A"), --green placeholder
 	atlas = "PlaceholderStallSeals",
   pos = {x = 0, y = 0},
+	weight = 0.5,
   config = {cardType = '', typeVars = {}, bonusXChips = 2, wildXMult = 0.25, glassXMult = 2, glassNum = 1, glassDem = 6,
-		steelXMult = 2, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
+		steelXMult = 2, goldHold = 2, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
-		toxicScaling = 0.01, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,},
+		toxicScaling = 0.01, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,},
 	loc_vars = function(self, info_queue, center)
 		if center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_bonus" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "waterium_zeal", vars = {center.ability.seal.bonusXChips}}
@@ -229,6 +230,28 @@ local zeal = {
 			end	
 		
 		elseif card.config.center.key == "m_stall_toxic" then
+			if context.before then
+				for _, v in ipairs(context.scoring_hand) do
+					if v == card then
+						card.ability.seal.toxicScoring = true
+						G.GAME.toxic_triggered = true
+						G.GAME.current_round.toxic.toxicMult_mod = G.GAME.current_round.toxic.toxicMult_mod + card.ability.seal.toxicScaling
+						break
+					end
+				end
+			end
+
+			if context.after and card.ability.seal.toxicScoring == true then
+				card.ability.seal.toxicScoring = false
+				G.GAME.current_round.toxic.toxicMult_mod = G.GAME.current_round.toxic.toxicMult_mod - card.ability.seal.toxicScaling
+			end
+			
+		elseif card.config.center.key == "m_poke_hazard" then
+			if context.fix_probability and context.identifier == "hazard" and context.trigger_obj == card then
+				return {
+					numerator = 0
+				}
+			end
 			if context.main_scoring and context.cardarea == G.play then			
 				G.GAME.toxic_triggered = true
 				G.GAME.current_round.toxic.toxicMult_mod = G.GAME.current_round.toxic.toxicMult_mod + card.ability.seal.toxicScaling
@@ -260,7 +283,7 @@ local zeal = {
 	end,
 	
 	in_pool = function(self)
-		return false
+		return true
   end
 }
 
