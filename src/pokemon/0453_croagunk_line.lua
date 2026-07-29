@@ -85,7 +85,6 @@ local toxicroak = {
 				card.ability.extra.pokerHand = "None"
 			end	
 		end
-		
 		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, "m_stall_focused") and context.other_card.ability.extra.combo == true then
 			toxic_scaling()
 			G.GAME.toxic_triggered = true

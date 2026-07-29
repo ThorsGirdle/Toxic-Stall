@@ -814,10 +814,13 @@ return {
 			m_stall_toxic = {
 				name = "Toxic Card",
 				text = {
-					"Gives {X:red,C:white}X#2#{} per {C:purple}Toxic{}",
+					"Gives {X:red,C:white}X#2#{} Mult per {C:purple}Toxic{}",
 					"card triggered this",			
 					"Blind when triggered",
-					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive})",
+					"{br:2}ERROR - CONTACT STEAK",
+					"{C:attention}#3#%{} chance to remove",
+					"enhancement at {X:mult,C:white}X#4#{} Mult",
+					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
 				}
 			},
 			m_stall_focused = {

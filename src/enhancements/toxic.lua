@@ -4,7 +4,7 @@ local toxic = {
   atlas = "StallEnhancements",
 	artist = "Emma",
   pos = { x = 0, y = 0 },
-	config = {extra = {toxicXMult = 1, toxicMult_mod = 0.05}},
+	config = {extra = {toxicXMult = 1, toxicMult_mod = 0.05, cureThreshold = 3, cureChance = .1}},
 	any_suit = false,
   replace_base_card = false,
   no_rank = false,
@@ -18,7 +18,8 @@ local toxic = {
 		type_tooltip(self, info_queue, card)
 		return {
 			vars = { ((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicXMult) or 1), 
-							((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicMult_mod) or 0.05)}
+							((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicMult_mod) or 0.05),
+							card.ability.extra.cureChance * 100, card.ability.extra.cureThreshold}
 		}
 	end,
 
@@ -47,7 +48,16 @@ local toxic = {
 			SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, card)
 			--return{xmult = G.GAME.current_round.toxic.toxicXMult}
     end
-		card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult	
+		if context.after and G.GAME.current_round.toxic.toxicXMult >= card.ability.extra.cureThreshold and not context.cardarea == G.poke_scry_view then
+			local random = pseudorandom('Toxic Cure')
+			if random < card.ability.extra.cureChance then
+				card:set_ability(G.P_CENTERS.c_base, nil, true)
+				return {
+					message = "Cured!"
+				}
+			end
+		end
+		
 		if context.end_of_round then
 			G.GAME.current_round.toxic.toxicXMult = 1
 			G.GAME.toxic_triggered = false

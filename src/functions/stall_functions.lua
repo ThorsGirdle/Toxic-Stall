@@ -3,7 +3,7 @@
 toxic_scaling = function(amount)
 if not amount then amount = 1 end
 	if not G.GAME.toxic_triggered then
-		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05}
+		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureChance = .06}
 	end
 	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + G.GAME.current_round.toxic.toxicMult_mod * amount
 end
@@ -16,7 +16,7 @@ end
 --scales Toxic by variable amount... should probably combine it with the other one but whatever
 foongus_xmult = function(XMult)
 	if not G.GAME.current_round.toxic then
-		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05}
+		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureChance = .06}
 	end
 	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + XMult
 end
