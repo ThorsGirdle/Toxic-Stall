@@ -48,7 +48,7 @@ local toxic = {
 			SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, card)
 			--return{xmult = G.GAME.current_round.toxic.toxicXMult}
     end
-		if context.after and G.GAME.current_round.toxic.toxicXMult >= card.ability.extra.cureThreshold then
+		if context.after and G.GAME.current_round.toxic.toxicXMult >= card.ability.extra.cureThreshold and context.cardarea ~= G.poke_scry_view then
 			local random = pseudorandom('Toxic Cure')
 			if random < card.ability.extra.cureChance then
 				card:set_ability(G.P_CENTERS.c_base, nil, true)
