@@ -1,9 +1,9 @@
 
 --increases Toxic XMult by 0.05
 toxic_scaling = function(amount)
-if not amount then amount = 1 end
+	if not amount then amount = 1 end
 	if not G.GAME.toxic_triggered then
-		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureChance = .06}
+		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureThreshold = 3, cureChance = .1}
 	end
 	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + G.GAME.current_round.toxic.toxicMult_mod * amount
 end
@@ -16,11 +16,19 @@ end
 --scales Toxic by variable amount... should probably combine it with the other one but whatever
 foongus_xmult = function(XMult)
 	if not G.GAME.current_round.toxic then
-		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureChance = .06}
+		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureThreshold = 3, cureChance = .1}
 	end
 	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + XMult
 end
 
+toxic_cure = function(card)
+	local random = pseudorandom('Toxic Cure')
+	if random < G.GAME.current_round.toxic.cureChance then
+		card:set_ability(G.P_CENTERS.c_base, nil, true)
+		SMODS.calculate_effect({message = "Cured!"}, card)
+			
+	end
+end
 --just espeon function but for yungoos
 reset_yungoos_card = function()
   G.GAME.current_round.yungoos_rank = 'Ace'

@@ -888,9 +888,10 @@ return {
 				name = "{X:planet}Icium{} Zeal",
 				text = {
 					"{X:mult,C:white}X#1#{} Mult",
-					"Cannot destroy self",
-					--[["{C:green}#2#{} in {C:green}#3#{} chance to destroy",
-					"other scoring cards",--]]
+					"Lowers {C:attention}self-destruct{} chance",
+					"Create an {C:spectral}Aura{} card if",
+					"this card {C:attention}self-destructs{}",
+					"{C:inactive,s:0.8}(Must have room){}",
 				},
 			},	
 			steelium_zeal = {

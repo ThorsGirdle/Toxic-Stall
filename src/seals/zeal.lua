@@ -87,9 +87,9 @@ local zeal = {
 			end
 			
 		elseif card.config.center.key == "m_glass" then
-			if context.fix_probability and context.trigger_obj == card and context.identifier == "glass" then
+			if context.mod_probability and context.trigger_obj == card and context.identifier == "glass" then
 				return {
-					numerator = 0
+					denominator = context.denominator * 4
 				}
 			end
 			
@@ -99,6 +99,27 @@ local zeal = {
 				}
 			end
 			
+			if context.remove_playing_cards then
+				for _, removed_card in ipairs(context.removed) do
+					if removed_card == card and removed_card.shattered then 
+						if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+							G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+							G.E_MANAGER:add_event(Event({
+								func = (function()
+										SMODS.add_card {
+												set = 'spectral',
+												key = "c_aura"
+												
+										}
+										G.GAME.consumeable_buffer = 0
+										return true
+								end)
+							}))		
+						end
+						break
+					end
+				end
+			end
 			--[[if context.destroy_card then
 				local scoring = false
 				for _, v in ipairs(g.play) do
@@ -109,7 +130,7 @@ local zeal = {
 				end
 				if scoring == true then
 					for _, v in ipairs(context.scoring_hand) do
-						if not v == card and SMODS.pseudorandom_probability(card, 'icium', card.ability.seal.glassNum, card.ability.seal.glassDem, "icium") then
+						if v ~= card and SMODS.pseudorandom_probability(card, 'icium', card.ability.seal.glassNum, card.ability.seal.glassDem, "icium") then
 							return {remove = true}
 						end
 					end	
