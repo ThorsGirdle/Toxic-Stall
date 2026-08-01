@@ -91,10 +91,10 @@ local toxicroak = {
 			return { x_mult = G.GAME.current_round.toxic.toxicXMult}
 		end
 		
-		if context.after and G.GAME.current_round.toxic.toxicXMult >= G.GAME.current_round.toxic.cureThreshold then
+		if context.after and G.GAME.current_round.toxic and (G.GAME.current_round.toxic.toxicXMult or 0) >= (G.GAME.current_round.toxic.cureThreshold or 3) then
 			local comborank, combosuit = false, false
 			for i, v in pairs(context.scoring_hand) do
-				if v:get_id() == G.GAME.focused.combo_rank.id and not SMODS.has_no_rank(v) then
+				if  v:get_id() == G.GAME.focused.combo_rank.id and not SMODS.has_no_rank(v) then
 					comborank = true
 				end
 				if v:is_suit(G.GAME.focused.combo_suit[1].suit) and not SMODS.has_no_suit(v) then
