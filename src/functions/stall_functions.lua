@@ -29,6 +29,11 @@ toxic_cure = function(card)
 			
 	end
 end
+
+--[[SMODS.current_mod.calculate = function(self, context)
+
+end]]--
+
 --just espeon function but for yungoos
 reset_yungoos_card = function()
   G.GAME.current_round.yungoos_rank = 'Ace'

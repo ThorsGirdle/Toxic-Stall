@@ -914,8 +914,8 @@ return {
 				name = "{X:poke_lightning,C:black}Electrium{} Zeal",
 				text = {
 					"Earn {C:money}$#1#{} at end of",
-					"round per hands held",
-					"in hand this round",
+					"round per hand played",
+					"while held in hand",
 					"{C:inactive,s:0.8}(Currently {C:money}$#2#{C:inactive,s:0.8})"
 				},
 			},	

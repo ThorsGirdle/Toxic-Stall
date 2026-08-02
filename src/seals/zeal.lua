@@ -6,7 +6,7 @@ local zeal = {
   pos = {x = 0, y = 0},
 	weight = 0.5,
   config = {cardType = '', typeVars = {}, bonusXChips = 2, wildXMult = 0.25, glassXMult = 2, glassNum = 1, glassDem = 6,
-		steelXMult = 2, goldHold = 2, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
+		steelXMult = 2, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
 		toxicScaling = 0.01, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,},
 	loc_vars = function(self, info_queue, center)
@@ -174,10 +174,24 @@ local zeal = {
 			end
 		
 		elseif card.config.center.key == "m_gold" then
+			if context.hand_drawn and SMODS.drawn_cards then
+				for i, drawnCard in ipairs(SMODS.drawn_cards) do
+					if drawnCard == card then
+						card.ability.seal.goldTurns = 0
+						break
+					end
+				end
+			end 
 
-			if context.main_scoring and context.cardarea == G.hand then
-				 card.ability.seal.goldTurns = card.ability.seal.goldTurns + 1
+			if context.before and G.hand then
+				for _, v in ipairs(G.hand.cards) do
+					if v == card then
+						 card.ability.seal.goldTurns = card.ability.seal.goldTurns + 1
+						break
+					end
+				end
 			end
+				
 			if context.playing_card_end_of_round and context.cardarea == G.hand and not context.game_over then
 				local turns = card.ability.seal.goldTurns
 				card.ability.goldTurns = 0
