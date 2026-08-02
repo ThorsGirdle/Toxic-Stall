@@ -923,7 +923,7 @@ return {
 				name = "{X:poke_psychic}Psychium{} Zeal",
 				text = {
 					"Increase all {C:attention}listed{}",
-					"{C:green}probababilities{} by {C:attention}#1#{}",
+					"{C:green}probabilities{} by {C:attention}#1#{}",
 					"while in {C:attention}poker hand{}",
 				},
 			},	
