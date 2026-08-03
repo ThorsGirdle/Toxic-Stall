@@ -3,7 +3,7 @@
 toxic_scaling = function(amount)
 	if not amount then amount = 1 end
 	if not G.GAME.toxic_triggered then
-		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureThreshold = 3, cureChance = .1}
+		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05}
 	end
 	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + G.GAME.current_round.toxic.toxicMult_mod * amount
 end
@@ -11,28 +11,57 @@ end
 reset_toxic_scaling = function()
 	G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05}
 	G.GAME.toxic_triggered = false
+	G.GAME.toxic_cured = false
 end
 
 --scales Toxic by variable amount... should probably combine it with the other one but whatever
 foongus_xmult = function(XMult)
 	if not G.GAME.current_round.toxic then
-		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05, cureThreshold = 3, cureChance = .1}
+		G.GAME.current_round.toxic = {toxicXMult = 1, toxicMult_mod = 0.05}
 	end
 	G.GAME.current_round.toxic.toxicXMult = G.GAME.current_round.toxic.toxicXMult + XMult
 end
 
-toxic_cure = function(card)
-	local random = pseudorandom('Toxic Cure')
-	if random < G.GAME.current_round.toxic.cureChance then
-		card:set_ability(G.P_CENTERS.c_base, nil, true)
-		SMODS.calculate_effect({message = "Cured!"}, card)
-			
+toxic_cure = function(card, number)
+	card:set_ability(G.P_CENTERS.c_base, nil, true)
+	if not G.GAME.toxic_cured then
+		SMODS.calculate_effect({message = "Cured!"}, (G.deck and G.deck.cards and G.deck.cards[#G.deck.cards]) or card)
+		G.GAME.toxic_cured = true
 	end
 end
 
---[[SMODS.current_mod.calculate = function(self, context)
+set_toxic_rounds = function()
+	if not G.GAME.toxic then
+		G.GAME.toxic = {}
+		G.GAME.toxic.set = true
+		G.GAME.toxic.cureRounds = 6
+	end
+end
 
-end]]--
+SMODS.current_mod.calculate = function(self, context)
+	if context.end_of_round and context.main_eval and G.playing_cards then
+		local reset = true
+		for i, v in ipairs(G.playing_cards) do
+			if SMODS.has_enhancement(v, "m_stall_toxic") then
+				if G.GAME.toxic.cureRounds <= 1 then
+					local tempCard = v
+					toxic_cure(tempCard)
+				else
+					G.GAME.toxic.cureRounds = G.GAME.toxic.cureRounds - 1
+					reset = false
+					break
+				end
+			end
+		end
+		if reset == true then
+			G.GAME.toxic.cureRounds = 6
+		end
+	end
+	
+	if context.skip_blind then
+		G.GAME.toxic.cureRounds = 6
+	end
+end
 
 --just espeon function but for yungoos
 reset_yungoos_card = function()
@@ -194,6 +223,8 @@ function SMODS.current_mod.reset_game_globals(run_start)
 	reset_clue()
   if run_start then
     set_focused_vars()
+		set_toxic_rounds()
+
   end
 end
 

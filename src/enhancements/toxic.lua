@@ -19,7 +19,7 @@ local toxic = {
 		return {
 			vars = { ((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicXMult) or 1), 
 							((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicMult_mod) or 0.05),
-							card.ability.extra.cureChance * 100, card.ability.extra.cureThreshold}
+							((G.GAME.toxic and G.GAME.toxic.cureRounds) or 6)}
 		}
 	end,
 
@@ -46,17 +46,8 @@ local toxic = {
 			G.GAME.toxic_triggered = true
 			card.ability.extra.toxicXMult = G.GAME.current_round.toxic.toxicXMult
 			SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, card)
-			--return{xmult = G.GAME.current_round.toxic.toxicXMult}
     end
-		if context.after and G.GAME.current_round.toxic.toxicXMult >= card.ability.extra.cureThreshold and context.cardarea ~= G.poke_scry_view then
-			local random = pseudorandom('Toxic Cure')
-			if random < card.ability.extra.cureChance then
-				card:set_ability(G.P_CENTERS.c_base, nil, true)
-				return {
-					message = "Cured!"
-				}
-			end
-		end
+
 		
 		if context.end_of_round then
 			G.GAME.current_round.toxic.toxicXMult = 1

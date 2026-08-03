@@ -818,8 +818,8 @@ return {
 					"card triggered this",			
 					"Blind when triggered",
 					"{br:2}ERROR - CONTACT STEAK",
-					"{C:attention}#3#%{} chance to remove",
-					"enhancement at {X:mult,C:white}X#4#{} Mult",
+					"Remove enhancement in {C:attention}#3#{}",
+					"rounds unless a {C:attention}Blind{} is skipped",
 					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
 				}
 			},
