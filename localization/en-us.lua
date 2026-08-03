@@ -816,10 +816,10 @@ return {
 				text = {
 					"Gives {X:red,C:white}X#2#{} Mult per {C:purple}Toxic{}",
 					"card triggered this",			
-					"Blind when triggered",
+					"{C:attention}Blind{} when triggered",
 					"{br:2}ERROR - CONTACT STEAK",
-					"Remove enhancement in {C:attention}#3#{}",
-					"rounds unless a {C:attention}Blind{} is skipped",
+					"Remove enhancement in {C:attention}#3#{} rounds,",
+					"resets when a {C:attention}Blind{} is skipped",
 					"{C:inactive}(Currently {X:mult,C:white}X#1#{C:inactive} Mult)",
 				}
 			},
