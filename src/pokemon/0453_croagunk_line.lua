@@ -91,28 +91,7 @@ local toxicroak = {
 			return { x_mult = G.GAME.current_round.toxic.toxicXMult}
 		end
 		
-		if context.after and G.GAME.current_round.toxic and (G.GAME.current_round.toxic.toxicXMult or 0) >= (G.GAME.current_round.toxic.cureThreshold or 3) then
-			local comborank, combosuit = false, false
-			for i, v in pairs(context.scoring_hand) do
-				if  v:get_id() == G.GAME.focused.combo_rank.id and not SMODS.has_no_rank(v) then
-					comborank = true
-				end
-				if v:is_suit(G.GAME.focused.combo_suit[1].suit) and not SMODS.has_no_suit(v) then
-					combosuit = true
-				end
-				if comborank == true and combosuit == true then
-					break
-				end
-			end		
-			if comborank == true and combosuit == true then
-				for _, v in ipairs(context.scoring_hand) do				
-					if SMODS.has_enhancement(v, "m_stall_focused") and v.ability.extra.combo == true then
-						local cureCard = v
-						toxic_cure(cureCard)
-					end
-				end
-			end
-		end
+		
 		
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
 			card.ability.extra.pokerHand = "None"
