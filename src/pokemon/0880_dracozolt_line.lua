@@ -82,6 +82,7 @@ local dracozolt = {
 		end
   end,
 	generate_ui = fossil_generate_ui,
+	attributes = {"ancient"},
 }
 
 return {name = "Dracozolt Line", 
