@@ -57,8 +57,8 @@ return {
 					"{C:attention}first{} scoring card becomes {C:attention}Focused{}",
 					"{C:inactive}First poker hand: {C:attention}#1#{}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"{C:attention}Focused{} cards played with both {C:poke_fighting}Combo{}",
-					"cards also triggers {C:purple}Toxic{} when scored",
+					"Trigger {C:purple}Toxic{} once per upgrading",
+					"{C:attention}Focused{} card in poker hand",
 				}
 			},
 			--540
@@ -904,9 +904,8 @@ return {
 			rockium_zeal = {
 				name = "{X:poke_earth}Rockium{} Zeal",
 				text = {
-					"+1 hand selection",
-					"limit for next hand",
-					"after card is drawn",
+					"+1 hand selection limit",
+					"while card is selected",
 					"{C:inactive,s:0.8}(Max of 1){}"
 				},
 			},

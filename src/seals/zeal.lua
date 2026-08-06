@@ -6,7 +6,7 @@ local zeal = {
   pos = {x = 0, y = 0},
 	weight = 0.5,
   config = {cardType = '', typeVars = {}, bonusXChips = 2, wildXMult = 0.25, glassXMult = 2, glassNum = 1, glassDem = 6,
-		steelXMult = 2, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
+		steelXMult = 2.5, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
 		toxicScaling = 0.01, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,},
 	loc_vars = function(self, info_queue, center)

@@ -19,7 +19,7 @@ local toxic = {
 		return {
 			vars = { ((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicXMult) or 1), 
 							((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicMult_mod) or 0.05),
-							((G.GAME.toxic and G.GAME.toxic.cureRounds) or 6)}
+							((G.GAME.toxic and G.GAME.toxic.cureRounds) or 8)}
 		}
 	end,
 

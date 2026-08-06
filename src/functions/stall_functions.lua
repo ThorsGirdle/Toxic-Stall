@@ -34,7 +34,7 @@ set_toxic_rounds = function()
 	if not G.GAME.toxic then
 		G.GAME.toxic = {}
 		G.GAME.toxic.set = true
-		G.GAME.toxic.cureRounds = 6
+		G.GAME.toxic.cureRounds = 8
 	end
 end
 
@@ -54,13 +54,29 @@ SMODS.current_mod.calculate = function(self, context)
 			end
 		end
 		if reset == true then
-			G.GAME.toxic.cureRounds = 6
+			G.GAME.toxic.cureRounds = 8
 		end
 	end
 	
 	if context.skip_blind then
-		G.GAME.toxic.cureRounds = 6
+		G.GAME.toxic.cureRounds = 8
 	end
+	
+	if context.modify_scoring_hand then
+		local foundRock = false
+		for _, v in ipairs(context.full_hand) do
+			if v.config.center.key == "m_stone" and v.seal and v.seal == "stall_zeal" then 
+				foundRock = true
+				break
+			end
+		end
+		if foundRock == true then
+			rockium_hand_limit(1)
+		else
+			rockium_hand_limit(-1)
+		end
+	end
+	
 end
 
 --just espeon function but for yungoos
