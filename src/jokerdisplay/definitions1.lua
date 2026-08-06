@@ -28,51 +28,39 @@ def_list["j_stall_amoonguss"] = {
 	},
 }
 
-def_list["j_stall_klink"] = {
+def_list["j_stall_joltik"] = {
 	text = {			
-		{ text = "$", colour = G.C.GOLD },
-		{ ref_table = "card.ability.extra", ref_value = "money", colour = G.C.GOLD  },
-		{ text = " " },
-		{ref_table = "card.joker_display_values", ref_value = "draws", colour = G.C.GREY}
+		{ text = "Last Sum: ", colour = G.C.ORANGE },
+		{ ref_table = "card.ability.extra", ref_value = "lastSum", colour = G.C.ORANGE },
+
 	},
-	calc_function = function(card)
-		card.joker_display_values.draws = card.ability.extra.to_draw - card.ability.extra.drawn
-	end
 }
 
-def_list["j_stall_klang"] = {
-	text = {			
-		{ text = "$", colour = G.C.GOLD },
-		{ ref_table = "card.ability.extra", ref_value = "money", colour = G.C.GOLD  },
-		{ text = " " },
-		{ref_table = "card.joker_display_values", ref_value = "draws", colour = G.C.GREY}
+def_list["j_stall_galvantula"] = {
+	text = {	
+		{ text = "Last Sum: ", colour = G.C.ORANGE },
+		{ ref_table = "card.ability.extra", ref_value = "lastSum", colour = G.C.ORANGE },
 	},
-	calc_function = function(card)
-		card.joker_display_values.draws = card.ability.extra.to_draw - card.ability.extra.drawn
-	end
 }
 
-def_list["j_stall_klinklang"] = {
+def_list["j_stall_hawlucha"] = {
 	text = {			
-		{ text = "$", colour = G.C.GOLD },
-		{ ref_table = "card.ability.extra", ref_value = "money", colour = G.C.GOLD  },
-		{ text = " " },
-		{ ref_table = "card.joker_display_values", ref_value = "draws", colour = G.C.GREY}
-	},
-	reminder_text = {
 		{
 			border_nodes = {
 				{text = "X", colour = G.C.WHITE},
 				{ref_table = "card.ability.extra", ref_value = "Xmult", colour = G.C.WHITE},
+				},
 			},
 		},
+		extra = {
+    {
 		{text = " "},
 		{ref_table = "card.joker_display_values", ref_value = "acroDraws", colour = G.C.GREY },
 		{text = " "},
 		{ref_table = "card.joker_display_values", ref_value = "status", colour = G.C.GREY },
+		},
 	},	
 	calc_function = function(card)
-		card.joker_display_values.draws = card.ability.extra.to_draw - card.ability.extra.drawn
 		card.joker_display_values.acroDraws = math.max(card.ability.extra.totalTarget - card.ability.extra.totaldrawn, 0)
 		local status = "Inactive"
 		if card.joker_display_values.acroDraws == 0 then
@@ -82,16 +70,6 @@ def_list["j_stall_klinklang"] = {
 		end
 		card.joker_display_values.status = status
 	end
-}
-def_list["j_stall_diggersby"] = {
-	text = {		
-		{
-			border_nodes = {
-				{ text = "X" },
-				{ ref_table = "card.ability.extra", ref_value = "Xmult" },
-			},
-		},
-	},
 }
 
 def_list["j_stall_rowlet"] = {
