@@ -31,7 +31,7 @@ local sandygast = {
         chip_mod = card.ability.extra.chips
       }
      end
-    return scaling_evo(self, card, context, "j_stall_palossand", card.ability.extra.chips, self.config.evo_rqmt)
+    return pokermon.scaling_evo(self, card, context, "j_stall_palossand", card.ability.extra.chips, self.config.evo_rqmt)
 	end,
 }
 
@@ -50,17 +50,16 @@ local palossand = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
-	--custom_art = true,
 	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
 		if context.individual and context.cardarea == G.play and not context.blueprint then
-			local waterTypes = #find_pokemon_type("Water")
+			local waterTypes = #pokermon.find_pokemon_type("Water")
 			if context.other_card:is_suit("Spades") then
 				card.ability.extra.chips = (card.ability.extra.chips) + card.ability.extra.chip_mod
-				if context.other_card.ability.perma_mult < #find_pokemon_type("Water") then
+				if context.other_card.ability.perma_mult < #pokermon.find_pokemon_type("Water") then
 					context.other_card.ability.perma_mult = context.other_card.ability.perma_mult + 1
 					return {
 						message = localize('k_upgrade_ex'),

@@ -42,7 +42,7 @@ local spinarak = {
 				}
 			end
 		end
-	return scaling_evo(self, card, context, "j_stall_ariados", card.ability.extra.totalEarned, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_ariados", card.ability.extra.totalEarned, self.config.evo_rqmt)
 	end,
 }
 

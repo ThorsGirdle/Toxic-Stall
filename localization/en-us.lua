@@ -790,9 +790,9 @@ return {
 			c_stall_blacksludge = {
 				name = "Black Sludge",
 				text = {
-					"{C:enhanced}Enhance{} {C:attention}1{} selected", 
+					"Enhance {C:attention}1{} selected", 
 					"card and {C:attention}2{} random cards",
-					"in hand with {C:attention}Toxic{}", 
+					"in hand into {C:attention}Toxic cards{}", 
 				},
 			},
 			c_stall_clue = {
@@ -805,10 +805,19 @@ return {
 			c_stall_blackbelt = { 
 				name = "Black Belt",
 				text = {
-					"{C:enhanced}Enhance{} {C:attention}#1#{} selected", 
-					"card with {C:attention}Focused{}",
+					"Enhances {C:attention}#1#{} selected", 
+					"card into a",
+					"{C:attention}Focused card{}",
 				},
-			},	
+			},
+			c_stall_dragonfang = { 
+				name = "Dragon Fang",
+				text = {
+					"Enhances {C:attention}#1#{} selected", 
+					"card into a",
+					"{C:attention}Scale card{}",
+				},
+			},				
 		},
 		Enhanced = {
 			m_stall_toxic = {
@@ -831,6 +840,15 @@ return {
 					"Permanently gain {C:mult}+#1#{} Mult",
 					"if poker hand contains",
 					" both {C:poke_fighting}Combo{} cards",
+				}
+			},
+			m_stall_scale = {
+				name = "Scale Card",
+				text = {
+					"{B:1,V:2}#2#{} {C:poke_pink}Type{} Jokers have",
+					"{C:poke_pink}+#1#{} Energy while card",
+					"is in poker hand",
+					"{C:inactive,s:0.8}({C:poke_pink,s:0.8}Type{C:inactive,s:0.8} changes when discarded){}",
 				}
 			},
 		},		
@@ -897,8 +915,10 @@ return {
 			steelium_zeal = {
 				name = "{X:poke_metal}Steelium{} Zeal",
 				text = {
-					"{X:mult,C:white}X#1#{} Mult then discard",
-					"self when held in hand",
+					"{X:mult,C:white}X#1#{} Mult",
+					"when held in hand",
+					"Gain {X:mult,C:white}X#2#{} Mult per",
+					"{C:money}$#3#{} earned this round",
 				},
 			},	
 			rockium_zeal = {
@@ -966,6 +986,15 @@ return {
 					"Permanently gain {C:chips}+#2#{} Chips",
 					"and {C:mult}+#1#{} Mult when",
 					"card upgrades itself"
+				},
+			},
+			dragonium_zeal = {
+				name = "{X:poke_dragon}Dragonium{} Zeal",
+				text = {
+					"Increase max {C:poke_pink}Energy{} of a",
+					"fully {C:poke_pink}Energized {B:1,V:2}#1#{}",
+					"{C:poke_pink}Type{} Joker when discarded",
+
 				},
 			},
 			normalium_zeal = {

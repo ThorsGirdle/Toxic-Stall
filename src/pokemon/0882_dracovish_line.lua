@@ -40,7 +40,7 @@ local dracovish = {
 					end
 				end
 				if card.ability.extra.ancient_suits[card.ability.extra.suit2] > 2 then
-					local earned = ease_poke_dollars(card, "dracovish", card.ability.extra.money * card.ability.extra.tarotUsed)
+					local earned = pokermon.ease_poke_dollars(card, "dracovish", card.ability.extra.money * card.ability.extra.tarotUsed)
 					return {
 							message = '$'..earned,
 							colour = G.C.MONEY

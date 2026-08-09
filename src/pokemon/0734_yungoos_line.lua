@@ -27,7 +27,7 @@ local yungoos={
                 return true
             end
         }))
-			local earned = ease_poke_dollars(card, "yungoos", card.ability.extra.money_mod)
+			local earned = pokermon.ease_poke_dollars(card, "yungoos", card.ability.extra.money_mod)
 			if not context.blueprint then
 				reset_yungoos_card()
 				card.ability.extra.totalEarned = card.ability.extra.totalEarned + earned

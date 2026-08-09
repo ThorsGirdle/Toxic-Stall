@@ -5,10 +5,11 @@ local zeal = {
 	atlas = "PlaceholderStallSeals",
   pos = {x = 0, y = 0},
 	weight = 0.5,
-  config = {cardType = '', typeVars = {}, bonusXChips = 2, wildXMult = 0.25, glassXMult = 2, glassNum = 1, glassDem = 6,
-		steelXMult = 2.5, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
+  config = {cardType = '', typeVars = {}, bonusXChips = 2, wildXMult = 0.25, glassXMult = 2, 
+		steelXMult = 1.2, steelMoneyXMult = 0.05, steelMoney = 1, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
-		toxicScaling = 0.02, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,},
+		toxicScaling = 0.02, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,
+		scaleMax = 1, scaleNum = 1, scaleDem = 6,},
 	loc_vars = function(self, info_queue, center)
 		if center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_bonus" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "waterium_zeal", vars = {center.ability.seal.bonusXChips}}
@@ -18,10 +19,10 @@ local zeal = {
 			info_queue[#info_queue+1] = {set = 'Other', key = "buginium_zeal", vars = {center.ability.seal.wildXMult}}		
 			info_queue[#info_queue+1] = {set = 'Other', key = 'pickup'}
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_glass" then
-			local num, dem = SMODS.get_probability_vars(center, center.ability.seal.glassNum, center.ability.seal.glassDem, 'icium')
-			info_queue[#info_queue+1] = {set = 'Other', key = "icium_zeal", vars = {center.ability.seal.glassXMult, num, dem}}			
+			info_queue[#info_queue+1] = {set = 'Other', key = "icium_zeal", vars = {center.ability.seal.glassXMult}}			
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_steel" then
-			info_queue[#info_queue+1] = {set = 'Other', key = "steelium_zeal", vars = {center.ability.seal.steelXMult}}			
+			info_queue[#info_queue+1] = {set = 'Other', key = "steelium_zeal", vars = {(center.ability.seal.steelXMult + (center.ability.seal.steelMoneyXMult * (G.GAME.current_round.amount_gained or 0))),
+			center.ability.seal.steelMoneyXMult, center.ability.seal.steelMoney}}			
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stone" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "rockium_zeal", vars = {}}			
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_gold" then
@@ -38,6 +39,10 @@ local zeal = {
 			info_queue[#info_queue+1] = {set = 'Other', key = "poisonium_zeal", vars = {center.ability.seal.toxicScaling}}
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_focused" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "fightinium_zeal", vars = {center.ability.seal.focusedMult, center.ability.seal.focusedChips}}
+		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_scale" then
+			local num, dem = SMODS.get_probability_vars(center, center.ability.seal.scaleNum, center.ability.seal.scaleDem, 'dragonium')
+			local highlight_colour = center.ability.extra.currentType ~= "Lightning" and G.C.WHITE or G.C.BLACK
+			info_queue[#info_queue+1] = {set = 'Other', key = "dragonium_zeal", vars = {center.ability.extra.currentType, num, dem, colours = {pokermon.colours[string.lower(center.ability.extra.currentType)], highlight_colour}}}
 		elseif center and center.config and center.config.center then
 			info_queue[#info_queue+1] = {set = 'Other', key = "normalium_zeal", vars = {center.ability.seal.baseChips, center.ability.seal.baseMult, center.ability.seal.baseXMult}}			
 		end
@@ -89,7 +94,7 @@ local zeal = {
 		elseif card.config.center.key == "m_glass" then
 			if context.mod_probability and context.trigger_obj == card and context.identifier == "glass" then
 				return {
-					denominator = context.denominator * 4
+					denominator = context.denominator * 3
 				}
 			end
 			
@@ -120,45 +125,16 @@ local zeal = {
 					end
 				end
 			end
-			--[[if context.destroy_card then
-				local scoring = false
-				for _, v in ipairs(g.play) do
-					if v == card then
-						scoring = true
-						break
-					end
-				end
-				if scoring == true then
-					for _, v in ipairs(context.scoring_hand) do
-						if v ~= card and SMODS.pseudorandom_probability(card, 'icium', card.ability.seal.glassNum, card.ability.seal.glassDem, "icium") then
-							return {remove = true}
-						end
-					end	
-				end
-			end--]]
 			
 		elseif card.config.center.key == "m_steel" then
 			if context.main_scoring and context.cardarea == G.hand then
 				return {
-					x_mult = card.ability.seal.steelXMult
+					x_mult = card.ability.seal.steelXMult + (card.ability.seal.steelMoneyXMult * (G.GAME.current_round.amount_gained or 0))
 				}
 			end
-			if context.after and context.cardarea == G.hand then
-				 G.E_MANAGER:add_event(Event({
-                func = function()
-                    local any_selected = nil
-											G.hand:add_to_highlighted(card, true)
-											any_selected = true
-											play_sound('card1', 1)         
-                    
-                    if any_selected then 
-											G.FUNCS.discard_cards_from_highlighted(nil, true)
-										end
-                    return true
-                end
-            }))	
-			end
 			
+			
+
 		elseif card.config.center.key == "m_stone" then		
 			if context.after and G.GAME.current_round.rockium_selection and G.GAME.current_round.rockium_selection > 0 then
 				rockium_hand_limit(-1)
@@ -290,6 +266,33 @@ local zeal = {
 				card.ability.perma_bonus = card.ability.perma_bonus + card.ability.seal.focusedChips
 			end
 		
+		elseif card.config.center.key == "m_stall_scale" then
+			if context.pre_discard then
+				local sendit = false
+				for i,v in ipairs(context.full_hand) do
+					if v == card then
+						sendit = true
+						break
+					end
+				end
+				if sendit then
+					local eligible = {}
+					for i,v in ipairs(pokermon.find_pokemon_type(card.ability.extra.currentType)) do
+						if pokermon.energy.is_energizable(v) and not pokermon.energy.can_increase_energy(v) then
+							eligible[#eligible +1] = v
+						end
+					end
+					if #eligible >= 1 then
+						pseudoshuffle(eligible, pseudoseed('dragonium'))
+						eligible[1].ability.extra.e_limit_up = (eligible[1].ability.extra.e_limit_up or 0) + 1
+						return {
+							message = localize('k_upgrade_ex'), 
+							colour = G.C.ATTENTION
+						}			
+					end
+				end
+			end
+			
 		else 
 			if (context.change_rank or context.change_suit) and context.other_card == card then
 				local random = pseudorandom('Normalium Zeal')

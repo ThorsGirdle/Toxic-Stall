@@ -70,11 +70,29 @@ SMODS.current_mod.calculate = function(self, context)
 				break
 			end
 		end
-		if foundRock == true then
-			rockium_hand_limit(1)
-		else
-			rockium_hand_limit(-1)
+		if G.hand and G.hand.cards then
+			for _, v in ipairs(G.hand.cards) do
+				if SMODS.has_enhancement(v, "m_stall_scale") then 
+					v.ability.extra.isScoring = false
+				end
+			end
 		end
+		for _, v in ipairs(context.scoring_hand) do
+			if SMODS.has_enhancement(v, "m_stall_scale") then 
+				v.ability.extra.isScoring = true
+			end
+		end
+	end
+	
+	if context.money_altered then
+			local amount_gained = context.amount
+			if (SMODS.Mods["Talisman"] or {}).can_load then amount_gained = to_number(amount_gained) end
+      if amount_gained and amount_gained > 0 then
+				G.GAME.current_round.amount_gained = (G.GAME.current_round.amount_gained or 0) + amount_gained
+			end
+		end
+	if context.setting_blind then
+		reset_money_earned()
 	end
 	
 end
@@ -233,10 +251,29 @@ rockium_hand_limit = function(change)
 	end
 end
 
+-- so you dont get sick of the energize notification
+set_scale_vars = function(bool)
+	if not G.GAME.current_round.scale then
+		G.GAME.current_round.scale = {}
+		G.GAME.current_round.scale.set = true
+		G.GAME.current_round.scale.energize = true
+	end
+	if bool then
+		G.GAME.current_round.scale.energize = true
+	else 
+		G.GAME.current_round.scale.energize  = false
+	end
+end
+
+reset_money_earned = function()
+	G.GAME.current_round.amount_gained = 0
+end
 
 function SMODS.current_mod.reset_game_globals(run_start)
 	reset_toxic_scaling()
 	reset_clue()
+	set_scale_vars(true)
+	reset_money_earned()
   if run_start then
     set_focused_vars()
 		set_toxic_rounds()
