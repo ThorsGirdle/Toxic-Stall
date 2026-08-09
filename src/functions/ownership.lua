@@ -13,9 +13,11 @@ SMODS.Enhancement:take_ownership("poke_hazard", {
 					groundium = groundium + 1
 				end
 			end
-			return {
-				repetitions = groundium
-			}
+			if groundium > 0 then
+				return {
+					repetitions = groundium
+				}
+			end
 		end
    end,
 		
