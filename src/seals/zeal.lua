@@ -287,7 +287,8 @@ local zeal = {
 						eligible[1].ability.extra.e_limit_up = (eligible[1].ability.extra.e_limit_up or 0) + 1
 						return {
 							message = localize('k_upgrade_ex'), 
-							colour = G.C.ATTENTION
+							colour = G.C.ATTENTION,
+							card = eligible[1]
 						}			
 					end
 				end
