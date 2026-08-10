@@ -9,7 +9,7 @@ local dragonfang = {
   discovered = false,
 	hidden = false,
   atlas = 'PlaceholderStallItem',
-	weight = 0.03,
+	weight = 7.5,
 	config = { mod_conv = 'm_stall_scale', max_highlighted = 1, min_highlighted = 1},
 	loc_vars = function(self, info_queue, center)
     info_queue[#info_queue+1] = G.P_CENTERS.m_stall_scale
@@ -26,12 +26,8 @@ local dragonfang = {
 		end
   end,
 	
-	in_pool = function(self)	
-		if stall_config.BlackBelt and stall_config.BlackBelt == false then
-			return false
-		else 
-			return true
-		end
+	in_pool = function(self)
+    return stall_config.DragonFang
 	end,
 }
 

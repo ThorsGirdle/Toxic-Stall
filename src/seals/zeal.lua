@@ -4,7 +4,7 @@ local zeal = {
 	badge_colour = HEX("24BD7A"), --green placeholder
 	atlas = "PlaceholderStallSeals",
   pos = {x = 0, y = 0},
-	weight = 0.5,
+	weight = 1,
   config = {cardType = '', typeVars = {}, bonusXChips = 2, wildXMult = 0.25, glassXMult = 2, 
 		steelXMult = 1.2, steelMoneyXMult = 0.05, steelMoney = 1, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
@@ -313,8 +313,12 @@ local zeal = {
 	end,
 	
 	in_pool = function(self)
-		return true
-  end
+		if stall_config.ZCrystal and stall_config.ZCrystal == false then
+			return false
+		else 
+			return true
+		end
+  end,
 }
 
 return {

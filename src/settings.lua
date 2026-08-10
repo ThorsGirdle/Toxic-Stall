@@ -1,5 +1,5 @@
 -- Yes, this file is a mess, I'm not touching it again. I appreciate you Emma
-local Tile = assert(SMODS.load_file("src/settings/tile.lua"))()
+local StallTile = assert(SMODS.load_file("src/settings/tile.lua"))()
 local map = STALL.LIST_UTILS.map
 
 local content = assert(SMODS.load_file("src/settings/contents.lua"))()
@@ -12,7 +12,7 @@ local function create_tile_grid(args)
   local page_options = {}
 
   for i, _ in ipairs(content.pages) do
-    page_options[#page_options + 1] = localize('k_page') .. " " .. i .. "/" .. #content.pages
+    page_options[#page_options+1] = localize('k_page') .. " " .. i .. "/" .. #content.pages
   end
 
   local current_page = content.pages[args.page_num]
@@ -21,7 +21,7 @@ local function create_tile_grid(args)
   local second_row = { n = G.UIT.R, config = { align = "cm" }, nodes = { create_tile_spacer() } }
 
   local tiles = map(current_page.tiles, function(tile)
-    return Tile {
+    return StallTile {
       label = tile.label(),
       display_cards = tile.list,
       ref_table = stall_config,

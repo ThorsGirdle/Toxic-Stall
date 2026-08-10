@@ -1017,7 +1017,7 @@ return {
 			stall_Alolan_starters = "Alolan Starters",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",
-			stall_items = "Enhancement Items",
+			stall_items = "Modifier Items",
 			stallzeal_variable = "Zeal",
 
 		},

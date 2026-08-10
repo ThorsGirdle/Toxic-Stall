@@ -70,13 +70,14 @@ return {
 			{ list = { "j_stall_varoom", "j_stall_revavroom" }, label = function() return localize { type = "name_text", set = "Joker", key = "j_stall_varoom" } end, config_key = "Varoom" },
 			
 			},	
-	--[[	},
+		},
 		{
       title = function() return localize("stall_items") end,
       tiles = {
-				{ list = { "c_stall_blackbelt" }, label = function() return localize { type = "name_text", set = "Item", key = "c_stall_blackbelt" } end, config_key = "BlackBelt" },
-         
-      } --]]		
+				{ list = { "c_stall_blackbelt" }, label = function() return localize { type = "name_text", set = "poke_item", key = "c_stall_blackbelt" } end, config_key = "BlackBelt" },
+        { list = { "c_stall_dragonfang" }, label = function() return localize { type = "name_text", set = "poke_item", key = "c_stall_dragonfang" } end, config_key = "DragonFang" },
+				{ list = { "c_stall_z_crystal" }, label = function() return localize { type = "name_text", set = "Spectral", key = "c_stall_z_crystal" } end, config_key = "ZCrystal" },
+      } 	
     }, 
 	}
 	

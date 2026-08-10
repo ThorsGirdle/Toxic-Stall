@@ -8,9 +8,8 @@ local blackbelt = {
 	--artist = "Emma",
   unlocked = true,
   discovered = true,
-	hidden = true,
-  soul_set = "poke_item",
-  weight = .08,
+	hidden = false,
+  weight = 7.5,
   atlas = 'PlaceholderStallItem',
 	config = { mod_conv = 'm_stall_focused', max_highlighted = 1, min_highlighted = 1},
 	loc_vars = function(self, info_queue, center)
@@ -28,12 +27,9 @@ local blackbelt = {
 		end
   end,
 	
-  in_pool = function(self)	
-		if stall_config.BlackBelt and stall_config.BlackBelt == false then
-			return false
-		else 
-			return true
-		end
+	
+	in_pool = function(self)
+    return stall_config.BlackBelt
 	end,
 }
 

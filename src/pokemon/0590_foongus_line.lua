@@ -1,6 +1,6 @@
 local foongus = {
 	name = "foongus",
-	pos = {x = 8, y = 39},
+	--pos = {x = 8, y = 39},
 	config = {extra = {Xmult_mod = 0.10, rounds = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -12,7 +12,7 @@ local foongus = {
 	stage = "Basic",
 	ptype = "Grass",
 	gen = 5,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	toxic = true,
 	designer = "Thor's Girdle",
 	perishable_compat = true,
@@ -40,11 +40,12 @@ local foongus = {
     end
 		return level_evo(self, card, context, "j_stall_amoonguss")
 	end,
+	attributes = {"toxic"},
 }
 
 local amoonguss = {
 	name = "amoonguss",
-	pos = {x = 10, y = 39},
+	--pos = {x = 10, y = 39},
 	config = {extra = {Xmult_mod = 0.25, mult = 0, mult_mod = 5}},
 	loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -56,7 +57,7 @@ local amoonguss = {
 	stage = "One",
 	ptype = "Grass",
 	gen = 5,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 	toxic = true,
 	designer = "Thor's Girdle",
 	perishable_compat = true,
@@ -100,6 +101,7 @@ local amoonguss = {
 			end --]]	
 		end
 	end,
+	attributes = {"toxic"},
 }
 
 return {

@@ -2,7 +2,7 @@ STALL = {}
 
 stall_config = SMODS.current_mod.config
 
---SMODS.current_mod.optional_features = { quantum_enhancements = true }
+SMODS.current_mod.optional_features = { object_weights = true }
 
 assert(SMODS.load_file("src/functions.lua"))()
 assert(SMODS.load_file("src/sprites.lua"))()

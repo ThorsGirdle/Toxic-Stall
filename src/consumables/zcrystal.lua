@@ -7,7 +7,7 @@ local z_crystal = {
   discovered = false,
 	hidden = true,
   soul_set = "poke_item",
-  soul_rate = .015,
+  soul_rate = .008,
   atlas = 'PlaceholderStallItem',
 	config = { extra = { seal = 'stall_zeal' }, max_highlighted = 1 },
 	loc_vars = function(self, info_queue, card)
@@ -43,9 +43,13 @@ local z_crystal = {
 					end
 			}))
 	end,
+	
+	in_pool = function(self)
+    return stall_config.ZCrystal
+	end,
 }
 	
 return {
-	name = "Spectrals",
-	list = { z_crystal, }
+  config_key = "ZCrystal",
+  list = { z_crystal },
 }

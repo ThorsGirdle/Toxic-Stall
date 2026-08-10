@@ -58,7 +58,7 @@ local toxic = {
 	in_pool = function(self)
 	local toxic_mons = false
 	if G.jokers and G.jokers.cards then
-		for k, v in ipairs(G.jokers.cards) do
+		for k, v in pairs(G.jokers.cards) do
 			if v.toxic then
 				toxic_mons = true
 				break
@@ -73,11 +73,10 @@ local toxic = {
 			end
 		end
 	end
-	if not toxic_mons and totalToxic < 5 then
-		return false
-	else 
-		return true
+	if  totalToxic >= 5 then
+		toxic_mons = true 
 	end
+	return toxic_mons
 end,
 }
 

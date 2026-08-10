@@ -12,7 +12,7 @@ local scale = {
   unlocked = true,
   discovered = true,
   no_collection = false,
-	weight = 0.1,
+	weight = 4,
 
   loc_vars = function(self, info_queue, card)
 		type_tooltip(self, info_queue, card)
@@ -62,6 +62,10 @@ local scale = {
 	
 	set_ability = function(self, card, initial, delay_sprites)
 		card.ability.extra.currentType = self:get_next_type(card)
+	end,
+	
+	in_pool = function(self)
+    return stall_config.DragonFang
 	end,
 }
 return {
