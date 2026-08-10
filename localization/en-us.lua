@@ -810,12 +810,12 @@ return {
 					"{C:attention}Focused card{}",
 				},
 			},
-			c_stall_dragonfang = { 
-				name = "Dragon Fang",
+			c_stall_dustygeode = { 
+				name = "Dusty Geode",
 				text = {
 					"Enhances {C:attention}#1#{} selected", 
 					"card into a",
-					"{C:attention}Scale card{}",
+					"{C:attention}Gem card{}",
 				},
 			},				
 		},
@@ -842,8 +842,8 @@ return {
 					" both {C:poke_fighting}Combo{} cards",
 				}
 			},
-			m_stall_scale = {
-				name = "Scale Card",
+			m_stall_gem = {
+				name = "Gem Card",
 				text = {
 					"{B:1,V:2}#2#{} {C:poke_pink}Type{} Jokers have",
 					"{C:poke_pink}+#1#{} Energy while card",

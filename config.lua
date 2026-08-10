@@ -34,6 +34,6 @@ return{
 	Rellor = true,
 	Varoom = true,
 	BlackBelt = true,
-	DragonFang = true,
+	DustyGeode = true,
 	ZCrystal = true,
 }

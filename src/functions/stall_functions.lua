@@ -72,13 +72,13 @@ SMODS.current_mod.calculate = function(self, context)
 		end
 		if G.hand and G.hand.cards then
 			for _, v in ipairs(G.hand.cards) do
-				if SMODS.has_enhancement(v, "m_stall_scale") then 
+				if SMODS.has_enhancement(v, "m_stall_gem") then 
 					v.ability.extra.isScoring = false
 				end
 			end
 		end
 		for _, v in ipairs(context.scoring_hand) do
-			if SMODS.has_enhancement(v, "m_stall_scale") then 
+			if SMODS.has_enhancement(v, "m_stall_gem") then 
 				v.ability.extra.isScoring = true
 			end
 		end
@@ -252,16 +252,16 @@ rockium_hand_limit = function(change)
 end
 
 -- so you dont get sick of the energize notification
-set_scale_vars = function(bool)
-	if not G.GAME.current_round.scale then
-		G.GAME.current_round.scale = {}
-		G.GAME.current_round.scale.set = true
-		G.GAME.current_round.scale.energize = true
+set_gem_vars = function(bool)
+	if not G.GAME.current_round.gem then
+		G.GAME.current_round.gem = {}
+		G.GAME.current_round.gem.set = true
+		G.GAME.current_round.gem.energize = true
 	end
 	if bool then
-		G.GAME.current_round.scale.energize = true
+		G.GAME.current_round.gem.energize = true
 	else 
-		G.GAME.current_round.scale.energize  = false
+		G.GAME.current_round.gem.energize  = false
 	end
 end
 
@@ -272,7 +272,7 @@ end
 function SMODS.current_mod.reset_game_globals(run_start)
 	reset_toxic_scaling()
 	reset_clue()
-	set_scale_vars(true)
+	set_gem_vars(true)
 	reset_money_earned()
   if run_start then
     set_focused_vars()
