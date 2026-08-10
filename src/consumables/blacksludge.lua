@@ -44,16 +44,8 @@ local blacksludge = {
 		if G.jokers and G.jokers.cards then
 			for k, v in ipairs(G.jokers.cards) do
 				local tempCard = v
-				if tempCard:has_attribute("toxic") then
-						print("attr")
-				end
-				key = SMODS.poll_object({ attributes = {"ancient"} })
-        if tempCard.toxic or tempCard:has_attribute("toxic") then
-					print("here 4")
+        if tempCard.config.center.toxic or tempCard:has_attribute("toxic") then
           toxic_mons = true
-					if tempCard:has_attribute("toxic") then
-						print("attr")
-					end
 					break
         end
 			end
@@ -66,9 +58,9 @@ local blacksludge = {
 				end
 			end
 		end
-		--if  totalToxic >= 5 then
+		if  totalToxic >= 5 then
 			toxic_mons = true 
-		--end
+		end
 		return toxic_mons
 	end,
 }

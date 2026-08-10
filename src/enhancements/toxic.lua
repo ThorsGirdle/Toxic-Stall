@@ -57,27 +57,28 @@ local toxic = {
 	end,	
 	in_pool = function(self)
 	local toxic_mons = false
-	if G.jokers and G.jokers.cards then
-		for k, v in pairs(G.jokers.cards) do
-			if v.toxic then
-				toxic_mons = true
-				break
+		if G.jokers and G.jokers.cards then
+			for k, v in ipairs(G.jokers.cards) do
+				local tempCard = v
+        if tempCard.config.center.toxic or tempCard:has_attribute("toxic") then
+          toxic_mons = true
+					break
+        end
 			end
 		end
-	end
-	local totalToxic = 0
-	if G.deck and G.deck.cards then
-		for k, v in pairs(G.deck.cards) do
-			if SMODS.has_enhancement(v, "m_stall_toxic") then
-				totalToxic = totalToxic + 1
+		local totalToxic = 0
+		if G.deck and G.deck.cards then
+			for k, v in pairs(G.deck.cards) do
+        if SMODS.has_enhancement(v, "m_stall_toxic") then
+					totalToxic = totalToxic + 1
+				end
 			end
 		end
-	end
-	if  totalToxic >= 5 then
-		toxic_mons = true 
-	end
-	return toxic_mons
-end,
+		if  totalToxic >= 5 then
+			toxic_mons = true 
+		end
+		return toxic_mons
+	end,
 }
 
 return {
