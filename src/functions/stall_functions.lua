@@ -70,6 +70,11 @@ SMODS.current_mod.calculate = function(self, context)
 				break
 			end
 		end
+		if foundRock == true then
+			rockium_hand_limit(1)
+		else
+			rockium_hand_limit(-1)
+		end
 		if G.hand and G.hand.cards then
 			for _, v in ipairs(G.hand.cards) do
 				if SMODS.has_enhancement(v, "m_stall_gem") then 
