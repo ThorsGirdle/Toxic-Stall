@@ -269,6 +269,30 @@ reset_money_earned = function()
 	G.GAME.current_round.amount_gained = 0
 end
 
+
+--hooks to dynamically adjust whether to show a Vestige card's Rank
+local hookNoRanks = SMODS.has_no_rank
+function SMODS.has_no_rank(card)
+	if SMODS.has_enhancement(card, "m_stall_vestige") then
+		return card.ability.extra.noRank
+	else
+		return hookNoRanks(card)	
+	end
+end
+
+local hookReplaceBaseCard = Card.should_hide_front
+function Card:should_hide_front()
+	if SMODS.has_enhancement(self, "m_stall_vestige") then
+		if self.ability and self.ability.extra and self.ability.extra.noRank and self.ability.extra.noRank == true then
+			return true
+		else 
+			return false
+		end
+	end
+	return hookReplaceBaseCard(self)
+end
+
+
 function SMODS.current_mod.reset_game_globals(run_start)
 	reset_toxic_scaling()
 	reset_clue()

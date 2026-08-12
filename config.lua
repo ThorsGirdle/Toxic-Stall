@@ -35,5 +35,6 @@ return{
 	Varoom = true,
 	BlackBelt = true,
 	DustyGeode = true,
+	SilphScope = true, 
 	ZCrystal = true,
 }

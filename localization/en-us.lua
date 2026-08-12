@@ -817,6 +817,14 @@ return {
 					"card into a",
 					"{C:attention}Gem card{}",
 				},
+			},
+			c_stall_silphscope = { 
+				name = "Silph Scope",
+				text = {
+					"Enhances {C:attention}#1#{} selected", 
+					"card into a",
+					"{C:attention}Vestige card{}",
+				},
 			},				
 		},
 		Enhanced = {
@@ -849,6 +857,14 @@ return {
 					"{C:poke_pink}+#1#{} Energy while card",
 					"is in poker hand",
 					"{C:inactive,s:0.8}({C:poke_pink,s:0.8}Type{C:inactive,s:0.8} changes when discarded){}",
+				}
+			},
+			m_stall_vestige = {
+				name = "Vestige Card",
+				text = {
+					"Becomes rank of ",
+					"{C:attention}left{} card minus {C:attention}1{}",
+
 				}
 			},
 		},		
@@ -995,6 +1011,14 @@ return {
 					"fully {C:poke_pink}Energized {B:1,V:2}#1#{}",
 					"{C:poke_pink}Type{} Joker when discarded",
 
+				},
+			},
+			ghostium_zeal = {
+				name = "{X:spectral}Ghostium{} Zeal",
+				text = {
+					"Create a {C:spectral}Spectral{} card",
+					"if {C:attention}poker hand{} has exactly",
+					"{C:attention}#1#{} cards with higher ranks",
 				},
 			},
 			normalium_zeal = {

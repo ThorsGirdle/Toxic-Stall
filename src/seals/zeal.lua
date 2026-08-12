@@ -9,7 +9,7 @@ local zeal = {
 		steelXMult = 1.2, steelMoneyXMult = 0.05, steelMoney = 1, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
 		toxicScaling = 0.02, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,
-		gemMax = 1, gemNum = 1, gemDem = 6,},
+		gemMax = 1, gemNum = 1, gemDem = 6, vestigeBigger = 2},
 	loc_vars = function(self, info_queue, center)
 		if center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_bonus" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "waterium_zeal", vars = {center.ability.seal.bonusXChips}}
@@ -43,6 +43,8 @@ local zeal = {
 			local num, dem = SMODS.get_probability_vars(center, center.ability.seal.gemNum, center.ability.seal.gemDem, 'dragonium')
 			local highlight_colour = center.ability.extra.currentType ~= "Lightning" and G.C.WHITE or G.C.BLACK
 			info_queue[#info_queue+1] = {set = 'Other', key = "dragonium_zeal", vars = {center.ability.extra.currentType, num, dem, colours = {pokermon.colours[string.lower(center.ability.extra.currentType)], highlight_colour}}}
+		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_vestige" then
+			info_queue[#info_queue+1] = {set = 'Other', key = "ghostium_zeal", vars = {center.ability.seal.vestigeBigger}}
 		elseif center and center.config and center.config.center then
 			info_queue[#info_queue+1] = {set = 'Other', key = "normalium_zeal", vars = {center.ability.seal.baseChips, center.ability.seal.baseMult, center.ability.seal.baseXMult}}			
 		end
@@ -293,7 +295,35 @@ local zeal = {
 					end
 				end
 			end
-			
+		elseif card.config.center.key == "m_stall_vestige" then
+			if context.before then
+				local higherRanks = 0
+				for _, v in ipairs(context.scoring_hand) do
+					if v:get_id() > card:get_id() then
+						higherRanks = higherRanks + 1
+					end
+				end
+				if higherRanks == card.ability.seal.vestigeBigger then
+					if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+						G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+						G.E_MANAGER:add_event(Event({
+							func = (function()
+								SMODS.add_card {
+									set = 'Spectral',
+									key_append = 'stall_ghostium_zeal' -- Optional, useful for manipulating the random seed and checking the source of the creation in `in_pool`.
+									}
+									G.GAME.consumeable_buffer = 0
+									return true
+							end)
+						}))
+					return {
+						message = localize('k_plus_spectral'),
+						colour = G.C.SECONDARY_SET.Spectral
+					}
+					end
+				end
+			end
+		
 		else 
 			if (context.change_rank or context.change_suit) and context.other_card == card then
 				local random = pseudorandom('Normalium Zeal')
