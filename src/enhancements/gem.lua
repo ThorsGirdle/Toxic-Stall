@@ -56,6 +56,10 @@ local gem = {
 		
 		if context.discard and context.other_card == card then
 			card.ability.extra.currentType = self:get_next_type(card)
+			return {
+				message = card.ability.extra.currentType,
+				colour = pokermon.colours[string.lower(card.ability.extra.currentType)],
+			}
 		end
 		
 	end,
