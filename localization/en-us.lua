@@ -254,6 +254,17 @@ return {
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",					
 				}
 			},
+			--621
+			j_stall_druddigon = {
+				name = 'Druddigon',
+				text = {
+					"{C:attention}Nature:{} {C:inactive}({B:1,V:2}#1#{C:inactive})",
+					"{C:attention}Gem{} cards give {C:poke_pink}+1{} Energy to",
+					"Jokers with {C:attention}Nature{} {C:poke_pink}Type{}",
+					"while in poker hand",
+				}
+			},
+			
 			--636
 			j_stall_larvesta = {
 				name = 'Larvesta',
@@ -815,7 +826,7 @@ return {
 				text = {
 					"Enhances {C:attention}#1#{} selected", 
 					"card into a",
-					"{C:attention}Gem card{}",
+					"{B:1,V:2}#2#{C:attention} Gem card{}",
 				},
 			},
 			c_stall_silphscope = { 
@@ -1029,6 +1040,15 @@ return {
 					"when card changes",
 					"{C:attention}Rank{} or {C:attention}Suit{}",
 				},
+			},
+			stall_gem = {
+				name = "Gem Card",
+				text = {
+					"{B:1,V:2}#2#{} {C:poke_pink}Type{} Jokers have",
+					"{C:poke_pink}+#1#{} Energy while card",
+					"is in poker hand",
+					"{C:inactive,s:0.8}({C:poke_pink,s:0.8}Type{C:inactive,s:0.8} changes when discarded){}",
+				}
 			},
 		},
 	},

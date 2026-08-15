@@ -9,6 +9,7 @@ return{
 	Foongus = true,
 	Joltik = true,
 	Mienfoo = true,
+	Druddigon = true,
 	Larvesta = true,
 	Skrelp = true,
 	Hawlucha = true,

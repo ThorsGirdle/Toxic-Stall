@@ -3,7 +3,6 @@ local foongus = {
 	--pos = {x = 8, y = 39},
 	config = {extra = {Xmult_mod = 0.10, rounds = 5}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_blacksludge
 	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.rounds}}
 	end,
@@ -38,7 +37,7 @@ local foongus = {
 				}
 			end
     end
-		return level_evo(self, card, context, "j_stall_amoonguss")
+		return pokermon.level_evo(self, card, context, "j_stall_amoonguss")
 	end,
 	attributes = {"toxic"},
 }
@@ -48,7 +47,6 @@ local amoonguss = {
 	--pos = {x = 10, y = 39},
 	config = {extra = {Xmult_mod = 0.25, mult = 0, mult_mod = 5}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_blacksludge
 	  return {vars = {card.ability.extra.Xmult_mod, card.ability.extra.mult, card.ability.extra.mult_mod}}
 	end,
@@ -83,22 +81,6 @@ local amoonguss = {
 					extra = { message = 'Effect Spore', colour = G.C.MULT },
 				}
 			end
-			--[[
-			if context.joker_main and card.ability.extra.mult > 0 then
-				return{
-					message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
-					--colour = G.C.RED,
-					mult_mod = card.ability.extra.mult
-				}		
-			end
-    end
-		if context.using_consumeable and not context.blueprint then
-			if context.consumeable.ability.name == "pokeball" or context.consumeable.ability.name == "greatball" or context.consumeable.ability.name == "ultraball" or context.consumeable.ability.name == "masterball" then
-				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
-				return {
-						extra = { message = localize('k_upgrade_ex'), colour = G.C.MULT}
-						}
-			end --]]	
 		end
 	end,
 	attributes = {"toxic"},

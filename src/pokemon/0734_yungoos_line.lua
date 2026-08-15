@@ -3,7 +3,6 @@ local yungoos={
   pos = {x = 0, y = 0},
   config = {extra = {money_mod = 8, totalEarned = 0}, evo_rqmt = 24},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.money_mod, math.max(self.config.evo_rqmt - card.ability.extra.totalEarned, 0), localize(G.GAME.current_round.yungoos_rank or "Ace", 'ranks'),
                    (G.GAME.current_round.yungoos_suit or "Spades"), colours = {G.C.SUITS[G.GAME.current_round.yungoos_suit or "Spades"]}}}
   end,
@@ -54,7 +53,6 @@ local gumshoos={
   pos = {x = 0, y = 0},
   config = {extra = {money_mod = 10, rank = "???", suit = "???", rankRevealed = false, suitRevealed = false }},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.c_stall_clue
 		local abbr = card.ability.extra
 		if abbr.rankRevealed == true then

@@ -9,7 +9,7 @@ local zeal = {
 		steelXMult = 1.2, steelMoneyXMult = 0.05, steelMoney = 1, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
 		toxicScaling = 0.02, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,
-		gemMax = 1, gemNum = 1, gemDem = 6, vestigeBigger = 2},
+		gemMax = 1, vestigeBigger = 2},
 	loc_vars = function(self, info_queue, center)
 		if center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_bonus" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "waterium_zeal", vars = {center.ability.seal.bonusXChips}}
@@ -40,9 +40,8 @@ local zeal = {
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_focused" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "fightinium_zeal", vars = {center.ability.seal.focusedMult, center.ability.seal.focusedChips}}
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_gem" then
-			local num, dem = SMODS.get_probability_vars(center, center.ability.seal.gemNum, center.ability.seal.gemDem, 'dragonium')
 			local highlight_colour = center.ability.extra.currentType ~= "Lightning" and G.C.WHITE or G.C.BLACK
-			info_queue[#info_queue+1] = {set = 'Other', key = "dragonium_zeal", vars = {center.ability.extra.currentType, num, dem, colours = {pokermon.colours[string.lower(center.ability.extra.currentType)], highlight_colour}}}
+			info_queue[#info_queue+1] = {set = 'Other', key = "dragonium_zeal", vars = {center.ability.extra.currentType, colours = {pokermon.colours[string.lower(center.ability.extra.currentType)], highlight_colour}}}
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_vestige" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "ghostium_zeal", vars = {center.ability.seal.vestigeBigger}}
 		elseif center and center.config and center.config.center then

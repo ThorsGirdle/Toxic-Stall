@@ -3,7 +3,6 @@ local croagunk = {
 	--pos = {x = 4, y = 30},
 	config = {extra = {pokerHand = "None", rounds = 5}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_focused
 	  return {vars = {card.ability.extra.pokerHand, card.ability.extra.rounds}}
 	end,
@@ -41,7 +40,7 @@ local croagunk = {
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
 			card.ability.extra.pokerHand = "None"
 		end
-	return level_evo(self, card, context, "j_stall_toxicroak")
+	return pokermon.level_evo(self, card, context, "j_stall_toxicroak")
 	end,
 }
 
@@ -50,7 +49,6 @@ local toxicroak = {
 	--pos = {x = 6, y = 30},
 	config = {extra = {pokerHand = "None"}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_focused
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic		
 	  return {vars = {card.ability.extra.pokerHand}}

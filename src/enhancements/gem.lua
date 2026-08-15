@@ -3,7 +3,7 @@ local gem = {
   atlas = "PlaceholderStallEnhancements",
 	--artist = 
   pos = { x = 1, y = 0 },
-	config = {extra = {energyGiven = 1, currentType = "Grass", cycleTypes = {}, isScoring = false, check = true}},
+	config = {extra = {energyGiven = 1, currentType = "Grass", cycleTypes = {}, isScoring = false, wasSet = false}},
 	any_suit = false,
   replace_base_card = false,
   no_rank = false,
@@ -15,7 +15,6 @@ local gem = {
 	weight = 6,
 
   loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 		local highlight_colour = abbr.currentType ~= "Lightning" and G.C.WHITE or G.C.BLACK
 		return {
@@ -35,7 +34,7 @@ local gem = {
 		if context.press_play and card.ability.extra.isScoring == true then
 			for i,v in ipairs(pokermon.find_pokemon_type(card.ability.extra.currentType)) do
 				if pokermon.energy.is_energizable(v) and  G.GAME.current_round.gem and G.GAME.current_round.gem.energize and  G.GAME.current_round.gem.energize == true then
-					pokermon.energy.energize(v, card.ability.extra.currentType, false, false, card.ability.extra.energyGiven)
+					pokermon.energy.energize(v, card.ability.extra.currentType, false, false, card.ability.extra.energyGiven) --To Do: make Gem's energy given a global. If you want it sooner than later let me know
 					set_gem_vars(false)
 				elseif pokermon.energy.is_energizable(v) then
 					pokermon.energy.energize(v, card.ability.extra.currentType, false, true, card.ability.extra.energyGiven)
@@ -62,10 +61,31 @@ local gem = {
 			}
 		end
 		
+		if card.ability.extra.wasSet == true then
+			card.ability.extra.cycleTypes = {}
+				for _, t in ipairs(POKE_TYPES) do
+					if t ~= chosenType then
+						table.insert(card.ability.extra.cycleTypes, t)
+					end
+				end
+			pseudoshuffle(card.ability.extra.cycleTypes, 'gem')
+			card.ability.extra.wasSet = false
+		end
+
+		
 	end,
 	
 	set_ability = function(self, card, initial, delay_sprites)
+		if not card.ability.extra.cycleTypes or #card.ability.extra.cycleTypes < 1 then
+			for _, t in ipairs(POKE_TYPES) do
+				if t ~= chosenType then
+					table.insert(card.ability.extra.cycleTypes, t)
+				end
+			end
+		end
+		pseudoshuffle(card.ability.extra.cycleTypes, 'gem')
 		card.ability.extra.currentType = self:get_next_type(card)
+		
 	end,
 	
 	in_pool = function(self)
