@@ -40,13 +40,13 @@ calculate = function(self, card, context)
 			}
 			end
 	end
-	return scaling_evo(self, card, context, "j_stall_toxapex", card.ability.extra.heldTH, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_toxapex", card.ability.extra.heldTH, self.config.evo_rqmt)
 end,
 add_to_deck = function(self, card, from_debuff)
-	poke_change_hazard_level(card.ability.extra.hazard_level)
+	pokermon.change_hazard_level(card.ability.extra.hazard_level)
 end,
 remove_from_deck = function(self, card, from_debuff)
-	poke_change_hazard_level(-card.ability.extra.hazard_level)
+	pokermon.change_hazard_level(-card.ability.extra.hazard_level)
 end
 }
 
@@ -98,10 +98,10 @@ calculate = function(self, card, context)
 	end
 end,
 add_to_deck = function(self, card, from_debuff)
-	poke_change_hazard_level(card.ability.extra.hazard_level)
+	pokermon.change_hazard_level(card.ability.extra.hazard_level)
 end,
 remove_from_deck = function(self, card, from_debuff)
-	poke_change_hazard_level(-card.ability.extra.hazard_level)
+	pokermon.change_hazard_level(-card.ability.extra.hazard_level)
 end
 }
 

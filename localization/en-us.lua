@@ -38,6 +38,27 @@ return {
 					"with {C:attention}Toxic{} when a {C:attention}face{} card is destroyed",
 				}
 			},
+			--425
+			j_stall_drifloon = {
+				name = 'Drifloon',
+				text = {
+					"{C:attention}Unenhanced{} drawn cards",
+					"with {C:attention}depleted{} ranks",
+					"become {C:attention}Vestige{} cards",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{C:inactive,s:0.8} rounds)",
+				}
+			},
+			j_stall_drifblim = {
+				name = 'Drifblim',
+				text = {
+					"{C:attention}Unenhanced{} drawn cards",
+					"with {C:attention}depleted{} ranks",
+					"become {C:attention}Vestige{} cards",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Played cards with {C:attention}depleted{}",
+					"ranks give {X:mult,C:white}X#1#{} Mult when scored",
+				}
+			},
 			--453
 			j_stall_croagunk = {
 				name = 'Croagunk',

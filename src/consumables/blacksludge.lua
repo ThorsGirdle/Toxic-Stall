@@ -17,7 +17,7 @@ local blacksludge = {
     return {vars = {}}--self.config.max_highlighted, self.config.card_amount, key = self.config.mod_conv}}}
   end,
   use = function(self, card, area, copier)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
 		if #G.hand.highlighted == 1 then
 		
       local cards_held = {}

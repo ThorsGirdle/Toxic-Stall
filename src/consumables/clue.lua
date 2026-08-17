@@ -24,7 +24,7 @@ local clue = {
 	end,
 	
   use = function(self, card, area, copier)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
 		clue_increment(self.config.handsize)	
   end,
   in_pool = function(self)

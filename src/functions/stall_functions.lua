@@ -89,6 +89,16 @@ SMODS.current_mod.calculate = function(self, context)
 		end
 	end
 	
+	if context.setting_blind then
+		if G.deck and G.deck.cards then
+			for i,v in ipairs(G.deck.cards) do
+				if SMODS.has_enhancement(v, "m_stall_vestige") then
+					v.ability.extra.noRank = true
+				end
+			end
+		end
+	end
+	
 	if context.money_altered then
 			local amount_gained = context.amount
 			if (SMODS.Mods["Talisman"] or {}).can_load then amount_gained = to_number(amount_gained) end

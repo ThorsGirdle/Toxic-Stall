@@ -16,7 +16,6 @@ local focused = {
 	weight = 0,
 
   loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		abbr = card.ability.extra
 		
 		return {vars = {abbr.comboMult, (G.GAME.focused and G.GAME.focused.combo_rank.value or "Ace"), 
