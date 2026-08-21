@@ -37,7 +37,7 @@ local drifloon = {
 						end
 						if trigger == true then
 							drawnCard:set_ability(G.P_CENTERS.m_stall_vestige)
-							SMODS.calculate_effect({message = "Upgrade!"}, drawnCard)
+							SMODS.calculate_effect({message = localize('k_upgrade_ex')}, drawnCard)
 						end
 					end
 				end
@@ -86,7 +86,7 @@ local drifblim = {
 						end
 						if trigger == true then
 							drawnCard:set_ability(G.P_CENTERS.m_stall_vestige)
-							SMODS.calculate_effect({message = "Upgrade!"}, drawnCard)
+							SMODS.calculate_effect({message = localize('k_upgrade_ex')}, drawnCard)
 						end
 					end
 				end
@@ -95,7 +95,10 @@ local drifblim = {
 		
 		if context.individual and context.cardarea == G.play then
 			local trigger = true
-			if G.deck and G.deck.cards then
+			if SMODS.has_no_rank(context.other_card) then
+				trigger = false
+			end
+			if G.deck and G.deck.cards and not SMODS.has_no_rank(context.other_card) then
 				for k, v in ipairs(G.deck.cards) do
 					if context.other_card:get_id() == v:get_id() and not SMODS.has_no_rank(v) and not SMODS.has_enhancement(v, "m_stall_vestige") then
 						trigger = false
