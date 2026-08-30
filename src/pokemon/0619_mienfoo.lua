@@ -3,7 +3,6 @@ local mienfoo = {
 	--pos = {x = 0, y = 0},
 	config = {extra = {uniqueHands = {}, handReq = 4, activations = 0}, evo_rqmt = 3},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_focused
 	  return {vars = {math.max(card.ability.extra.handReq - #card.ability.extra.uniqueHands, 0), math.max(self.config.evo_rqmt - card.ability.extra.activations, 0)}}
 	end,
@@ -49,7 +48,7 @@ local mienfoo = {
 			end
 		end
 		
-	return scaling_evo(self, card, context, "j_stall_mienshao", card.ability.extra.activations, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_mienshao", card.ability.extra.activations, self.config.evo_rqmt)
 	end,
 }
 

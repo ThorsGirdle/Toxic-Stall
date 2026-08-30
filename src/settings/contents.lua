@@ -80,6 +80,8 @@ return {
 				{ list = { "c_stall_blackbelt" }, label = function() return localize { type = "name_text", set = "poke_item", key = "c_stall_blackbelt" } end, config_key = "BlackBelt" },
         { list = { "c_stall_dustygeode" }, label = function() return localize { type = "name_text", set = "poke_item", key = "c_stall_dustygeode" } end, config_key = "DustyGeode" },
 				{ list = { "c_stall_silphscope" }, label = function() return localize { type = "name_text", set = "poke_item", key = "c_stall_silphscope" } end, config_key = "SilphScope" },
+				{ list = { "c_stall_choiceband" }, label = function() return localize { type = "name_text", set = "poke_item", key = "c_stall_choiceband" } end, config_key = "ChoiceBand" },
+				{ list = { "c_stall_ejectbutton" }, label = function() return localize { type = "name_text", set = "poke_item", key = "c_stall_ejectbutton" } end, config_key = "EjectButton" },
 				{ list = { "c_stall_z_crystal" }, label = function() return localize { type = "name_text", set = "Spectral", key = "c_stall_z_crystal" } end, config_key = "ZCrystal" },
       } 	
     }, 

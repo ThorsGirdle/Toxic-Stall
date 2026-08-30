@@ -64,28 +64,21 @@ local gem = {
 		if card.ability.extra.wasSet == true then
 			card.ability.extra.cycleTypes = {}
 				for _, t in ipairs(POKE_TYPES) do
-					if t ~= chosenType then
-						table.insert(card.ability.extra.cycleTypes, t)
-					end
+					table.insert(card.ability.extra.cycleTypes, t)
 				end
 			pseudoshuffle(card.ability.extra.cycleTypes, 'gem')
 			card.ability.extra.wasSet = false
 		end
-
-		
 	end,
 	
 	set_ability = function(self, card, initial, delay_sprites)
 		if not card.ability.extra.cycleTypes or #card.ability.extra.cycleTypes < 1 then
 			for _, t in ipairs(POKE_TYPES) do
-				if t ~= chosenType then
-					table.insert(card.ability.extra.cycleTypes, t)
-				end
+				table.insert(card.ability.extra.cycleTypes, t)
 			end
 		end
 		pseudoshuffle(card.ability.extra.cycleTypes, 'gem')
-		card.ability.extra.currentType = self:get_next_type(card)
-		
+		card.ability.extra.currentType = self:get_next_type(card)	
 	end,
 	
 	in_pool = function(self)

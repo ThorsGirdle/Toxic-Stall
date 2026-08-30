@@ -2,7 +2,7 @@
 local focused = {
 	key = "focused",		
   atlas = "PlaceholderStallEnhancements",
-	--artist = "Emma",
+	--artist = 
   pos = { x = 0, y = 0 },
 	config = { extra = {comboMult = 1, combo = false, upgrades = 0}},
 	any_suit = false,

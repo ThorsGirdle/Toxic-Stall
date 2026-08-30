@@ -3,7 +3,6 @@ local litten_alt = {
 	pos = {x = 8, y = 48},
 	config = {extra = {mult = 0, mult_mod = 1, d_size = 1}, evo_rqmt = 10},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 		return {vars = {abbr.d_size, abbr.mult, abbr.mult_mod, self.config.evo_rqmt}}
 	end,
@@ -44,7 +43,7 @@ local litten_alt = {
 			}
 		end
 		
-		return scaling_evo(self, card, context, "j_stall_torracat_alt", card.ability.extra.mult, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_torracat_alt", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
@@ -62,7 +61,6 @@ local torracat_alt = {
 	pos = {x = 10, y = 48},
 	config = {extra = {mult = 0, mult_mod = 2, d_size = 1}, evo_rqmt = 24},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.d_size, abbr.mult, abbr.mult_mod, self.config.evo_rqmt}}
 	end,
@@ -102,7 +100,7 @@ local torracat_alt = {
 			}
 		end
 		
-		return scaling_evo(self, card, context, "j_stall_incineroar_alt", card.ability.extra.mult, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_incineroar_alt", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 	
 	add_to_deck = function(self, card, from_debuff)
@@ -120,7 +118,6 @@ local incineroar_alt = {
 	pos = {x = 12, y = 48},
 	config = {extra = {money = 1, mult = 0, mult_mod = 3, d_size = 1}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.money, abbr.d_size, abbr.mult, abbr.mult_mod}}
 	end,
@@ -149,7 +146,7 @@ local incineroar_alt = {
 				card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 				if not context.blueprint then
 					local _,_, scoringCards = stall_evaluate_hand(context.full_hand, true)
-					local earned = ease_poke_dollars(card, "incineroar", (card.ability.extra.money * #scoringCards))
+					local earned = pokermon.ease_poke_dollars(card, "incineroar", (card.ability.extra.money * #scoringCards))
 				end
 				return {
 					message = 'Roar!',

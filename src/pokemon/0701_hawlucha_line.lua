@@ -4,7 +4,6 @@ local hawlucha = {
 	--pos = {x = 0, y = 0},
 	config = {extra = { Xmult = 3, totaldrawn = 0, totalTarget = 30}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = { abbr.Xmult, abbr.totalTarget, abbr.totaldrawn}}
 	end,

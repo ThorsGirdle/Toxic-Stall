@@ -36,7 +36,7 @@ local yungoos={
 				colour = G.C.MONEY
 				}
     end
-		return scaling_evo(self, card, context, "j_stall_gumshoos", card.ability.extra.totalEarned, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_gumshoos", card.ability.extra.totalEarned, self.config.evo_rqmt)
   end,
 	set_ability = function(self, card, initial, delay_sprites)
 		if initial then
@@ -86,7 +86,7 @@ local gumshoos={
                 return true
             end
         }))
-			local earned = ease_poke_dollars(card, "yungoos", card.ability.extra.money_mod)
+			local earned = pokermon.ease_poke_dollars(card, "yungoos", card.ability.extra.money_mod)
 			if not context.blueprint then
 				card.ability.extra.rankRevealed = false
 				card.ability.extra.suitRevealed = false

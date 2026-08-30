@@ -3,7 +3,6 @@ local mareanie = {
 	--pos = {x = 22, y = 49},
 	config = {extra = {hazard_level = 1, Xmult = 0.30, heldTH = 0}, evo_rqmt = 20},	
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 		info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard
@@ -55,7 +54,6 @@ local toxapex = {
 	--pos = {x = 24, y = 49},
 	config = {extra = {hazard_level = 1, Xmult = 0.40}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 		info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard

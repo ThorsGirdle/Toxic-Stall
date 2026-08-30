@@ -3,7 +3,6 @@ local rowlet = {
 	pos = {x = 0, y = 0},
 	config = {extra = {mult = 0, mult_mod = 1, h_size = 1, next_poker_hand = "High Card", poker_hand = "None"}, evo_rqmt = 8},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.mult_mod, abbr.h_size, abbr.poker_hand, abbr.next_poker_hand, self.config.evo_rqmt}}
 	end,
@@ -49,7 +48,7 @@ local rowlet = {
 				mult = card.ability.extra.mult
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_dartrix", card.ability.extra.mult, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_dartrix", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 
 	set_ability = function(self, card, initial, delay_sprites)
@@ -84,7 +83,6 @@ local dartrix = {
 	pos = {x = 0, y = 0},
 	config = {extra = {mult = 0, mult_mod = 2, h_size = 1, next_poker_hand = "High Card", poker_hand = "None"}, evo_rqmt = 20},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.mult_mod, abbr.h_size, abbr.poker_hand, abbr.next_poker_hand, self.config.evo_rqmt}}
 	end,
@@ -129,7 +127,7 @@ local dartrix = {
 				mult = card.ability.extra.mult
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_decidueye", card.ability.extra.mult, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_decidueye", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 
 	set_ability = function(self, card, initial, delay_sprites)
@@ -164,7 +162,6 @@ local decidueye = {
 	pos = {x = 0, y = 0},
 	config = {extra = {mult = 0, mult_mod = 3, h_size = 1, next_poker_hand = "High Card", poker_hand = "None", prev_poker_hand = "None", num = 1, dem = 2}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 		local num, dem = SMODS.get_probability_vars(card, abbr.num, abbr.dem, 'decidueye')
 	  return {vars = {abbr.mult, abbr.mult_mod, abbr.h_size, abbr.poker_hand, abbr.next_poker_hand, abbr.prev_poker_hand, num, dem}}

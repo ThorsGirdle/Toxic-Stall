@@ -226,6 +226,15 @@ return {
 					"{C:attention}half{} the {C:attention}sum{} of previous hand",
 				}
 			},
+			j_stall_tynamo = {
+				name = 'Tynamo',
+				text = {
+					"If first hand of round ",
+					"has only 1 card, reduce",
+					"its rank by 1"
+
+				}
+			},
 			--599
 			j_stall_klink = {
 				name = 'Klink',
@@ -857,6 +866,22 @@ return {
 					"card into a",
 					"{C:attention}Vestige card{}",
 				},
+			},
+			c_stall_choiceband = { 
+				name = "Choice Band",
+				text = {
+					"Enhances {C:attention}#1#{} selected", 
+					"card into a",
+					"{C:attention}Brave card{}",
+				},
+			},	
+			c_stall_ejectbutton = { 
+				name = "Eject Button",
+				text = {
+					"Enhances {C:attention}#1#{} selected", 
+					"card into a",
+					"{C:attention}Sleight card{}",
+				},
 			},				
 		},
 		Enhanced = {
@@ -879,7 +904,7 @@ return {
 					"{br:2}ERROR - CONTACT STEAK",
 					"Permanently gain {C:mult}+#1#{} Mult",
 					"if poker hand contains",
-					" both {C:poke_fighting}Combo{} cards",
+					"both {C:poke_fighting}Combo{} cards",
 				}
 			},
 			m_stall_gem = {
@@ -894,9 +919,28 @@ return {
 			m_stall_vestige = {
 				name = "Vestige Card",
 				text = {
-					"Becomes rank of ",
+					"Becomes rank of",
 					"{C:attention}left{} card minus {C:attention}1{}",
-
+				}
+			},
+			m_stall_brave = {
+				name = "Brave Card",
+				text = {
+					"Changes rank or suit",
+					"after being drawn {C:attention}#1#{} times",
+					"{br:2}ERROR - CONTACT STEAK",					
+					"{C:attention}Retriggers{} if played",
+					"before next draw",
+					"{C:inactive,s:0.8}(#2#){}",
+				}
+			},
+			m_stall_sleight = {
+				name = "Sleight Card",
+				text = {
+					"Gives the highest Chips",
+					"Mult, and {X:red,C:white}X{} Mult from",
+					"cards in {C:attention}poker hand{}",
+					"{C:green}#1# in #2#{} chance to {C:attention}Prank{}",
 				}
 			},
 		},		
@@ -1042,7 +1086,6 @@ return {
 					"Increase max {C:poke_pink}Energy{} of a",
 					"fully {C:poke_pink}Energized {B:1,V:2}#1#{}",
 					"{C:poke_pink}Type{} Joker when discarded",
-
 				},
 			},
 			ghostium_zeal = {
@@ -1051,6 +1094,25 @@ return {
 					"Create a {C:spectral}Spectral{} card",
 					"if {C:attention}poker hand{} has exactly",
 					"{C:attention}#1#{} cards with higher ranks",
+				},
+			}, 
+			flyinium_zeal = {
+				name = "{X:white,C:black}Flyinium{} Zeal",
+				text = {
+					"Return to deck and gain",
+					"{X:mult,C:white}X#1#{} Mult if card scored,", 
+					"resets each ante",
+					"{br:2}ERROR - CONTACT STEAK",
+					"Retriggers {C:attention}#2#{} additional times",
+					"if card has scored this round",
+					"{C:inactive,s:0.8}(#3#){}",
+				},
+			},
+			darkinium_zeal = {
+				name = "{X:poke_dark}Darkinium{} Zeal",
+				text = {
+					"Create a {C:attention}Tag{}",
+					"if card {C:attention}Pranks{}",
 				},
 			},
 			normalium_zeal = {
@@ -1069,6 +1131,16 @@ return {
 					"{C:poke_pink}+#1#{} Energy while card",
 					"is in poker hand",
 					"{C:inactive,s:0.8}({C:poke_pink,s:0.8}Type{C:inactive,s:0.8} changes when discarded){}",
+				}
+			},
+			stall_prank = {
+				name = "Pranks",
+				text = {
+				"{C:attention}30%{}: Card moves position",
+				"{C:attention}30%{}: Card doesn't score ",
+				"{C:attention}20%{}: Shuffle poker hand ",
+				"{C:attention}20%{}: Random Joker moves",
+				
 				}
 			},
 		},

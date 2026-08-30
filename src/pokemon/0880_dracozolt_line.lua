@@ -3,7 +3,6 @@ local dracozolt = {
 	--pos = {x = 0, y = 0},
 	config = {extra = { suit1 = "Diamonds", suit2 = "Spades", Xmult_mod = 0.75, chip_mod = 2, money = 1, handsPlayed = 0}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra or self.config.extra
 		--info_queue[#info_queue+1] = {set = 'Other', key = 'ancientsuits', vars = {localize(abbr.suit1, 'suits'), localize(abbr.suit2, 'suits'), colours = {G.C.SUITS[abbr.suit1],  G.C.SUITS[abbr.suit2]}}}	
 	  return {vars = {abbr.suit1, abbr.suit2, abbr.Xmult_mod, abbr.chip_mod, abbr.money, colours = {G.C.SUITS[abbr.suit1 or "Diamonds"], G.C.SUITS[abbr.suit2 or "Spades"] }}}
@@ -43,7 +42,7 @@ local dracozolt = {
 					end
 				end
 				if card.ability.extra.ancient_suits[card.ability.extra.suit2] > 1 then
-					local earned = ease_poke_dollars(card, "dracozolt", card.ability.extra.money * card.ability.extra.handsPlayed)
+					local earned = pokermon.ease_poke_dollars(card, "dracozolt", card.ability.extra.money * card.ability.extra.handsPlayed)
 					return {
 							message = '$'..earned,
 							colour = G.C.MONEY

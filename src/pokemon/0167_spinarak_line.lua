@@ -4,7 +4,6 @@ local spinarak = {
 	pos = PokemonSprites["spinarak"].base.pos,
 	config = {extra = {chips = 28, totalEarned = 0}, evo_rqmt = 250},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		return {vars = {card.ability.extra.chips, math.max(self.config.evo_rqmt - card.ability.extra.totalEarned, 0)}}
 	end,
 		
@@ -51,7 +50,6 @@ local ariados = {
 	pos = PokemonSprites["ariados"].base.pos,
 	config = {extra = {chips = 32, num = 1, dem = 3}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'ariados')
 		return {vars = {card.ability.extra.chips, num, dem}}
 	end,

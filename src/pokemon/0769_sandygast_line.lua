@@ -3,7 +3,6 @@ local sandygast = {
 	pos = {x = 6, y = 51},
 	config = {extra = {chip_mod = 1, chips = 0}, evo_rqmt = 42},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.chips, self.config.evo_rqmt}}
 	end,
 	rarity = 1, --Common
@@ -40,7 +39,6 @@ local palossand = {
 	pos = {x = 8, y = 51},
 	config = {extra = {chip_mod = 2, chips = 0, waterTypes = 0}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.chips, self.config.waterTypes}}
 	end,
 	rarity = "poke_safari",

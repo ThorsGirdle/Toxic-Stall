@@ -3,7 +3,6 @@ local arctovish = {
 	--pos = {x = 0, y = 0},
 	config = {extra = { suit1 = "Clubs", suit2 = "Hearts", Xmult_mod = 0.25, retriggers = 1, heartThreshold = 3, handLevelAmount = 2, eaten = 0, madePlanet = 0 }},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra or self.config.extra
 		--info_queue[#info_queue+1] = {set = 'Other', key = 'ancientsuits', vars = {abbr.suit1, abbr.suit2, colours = {G.C.SUITS[abbr.suit1], G.C.SUITS[abbr.suit2]}}}	
 	  return {vars = {abbr.suit1, abbr.suit2, 1 + abbr.Xmult_mod, abbr.retriggers, abbr.heartThreshold, abbr.handLevelAmount, colours = {G.C.SUITS[abbr.suit1 or "Clubs"], G.C.SUITS[abbr.suit2 or "Hearts"] }}}

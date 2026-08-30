@@ -2,13 +2,13 @@ local dustygeode = {
 	name = "dustygeode",
 	key = "dustygeode",
 	set = "poke_item",
-	pos = { x = 0, y = 0 },
+	pos = { x = 1, y = 0 },
   cost = 4,
 	--artist =
   unlocked = true,
   discovered = false,
 	hidden = false,
-  atlas = 'PlaceholderStallItem',
+  atlas = 'PlaceholderStallItems2',
 	weight = 7,
 	config = { mod_conv = 'm_stall_gem', max_highlighted = 1, min_highlighted = 1, currentType = "Grass"},
 	loc_vars = function(self, info_queue, center)

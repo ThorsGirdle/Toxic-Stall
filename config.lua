@@ -33,10 +33,12 @@ return{
 	Arctozolt = true,
 	Dracovish = true,
 	Arctovish = true,
-	Rellor = true,
 	Varoom = true,
 	BlackBelt = true,
 	DustyGeode = true,
 	SilphScope = true, 
+	ChoiceBand = true,
+	EjectButton = true,
 	ZCrystal = true,
+	--Tynamo = true
 }

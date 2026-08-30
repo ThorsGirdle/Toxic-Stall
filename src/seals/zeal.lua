@@ -9,7 +9,7 @@ local zeal = {
 		steelXMult = 1.2, steelMoneyXMult = 0.05, steelMoney = 1, goldHold = 3, goldTurns = 0, luckyOdds = 1, luckyScoring = false,
 		hazardScoring = false, hazardRepetitions = 1, seedMoolah = 1, flowerXMult = 0.5,
 		toxicScaling = 0.02, toxicScoring = false, focusedMult = 1, focusedChips = 5, baseChips = 5, baseMult = 1, baseXMult = 0.05,
-		gemMax = 1, vestigeBigger = 2},
+		gemMax = 1, vestigeBigger = 2, braveXMult = 0.25, braveRetriggers = 1, bravePlayed = false, braveTriggers = 0, braveShuffle = false},
 	loc_vars = function(self, info_queue, center)
 		if center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_bonus" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "waterium_zeal", vars = {center.ability.seal.bonusXChips}}
@@ -44,6 +44,16 @@ local zeal = {
 			info_queue[#info_queue+1] = {set = 'Other', key = "dragonium_zeal", vars = {center.ability.extra.currentType, colours = {pokermon.colours[string.lower(center.ability.extra.currentType)], highlight_colour}}}
 		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_vestige" then
 			info_queue[#info_queue+1] = {set = 'Other', key = "ghostium_zeal", vars = {center.ability.seal.vestigeBigger}}
+		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_brave" then
+			local braveActive = "Inactive"
+			if center.ability.seal.bravePlayed == true then
+				braveActive = "Active!"
+			else
+				braveActive = "Inactive"
+			end
+			info_queue[#info_queue+1] = {set = 'Other', key = "flyinium_zeal", vars = {center.ability.seal.braveXMult, center.ability.seal.braveRetriggers, braveActive}}	
+		elseif center and center.config and center.config.center and center.config.center.key and center.config.center.key == "m_stall_sleight" then
+			info_queue[#info_queue+1] = {set = 'Other', key = "darkinium_zeal", vars = {}}	
 		elseif center and center.config and center.config.center then
 			info_queue[#info_queue+1] = {set = 'Other', key = "normalium_zeal", vars = {center.ability.seal.baseChips, center.ability.seal.baseMult, center.ability.seal.baseXMult}}			
 		end
@@ -322,7 +332,22 @@ local zeal = {
 					end
 				end
 			end
-		
+		elseif card.config.center.key == "m_stall_brave" then
+			if context.after and context.cardarea == G.play then
+				card.ability.perma_x_mult = card.ability.perma_x_mult + card.ability.seal.braveXMult
+				card.ability.seal.bravePlayed = true
+				card.ability.seal.braveTriggers = card.ability.seal.braveTriggers + 1
+				card.ability.seal.braveShuffle = true
+			end
+
+			if context.repetition and context.cardarea == G.play and context.other_card == card and card.ability.seal.bravePlayed == true then
+				return {
+					repetitions = card.ability.seal.braveRetriggers
+				}
+			end
+		elseif card.config.center.key == "m_stall_sleight" then 
+
+
 		else 
 			if (context.change_rank or context.change_suit) and context.other_card == card then
 				local random = pseudorandom('Normalium Zeal')
@@ -354,3 +379,13 @@ return {
 	name = "Seals",
 	list = {zeal,}
 }
+
+
+
+--[[ if context.stay_flipped and context.from_area == G.hand and context.to_area == G.discard and context.other_card.claydoll_discard then
+      context.other_card.claydoll_discard = nil
+      return
+      {
+        modify = {to_area = G.hand}
+      }
+    end--]]

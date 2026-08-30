@@ -1,9 +1,8 @@
 local venipede = {
 	name = "venipede",
-	pos = {x = 4, y = 36},
+	--pos = {x = 4, y = 36},
 	config = {extra = { num = 1, dem = 7, rounds = 5}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 		 local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'venipede')
 	  return {vars = {num, dem, card.ability.extra.rounds}}
@@ -18,7 +17,7 @@ local venipede = {
 	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
-	atlas = "AtlasJokersBasicNatdex",
+	--atlas = "AtlasJokersBasicNatdex",
 
 	calculate = function(self, card, context)
 		if context.before and context.scoring_hand and context.full_hand and context.scoring_hand[1] then
@@ -39,16 +38,15 @@ local venipede = {
 		if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
 			card.ability.extra.num = 1
 		end
-	 return level_evo(self, card, context, "j_stall_whirlipede")
+	 return pokermon.level_evo(self, card, context, "j_stall_whirlipede")
 	end,
 }
 
 local whirlipede = {
 	name = "whirlipede",
-	pos = {x = 6, y = 36},
+	--pos = {x = 6, y = 36},
 	config = {extra = { num = 1, dem = 6, threshold = 0.3, goal = 0, retriggers = 0},  evo_rqmt = 5},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  local abbr = card.ability.extra
 		local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'whirlipede')
@@ -100,7 +98,7 @@ local whirlipede = {
 			card.ability.extra.num = 1
 			card.ability.extra.retriggers = 0
 		end
-	 return scaling_evo(self, card, context, "j_stall_scolipede", card.ability.extra.goal, self.config.evo_rqmt)
+	 return pokermon.scaling_evo(self, card, context, "j_stall_scolipede", card.ability.extra.goal, self.config.evo_rqmt)
 	end,
 }
 

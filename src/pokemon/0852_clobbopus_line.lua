@@ -3,7 +3,6 @@ local clobbopus = {
 	pos = {x = 0, y = 0},
 	config = {extra = {chips = 12, suit = 'Clubs', triggers = 0}, evo_rqmt = 35},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chips, localize(card.ability.extra.suit, 'suits_singular'), math.max( self.config.evo_rqmt - card.ability.extra.triggers, 0 )}}
 	end,
 	rarity = 2, --Uncommon
@@ -28,7 +27,7 @@ local clobbopus = {
 				end
 			end
 		end
-	return scaling_evo(self, card, context, "j_stall_grapploct", card.ability.extra.triggers, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_grapploct", card.ability.extra.triggers, self.config.evo_rqmt)
 	end,
 }
 
@@ -37,7 +36,6 @@ local grapploct = {
 	pos = {x = 0, y = 0},
 	config = {extra = {chips = 16, suit = 'Clubs', Xmult = 3, Xmult1 = 1}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.chips, localize(abbr.suit, 'suits_singular'), abbr.Xmult, abbr.Xmult1}}
 	end,

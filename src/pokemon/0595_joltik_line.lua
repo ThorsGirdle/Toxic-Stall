@@ -3,7 +3,6 @@ local joltik = {
 	--pos = {x = 0, y = 0},
 	config = {extra = { mult = 16, lastSum = 0, trigger = false, rounds = 5}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.lastSum, abbr.rounds}}
 	end,
@@ -66,7 +65,7 @@ local joltik = {
 			card.ability.extra.trigger = false
 		end
 			
-		return level_evo(self, card, context, "j_stall_galvantula")
+		return pokermon.level_evo(self, card, context, "j_stall_galvantula")
 	end,
 }
 
@@ -75,7 +74,6 @@ local galvantula = {
 	--pos = {x = 0, y = 0},
 	config = {extra = { mult = 20, Xmult = 2, lastSum = 0, trigger = false, xmultTrigger = false}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.lastSum, abbr.Xmult}}
 	end,

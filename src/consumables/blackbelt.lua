@@ -5,12 +5,12 @@ local blackbelt = {
 	set = "poke_item",
 	pos = { x = 0, y = 0 },
   cost = 4,
-	--artist = "Emma",
+	--artist = 
   unlocked = true,
   discovered = true,
 	hidden = false,
   weight = 7.5,
-  atlas = 'PlaceholderStallItem',
+  atlas = 'PlaceholderStallItems2',
 	config = { mod_conv = 'm_stall_focused', max_highlighted = 1, min_highlighted = 1},
 	loc_vars = function(self, info_queue, center)
     info_queue[#info_queue+1] = G.P_CENTERS.m_stall_focused

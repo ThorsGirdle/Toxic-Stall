@@ -3,7 +3,6 @@ local blipbug = {
 	--pos = {x = 0, y = 0},
 	 config = {extra = { consumablesUsed = {}, money_mod = 3}, evo_rqmt = 4},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.money_mod, math.max(self.config.evo_rqmt - ((card.ability.extra.consumablesUsed and #card.ability.extra.consumablesUsed) or 0), 0)}}
   end,
 	rarity = 1, --Common
@@ -32,14 +31,14 @@ local blipbug = {
 				if not context.blueprint then
 					table.insert(card.ability.extra.consumablesUsed, usedCard.config.center_key)
 				end
-				local earned = ease_poke_dollars(card, "blipbug", card.ability.extra.money_mod)
+				local earned = pokermon.ease_poke_dollars(card, "blipbug", card.ability.extra.money_mod)
 				return {
 					message = '$'..earned,
 					colour = G.C.MONEY
 				}
 			end
 		end
-		return scaling_evo(self, card, context, "j_stall_dottler", ((card.ability.extra.consumablesUsed and #card.ability.extra.consumablesUsed) or 0), self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_dottler", ((card.ability.extra.consumablesUsed and #card.ability.extra.consumablesUsed) or 0), self.config.evo_rqmt)
 	end,
 }	
 
@@ -48,7 +47,6 @@ local dottler = {
 	--pos = {x = 0, y = 0},
 	 config = {extra = { consumablesUsed = {}, money_mod = 4}, evo_rqmt = 12},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.money_mod, math.max(self.config.evo_rqmt - ((card.ability.extra.consumablesUsed and #card.ability.extra.consumablesUsed) or 0), 0)}}
   end,
 	rarity = "poke_safari", 
@@ -77,7 +75,7 @@ local dottler = {
 				if not context.blueprint then
 					table.insert(card.ability.extra.consumablesUsed, usedCard.config.center_key)
 				end
-				local earned = ease_poke_dollars(card, "dottler", card.ability.extra.money_mod)
+				local earned = pokermon.ease_poke_dollars(card, "dottler", card.ability.extra.money_mod)
 				return {
 					message = '$'..earned,
 					colour = G.C.MONEY
@@ -93,7 +91,6 @@ local orbeetle = {
 	--pos = {x = 0, y = 0},
 	 config = {extra = { consumablesUsed = {}, money_mod = 4, mult_mod = 1}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.money_mod, card.ability.extra.mult_mod, (((card.ability.extra.consumablesUsed and #card.ability.extra.consumablesUsed) or 0) * card.ability.extra.mult_mod)}}
   end,
 	rarity = "poke_safari", 
@@ -122,7 +119,7 @@ local orbeetle = {
 				if not context.blueprint then
 					table.insert(card.ability.extra.consumablesUsed, usedCard.config.center_key)
 				end
-				local earned = ease_poke_dollars(card, "orbeetle", card.ability.extra.money_mod)
+				local earned = pokermon.ease_poke_dollars(card, "orbeetle", card.ability.extra.money_mod)
 				return {
 					message = '$'..earned,
 					colour = G.C.MONEY

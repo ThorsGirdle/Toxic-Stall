@@ -3,7 +3,6 @@ local paldean_wooper = {
   pos = {x = 6, y = 5},
   config = {extra = {money = 5, earned = 0}, evo_rqmt = 20},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.money, self.config.evo_rqmt - card.ability.extra.earned}}
   end,
   rarity = 1,
@@ -26,13 +25,13 @@ local paldean_wooper = {
 					card.ability.extra.earned = card.ability.extra.earned + card.ability.extra.money
 				end
 			end
-			local totalEarned = ease_poke_dollars(card, "paldean_wooper", earned)
+			local totalEarned = pokermon.ease_poke_dollars(card, "paldean_wooper", earned)
 			return {
 				message = '$'..totalEarned,
 				colour = G.C.MONEY
 			}
 		end
-   return scaling_evo (self, card, context, "j_stall_clodsire", card.ability.extra.earned, self.config.evo_rqmt)
+   return pokermon.scaling_evo (self, card, context, "j_stall_clodsire", card.ability.extra.earned, self.config.evo_rqmt)
   end,
 }
 
@@ -41,7 +40,6 @@ local clodsire = {
 	pos = {x = 8, y = 65},
   config = {extra = {money = 6}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.money}}
   end,
   rarity = 2,
@@ -78,7 +76,7 @@ local clodsire = {
 					cards_held[i]:juice_up()
 				end
 			end
-			local totalEarned = ease_poke_dollars(card, "clodsire", earned)
+			local totalEarned = pokermon.ease_poke_dollars(card, "clodsire", earned)
 			return {
 				message = '$'..totalEarned,
 				colour = G.C.MONEY

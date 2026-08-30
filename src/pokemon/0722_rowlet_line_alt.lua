@@ -3,7 +3,6 @@ local rowlet_alt = {
 	pos = {x = 2, y = 48},
 	config = {extra = {money = 2, totalEarned = 0, h_size = 1, next_poker_hand = "High Card", poker_hand = "None"}, evo_rqmt = 14},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.money, abbr.h_size, abbr.poker_hand, abbr.next_poker_hand, math.max(self.config.evo_rqmt - abbr.totalEarned, 0)}}
 	end,
@@ -24,7 +23,7 @@ local rowlet_alt = {
 			if G.hand and G.hand.cards and #G.hand.cards > 0 then
 				local handname, _, poker_hands = G.FUNCS.get_poker_hand_info(G.hand.cards)
 				if handname == card.ability.extra.poker_hand then 
-				local earned = ease_poke_dollars(card, "litten", card.ability.extra.money)
+				local earned = pokermon.ease_poke_dollars(card, "litten", card.ability.extra.money)
 					card.ability.extra.totalEarned = card.ability.extra.totalEarned + earned
 					return {
 						message = '$'..earned,
@@ -47,7 +46,7 @@ local rowlet_alt = {
 					message = localize('k_reset')
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_dartrix_alt", card.ability.extra.totalEarned, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_dartrix_alt", card.ability.extra.totalEarned, self.config.evo_rqmt)
 	end,
 
 	set_ability = function(self, card, initial, delay_sprites)
@@ -82,7 +81,6 @@ local dartrix_alt = {
 	pos = {x = 4, y = 48},
 	config = {extra = {money = 3, totalEarned = 0, h_size = 1, next_poker_hand = "High Card", poker_hand = "None"}, evo_rqmt = 21},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 		return {vars = {abbr.money, abbr.h_size, abbr.poker_hand, abbr.next_poker_hand, math.max(self.config.evo_rqmt - abbr.totalEarned, 0)}}
 	end,
@@ -102,7 +100,7 @@ local dartrix_alt = {
 			if G.hand and G.hand.cards and #G.hand.cards > 0 then
 				local handname, _, poker_hands = G.FUNCS.get_poker_hand_info(G.hand.cards)
 				if handname == card.ability.extra.poker_hand then 
-					local earned = ease_poke_dollars(card, "litten", card.ability.extra.money)
+					local earned = pokermon.ease_poke_dollars(card, "litten", card.ability.extra.money)
 					card.ability.extra.totalEarned = card.ability.extra.totalEarned + earned
 					return {
 						message = '$'..earned,
@@ -125,7 +123,7 @@ local dartrix_alt = {
 					message = localize('k_reset')
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_decidueye_alt", card.ability.extra.totalEarned, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_decidueye_alt", card.ability.extra.totalEarned, self.config.evo_rqmt)
 	end,
 
 	set_ability = function(self, card, initial, delay_sprites)
@@ -181,7 +179,7 @@ local decidueye_alt = {
 			if G.hand and G.hand.cards and #G.hand.cards > 0 then
 				local handname, _, poker_hands = G.FUNCS.get_poker_hand_info(G.hand.cards)
 				if handname == card.ability.extra.poker_hand then 
-					local earned = ease_poke_dollars(card, "litten", card.ability.extra.money)
+					local earned = pokermon.ease_poke_dollars(card, "litten", card.ability.extra.money)
 					if context.scoring_name == card.ability.extra.prev_poker_hand then
 						if #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 							if SMODS.pseudorandom_probability(card, 'decidueye', card.ability.extra.num, card.ability.extra.dem, 'decidueye') then

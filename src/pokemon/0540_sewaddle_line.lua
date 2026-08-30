@@ -3,7 +3,6 @@ local sewaddle = {
 	pos = {x = 0, y = 0},
 	config = {extra = {savedChips = 0, rounds = 4}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.rounds}}
 	end,
 	rarity = 1, --Common
@@ -22,7 +21,7 @@ local sewaddle = {
 			if context.other_card == context.scoring_hand[1] then
 				local firstCard = context.scoring_hand[1]
 				if card.ability.extra.savedChips == 0 then
-					card.ability.extra.savedChips = poke_total_chips(firstCard)
+					card.ability.extra.savedChips = pokermon.total_chips(firstCard)
 				end
 			else 
 				return {
@@ -34,7 +33,7 @@ local sewaddle = {
 			card.ability.extra.savedChips = 0
 		end
 		
-	return level_evo(self, card, context, "j_stall_swadloon")
+	return pokermon.level_evo(self, card, context, "j_stall_swadloon")
 	end,
 }
 
@@ -43,7 +42,6 @@ local swadloon = {
 	pos = {x = 0, y = 0},
 	config = {extra = {savedChips = 0, chip_mod = 4, bigBoys = 0, targetChips = 20}, evo_rqmt = 20 },
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chip_mod, math.max((self.config.evo_rqmt - card.ability.extra.bigBoys),0), card.ability.extra.targetChips}}
 	end,
 	rarity = "poke_safari",
@@ -62,7 +60,7 @@ local swadloon = {
 			if context.other_card == context.scoring_hand[1] then
 				local firstCard = context.scoring_hand[1]
 				if card.ability.extra.savedChips == 0 then
-					card.ability.extra.savedChips = poke_total_chips(firstCard)
+					card.ability.extra.savedChips = pokermon.total_chips(firstCard)
 				end
 				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod
 				return {
@@ -82,7 +80,7 @@ local swadloon = {
 			card.ability.extra.savedChips = 0
 		end
 		
-	return scaling_evo(self, card, context, "j_stall_leavanny", card.ability.extra.bigBoys, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_leavanny", card.ability.extra.bigBoys, self.config.evo_rqmt)
 	end,
 }
 
@@ -91,7 +89,6 @@ local leavanny = {
 	pos = {x = 0, y = 0},
 	config = {extra = {savedChips = 0, chip_mod = 6}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chip_mod}}
 	end,
 	rarity = "poke_safari",
@@ -110,7 +107,7 @@ local leavanny = {
 			if context.other_card == context.scoring_hand[1] then
 				local firstCard = context.scoring_hand[1]
 				if card.ability.extra.savedChips == 0 then
-					card.ability.extra.savedChips = poke_total_chips(firstCard)
+					card.ability.extra.savedChips = pokermon.total_chips(firstCard)
 				end 
 				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod 
 				return {

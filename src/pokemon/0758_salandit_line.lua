@@ -3,7 +3,6 @@
 	--pos = {x = 12, y = 50},
 	config = {extra = { rounds = 4}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = { card.ability.extra.rounds}}
 	end,
@@ -45,7 +44,7 @@
 
 				return nil, true -- This is for Joker retrigger purposes
 		end
-		return level_evo(self, card, context, "j_stall_salazzle")
+		return pokermon.level_evo(self, card, context, "j_stall_salazzle")
 	end,
 }
 
@@ -54,7 +53,6 @@ local salazzle = {
 	--pos = {x = 14, y = 50},
 	config = {extra = {drainedMult = 0}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.drainedMult}}
 	end,

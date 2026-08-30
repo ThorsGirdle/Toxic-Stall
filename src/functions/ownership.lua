@@ -36,7 +36,7 @@ SMODS.Enhancement:take_ownership("poke_seed", {
 
       if level and level > 0 then
         if level >= level_max then
-					if card.seal and card.seal == "stall_zeal" then
+					if card.seal and card.seal == "stall_zeal" and card.config.center.key == "m_poke_seed" then
 						card.ability.extra.level = 0
 					else
 						return {
@@ -73,6 +73,18 @@ SMODS.Enhancement:take_ownership("poke_seed", {
 
 
 }, true)
+
+if (SMODS.Mods["Agarmons"] or {}).can_load then
+	SMODS.Enhancement:take_ownership("agar_combee", {
+		calculate = function(self, card, context)
+			if context.change_rank and context.new_rank == 12
+					and (context.old_rank == 11 or context.old_rank == 13) and not SMODS.has_enhancement(context.other_card, 'm_stall_vestige') then
+				card.ability.extra.queens_promoted = card.ability.extra.queens_promoted + 1
+			end
+			return pokermon.scaling_evo(self, card, context, 'j_agar_vespiquen', card.ability.extra.queens_promoted, 1)
+		end
+	}, true)
+end
 
 return {
   key = "STALL_OWNERSHIP",

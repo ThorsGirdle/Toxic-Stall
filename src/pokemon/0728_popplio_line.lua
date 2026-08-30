@@ -3,7 +3,6 @@ local popplio = {
 	pos = {x = 0, y = 0},
 	config = {extra = {mult = 0, mult_mod = 1, hands = 1, poker_hand = "High Card"}, evo_rqmt = 12},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.mult_mod, abbr.hands, abbr.poker_hand, self.config.evo_rqmt}}
 	end,
@@ -44,7 +43,7 @@ local popplio = {
 				mult = card.ability.extra.mult
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_brionne", card.ability.extra.mult, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_brionne", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 	
 	set_ability = function(self, card, initial, delay_sprites)
@@ -77,7 +76,6 @@ local brionne = {
 	pos = {x = 0, y = 0},
 	config = {extra = {mult = 0, mult_mod = 2, hands = 1, poker_hand = "High Card"}, evo_rqmt = 30},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.mult_mod, abbr.hands, abbr.poker_hand, self.config.evo_rqmt}}
 	end,
@@ -117,7 +115,7 @@ local brionne = {
 				mult = card.ability.extra.mult
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_primarina", card.ability.extra.mult, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_primarina", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 	
 	set_ability = function(self, card, initial, delay_sprites)
@@ -150,7 +148,6 @@ local primarina = {
 	pos = {x = 0, y = 0},
 	config = {extra = {mult = 0, mult_mod = 3, Xmult_mod = 1, currXmult = 1, hands = 1, poker_hand = "High Card", triggered = false}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.mult, abbr.mult_mod, abbr.hands, abbr.currXmult, abbr.Xmult_mod, abbr.poker_hand}}
 	end,

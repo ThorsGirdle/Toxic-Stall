@@ -3,7 +3,6 @@ local litten = {
 	pos = {x = 0, y = 0},
 	config = {extra = {money = 2, totalEarned = 0, d_size = 1}, evo_rqmt = 20},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.money, abbr.d_size, math.max(self.config.evo_rqmt - abbr.totalEarned, 0)}}
 	end,
@@ -56,7 +55,6 @@ local torracat = {
 	pos = {x = 0, y = 0},
 	config = {extra = {money = 3, totalEarned = 0, d_size = 1}, evo_rqmt = 30},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.money, abbr.d_size, math.max(self.config.evo_rqmt - abbr.totalEarned, 0)}}
 	end,
@@ -108,7 +106,6 @@ local incineroar = {
 	pos = {x = 0, y = 0},
 	config = {extra = {money = 4, mult = 0, mult_mod = 1, d_size = 1}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.money, abbr.d_size, abbr.mult, abbr.mult_mod}}
 	end,

@@ -3,7 +3,6 @@ local dracovish = {
 	--pos = {x = 0, y = 0},
 	config = {extra = { suit1 = "Clubs", suit2 = "Spades", Xmult_mod = 0.4, mult = 7, money = 3, moneyEarned = 0, consumableHeld = 0, consumableUsed = 0, tarotUsed = 0, moneyThreshold = 5}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		--info_queue[#info_queue+1] = {set = 'Other', key = 'ancient_suits', vars = {card.ability.extra.suit1, card.ability.extra.suit2}} --colours = {G.C.SUITS[abbr.suit1],  G.C.SUITS[abbr.suit2]}}}	
 	  local abbr = card.ability.extra or self.config.extra
 		return {vars = {abbr.suit1, abbr.suit2, abbr.Xmult_mod, abbr.money, abbr.mult, abbr.moneyThreshold, abbr.mult * abbr.consumableHeld, (1 + (abbr.Xmult_mod * abbr.consumableUsed)), 

@@ -3,7 +3,6 @@ local skrelp = {
 	--pos = {x = 28, y = 45},
 	config = {extra = { chip_mod = 1, highestSev = 0}, evo_rqmt = 7},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.chip_mod, self.config.evo_rqmt}}
 	end,
@@ -35,7 +34,7 @@ local skrelp = {
 				end
 			end
 		end
-	return scaling_evo(self, card, context, "j_stall_dragalge", card.ability.extra.highestSev, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_dragalge", card.ability.extra.highestSev, self.config.evo_rqmt)
 	end,
 }
 
@@ -44,7 +43,6 @@ local dragalge = {
 	--pos = {x = 0, y = 46},
 	config = {extra = { chip_mod = 2, toxicThreshold = 14}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.toxicThreshold}}
 	end,
@@ -97,7 +95,6 @@ local mega_dragalge = {
 	soul_pos = {x = 1, y = 0},
 	config = {extra = { chip_mod = 3, toxicThreshold = 15}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.chip_mod, card.ability.extra.toxicThreshold}}
 	end,
 	rarity = "poke_mega", 

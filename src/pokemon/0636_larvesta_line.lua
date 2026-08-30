@@ -3,7 +3,6 @@ local larvesta = {
 	pos = {x = 0, y = 0},
 	config = {extra = {mult_mod = 3, maxMult = 0, tempMult = 0}, evo_rqmt = 5},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.mult_mod, self.config.evo_rqmt}}
 	end,
 	rarity = 3, --Rare
@@ -48,7 +47,7 @@ local larvesta = {
 			end
 		end	
 		
-	return scaling_evo(self, card, context, "j_stall_volcarona", card.ability.extra.maxMult, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_volcarona", card.ability.extra.maxMult, self.config.evo_rqmt)
 	end,
 }
 
@@ -58,7 +57,6 @@ local volcarona = {
 	pos = {x = 0, y = 0},
 	config = {extra = { Xmult_mod = 0.05}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 	  return {vars = {card.ability.extra.Xmult_mod}}
 	end,
 	rarity = "poke_safari", 

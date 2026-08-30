@@ -3,7 +3,6 @@ local popplio_alt = {
 	pos = {x = 14, y = 48},
 	config = {extra = {chips = 0, chip_mod = 6, hands = 1, poker_hand = "High Card"}, evo_rqmt = 30},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.chips, abbr.chip_mod, abbr.hands, abbr.poker_hand, self.config.evo_rqmt}}
 	end,
@@ -44,7 +43,7 @@ local popplio_alt = {
 				chips = card.ability.extra.chips
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_brionne_alt", card.ability.extra.chips, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_brionne_alt", card.ability.extra.chips, self.config.evo_rqmt)
 	end,
 	
 	set_ability = function(self, card, initial, delay_sprites)
@@ -117,7 +116,7 @@ local brionne_alt = {
 				chips = card.ability.extra.chips
 			}
 		end
-		return scaling_evo(self, card, context, "j_stall_primarina_alt", card.ability.extra.chips, self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_primarina_alt", card.ability.extra.chips, self.config.evo_rqmt)
 	end,
 	
 	set_ability = function(self, card, initial, delay_sprites)
