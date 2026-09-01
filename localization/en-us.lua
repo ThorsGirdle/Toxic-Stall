@@ -772,7 +772,7 @@ return {
 					"destroyed this {C:attention}ante{}",
 					"{C:inactive,s:0.8}(#2#){}",
 					"{br:2}ERROR - CONTACT STEAK",
-					"{C:attention}Leftmost{} Joker becomes  {C:poke_pink}Type{}",
+					"{C:attention}Leftmost{} Joker becomes {C:poke_pink}Type{}",
 					"of destroyed {C:attention}Gem{} cards",
 				}
 			},				
