@@ -345,7 +345,15 @@ return {
 					"current {C:attention}Boss Blind{} if {C:attention}#2# {C:inactive}[#3#]{} cards",
 					"have been drawn this blind",
 				}
-			},			
+			},
+			j_stall_mega_hawlucha = {
+				name = 'Mega Hawlucha',
+				text = {
+					"Played cards from previous",
+					"{C:attention}draw{} give {X:mult,C:white}X#1#{} Mult",
+					"when scored",
+				}
+			},						
 			--721
 			j_stall_volcanion = {
 				name = 'Volcanion',
@@ -732,6 +740,42 @@ return {
 					"{C:inactive}(Currently {C:mult}+#3#{C:inactive} Mult)",
 				}
 			},
+			--837
+			j_stall_rolycoly = {
+				name = 'Rolycoly',
+				text = {
+					"{C:mult}+#1#{} Mult if a card",
+					"has been destroyed",
+					"this {C:attention}ante{}",
+					"{C:inactive,s:0.8}(#3#){}",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
+				}
+			},		
+			j_stall_carkol = {
+				name = 'Carkol',
+				text = {
+					"{C:mult}+#1#{} Mult if a card",
+					"has been destroyed",
+					"this {C:attention}ante{}",
+					"{C:inactive,s:0.8}(#3#){}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"{C:attention}Leftmost{} Joker becomes {C:poke_pink}Type{}",
+					"of destroyed {C:attention}Gem{} cards",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} cards are destroyed)",
+				}
+			},
+			j_stall_coalossal = {
+				name = 'Coalossal',
+				text = {
+					"{X:mult,C:white}X#1#{} Mult and {C:red}+#3#{} discard",
+					"if a card has been",
+					"destroyed this {C:attention}ante{}",
+					"{C:inactive,s:0.8}(#2#){}",
+					"{br:2}ERROR - CONTACT STEAK",
+					"{C:attention}Leftmost{} Joker becomes  {C:poke_pink}Type{}",
+					"of destroyed {C:attention}Gem{} cards",
+				}
+			},				
 			--852
 			j_stall_clobbopus = {
 				name = 'Clobbopus',

@@ -43,10 +43,50 @@ local hawlucha = {
 			}
 		end
 	end,
+	megas = { "mega_hawlucha" },
+}
+
+local mega_hawlucha = {
+	name = "mega_hawlucha",
+	--pos = {x = 0, y = 0},
+	--soul_pos = {x = 1, y = 0},
+	config = {extra = { Xmult_multi = 2}},
+	loc_vars = function(self, info_queue, card)
+	  return {vars = {card.ability.extra.Xmult_multi}}
+	end,
+	rarity = "poke_mega", 
+	cost = 12,
+	stage = "Mega",
+	ptype = "Fighting",
+	gen = 6,
+	--atlas = ,
+	designer = "Thor's Girdle",
+	perishable_compat = true,
+	blueprint_compat = true,
+	eternal_compat = true,
+	
+	calculate = function(self, card, context)
+		if context.hand_drawn and SMODS.drawn_cards and not context.blueprint then
+			if G.hand and G.hand.cards then
+				for i, v in ipairs(G.hand.cards) do
+					v.megaluchaDrawn = false
+				end
+			end
+			for i, drawnCard in ipairs(SMODS.drawn_cards) do
+				drawnCard.megaluchaDrawn = true
+			end
+		end
+		
+		if context.individual and context.cardarea == G.play and context.other_card.megaluchaDrawn == true then
+			return {
+				xmult = card.ability.extra.Xmult_multi
+			}
+		end
+	end,
 }
 
 return {
 	name = "Hawlucha Line",
 	enabled = stall_config.Hawlucha or false,
-	list = {hawlucha,}
+	list = {hawlucha, mega_hawlucha}
 }

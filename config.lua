@@ -28,6 +28,7 @@ return{
 	Sandygast = true,
 	Jangmoo = true,
 	Blipbug = true,
+	Rolycoly = true,
 	Clobbopus = true,
 	Dracozolt = true,
 	Arctozolt = true,
