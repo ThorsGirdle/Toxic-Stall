@@ -72,6 +72,24 @@ def_list["j_stall_hawlucha"] = {
 	end
 }
 
+def_list["j_stall_mega_hawlucha"] = {
+  text = {
+    { text = "Eligible cards: " },
+    { ref_table = "card.joker_display_values", ref_value = "newCards"}
+  },
+  text_config = { colour = G.C.ORANGE },
+  calc_function = function(card)
+    local newCards = 0
+    local text, _, scoring_hand = JokerDisplay.evaluate_hand()
+    for _, scoring_card in pairs(scoring_hand) do
+      if scoring_card.megaluchaDrawn then
+				newCards = newCards + 1
+			end
+		end	
+    card.joker_display_values.newCards = newCards
+  end
+}
+
 def_list["j_stall_rowlet"] = {
   text = {
 		{ text = "Next: ", colour = G.C.GREY},
