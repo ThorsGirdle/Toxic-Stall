@@ -349,9 +349,9 @@ return {
 			j_stall_mega_hawlucha = {
 				name = 'Mega Hawlucha',
 				text = {
-					"Played cards from previous",
-					"{C:attention}draw{} give {X:mult,C:white}X#1#{} Mult",
-					"when scored",
+					"Played cards drawn in",
+					"most recent {C:attention}draw{} give",
+					"{X:mult,C:white}X#1#{} Mult when scored",
 				}
 			},						
 			--721
@@ -1180,11 +1180,18 @@ return {
 			stall_prank = {
 				name = "Pranks",
 				text = {
-				"{C:attention}30%{}: Card moves position",
-				"{C:attention}30%{}: Card doesn't score ",
-				"{C:attention}20%{}: Shuffle poker hand ",
-				"{C:attention}20%{}: Random Joker moves",
+					"{C:attention}30%{}: Card moves position",
+					"{C:attention}30%{}: Card doesn't score ",
+					"{C:attention}20%{}: Shuffle poker hand ",
+					"{C:attention}20%{}: Random Joker moves",
 				
+				}
+			},
+			stall_priority = {
+				name = "Priority",
+				text = {
+					"Cards drawn in most",
+					"recent draw step",
 				}
 			},
 		},
