@@ -275,7 +275,7 @@ set_focused_vars = function()
 		local rankdefault = {{value = "Ace", id = "14"}, {value = "King", id = "13"}}
 		local ranks = pokermon.get_target_card_suit("focused", 1, rankdefault, true)
 		G.GAME.focused.combo_rank = ranks[1]
-		G.GAME.focused.combo_suit = pokermon.get_target_card_suit("focused", true, "Spades", nil, nil)
+		G.GAME.focused.combo_suit = pokermon.get_target_card_suit("focused", true, "Spades", nil)
 	end
 end
 
