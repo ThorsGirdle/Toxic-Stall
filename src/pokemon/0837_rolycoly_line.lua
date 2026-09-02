@@ -49,6 +49,7 @@ local carkol = {
 	--pos = {x = 0, y = 0},
 	config = {extra = {mult = 25, cardDestroyed = false, destroyedNum = 0}, evo_rqmt = 5},
 	loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_gem
 		local abbr = card.ability.extra
 		if abbr.cardDestroyed == true then
 			active = "Active!"
@@ -106,6 +107,7 @@ local coalossal = {
 	--pos = {x = 0, y = 0},
 	config = {extra = {Xmult = 3, cardDestroyed = false, discards = 1, discardGiven = false}},
 	loc_vars = function(self, info_queue, card)
+		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_gem
 		local abbr = card.ability.extra
 		if abbr.cardDestroyed == true then
 			active = "Active!"
