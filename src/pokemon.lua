@@ -6,8 +6,8 @@ local function load_pokemon(item)
   local custom_atlas = item.atlas and string.find(item.atlas, "Stall")
 
   if not item.atlas then
-    poke_load_atlas(item)
-    poke_load_sprites(item)
+    pokermon.sprites.load_atlas(item)
+    pokermon.sprites.load_sprites(item)
   end
 
   pokermon.Pokemon(item, "stall", custom_atlas)

@@ -5,7 +5,7 @@ local dewpider = {
 	config = {extra = {money = 2, mult = 0, mult_mod = 1, minSum = 1}, evo_rqmt = 8},
 	loc_vars = function(self, info_queue, card)
 		local abbr = card.ability.extra
-	  return {vars = {abbr.minSum, abbr.minSum + 4, abbr.money, abbr.mult, abbr.mult_mod, self.config.evo_rqmt}}
+	  return {vars = {abbr.minSum, abbr.minSum + 3, abbr.money, abbr.mult, abbr.mult_mod, self.config.evo_rqmt}}
 	end,
 	rarity = 1, --Common
 	cost = 5,
@@ -33,7 +33,7 @@ local dewpider = {
 						end
 					end
 				end		
-				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
+				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 3 then
 					card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 					local earned = pokermon.ease_poke_dollars(card, "dewpider", card.ability.extra.money)
 					return {
@@ -43,7 +43,7 @@ local dewpider = {
 				elseif AceCount > 0 then
 					for i = 1, AceCount do
 						totalSum = totalSum + 10
-						if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
+						if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 3 then
 							card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 							local earned = pokermon.ease_poke_dollars(card, "dewpider", card.ability.extra.money)
 							return {
@@ -55,7 +55,7 @@ local dewpider = {
 				end
 			end
 			if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-				card.ability.extra.minSum = math.random(1, 46)
+				card.ability.extra.minSum = math.random(1, 47)
 				--[[return {
 					message = localize('k_reset')
 				}--]]
@@ -70,7 +70,7 @@ local dewpider = {
 		return pokermon.scaling_evo(self, card, context, "j_stall_araquanid", card.ability.extra.mult, self.config.evo_rqmt)
 	end,
 	set_ability = function(self, card, initial, delay_sprites)
-		card.ability.extra.minSum = math.random(1, 46)
+		card.ability.extra.minSum = math.random(1, 47)
 	end
 }
 
@@ -80,10 +80,10 @@ local araquanid = {
 	config = {extra = {money = 4, mult = 0, mult_mod = 2, minSum = 1}},
 	loc_vars = function(self, info_queue, card)
 		local abbr = card.ability.extra
-	  return {vars = {abbr.minSum, abbr.minSum + 4, abbr.money, abbr.mult, abbr.mult_mod}}
+	  return {vars = {abbr.minSum, abbr.minSum + 3, abbr.money, abbr.mult, abbr.mult_mod}}
 	end,
 	rarity = "poke_safari", --Safari
-	cost = 5,
+	cost = 7,
 	stage = "One",
 	ptype = "Water",
 	gen = 7,
@@ -108,7 +108,7 @@ local araquanid = {
 						end
 					end
 				end		
-				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
+				if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 3 then
 					card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 					local earned = pokermon.ease_poke_dollars(card, "araquanid", card.ability.extra.money)
 					return {
@@ -118,7 +118,7 @@ local araquanid = {
 				elseif AceCount > 0 then
 					for i = 1, AceCount do
 						totalSum = totalSum + 10
-						if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 4 then
+						if totalSum >= card.ability.extra.minSum and totalSum <= card.ability.extra.minSum + 3 then
 							card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 							local earned = pokermon.ease_poke_dollars(card, "araquanid", card.ability.extra.money)
 							return {
@@ -130,7 +130,7 @@ local araquanid = {
 				end
 			end
 			if context.end_of_round and context.game_over == false and context.main_eval and not context.blueprint then
-				card.ability.extra.minSum = math.random(1, 46)
+				card.ability.extra.minSum = math.random(1, 47)
 				--[[return {
 					message = localize('k_reset')
 				}--]]
@@ -144,7 +144,7 @@ local araquanid = {
 		end
 	end,
 	set_ability = function(self, card, initial, delay_sprites)
-		card.ability.extra.minSum = math.random(1, 46)
+		card.ability.extra.minSum = math.random(1, 47)
 	end
 }
 

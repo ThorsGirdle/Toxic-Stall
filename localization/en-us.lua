@@ -981,7 +981,7 @@ return {
 			m_stall_sleight = {
 				name = "Sleight Card",
 				text = {
-					"Gives the highest Chips",
+					"Gives the highest Chips,",
 					"Mult, and {X:red,C:white}X{} Mult from",
 					"cards in {C:attention}poker hand{}",
 					"{C:green}#1# in #2#{} chance to {C:attention}Prank{}",

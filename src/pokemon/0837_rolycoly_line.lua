@@ -1,7 +1,7 @@
 local rolycoly = {
 	name = "rolycoly",
 	--pos = {x = 0, y = 0},
-	config = {extra = {mult = 20, cardDestroyed = false, rounds = 3}},
+	config = {extra = {mult = 18, cardDestroyed = false, rounds = 3}},
 	loc_vars = function(self, info_queue, card)
 		local abbr = card.ability.extra
 		local active = ""
@@ -47,7 +47,7 @@ local rolycoly = {
 local carkol = {
 	name = "carkol",
 	--pos = {x = 0, y = 0},
-	config = {extra = {mult = 25, cardDestroyed = false, destroyedNum = 0}, evo_rqmt = 5},
+	config = {extra = {mult = 22, cardDestroyed = false, destroyedNum = 0}, evo_rqmt = 5},
 	loc_vars = function(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_gem
 		local abbr = card.ability.extra
