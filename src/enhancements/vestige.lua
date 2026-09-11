@@ -15,7 +15,6 @@ local vestige = {
 	weight = 6,
 
   loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		return {
 			vars = {}
 		}
