@@ -4,7 +4,7 @@ local mareanie = {
 	config = {extra = {hazard_level = 1, Xmult = 0.30, heldTH = 0}, evo_rqmt = 20},	
 	loc_vars = function(self, info_queue, card)
 		local abbr = card.ability.extra
-		info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
+		info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = pokermon.get_hazard_level_vars()}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {abbr.hazard_level, abbr.Xmult, self.config.evo_rqmt - abbr.heldTH}}
@@ -55,7 +55,7 @@ local toxapex = {
 	config = {extra = {hazard_level = 1, Xmult = 0.40}},
 	loc_vars = function(self, info_queue, card)
 		local abbr = card.ability.extra
-		info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = poke_get_hazard_level_vars()}
+		info_queue[#info_queue+1] = {set = 'Other', key = 'hazard_level', vars = pokermon.get_hazard_level_vars()}
 		info_queue[#info_queue+1] = G.P_CENTERS.m_poke_hazard
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 	  return {vars = {abbr.hazard_level, abbr.Xmult}}
@@ -84,7 +84,7 @@ calculate = function(self, card, context)
 				end
 			end
 			totalMult = 1 + (card.ability.extra.Xmult * heldTargets)
-			if G.GAME.round_resets.hazard_level and G.GAME.round_resets.hazard_level > 1 then
+			if G.GAME.poke_hazard_level and G.GAME.poke_hazard_level > 1 then
 				toxic_scaling()
 				G.GAME.toxic_triggered = true
 				SMODS.calculate_effect({x_mult = G.GAME.current_round.toxic.toxicXMult}, context.other_card)	
