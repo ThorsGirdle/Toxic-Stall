@@ -15,7 +15,6 @@ local toxic = {
   no_collection = false,
 
   loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		return {
 			vars = { ((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicXMult) or 1), 
 							((G.GAME.current_round.toxic and G.GAME.current_round.toxic.toxicMult_mod) or 0.05),
