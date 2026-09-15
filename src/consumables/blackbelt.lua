@@ -23,7 +23,7 @@ local blackbelt = {
 			pokermon.juice_flip(G.hand.highlighted[1])
 			G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function() G.hand.highlighted[1]:set_ability(G.P_CENTERS.m_stall_focused);return true end }))
 			pokermon.juice_flip(G.hand.highlighted[1])
-			poke_unhighlight_cards()
+			pokermon.unhighlight_cards()
 		end
   end,
 	

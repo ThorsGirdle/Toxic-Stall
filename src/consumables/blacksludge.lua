@@ -36,7 +36,7 @@ local blacksludge = {
       end
 			pokermon.juice_flip(G.hand.highlighted[1])
       pokermon.juice_flip_table(card, cards_held, true, limit)
-			poke_unhighlight_cards()
+			pokermon.unhighlight_cards()
 		end
   end,
   in_pool = function(self)

@@ -17,12 +17,12 @@ local ejectbutton = {
   end,
 	
   use = function(self, card, area, copier)
-    set_spoon_item(card)
+    pokermon.set_spoon_item(card)
 		if #G.hand.highlighted == 1 then
 			pokermon.juice_flip(G.hand.highlighted[1])
 			G.E_MANAGER:add_event(Event({trigger = 'after',delay = 0.1,func = function() G.hand.highlighted[1]:set_ability(G.P_CENTERS.m_stall_sleight);return true end }))
 			pokermon.juice_flip(G.hand.highlighted[1])
-			poke_unhighlight_cards()
+			pokermon.unhighlight_cards()
 		end
   end,
 	
