@@ -76,7 +76,6 @@ local brionne_alt = {
 	pos = {x = 16, y = 48},
 	config = {extra = {chips = 0, chip_mod = 8, hands = 1, poker_hand = "High Card"}, evo_rqmt = 96},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.chips, abbr.chip_mod, abbr.hands, abbr.poker_hand, self.config.evo_rqmt}}
 	end,
@@ -149,7 +148,6 @@ local primarina_alt = {
 	pos = {x = 18, y = 48},
 	config = {extra = {chips = 0, chip_mod = 10, Xmult_mod = 1, currXmult = 1, hands = 1, poker_hand = "High Card", triggered = false}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 	  return {vars = {abbr.chips, abbr.chip_mod, abbr.hands, abbr.currXmult, abbr.Xmult_mod, abbr.poker_hand}}
 	end,

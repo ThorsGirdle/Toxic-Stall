@@ -57,7 +57,6 @@ local mienshao = {
 	--pos = {x = 0, y = 0},
 	config = {extra = {uniqueHands = {}, handReq = 4, mult_mod = 1, upgrades = 0}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_focused
 		abbr = card.ability.extra
 	  return {vars = {math.max(abbr.handReq - #abbr.uniqueHands, 0), abbr.mult_mod, abbr.mult_mod * abbr.upgrades}}

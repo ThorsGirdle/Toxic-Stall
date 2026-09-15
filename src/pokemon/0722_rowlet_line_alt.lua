@@ -158,7 +158,6 @@ local decidueye_alt = {
 	pos = {x = 6, y = 48},
 	config = {extra = {money = 4, h_size = 1, next_poker_hand = "High Card", poker_hand = "None", prev_poker_hand = "None", num = 1, dem = 2}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		local abbr = card.ability.extra
 		local num, dem = SMODS.get_probability_vars(card, abbr.num, abbr.dem, 'decidueye')
 	  return {vars = {abbr.money, abbr.h_size, abbr.poker_hand, abbr.next_poker_hand, abbr.prev_poker_hand, num, dem}}

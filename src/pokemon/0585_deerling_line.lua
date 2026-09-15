@@ -3,7 +3,6 @@ local deerling = {
 	pos = {x = 4, y = 1},
 	 config = {extra = {mult_mod = 1, mult = 0, check = true, form = "Summer", targets = {{suit = "Spades"}}}, evo_rqmt = 12},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"suit"}}
     end
@@ -114,7 +113,6 @@ local sawsbuck = {
 	pos = {x = 0, y = 2},
 	 config = {extra = {mult_mod = 2, mult = 0, check = true, form = "Summer", targets = {{suit = "Spades"}}}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = {set = 'Other', key = 'nature', vars = {"suit"}}
     end

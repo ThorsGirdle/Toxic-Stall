@@ -4,7 +4,6 @@ local volcanion ={
   soul_pos = { x = 0, y = 0},
   config = {extra = {currXmult = 1, Xmult_mod = 1, chipTotal = 0, reset = false}},
   loc_vars = function(self, info_queue, card)
-    type_tooltip(self, info_queue, card)
     return {vars = {card.ability.extra.currXmult, card.ability.extra.Xmult_mod, card.ability.extra.chipTotal}}
   end,
   rarity = 4, --Legendary
