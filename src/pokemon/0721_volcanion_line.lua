@@ -19,7 +19,7 @@ local volcanion ={
 		if context.before and not context.blueprint then
 			local tempChipTotal = 0
 			for i, v in ipairs(context.scoring_hand) do
-				tempChipTotal = tempChipTotal + poke_total_chips(v)
+				tempChipTotal = tempChipTotal + pokermon.total_chips(v)
 			end
 			if tempChipTotal > card.ability.extra.chipTotal then
 				card.ability.extra.currXmult = card.ability.extra.currXmult + card.ability.extra.Xmult_mod
