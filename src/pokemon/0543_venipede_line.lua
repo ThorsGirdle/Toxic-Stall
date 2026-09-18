@@ -107,7 +107,6 @@ local scolipede = {
 	pos = {x = 8, y = 36},
 	config = {extra = { num = 1, dem = 5, retriggers = 0, threshold = 0.25}},
 	loc_vars = function(self, info_queue, card)
-		type_tooltip(self, info_queue, card)
 		info_queue[#info_queue+1] = G.P_CENTERS.m_stall_toxic
 		local abbr = card.ability.extra
 		local num, dem = SMODS.get_probability_vars(card, card.ability.extra.num, card.ability.extra.dem, 'scolipede')
