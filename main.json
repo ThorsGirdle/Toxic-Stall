@@ -9,11 +9,11 @@
 	"badge_colour": "701fab",
 	"badge_text_colour": "ffffff",
   "display_name": "ToxicStall",
-	"version": "0.7.77",
+	"version": "0.7.78",
 	"dependencies": [
 			"Steamodded (>=1.0.0~BETA-1221a)",
 			"Lovely (>=0.8)",
-			"Pokermon (>=3.8.1-0625a)"
+			"Pokermon (>=3.9.1-0918a)"
 	],
 	"conflicts": [],
 	"provides": [],
