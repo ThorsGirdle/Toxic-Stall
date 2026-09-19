@@ -82,7 +82,7 @@ local dottler = {
 				}
 			end
 		end
-		return scaling_evo(self, card, context, "j_stall_orbeetle", ((card.ability.extra.consumablesUsed and #card.ability.extra.consumablesUsed) or 0), self.config.evo_rqmt)
+		return pokermon.scaling_evo(self, card, context, "j_stall_orbeetle", ((card.ability.extra.consumablesUsed and #card.ability.extra.consumablesUsed) or 0), self.config.evo_rqmt)
 	end,
 }	
 
