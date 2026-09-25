@@ -469,7 +469,7 @@ return {
 				name = 'Litten',
 				text = {
 					"{C:red}+#1#{} discard",
-					"Gain {C:mult}+#3#{} after discarding",
+					"Gain {C:mult}+#3#{} Mult after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
 					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#4#{C:inactive,s:0.8} Mult)",
@@ -479,7 +479,7 @@ return {
 				name = 'Torracat',
 				text = {
 					"{C:red}+#1#{} discard",
-					"Gain {C:mult}+#3#{} after discarding",
+					"Gain {C:mult}+#3#{} Mult after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
 					"{C:inactive,s:0.8}(Evolves at {C:mult,s:0.8}+#4#{C:inactive,s:0.8} Mult)",
@@ -489,7 +489,7 @@ return {
 				name = 'Incineroar',
 				text = {
 					"{C:red}+#2#{} discard",
-					"Gain {C:mult}+#4#{} after discarding",
+					"Gain {C:mult}+#4#{} Mult after discarding",
 					"your most played {C:attention}poker hand{}",
 					"{br:2}ERROR - CONTACT STEAK",
 					"Also earn {C:money}$#1#{} per card",
