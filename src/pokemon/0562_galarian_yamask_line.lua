@@ -24,11 +24,11 @@ local galarian_yamask = {
 					adjacent[2]:set_edition( adjacent[1].edition, true, true)
 					adjacent[1]:set_edition()
 				end
-				local energy1, energy2 = get_total_energy(adjacent[1], true)
+				local energy1, energy2 = pokermon.energy.get_total_energy(adjacent[1], true)
 				if (energy1 or energy2) and energy1 + energy2 > 0 then
 					--local rightEnergy = get_total_energy(adjacent[1], false)
 					if not pokermon_config.unlimited_energy and not adjacent[2].config.center.no_energy_limit then
-						pokermon.energy.modify(adjacent[2], pokermon.get_type(adjacent[2]), (math.min(energy1 + energy2,  (energy_max + (G.GAME.energy_plus or 0) - get_total_energy(adjacent[2])))), false)
+						pokermon.energy.modify(adjacent[2], pokermon.get_type(adjacent[2]), (math.min(energy1 + energy2,  (pokermon.energy.max + (G.GAME.energy_plus or 0) - pokermon.energy.get_total_energy(adjacent[2])))), false)
 					else
 						pokermon.energy.modify(adjacent[2], pokermon.get_type(adjacent[2]), energy1 + energy2, false)
 					end
@@ -70,10 +70,10 @@ local runerigus = {
 				if adjacent[1].edition then
 					adjacent[2]:set_edition( adjacent[1].edition, true, true)
 				end
-				local energy1, energy2 = get_total_energy(adjacent[1], true)
+				local energy1, energy2 = pokermon.energy.get_total_energy(adjacent[1], true)
 				if (energy1 or energy2) and energy1 + energy2 > 0 then
 					if not pokermon_config.unlimited_energy and not adjacent[2].config.center.no_energy_limit then
-						pokermon.energy.modify(adjacent[2], pokermon.get_type(adjacent[2]), (math.min(energy1 + energy2,  (energy_max + (G.GAME.energy_plus or 0) - get_total_energy(adjacent[2])))), false)
+						pokermon.energy.modify(adjacent[2], pokermon.get_type(adjacent[2]), (math.min(energy1 + energy2,  (pokermon.energy.max + (G.GAME.energy_plus or 0) - pokermon.energy.get_total_energy(adjacent[2])))), false)
 					else
 						pokermon.energy.modify(adjacent[2], pokermon.get_type(adjacent[2]), energy1 + energy2, false)
 					end

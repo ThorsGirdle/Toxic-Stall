@@ -380,12 +380,3 @@ return {
 	list = {zeal,}
 }
 
-
-
---[[ if context.stay_flipped and context.from_area == G.hand and context.to_area == G.discard and context.other_card.claydoll_discard then
-      context.other_card.claydoll_discard = nil
-      return
-      {
-        modify = {to_area = G.hand}
-      }
-    end--]]
