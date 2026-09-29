@@ -1,10 +1,13 @@
 return{
 	Spinarak = true,
 	Paldean_Wooper = true,
+	Shinx = true,
 	Drifloon = true,
+	Hippopotas = true,
 	Croagunk = true,
 	Sewaddle = true,
 	Venipede = true,
+	Petilil = true,
 	Galarian_Yamask = true,
 	Deerling = true,
 	Foongus = true,

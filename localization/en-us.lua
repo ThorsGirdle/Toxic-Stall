@@ -38,6 +38,33 @@ return {
 					"with {C:attention}Toxic{} when a {C:attention}face{} card is destroyed",
 				}
 			},
+			--403
+			j_stall_shinx = {
+				name = 'Shinx',
+				text = {
+					"{C:purple}+#2# Foresight",
+					"Played {C:diamonds}#4#{} give {C:mult}+#1#{} Mult",
+					"if a {C:diamonds}#3#{} is {C:attention}foreseen",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#5#{C:inactive,s:0.8} rounds)",
+				}
+			},
+			j_stall_luxio = {
+				name = 'Luxio',
+				text = {
+					"{C:purple}+#2# Foresight",
+					"Played {C:diamonds}#5#{} give {C:mult}+#1#{} Mult",
+					"if {C:attention}2+ {C:diamonds}#5#{} are {C:attention}foreseen{}",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#4#{C:inactive,s:0.8} {C:diamonds,s:0.8}#5#{C:inactive,s:0.8} are foreseen)",
+				}
+			},
+			j_stall_luxray = {
+				name = 'Luxray',
+				text = {
+					"{C:purple}+#2# Foresight",
+					"Played {C:diamonds}#4#{} give {X:mult,C:white}X#1#{} Mult",
+					"per {C:attention}foreseen {C:diamonds}#3#{} card",
+				}
+			},
 			--425
 			j_stall_drifloon = {
 				name = 'Drifloon',
@@ -59,6 +86,24 @@ return {
 					"ranks give {X:mult,C:white}X#1#{} Mult when scored",
 				}
 			},
+			--449
+			j_stall_hippopotas = {
+				name = 'Hippopotas',
+				text = {
+					"Played {C:spades}#5#{} give {C:mult}+#1#{} Mult",
+					"per {C:attention}depleted Rank{} when scored",
+					"{C:inactive}(Currently {C:mult}+#2#{C:inactive} Mult)",
+					"{C:inactive,s:0.8}(Evolves after scoring {C:attention,s:0.8}#4# {C:spades,s:0.8}#5#{C:inactive,s:0.8})",
+				}
+			},		
+			j_stall_hippowdon = {
+				name = 'Hippowdon',
+				text = {
+					"Played {C:spades}#4#{} give {X:mult,C:white}X#1#{} Mult",
+					"per {C:attention}depleted card{} when scored",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
+				}
+			},			
 			--453
 			j_stall_croagunk = {
 				name = 'Croagunk',
@@ -147,6 +192,32 @@ return {
 					"{C:attention}Retrigger{} first scoring card {C:attention}1{} additional ",
 					"time per {X:mult,C:white}X#4#{} extra {C:attention}Toxic{} Mult",
 					"{C:inactive,s:0.8} (Max 5 retriggers)"
+				}
+			},
+			--548
+			j_stall_petilil = {
+				name = 'Petlil',
+				text = {
+					"Played {C:clubs}#3#{} give {C:mult}+#1#{} Mult",
+					"if played hand is your most",
+					"played {C:attention}poker hand{}",
+					"{C:inactive,s:0.8}(Evolves with a {C:poke_fighting,s:0.8}Fighting{C:inactive,s:0.8} sticker or {C:attention,s:0.8}Sun Stone{C:inactive,s:0.8})",
+				}
+			},
+			j_stall_lilligant = {
+				name = 'Lilligant',
+				text = {
+					"Played {C:clubs}#3#{} give {X:mult,C:white}X#1#{} Mult",
+					"per times {C:attention}poker hand{}",
+					"has been played this run",
+				}
+			},
+			j_stall_hisuian_lilligant = {
+				name = '{s:0.6}Hisuian{}Lilligant',
+				text = {
+					"Played {C:clubs}#3#{} retrigger if",
+					"played hand is {C:attention}not{} your",
+					"most played {C:attention}poker hand{}",
 				}
 			},
 			--562
@@ -1198,10 +1269,11 @@ return {
 	},
 	misc = {
 		dictionary = {
-			stall_regular_pokemon1 = "Regular Pokemon 1/4",
-			stall_regular_pokemon2 = "Regular Pokemon 2/4",
-			stall_regular_pokemon3 = "Regular Pokemon 3/4",
-			stall_regular_pokemon4 = "Regular Pokemon 4/4",
+			stall_regular_pokemon1 = "Regular Pokemon 1/5",
+			stall_regular_pokemon2 = "Regular Pokemon 2/5",
+			stall_regular_pokemon3 = "Regular Pokemon 3/5",
+			stall_regular_pokemon4 = "Regular Pokemon 4/5",
+			stall_regular_pokemon5 = "Regular Pokemon 5/5",
 			stall_Alolan_starters = "Alolan Starters",
 			stall_toxic_pokemon1 = "Toxic Pokemon 1/2",
 			stall_toxic_pokemon2 = "Toxic Pokemon 2/2",

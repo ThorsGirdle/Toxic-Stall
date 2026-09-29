@@ -80,7 +80,7 @@ local dracozolt = {
 			card.ability.extra.handsPlayed = 0
 		end
   end,
-	generate_ui = fossil_generate_ui,
+	generate_ui = pokermon.fossil_generate_ui,
 	attributes = {"ancient"},
 }
 
