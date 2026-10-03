@@ -110,6 +110,11 @@ local brave = {
 			}
 		end
 	end,
+	
+	in_pool = function(self)
+    return stall_config.ChoiceBand
+	end,
+}
 }
 
 return {

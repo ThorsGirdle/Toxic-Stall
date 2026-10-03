@@ -121,6 +121,10 @@ local sleight = {
 			card.ability.extra.savedXMult = 0
 		end
 	end,
+	
+	in_pool = function(self)
+    return stall_config.EjectButton
+	end,
 }
 
 return {
