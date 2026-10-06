@@ -115,7 +115,6 @@ local brave = {
     return stall_config.ChoiceBand
 	end,
 }
-}
 
 return {
 	name = "Enhancements",

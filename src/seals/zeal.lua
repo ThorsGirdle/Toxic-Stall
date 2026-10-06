@@ -367,12 +367,8 @@ local zeal = {
 	end,
 	
 	in_pool = function(self)
-		if stall_config.ZCrystal and stall_config.ZCrystal == false then
-			return false
-		else 
-			return true
-		end
-  end,
+    return stall_config.ZCrystal
+	end,
 }
 
 return {
