@@ -74,66 +74,6 @@ SMODS.Enhancement:take_ownership("poke_seed", {
 
 }, true)
 
-stall_grow_card = function(card, amount)
-  if not is_seed_card(card) then return end
-
-  local center = card.config.center
-  local level_up = (amount or 1) + (G.GAME.poke_growth_level or 0)
-  card.ability.extra.level = card.ability.extra.level + level_up
-  local level, level_max = card.ability.extra.level, card.ability.extra.level_max or center.config.extra.level_max
-  card.poke_visual_growth_mod = math.max(-level_max, (card.poke_visual_growth_mod or 0) - level_up)
-
-  if level > 0 then
-    if level >= level_max then
-			if card.seal and card.seal == "stall_zeal" and card.config.center.key == "m_poke_seed" then
-				card.ability.extra.level = 0
-				SMODS.calculate_effect({
-					extra = { -- Necessary for timing
-						message = localize('k_upgrade_ex'),
-						sound = 'poke_seed_' .. level,
-					},
-					func = function()
-						G.E_MANAGER:add_event(Event({
-							func = function()
-								center:set_sprites(card)
-								return true
-							end
-						}))
-					end,
-				}, card)
-			else
-				pokermon.bloom_card(card)
-			end
-    else
-      SMODS.calculate_effect({
-        extra = { -- Necessary for timing
-          message = localize('k_upgrade_ex'),
-          sound = 'poke_seed_' .. level,
-        },
-        func = function()
-          G.E_MANAGER:add_event(Event({
-            func = function()
-              card.poke_visual_growth_mod = math.min(0, (card.poke_visual_growth_mod or 0) + level_up)
-              center:set_sprites(card)
-              return true
-            end
-          }))
-        end,
-      }, card)
-    end
-  end
-end
-
-
-SMODS.Enhancement:take_ownership("poke_seed", {
-
-  calculate = function(self, card, context)
-    if context.main_scoring and context.cardarea == G.play then
-      stall_grow_card(card)
-    end
-  end,
-
-}, true)
 
 
 return {
