@@ -1,12 +1,12 @@
 local sewaddle = {
 	name = "sewaddle",
 	pos = {x = 0, y = 0},
-	config = {extra = {savedChips = 0, rounds = 4}},
+	config = {extra = {mult = 20, rounds = 5}},
 	loc_vars = function(self, info_queue, card)
-	  return {vars = {card.ability.extra.rounds}}
+	  return {vars = {card.ability.extra.mult, card.ability.extra.rounds}}
 	end,
 	rarity = 1, --Common
-	cost = 4,
+	cost = 5,
 	stage = "Basic",
 	ptype = "Grass",
 	gen = 5,
@@ -17,20 +17,21 @@ local sewaddle = {
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
-		if context.individual and context.cardarea == G.play then
-			if context.other_card == context.scoring_hand[1] then
-				local firstCard = context.scoring_hand[1]
-				if card.ability.extra.savedChips == 0 then
-					card.ability.extra.savedChips = pokermon.total_chips(firstCard)
+		if context.joker_main then
+			local trigger = true
+			local play_more_than = (G.GAME.hands[context.scoring_name].played or 1) - 1
+			for handname, values in pairs(G.GAME.hands) do
+				if handname ~= context.scoring_name and (values.played or 0) < play_more_than and SMODS.is_poker_hand_visible(handname) then
+					trigger = false
+					break
 				end
-			else 
-				return {
-					chips = (card.ability.extra.savedChips/2) 
-				}
 			end
-		end
-		if context.after and not context.blueprint then
-			card.ability.extra.savedChips = 0
+			if trigger == true then
+				return{
+					message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
+					mult_mod = card.ability.extra.mult
+				}	
+			end
 		end
 		
 	return pokermon.level_evo(self, card, context, "j_stall_swadloon")
@@ -40,12 +41,13 @@ local sewaddle = {
 local swadloon = {
 	name = "swadloon",
 	pos = {x = 0, y = 0},
-	config = {extra = {savedChips = 0, chip_mod = 4, bigBoys = 0, targetChips = 20}, evo_rqmt = 20 },
+	config = {extra = {mult = 25, triggers = 0}, evo_rqmt = 7},
 	loc_vars = function(self, info_queue, card)
-	  return {vars = {card.ability.extra.chip_mod, math.max((self.config.evo_rqmt - card.ability.extra.bigBoys),0), card.ability.extra.targetChips}}
+		local abbr = card.ability.extra
+	  return {vars = {abbr.mult, math.max((self.config.evo_rqmt - abbr.triggers), 0)}}
 	end,
 	rarity = "poke_safari",
-	cost = 5,
+	cost = 7,
 	stage = "One",
 	ptype = "Grass",
 	gen = 5,
@@ -56,40 +58,35 @@ local swadloon = {
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
-		if context.individual and context.cardarea == G.play then
-			if context.other_card == context.scoring_hand[1] then
-				local firstCard = context.scoring_hand[1]
-				if card.ability.extra.savedChips == 0 then
-					card.ability.extra.savedChips = pokermon.total_chips(firstCard)
+		if context.joker_main then
+			local trigger = true
+			local play_more_than = (G.GAME.hands[context.scoring_name].played or 1) - 1
+			for handname, values in pairs(G.GAME.hands) do
+				if handname ~= context.scoring_name and (values.played or 0) < play_more_than and SMODS.is_poker_hand_visible(handname) then
+					trigger = false
+					break
 				end
-				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod
-				return {
-					message = localize('k_upgrade_ex'),
-					colour = G.C.CHIPS
-				}
-			else 
-				if card.ability.extra.savedChips >= 20 then
-					 card.ability.extra.bigBoys = card.ability.extra.bigBoys + 1
-				end
-				return {
-					chips = (card.ability.extra.savedChips/2)
-				}
+			end
+			if trigger == true then
+				card.ability.extra.triggers = card.ability.extra.triggers + 1
+				return{
+					message = localize{type = 'variable', key = 'a_mult', vars = {card.ability.extra.mult}}, 
+					mult_mod = card.ability.extra.mult
+				}	
 			end
 		end
-		if context.after and not context.blueprint then
-			card.ability.extra.savedChips = 0
-		end
 		
-	return pokermon.scaling_evo(self, card, context, "j_stall_leavanny", card.ability.extra.bigBoys, self.config.evo_rqmt)
+	return pokermon.scaling_evo(self, card, context, "j_stall_leavanny", card.ability.extra.triggers, self.config.evo_rqmt)
 	end,
 }
 
 local leavanny = {
 	name = "leavanny",
 	pos = {x = 0, y = 0},
-	config = {extra = {savedChips = 0, chip_mod = 6}},
+	config = {extra = {mult = 25, Xmult = 1, Xmult_mod = 0.25}},
 	loc_vars = function(self, info_queue, card)
-	  return {vars = {card.ability.extra.chip_mod}}
+		local abbr = card.ability.extra
+	  return {vars = {abbr.mult, abbr.Xmult, abbr.Xmult_mod}}
 	end,
 	rarity = "poke_safari",
 	cost = 6,
@@ -103,29 +100,36 @@ local leavanny = {
 	eternal_compat = true,
 	
 	calculate = function(self, card, context)
-		if context.individual and context.cardarea == G.play then
-			if context.other_card == context.scoring_hand[1] then
-				local firstCard = context.scoring_hand[1]
-				if card.ability.extra.savedChips == 0 then
-					card.ability.extra.savedChips = pokermon.total_chips(firstCard)
-				end 
-				context.other_card.ability.perma_bonus = (context.other_card.ability.perma_bonus or 0) + card.ability.extra.chip_mod 
-				return {
-					message = localize('k_upgrade_ex'),
-					colour = G.C.CHIPS
-				}
-			else 
-				return {
-					chips = card.ability.extra.savedChips
-				}
+		if context.joker_main then
+			local trigger = true
+			local play_more_than = (G.GAME.hands[context.scoring_name].played or 1) - 1
+			for handname, values in pairs(G.GAME.hands) do
+				if handname ~= context.scoring_name and (values.played or 0) < play_more_than and SMODS.is_poker_hand_visible(handname) then
+					trigger = false
+					break
+				end
+			end
+			if trigger == true then
+				local grow = true
+				local play_more_than = (G.GAME.hands[context.scoring_name].played or 0)
+				for handname, values in pairs(G.GAME.hands) do
+					if handname ~= context.scoring_name and (values.played or 0) > play_more_than and SMODS.is_poker_hand_visible(handname) then
+						grow = false
+						break
+					end
+				end
+				if grow == true then
+					card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
+				end
+				return{
+					mult = card.ability.extra.mult,
+					xmult = card.ability.extra.Xmult
+				}	
 			end
 		end
-		if context.after and not context.blueprint then
-			card.ability.extra.savedChips = 0
-		end
-		
 	end,
 }
+
 
 return {
 	name = "Sewaddle Line",

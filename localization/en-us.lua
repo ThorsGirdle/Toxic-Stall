@@ -131,33 +131,29 @@ return {
 			j_stall_sewaddle = {
 				name = 'Sewaddle',
 				text = {
-					"Other played cards give {C:attention}half{}",
-					"the total {C:chips}Chips{} of first",
-					"scored card when scored",
-					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#1#{C:inactive,s:0.8} rounds)",
+					"{C:mult}+#1#{} Mult if played hand is", 
+					"your least played {C:attention}poker hand{}",
+					"{C:inactive,s:0.8}(Evolves after {C:attention,s:0.8}#2#{C:inactive,s:0.8} rounds)",
 				}
 			},
 			j_stall_swadloon = {
 				name = 'Swadloon',
 				text = {
-					"Other played cards give {C:attention}half{}",
-					"the total {C:chips}Chips{} of first",
-					"scored card when scored",
-					"{br:2}ERROR - CONTACT STEAK",
-					"First played card permanently",
-					"gains {C:chips}+#1#{} Chips when scored",
-					"{C:inactive,s:0.7}(Evolves after giving {C:attention,s:0.7}#2#{C:inactive,s:0.7} scored cards {C:chips,s:0.7}+#3#{C:inactive,s:0.7} Chips)",
+					"{C:mult}+#1#{} Mult if played hand is", 
+					"your least played {C:attention}poker hand{}", 
+					"{C:inactive,s:0.7}(Evolves after triggering {C:attention,s:0.7}#2#{C:inactive,s:0.7} times)",
 				}
 			},
 			j_stall_leavanny = {
 				name = 'Leavanny',
 				text = {
-					"Other played cards give",
-					"the total {C:chips}Chips{} of first",
-					"scored card when scored",
+					"{C:mult}+#1#{} Mult if played hand is", 
+					"your least played {C:attention}poker hand{}", 
 					"{br:2}ERROR - CONTACT STEAK",
-					"First played card permanently",
-					"gains {C:chips}+#1#{} Chips when scored",
+					"Gain {X:mult,C:white}X#3#{} Mult if your least", 
+					"played {C:attention}poker hand{} becomes", 
+					"your most played",
+					"{C:inactive}(Currently {X:mult,C:white}X#2#{C:inactive} Mult)",
 				}
 			},
 			--543
@@ -304,33 +300,6 @@ return {
 					"has only 1 card, reduce",
 					"its rank by 1"
 
-				}
-			},
-			--599
-			j_stall_klink = {
-				name = 'Klink',
-				text = {
-					"Earn {C:money}$#1#{} after drawing {C:attention}#2#", 
-					"cards in a blind",
-					"{C:inactive,s:0.8}(Evolve after giving {C:money,s:0.8}$#3#{C:inactive,s:0.8})",
-				}
-			},
-			j_stall_klang = {
-				name = 'Klang',
-				text = {
-					"Earn {C:money}$#1#{} after drawing {C:attention}#2#", 
-					"cards in a blind",
-					"{C:inactive,s:0.8}(Evolve after giving {C:money,s:0.8}$#3#{C:inactive,s:0.8})",
-				}
-			},
-			j_stall_klinklang = {
-				name = 'Klinklang',
-				text = {
-					"Earn {C:money}$#1#{} after drawing {C:attention}#2#", 
-					"cards in a blind",
-					"{br:2}ERROR - CONTACT STEAK",
-					"{X:mult,C:white}X#3#{} if {C:attention}#4#{C:inactive}[#5#]{} cards have ",
-					"been drawn this blind",
 				}
 			},
 			--619
