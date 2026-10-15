@@ -45,10 +45,10 @@ local petilil = {
 local lilligant = {
 	name = "lilligant",
 	pos = {x = 0, y = 0},
-	config = {extra = {Xmult_mod = 0.01, suit = 'Clubs'}},
+	config = {extra = {Xmult_multi = 0.01, suit = 'Clubs'}},
 	loc_vars = function(self, info_queue, card)
 		local abbr = card.ability.extra
-	  return {vars = { abbr.Xmult_mod, localize(card.ability.extra.suit, 'suits_singular'), localize(card.ability.extra.suit, 'suits_plural'), card.ability.extra.rounds}}
+	  return {vars = { abbr.Xmult_multi, localize(card.ability.extra.suit, 'suits_singular'), localize(card.ability.extra.suit, 'suits_plural'), card.ability.extra.rounds}}
 	end,
 	rarity = "poke_safari", 
 	cost = 8,
@@ -65,7 +65,7 @@ local lilligant = {
 		if context.individual and context.cardarea == G.play and context.other_card:is_suit(card.ability.extra.suit) then
 			local play_more_than = (G.GAME.hands[context.scoring_name].played or 1) 
 			return {
-				Xmult = 1 + (card.ability.extra.Xmult_mod * play_more_than)
+				Xmult = 1 + (card.ability.extra.Xmult_multi * play_more_than)
 			}
 		end
 	end,

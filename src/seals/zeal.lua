@@ -143,8 +143,6 @@ local zeal = {
 					x_mult = card.ability.seal.steelXMult + (card.ability.seal.steelMoneyXMult * (G.GAME.current_round.amount_gained or 0))
 				}
 			end
-			
-			
 
 		elseif card.config.center.key == "m_stone" then		
 			if context.after and G.GAME.current_round.rockium_selection and G.GAME.current_round.rockium_selection > 0 then

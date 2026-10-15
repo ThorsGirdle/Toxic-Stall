@@ -58,7 +58,7 @@ local hippopotas = {
 local hippowdon = {
 	name = "hippowdon",
 	pos = {x = 0, y = 0},
-	config = {extra = {Xmult_mod = 0.01, suit = 'Spades'}},
+	config = {extra = {Xmult_multi = 0.01, suit = 'Spades'}},
 	loc_vars = function(self, info_queue, card)
 		if pokermon_config.detailed_tooltips then
       info_queue[#info_queue+1] = {set = 'Other', key = 'depleted'}
@@ -82,7 +82,7 @@ local hippowdon = {
 					end
 				end
 			end
-	  return {vars = { abbr.Xmult_mod, (1 + (abbr.Xmult_mod * depleted_count)), localize(card.ability.extra.suit, 'suits_singular'), localize(card.ability.extra.suit, 'suits_plural')}}
+	  return {vars = { abbr.Xmult_multi, (1 + (abbr.Xmult_multi * depleted_count)), localize(card.ability.extra.suit, 'suits_singular'), localize(card.ability.extra.suit, 'suits_plural')}}
 	end,
 	rarity = "poke_safari",
 	cost = 8,
@@ -115,7 +115,7 @@ local hippowdon = {
 				end
 			end
 			return {
-				Xmult = 1 + (card.ability.extra.Xmult_mod * depleted_count)
+				Xmult = 1 + (card.ability.extra.Xmult_multi * depleted_count)
 			}
 		end
 	end,

@@ -14,7 +14,7 @@ local varoom = {
 	toxic = true,
 	designer = "Thor's Girdle",
 	perishable_compat = true,
-	blueprint_compat = false,
+	blueprint_compat = true,
 	eternal_compat = true,
 	--atlas = "AtlasJokersBasicNatdex",
 
@@ -32,7 +32,7 @@ local varoom = {
 				card.ability.extra.mult = 0
 			end
 		end
-		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_stone') then
+		if context.individual and context.cardarea == G.play and SMODS.has_enhancement(context.other_card, 'm_stone') and not context.blueprint then
 			card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.mult_mod
 			return {
 				message = 'Vroom', 
@@ -66,7 +66,7 @@ local revavroom = {
 	toxic = true,
 	designer = "Thor's Girdle",
 	perishable_compat = true,
-	blueprint_compat = false,
+	blueprint_compat = true,
 	eternal_compat = true,
 	--atlas = "AtlasJokersBasicNatdex",
 

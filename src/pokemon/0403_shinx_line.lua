@@ -96,10 +96,10 @@ local luxio = {
 local luxray = {
 	name = "luxray",
 	pos = {x = 0, y = 0},
-	config = {extra = {Xmult_mod = 0.04, suit = 'Diamonds', foresight = 4}},
+	config = {extra = {Xmult_multi = 0.04, suit = 'Diamonds', foresight = 4}},
 	loc_vars = function(self, info_queue, card)
 		local abbr = card.ability.extra
-	  return {vars = { abbr.Xmult_mod, abbr.foresight, localize(card.ability.extra.suit, 'suits_singular'), localize(card.ability.extra.suit, 'suits_plural')}}
+	  return {vars = { abbr.Xmult_multi, abbr.foresight, localize(card.ability.extra.suit, 'suits_singular'), localize(card.ability.extra.suit, 'suits_plural')}}
 	end,
 	rarity = "poke_safari",
 	cost = 9,
@@ -122,7 +122,7 @@ local luxray = {
       end
 			if foreseenNum > 0 then
 				return {
-					Xmult = 1 + (card.ability.extra.Xmult_mod * foreseenNum)
+					Xmult = 1 + (card.ability.extra.Xmult_multi * foreseenNum)
 				}
 			end
 		end

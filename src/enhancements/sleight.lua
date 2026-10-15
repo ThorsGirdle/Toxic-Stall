@@ -3,7 +3,7 @@ local sleight = {
   atlas = "PlaceholderStallEnhancements",
 	--artist = 
   pos = { x = 4, y = 0 },
-	config = { extra = {num = 1, dem = 4, savedChips = 0, savedMult = 0, savedXMult = 0, prankTrigger = false}},
+	config = { extra = {num = 1, dem = 5, savedChips = 0, savedMult = 0, savedXMult = 0, prankTrigger = false}},
 	any_suit = false,
   replace_base_card = false,
   no_rank = false,
