@@ -120,11 +120,17 @@ local leavanny = {
 				end
 				if grow == true then
 					card.ability.extra.Xmult = card.ability.extra.Xmult + card.ability.extra.Xmult_mod
+					SMODS.calculate_effect({message = "Upgrade!"}, card)
 				end
 				return{
 					mult = card.ability.extra.mult,
 					xmult = card.ability.extra.Xmult
 				}	
+			
+			elseif card.ability.extra.Xmult > 1 then
+				return{
+					xmult = card.ability.extra.Xmult
+				}
 			end
 		end
 	end,
