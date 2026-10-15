@@ -570,7 +570,7 @@ return {
 					"{br:2}ERROR - CONTACT STEAK",
 					"Also gain {X:mult,C:white}X#5#{} per consecutive",
 					"correct hand, resets on round end",
-					"{C:inactive}(Currently {X:mult,C:white}X#4#{}, {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive}, {X:mult,C:white}X#4#{} Mult)",
 				}
 			},
 			j_stall_popplio_alt = {
@@ -749,7 +749,7 @@ return {
 					"{br:2}ERROR - CONTACT STEAK",
 					"Gain {X:mult,C:white}X#4#{} if difference is the same",
 					"for {C:attention}#6#{} consecutive hands",
-					"{C:inactive}(Currently {X:mult,C:white}X#3#{}, {C:mult}+#1#{C:inactive} Mult)",
+					"{C:inactive}(Currently {C:mult}+#1#{C:inactive}, {X:mult,C:white}X#3#{} Mult)",
 				}
 			},
 			--824
