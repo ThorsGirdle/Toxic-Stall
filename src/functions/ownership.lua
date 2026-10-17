@@ -29,54 +29,6 @@ local is_seed_card = function(card)
   return card and card.ability and type(card.ability.extra) == 'table' and card.ability.extra.level
 end
 
-SMODS.Enhancement:take_ownership("poke_seed", {
-
-	  calculate = function(self, card, context)
-     if context.main_scoring and context.cardarea == G.play and card.ability and card.ability.extra and type(card.ability.extra) == 'table' then
-      card.temp_level = card.temp_level or card.ability.extra.level -- If this card has yet to score this hand, snapshot the starting level to handle delayed set_sprites calls
-      card.ability.extra.level = card.ability.extra.level + 1 + (G.GAME.poke_growth_level or 0)
-
-      local level, level_max = card.ability.extra.level, card.ability.extra.level_max
-
-      if level and level > 0 then
-        if level >= level_max then
-					if card.seal and card.seal == "stall_zeal" and card.config.center.key == "m_poke_seed" then
-						card.ability.extra.level = 0
-					else
-						return {
-							extra = {
-								message = localize('k_upgrade_ex'),
-								sound = 'poke_seed_'..math.min(level_max, level),
-							},
-							func = function()
-								ease_dollars(card.ability.extra.money);
-								card:set_ability(G.P_CENTERS.m_poke_flower, nil, true)
-							end
-						}
-					end
-        else
-          return {
-            extra = {
-              message = localize('k_upgrade_ex'),
-              sound = 'poke_seed_'..level,
-            },
-            func = function()
-              G.E_MANAGER:add_event(Event({
-                func = function()
-                  card.temp_level = level
-                  self:set_sprites(card)
-                  return true
-                end
-              }))
-            end,
-          }
-        end
-      end
-     end
-   end,
-
-
-}, true)
 
 stall_grow_card = function(card, amount)
   if not is_seed_card(card) then return end

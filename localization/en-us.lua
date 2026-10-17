@@ -1013,7 +1013,8 @@ return {
 					"Changes rank or suit",
 					"after being drawn {C:attention}#1#{} times",
 					"{br:2}ERROR - CONTACT STEAK",					
-					"{C:attention}Retriggers{} if played",
+					"{C:attention}Retriggers{} and increases", 
+					"draw limit by {C:attention}1{} if played",
 					"before next draw",
 					"{C:inactive,s:0.8}(#2#){}",
 				}

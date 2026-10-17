@@ -3,7 +3,7 @@ local brave = {
   atlas = "PlaceholderStallEnhancements",
 	--artist = 
   pos = { x = 2, y = 0 },
-	config = { extra = {drawn = true, turnsLeft = 6, retriggers = 1}},
+	config = { extra = {drawn = true, turnsLeft = 4, retriggers = 1}},
 	any_suit = false,
   replace_base_card = false,
   no_rank = false,
@@ -100,6 +100,7 @@ local brave = {
 		end
 		
 		if context.repetition and context.cardarea == G.play and card.ability.extra.drawn == true then
+			card.ability.extra.turnsLeft = card.ability.extra.turnsLeft + 1
 			return {
 				repetitions = card.ability.extra.retriggers
 			}					
