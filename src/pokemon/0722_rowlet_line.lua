@@ -117,7 +117,7 @@ local dartrix = {
 				end
 			end
 			card.ability.extra.poker_hand = card.ability.extra.next_poker_hand
-			card.ability.extra.next_poker_hand = pseudorandom_element(_poker_hands, 'rowlet')
+			card.ability.extra.next_poker_hand = pseudorandom_element(_poker_hands, 'dartrix')
 			return {
 					message = localize('k_reset')
 			}

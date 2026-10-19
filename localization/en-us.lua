@@ -1014,7 +1014,7 @@ return {
 					"after being drawn {C:attention}#1#{} times",
 					"{br:2}ERROR - CONTACT STEAK",					
 					"{C:attention}Retriggers{} and increases", 
-					"draw limit by {C:attention}1{} if played",
+					"draw limit by {C:attention}1{} if scored",
 					"before next draw",
 					"{C:inactive,s:0.8}(#2#){}",
 				}

@@ -62,12 +62,14 @@ local deerling = {
 	  if initial then
 			self:set_nature(card)
 		end
-		G.E_MANAGER:add_event(Event({
-				func = function()
-					self:set_sprites(card)
-					return true
-				end
-			}))
+		if self.discovered then
+			G.E_MANAGER:add_event(Event({
+					func = function()
+						self:set_sprites(card)
+						return true
+					end
+				}))
+		end
 	end,
 
   set_nature = function(self, card)
@@ -169,12 +171,14 @@ local sawsbuck = {
 	  if initial then
 			self:set_nature(card)
 		end
-		G.E_MANAGER:add_event(Event({
-		func = function()
-			self:set_sprites(card)
-			return true
+		if self.discovered then
+			G.E_MANAGER:add_event(Event({
+			func = function()
+				self:set_sprites(card)
+				return true
+			end
+			}))
 		end
-		}))
 	end,
 
   set_nature = function(self, card)
