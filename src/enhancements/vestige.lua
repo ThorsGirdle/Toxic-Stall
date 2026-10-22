@@ -101,10 +101,10 @@ local vestige = {
 								immediate = true,
 								nopulse = nil,
 							}, {
-								handname = disp_text,
-								level = G.GAME.hands[disp_text or text].level,
-								mult = G.GAME.hands[disp_text or text].mult,
-								chips = G.GAME.hands[disp_text or text].chips,
+								handname = disp_text or text or next(poker_hands),
+								level = (G.GAME.hands[text or disp_text].level or 1),
+								mult = G.GAME.hands[text or disp_text].mult,
+								chips = G.GAME.hands[text or disp_text].chips,
 							})
 							break
 						end
