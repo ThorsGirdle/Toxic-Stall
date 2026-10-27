@@ -13,7 +13,7 @@ local rowlet = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = false,
+	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	starter = true,
@@ -93,7 +93,7 @@ local dartrix = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = false,
+	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	
@@ -173,7 +173,7 @@ local decidueye = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	--atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = false,
+	perishable_compat = true,
 	blueprint_compat = true,
 	eternal_compat = true,
 	

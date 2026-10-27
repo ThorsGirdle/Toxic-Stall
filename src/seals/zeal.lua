@@ -205,7 +205,7 @@ local zeal = {
 		
 		elseif card.config.center.key == "m_poke_seed" then
 
-			if context.main_scoring and context.cardarea == G.play then
+		--[[	if context.main_scoring and context.cardarea == G.play then
 				if card.ability.extra.level >= 4 and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
 					G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
 					G.E_MANAGER:add_event(Event({
@@ -221,7 +221,7 @@ local zeal = {
 				return {
 					dollars =  card.ability.extra.level * card.ability.seal.seedMoolah
 				}
-			end
+			end--]]
 				
 		elseif card.config.center.key == "m_poke_flower" then
 			if context.main_scoring and context.cardarea == G.play then		

@@ -13,7 +13,7 @@ local litten_alt = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	starter = true,
@@ -71,7 +71,7 @@ local torracat_alt = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	
@@ -128,7 +128,7 @@ local incineroar_alt = {
 	gen = 7,
 	designer = "Thor's Girdle",
 	atlas = "AtlasJokersBasicNatdex",
-	perishable_compat = true,
+	perishable_compat = false,
 	blueprint_compat = true,
 	eternal_compat = true,
 	

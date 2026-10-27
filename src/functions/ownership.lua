@@ -42,21 +42,37 @@ stall_grow_card = function(card, amount)
   if level > 0 then
     if level >= level_max then
 			if card.seal and card.seal == "stall_zeal" and card.config.center.key == "m_poke_seed" then
-				card.ability.extra.level = 0
+				if card.ability.extra.level >= 4 and #G.consumeables.cards + G.GAME.consumeable_buffer < G.consumeables.config.card_limit then
+					G.GAME.consumeable_buffer = G.GAME.consumeable_buffer + 1
+					G.E_MANAGER:add_event(Event({
+						func = (function()
+								SMODS.add_card {
+										set = 'Planet',
+								}
+								G.GAME.consumeable_buffer = 0
+								return true
+						end)
+					}))
+				end
+				card.ability.extra.level = card.ability.extra.level % level_up
 				SMODS.calculate_effect({
 					extra = { -- Necessary for timing
 						message = localize('k_upgrade_ex'),
-						sound = 'poke_seed_' .. level,
+						sound = 'poke_seed_' .. math.min(level, 5),
+						
 					},
 					func = function()
 						G.E_MANAGER:add_event(Event({
 							func = function()
+								card.poke_visual_growth_mod = math.min(0, (card.poke_visual_growth_mod or 0) + level_up)
 								center:set_sprites(card)
 								return true
 							end
 						}))
 					end,
-				}, card)
+				}, card)				
+				local earned = pokermon.ease_poke_dollars(card, "grassium", card.ability.extra.money)
+				SMODS.calculate_effect({money = earned}, card)
 			else
 				pokermon.bloom_card(card)
 			end
@@ -85,7 +101,13 @@ SMODS.Enhancement:take_ownership("poke_seed", {
 
   calculate = function(self, card, context)
     if context.main_scoring and context.cardarea == G.play then
+			local dollars = (card.ability.extra.level + 1) * card.ability.seal.seedMoolah
       stall_grow_card(card)
+			if card.seal and card.seal == "stall_zeal" and card.config.center.key == "m_poke_seed" then
+				return {
+					dollars =  dollars
+				}
+			end
     end
   end,
 
