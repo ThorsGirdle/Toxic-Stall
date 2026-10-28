@@ -104,7 +104,7 @@ SMODS.Enhancement:take_ownership("poke_seed", {
     if context.main_scoring and context.cardarea == G.play then
 			stall_grow_card(card)
 			if card.seal and card.seal == "stall_zeal" and card.config.center.key == "m_poke_seed" then
-				local dollars = (card.ability.extra.level + 1) * card.ability.seal.seedMoolah
+				local dollars = card.ability.extra.level * card.ability.seal.seedMoolah
 				return {
 					dollars =  dollars
 				}

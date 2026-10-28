@@ -1,7 +1,6 @@
 return{
 	Spinarak = true,
 	Paldean_Wooper = true,
-	Shinx = true,
 	Drifloon = true,
 	Hippopotas = true,
 	Croagunk = true,
@@ -28,7 +27,6 @@ return{
 	Mareanie = true,
 	Dewpider = true,
 	Salandit = true,
-	Sandygast = true,
 	Jangmoo = true,
 	Blipbug = true,
 	Rolycoly = true,
