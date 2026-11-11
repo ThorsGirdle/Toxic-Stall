@@ -43,7 +43,7 @@ local brave = {
 					if card.ability.extra.turnsLeft <= 0 then
 						if pseudorandom('brave') < .50 then
 							local legalRanks = {}
-							if G.jokers and G.jokers.cards then
+							--[[if G.jokers and G.jokers.cards then
 								for _, joker in ipairs(G.jokers.cards) do
 									if joker.ability and joker.ability.extra and joker.ability.extra.braveWhiteList then
 										for k, j in ipairs(joker.ability.extra.braveWhiteList) do
@@ -53,7 +53,7 @@ local brave = {
 										end
 									end
 								end
-							end
+							end--]]
 							local targetRank
 							if next(legalRanks) == nil then
 								local rankTable = pokermon.get_target_card_ranks("brave", 1, "Ace", false)
